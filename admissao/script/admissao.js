@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    alert("GITHUB OK")
     var rich = FLUIGC.richeditor('ti_message', {
         extraPlugins: 'liststyle,image',
         resize_enabled: true,
@@ -152,8 +153,8 @@ $(document).ready(function () {
         });
     }
     // Ação ao arrastar o input de competencias
-    if (ATV == 0 || ATV == 1 || ATV == 4) {
         // EXIBIR VALOR DO RANGE NO OUTPUT
+    if (ATV == 0 || ATV == 1 || ATV == 4) {
         $("input[type='range']").on("input", function () {
             var comportamento = $(this).attr("compData").split("vs");
             $(this).trigger("change");
@@ -170,7 +171,6 @@ $(document).ready(function () {
                 $(this).next("output").text(comportamento[0] + " e " + comportamento[1]);
                 $(this).next("output").next("input").val(comportamento[0] + " e " + comportamento[1]);
             }
-            // $(this).next("output").show();
         });
     }
     // Controla a exibicao dos inputs clicados
