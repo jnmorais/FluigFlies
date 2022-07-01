@@ -71,7 +71,7 @@ $(document).ready(function () {
         });
         $.ajax({
             type: "GET",
-            url: "https://raw.githack.com/marllonsousa/FluigFiles/main/geral/cidades.json",
+            url: "https://rawcdn.githack.com/marllonsousa/FluigFiles/11da323df5250b89eda2b8f99bdac3a2ba59bb56/geral/cidades.json?min=1",
             dataType: "json",
             success: function (response) {
                 for (var index = 0; index < response.cidades.length - 1; index++) {
