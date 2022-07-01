@@ -1,0 +1,272 @@
+/* EXIBICAO PARA TELAS GRANDES */
+@media screen and (min-width: 960px) {
+
+    /* OCULTAR OS BOTOES DE IMPRIMIR QUE FICAM NO FIM DO FORM */
+    #printBtView,
+    #printBt {
+        display: none !important;
+    }
+}
+
+/* OCULTAR O BOTAO DE IMPRIMIR NO APLICATIVO */
+@media screen and (max-width: 959px) {
+    .imprimirForm {
+        display: none;
+    }
+
+    .viewDoc {
+        display: none;
+    }
+}
+
+/* ESTILIZAÇÃO DO BOTAO DE IMPRIMIR */
+.btnLaterais {
+    position: fixed;
+    right: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #cc5c00 !important;
+    z-index: 99;
+}
+
+.btnLaterais:hover {
+    background-color: #58595b !important;
+}
+
+.imprimirForm {
+    bottom: 20px;
+}
+
+.viewDoc {
+    bottom: 90px;
+}
+
+.sendMail {
+    bottom: 160px;
+}
+
+.divsMR {
+    border-left: solid #58595b !important;
+    margin-left: 20px !important;
+    margin-top: 10px !important;
+}
+
+/* BARRA VERTICAL DE ELEMENTOS QUE APARECEM COM OPÇÂO SELECIONADA */
+.border-left {
+    border-left: solid 2px #58595b !important;
+    border-radius: 4px !important;
+    padding: 10px !important;
+}
+
+/* ALTERAR A COR DO TEXTO DE AJUDA NOS CAMPOS DO FORM */
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #999 !important;
+    opacity: 1 !important;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #999 !important;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #999 !important;
+}
+
+.totvs-form input[type=range]:disabled {
+    -webkit-appearance: none !important;
+    height: 15px !important;
+    background: #8a8a8a !important;
+    outline: none !important;
+    border: 5px solid #8a8a8a !important;
+    border-radius: 5px !important;
+    text-align: left !important;
+}
+
+.totvs-form input[type=range]::-webkit-slider-thumb:disabled {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 50px !important;
+    height: 25px !important;
+    background: #8a8a8a !important;
+    cursor: pointer !important;
+    border: 7px solid #8a8a8a !important;
+    border-radius: 5px !important;
+}
+
+.totvs-form input[type=range]::-moz-range-thumb:disabled {
+    height: 15px !important;
+    background: #8a8a8a !important;
+    outline: none !important;
+    border: 5px solid #8a8a8a !important;
+    border-radius: 5px !important;
+    text-align: left !important;
+    display: block !important;
+}
+
+.totvs-form input[type=range] {
+    -webkit-appearance: none !important;
+    height: 15px !important;
+    background: #fff !important;
+    outline: none !important;
+    border: 5px solid #58595b !important;
+    border-radius: 5px !important;
+    text-align: left !important;
+}
+
+.totvs-form input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 50px !important;
+    height: 25px !important;
+    background: #58595b !important;
+    cursor: pointer !important;
+    border: 7px solid #58595b !important;
+    border-radius: 5px !important;
+}
+
+.totvs-form input[type=range]::-moz-range-thumb {
+    height: 15px !important;
+    background: #fff !important;
+    outline: none !important;
+    border: 5px solid #58595b !important;
+    border-radius: 5px !important;
+    text-align: left !important;
+    display: block !important;
+}
+
+.rangeGroup {
+    text-align: center !important;
+}
+
+/* TOOLTIP HOVER */
+.tooltipImg {
+    visibility: hidden !important;
+    width: 150px !important;
+    background-color: transparent !important;
+    color: #fff !important;
+    text-align: center !important;
+    border-radius: 5px !important;
+    padding: 5px 0 !important;
+
+    /* Position the tooltip */
+    position: absolute !important;
+    z-index: 1 !important;
+}
+
+label:hover .tooltipImg {
+    visibility: visible !important;
+}
+
+/* TOOLTIP TEXT */
+.tooltipText {
+    visibility: hidden !important;
+    background-color: #58595b !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+    padding: 10px !important;
+    font-size: 13px !important;
+    text-align: left !important;
+    font-family: GilroyM !important;
+    /* Position the tooltip */
+    position: absolute !important;
+    z-index: 1 !important;
+    width: 400px !important;
+}
+
+.tooltipText strong {
+    text-align: left;
+}
+
+.labelRange:hover .tooltipText {
+    visibility: visible !important;
+}
+
+textarea {
+    resize: vertical !important;
+    box-sizing: border-box !important;
+}
+
+[data-value="range"] {
+    margin-bottom: 50px !important;
+}
+
+span.form-control {
+    border: solid 1px #58595b !important;
+    padding: 10px !important;
+}
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+/* EMAIL POPUP */
+.chat-popup {
+    display: none;
+    position: fixed;
+    top: 70;
+    left: 50;
+    padding: 10px;
+    border: 1px solid #58595b !important;
+    border-radius: 10px;
+    background-color: #fff !important;
+    color: #000;
+    z-index: 999;
+    max-width: 100% !important;
+    height: auto !important;
+}
+/* Add styles to the form container */
+.form-container {
+    width: auto;
+    height: auto;
+}
+/* Full-width textarea */
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+}
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+/* Set a style for the submit/send button */
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+}
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+/* Controla exibicao msg form */
+#ti_submit {
+    margin-top: 10px;
+}
