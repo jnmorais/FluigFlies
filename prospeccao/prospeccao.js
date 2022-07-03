@@ -292,3 +292,4 @@ $(document).ready(function () {
     $(".tpgBtn").click(function (e) { e.preventDefault(); $("[thc='tpg']").show() })
     if (ATV != 71) $("[thc='tpg']").show()
 });
+// Teste
