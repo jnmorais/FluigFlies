@@ -267,15 +267,6 @@ span.form-control {
     border-radius: 10px;
     background-color: #cc5c00 !important;
     z-index: 99;
-    width: 35px;
-    height: 35px;
-}
-
-.btnLaterais [class^="flaticon-"]:before,
-[class*=" flaticon-"]:before,
-[class^="flaticon-"]:after,
-[class*=" flaticon-"]:after {
-    font-size: 1em;
 }
 
 .btnLaterais:hover {
