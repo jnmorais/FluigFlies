@@ -165,7 +165,7 @@ $(document).ready(function () {
         $(".select2").select2();
         $.ajax({
             type: "GET",
-            url: "../script/cidades.json",
+            url: "https://rawcdn.githack.com/marllonsousa/FluigFiles/c9dcc197a7c44a346af03969e13e2953e98f5cfa/geral/cidades.json",
             dataType: "json",
             success: function (response) {
                 for (var cdd = 0; cdd < response.cidades.length - 1; cdd++) {
