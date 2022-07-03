@@ -4,9 +4,6 @@ $(document).ready(function () {
     var rd_mtvDslg2 = "Término do contrato de experiência"
     var rd_mtvDslg3 = "Desligamento Empregador (Empresa)"
     $("#div_rd_mtvDslg,#div_anx_demissao,#div_rd_tpAvs,#div_txt_acrdPts,#div_rd_eftv,#div_patr_eqp").hide()
-    if (FM == "VIEW" || FM == "MOD") {
-        $("span.form-control").removeAttr("style")
-    }
     if (FM == "ADD" || FM == "MOD") {
         // $(".select2").select2()
         // Carregar SPE

@@ -1,12 +1,4 @@
 $(document).ready(function () {
-    if(FM == "VIEW" || FM == "MOD"){
-        $("span.form-control").removeAttr("style");
-        $("textarea").each(function () {
-            $(this).removeAttr("style");
-        }).on("textarea", function () {
-            this.attr.readonly = "true";
-        });
-    }
     // AQUI CONTROLA A EXIBICAO EM QUALQUER MOMENTO DO FORMULARIO DOS BOTOES QUE JA FORAM CLICADOS
     if (ATV == null || FM == "VIEW" || FM == "MOD" || FM == "ADD") {
         $("#nn_motivorepro, #nn_motivo1, #altadirecao_mot, #nn_minutareproprosp, #nn_minutareprodire,#EstMassa_aprv,#viab_Aprov,#orcOk,#ans_OrcViab_appv").hide();

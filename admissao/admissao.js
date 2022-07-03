@@ -6,10 +6,6 @@ $(document).ready(function () {
         height: "auto",
         allowedContent: true
     });
-
-    if (FM == "VIEW" || FM == "MOD") {
-        $("span.form-control").removeAttr("style");
-    }
     // Controla os botoes de anexo // Caso estejam em modo leitura, vincula um click para a aba anexos e altera o texto para visualizr anexos
     var anexos = ['anx_aprDir', 'anx_crl']
     for (var pos = 0; pos < anexos.length; pos++) {
