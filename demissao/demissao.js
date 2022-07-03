@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#div_rd_mtvDslg,#div_anx_demissao,#div_rd_tpAvs,#div_txt_acrdPts,#div_rd_eftv,#recisao_colab").hide()
+    $("#div_rd_mtvDslg,#div_anx_demissao,#div_rd_tpAvs,#div_txt_acrdPts,#div_rd_eftv,#div_patr_eqp").hide()
     if (FM == "VIEW" || FM == "MOD") {
         $("span.form-control").removeAttr("style")
     }
@@ -30,11 +30,14 @@ $(document).ready(function() {
     }
     if (ATV >= 0 || ATV == "null") {
         var rd_Estg_clc
+        var rd_mtvDslg1 = "Antecipação do término de contrato de experiência"
+        var rd_mtvDslg2 = "Término do contrato de experiência"
+        var rd_mtvDslg3 = "Desligamento Empregador (Empresa)"
+        // CONTROLA EXIBICAO DOS INPUTS QUANDO CLICADOS
         $("input[name$='rd_Estg']").click(function (e) {
             $("input[name$='rd_mtvDslg']").removeAttr('checked')
             $("input[name$='rd_tpAvs']").removeAttr('checked')
             if($("#div_anx_demissao").is(":visible")) $("#div_anx_demissao").hide()
-            
             rd_Estg_clc = $(this).val()
             $("#div_rd_mtvDslg").show()
             if(rd_Estg_clc == "Não"){ 
@@ -46,10 +49,10 @@ $(document).ready(function() {
             }
         })
         $("input[name$='rd_mtvDslg']").click(function (e) { 
-            var val1 = "Antecipação do término de contrato de experiência"
-            var val2 = "Término do contrato de experiência"
-            var val3 = "Desligamento Empregador (Empresa)"
-            if(($(this).val() == val1 || $(this).val() == val2 || $(this).val() == val3) && rd_Estg_clc == "Não"){
+            if(($(this).val() == rd_mtvDslg1 
+            || $(this).val() == rd_mtvDslg2 
+            || $(this).val() == rd_mtvDslg3) 
+            && rd_Estg_clc == "Não"){
                 $("#div_rd_tpAvs").show()
                 $("#div_anx_demissao").hide()
             }else if($(this).val() == "Pedido de demissão pelo colaborador"){
@@ -66,12 +69,38 @@ $(document).ready(function() {
                 $("#div_txt_acrdPts").hide()
             }
         })
-        $("input[name$='rd_anx_dp_ok']").click(function (e) {
+        $("input[name$='rd_devEqp_slt']").click(function (e) {
             if($(this).val() == "Sim"){
-                $("#recisao_colab").show()
-            }else if($(this).val() == "Não"){
-                $("#recisao_colab").hide()
+                $("#div_patr_eqp").hide()
+            }else if($(this).val() == "Não, serão realocados"){
+                $("#div_patr_eqp").show()
             }
         })
+        // CONTROLA EXIBICAO DOS INPUTS DPS DE CLICADOS
+        if($("input[name$='rd_Estg']:checked").val() == "Não"){
+            $("#div_rd_mtvDslg,#div_txt_cargo").show()
+            $("#div_rd_eftv").hide()
+        }else{
+            $("#div_rd_eftv").show()
+            $("#div_txt_cargo,#div_rd_tpAvs").hide()
+        }
+        if($("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg1 || rd_mtvDslg2 || rd_mtvDslg3 
+        && $("input[name$='rd_Estg']:checked").val() == "Não"){
+            $("#div_rd_tpAvs").show()
+            $("#div_anx_demissao").hide()
+        }else if($("input[name$='rd_mtvDslg']:checked").val() == "Pedido de demissão pelo colaborador"){
+            $("#div_rd_tpAvs").hide()
+            $("#div_anx_demissao").show()
+        }
+        if($("input[name$='rd_acrdPts']:checked").val() == "Não"){
+            $("#div_txt_acrdPts").hide()
+        }else{
+            $("#div_txt_acrdPts").show()
+        }
+        if($("input[name$='rd_devEqp_slt']:checked").val() == "Não, serão realocados"){
+            $("#div_patr_eqp").show()
+        }else{
+            $("#div_patr_eqp").hide()
+        }
     }
 })
