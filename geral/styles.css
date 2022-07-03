@@ -19,9 +19,6 @@
     font-family: GilroyM !important;
     font-size: 15px !important;
     color: #000 !important;
-    display: flex !important;
-    justify-content: center !important;
-    max-width: 1366px !important;
 }
 /* BARRA VERTICAL DE ELEMENTOS QUE APARECEM COM OPÇÂO SELECIONADA */
 .divsMR {
