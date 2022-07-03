@@ -256,11 +256,6 @@ $(document).ready(function () {
         show_on_click('rd_int_rh', 'Sim', null, 'dt_int_rh')
     }
 })
-// Ação ao clicar no botão documento
-function viewDoc() {
-    var url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/ecmnavigation?app_ecm_navigation_doc=";
-    parent.open(url + docID);
-}
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
 function show_on_click(campo, valor1, valor2, show) {
     $("input[name$='" + campo + "']").click(function () {

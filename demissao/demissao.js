@@ -32,7 +32,7 @@ $(document).ready(function () {
             }
         })
     }
-    if (ATV == 9 || ATV == 13 || ATV == 29 || ATV == 58 || ATV == 27 || ATV == 15 || ATV == 19 || ATV == 21 || ATV == 23 || ATV == 25 || ATV == 36) {
+    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 13 || ATV == 29 || ATV == 58 || ATV == 27 || ATV == 15 || ATV == 19 || ATV == 21 || ATV == 23 || ATV == 25 || ATV == 36 || ATV == "null") {
         // CONTROLA EXIBICAO DOS INPUTS QUANDO CLICADOS
         $("input[name$='rd_Estg']").click(function (e) {
             $("input[name$='rd_mtvDslg']").removeAttr('checked')
@@ -77,7 +77,7 @@ $(document).ready(function () {
             }
         })
     }
-    if (ATV >= 0 || ATV == "null") {
+    if (ATV >=4 || ATV == "null") {
         // CONTROLA EXIBICAO DOS INPUTS DPS DE CLICADOS
         if ($("input[name$='rd_Estg']:checked").val() == "Não") {
             $("#div_rd_mtvDslg,#div_txt_cargo").show()

@@ -231,17 +231,20 @@ span.form-control {
     background-color: #58595b !important;
 }
 .imprimirForm {
-    bottom: 20px;
+    bottom: 10px;
 }
 .viewDoc {
-    bottom: 90px;
+    bottom: 80px;
 }
 .sendMail {
-    bottom: 160px;
+    bottom: 150px;
+}
+.visualizarSolicitacao {
+    bottom: 220px;
 }
 /* OCULTAR OS BOTOES MOBILE */
 @media screen and (max-width: 960px) {
-    #imprimirForm,#viewDoc,#sendMail {
+    #imprimirForm,#viewDoc,#sendMail,#visualizarSolicitacao {
         display: none !important;
     }
 }
