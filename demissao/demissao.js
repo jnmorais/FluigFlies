@@ -80,7 +80,7 @@ $(document).ready(function() {
         if($("input[name$='rd_Estg']:checked").val() == "Não"){
             $("#div_rd_mtvDslg,#div_txt_cargo").show()
             $("#div_rd_eftv").hide()
-        }else{
+        }else if($("input[name$='rd_Estg']:checked").val() == "Sim"){
             $("#div_rd_eftv").show()
             $("#div_txt_cargo,#div_rd_tpAvs").hide()
         }
@@ -88,18 +88,19 @@ $(document).ready(function() {
         && $("input[name$='rd_Estg']:checked").val() == "Não"){
             $("#div_rd_tpAvs").show()
             $("#div_anx_demissao").hide()
-        }else if($("input[name$='rd_mtvDslg']:checked").val() == "Pedido de demissão pelo colaborador"){
+        }
+        if($("input[name$='rd_mtvDslg']:checked").val() == "Pedido de demissão pelo colaborador"){
             $("#div_rd_tpAvs").hide()
             $("#div_anx_demissao").show()
         }
         if($("input[name$='rd_acrdPts']:checked").val() == "Não"){
             $("#div_txt_acrdPts").hide()
-        }else{
+        }else if($("input[name$='rd_acrdPts']:checked").val() == "Sim"){
             $("#div_txt_acrdPts").show()
         }
         if($("input[name$='rd_devEqp_slt']:checked").val() == "Não, serão realocados"){
             $("#div_patr_eqp").show()
-        }else{
+        }else if($("input[name$='rd_devEqp_slt']:checked").val() == "Sim"){
             $("#div_patr_eqp").hide()
         }
     }
