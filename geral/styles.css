@@ -35,10 +35,6 @@ textarea {
     resize: vertical !important;
     box-sizing: border-box !important;
 }
-/* PANEL FOOTER COLOR */
-.panel-footer{
-    background-color: #a7a7a7 !important;
-}
 /* HOVER BOTAO */
 .btn-primary:hover {
     color: #fff !important;
@@ -219,6 +215,7 @@ span.form-control {
 }
 .panel-heading small{
     color:#fff !important;
+    font-family: GilroyL !important;
 }
 /* FIM - BOTAO DE VISUALIZAR VIABILIDADE - PROSPECCAO */
 /* ESTILIZAÇÃO DO BOTOES LATERAIS */
