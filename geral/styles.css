@@ -1,0 +1,283 @@
+/* CARREGAR FONTES */
+@font-face {
+    font-family: GilroyB;
+    src: url(https://rawcdn.githack.com/marllonsousa/FluigFiles/1134b5eae0de91dea41d2c5d13c690c8a4b1a11a/fonts/Gilroy-Black.ttf);
+}
+@font-face {
+    font-family: GilroyM;
+    src: url(https://rawcdn.githack.com/marllonsousa/FluigFiles/1134b5eae0de91dea41d2c5d13c690c8a4b1a11a/fonts/Gilroy-Medium.ttf);
+}
+@font-face {
+    font-family: GilroyEB;
+    src: url(https://rawcdn.githack.com/marllonsousa/FluigFiles/1134b5eae0de91dea41d2c5d13c690c8a4b1a11a/fonts/Gilroy-ExtraBold.otf);
+}
+@font-face {
+    font-family: GilroyL;
+    src: url(https://rawcdn.githack.com/marllonsousa/FluigFiles/1134b5eae0de91dea41d2c5d13c690c8a4b1a11a/fonts/Gilroy-Light.otf);
+}
+/* BARRA VERTICAL DE ELEMENTOS QUE APARECEM COM OPÇÂO SELECIONADA */
+.divsMR {
+    border-left: solid #58595b !important;
+    margin-left: 20px !important;
+    margin-top: 10px !important;
+}
+/* MARGIN TOP 10px */
+.mt-1 {
+    margin-top: 10px !important;
+}
+/* IMPEDE ALARGAR TEXTAREA */
+textarea {
+    resize: vertical !important;
+    box-sizing: border-box !important;
+}
+/* PANEL FOOTER COLOR */
+.panel-footer{
+    background-color: #a7a7a7 !important;
+}
+/* HOVER BOTAO */
+.btn-primary:hover {
+    color: #fff !important;
+}
+/* ALTERA COR DOS TEXTOS NOS INPUTS */
+::placeholder {
+    color: #000 !important;
+    opacity: 0.4 !important; /* Firefox */
+}
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #000 !important;
+}
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #000 !important;
+}
+input[type=text][readonly], textarea[readonly], select[readonly]{
+    background-color: #fff !important;
+    color: #58595b !important;
+    border: #58595b solid 1px !important;
+}
+input[type=button][readonly]{
+    background-color: #58595b !important;
+    color: #fff !important;
+    opacity: 0.5 !important;
+}
+input[type=button][readonly]:hover{
+    background-color: #58595b !important;
+    color: #fff !important;
+    opacity: 1 !important;
+}
+span.form-control {
+    border: solid 1px #58595b !important;
+    padding: 10px !important;
+}
+/* ESTILO DOS RANGEDS - ADMISSAO */
+.range-group {
+    text-align: center !important;
+}
+.totvs-form input[type=range]:disabled {
+    -webkit-appearance: none !important;
+    height: 15px !important;
+    background: #8a8a8a !important;
+    outline: none !important;
+    border: 5px solid #8a8a8a !important;
+    border-radius: 5px !important;
+    text-align: left !important;
+}
+.totvs-form input[type=range]::-webkit-slider-thumb:disabled {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 50px !important;
+    height: 25px !important;
+    background: #8a8a8a !important;
+    cursor: pointer !important;
+    border: 7px solid #8a8a8a !important;
+    border-radius: 5px !important;
+}
+.totvs-form input[type=range]::-moz-range-thumb:disabled {
+    height: 15px !important;
+    background: #8a8a8a !important;
+    outline: none !important;
+    border: 5px solid #8a8a8a !important;
+    border-radius: 5px !important;
+    text-align: left !important;
+    display: block !important;
+}
+.totvs-form input[type=range] {
+    -webkit-appearance: none !important;
+    height: 15px !important;
+    background: #fff !important;
+    outline: none !important;
+    border: 5px solid #58595b !important;
+    border-radius: 5px !important;
+    text-align: left !important;
+}
+.totvs-form input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 50px !important;
+    height: 25px !important;
+    background: #58595b !important;
+    cursor: pointer !important;
+    border: 7px solid #58595b !important;
+    border-radius: 5px !important;
+}
+.totvs-form input[type=range]::-moz-range-thumb {
+    height: 15px !important;
+    background: #fff !important;
+    outline: none !important;
+    border: 5px solid #58595b !important;
+    border-radius: 5px !important;
+    text-align: left !important;
+    display: block !important;
+}
+[data-value="range"] {
+    margin-bottom: 50px !important;
+}
+/* ESTILO DOS BOTOES DE ANEXO */
+.componentAnexo {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.componentAnexo .input-group {
+    flex-grow: 1;
+    position: relative;
+}
+.componentAnexo .inputAnexo {
+    color: blue !important;
+    border-radius: 0 !important;
+}
+.componentAnexo .icones {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.componentAnexo .icones .btn {
+    outline: none !important;
+    outline-offset: unset !important;
+    border-radius: 0;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-left: 3px;
+}
+.componentAnexo .icones .btn-default,
+.componentAnexo .icones .btn-default:focus,
+.componentAnexo .icones .btn-default:active,
+.componentAnexo .icones .btn-default:hover {
+    border: solid 1px #58595b !important;
+}
+.componentAnexo .icones .btn-primary,
+.componentAnexo .icones .btn-primary:focus,
+.componentAnexo .icones .btn-primary:active,
+.componentAnexo .icones .btn-primary:hover {
+    border: solid 1px #58595b !important;
+}
+.componentAnexo .icones .btn-success,
+.componentAnexo .icones .btn-success:focus,
+.componentAnexo .icones .btn-success:active,
+.componentAnexo .icones .btn-success:hover {
+    border: solid 1px #1ab83f !important;
+}
+.componentAnexo .icones .btn-info,
+.componentAnexo .icones .btn-info:focus,
+.componentAnexo .icones .btn-info:active,
+.componentAnexo .icones .btn-info:hover {
+    border: solid 1px #1eaad9 !important;
+}
+.componentAnexo .icones .btn-warning,
+.componentAnexo .icones .btn-warning:focus,
+.componentAnexo .icones .btn-warning:active,
+.componentAnexo .icones .btn-warning:hover {
+    border: solid 1px #e3b420 !important;
+}
+.componentAnexo .icones .btn-danger,
+.componentAnexo .icones .btn-danger:focus,
+.componentAnexo .icones .btn-danger:active,
+.componentAnexo .icones .btn-danger:hover {
+    border: solid 1px #cc3d3d !important;
+}
+/* FIM ESTILO ANEXO */
+/* BOTAO DE VISUALIZAR VIABILIDADE - PROSPECCAO */
+.input-icon {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.input-icon-i {
+    width: 50px;
+    border-radius: 5px;
+    background: #58595b;
+    color: white;
+    text-align: center;
+}
+.panel-heading small{
+    color:#fff !important;
+}
+/* FIM - BOTAO DE VISUALIZAR VIABILIDADE - PROSPECCAO */
+/* ESTILIZAÇÃO DO BOTOES LATERAIS */
+.btnLaterais {
+    position: fixed;
+    right: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #cc5c00 !important;
+    z-index: 99;
+}
+.btnLaterais:hover {
+    background-color: #58595b !important;
+}
+.imprimirForm {
+    bottom: 20px;
+}
+.viewDoc {
+    bottom: 90px;
+}
+.sendMail {
+    bottom: 160px;
+}
+/* OCULTAR OS BOTOES MOBILE */
+@media screen and (max-width: 960px) {
+    #imprimirForm,#viewDoc,#sendMail {
+        display: none !important;
+    }
+}
+/* FIM - ESTILIZAÇÃO DO BOTOES LATERAIS */
+/* ESCURECE A TELA AO ABRIR BOTAO DE EMAIL */
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+/* EMAIL POPUP */
+.chat-popup {
+    display: none;
+    position: fixed;
+    top: 70;
+    left: 50;
+    padding: 10px;
+    border: 1px solid #58595b !important;
+    border-radius: 10px;
+    background-color: #fff !important;
+    color: #000;
+    z-index: 999;
+    max-width: 100% !important;
+    height: auto !important;
+}
+/* ESTILO FORM EMAIL */
+.form-container {
+    width: auto;
+    height: auto;
+}
+#ti_submit {
+    margin-top: 10px;
+}

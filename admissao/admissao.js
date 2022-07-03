@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    alert("GITHUB OK")
     var rich = FLUIGC.richeditor('ti_message', {
         extraPlugins: 'liststyle,image',
         resize_enabled: true,
@@ -72,7 +71,7 @@ $(document).ready(function () {
         });
         $.ajax({
             type: "GET",
-            url: "https://rawcdn.githack.com/marllonsousa/FluigFiles/11da323df5250b89eda2b8f99bdac3a2ba59bb56/geral/cidades.json?min=1",
+            url: "https://raw.githack.com/marllonsousa/FluigFiles/main/geral/cidades.json",
             dataType: "json",
             success: function (response) {
                 for (var index = 0; index < response.cidades.length - 1; index++) {
@@ -153,8 +152,8 @@ $(document).ready(function () {
         });
     }
     // Ação ao arrastar o input de competencias
-        // EXIBIR VALOR DO RANGE NO OUTPUT
     if (ATV == 0 || ATV == 1 || ATV == 4) {
+        // EXIBIR VALOR DO RANGE NO OUTPUT
         $("input[type='range']").on("input", function () {
             var comportamento = $(this).attr("compData").split("vs");
             $(this).trigger("change");
@@ -171,6 +170,7 @@ $(document).ready(function () {
                 $(this).next("output").text(comportamento[0] + " e " + comportamento[1]);
                 $(this).next("output").next("input").val(comportamento[0] + " e " + comportamento[1]);
             }
+            // $(this).next("output").show();
         });
     }
     // Controla a exibicao dos inputs clicados
