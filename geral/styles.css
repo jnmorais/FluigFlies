@@ -226,6 +226,8 @@ span.form-control {
     border-radius: 10px;
     background-color: #cc5c00 !important;
     z-index: 99;
+    width: 35px;
+    height: 35px;
 }
 .btnLaterais i{
     width: 100%;
@@ -235,16 +237,16 @@ span.form-control {
     background-color: #58595b !important;
 }
 .imprimirForm {
-    bottom: 10px;
+    bottom: 5px;
 }
 .viewDoc {
     bottom: 80px;
 }
 .sendMail {
-    bottom: 150px;
+    bottom: 155px;
 }
 .visualizarSolicitacao {
-    bottom: 220px;
+    bottom: 230px;
 }
 /* OCULTAR OS BOTOES MOBILE */
 @media screen and (max-width: 960px) {
