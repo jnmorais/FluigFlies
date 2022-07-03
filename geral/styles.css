@@ -15,6 +15,11 @@
     font-family: GilroyL;
     src: url('https://rawcdn.githack.com/marllonsousa/FluigFiles/1134b5eae0de91dea41d2c5d13c690c8a4b1a11a/fonts/Gilroy-Light.otf');
 }
+.fluig-style-guide{
+    font-family: GilroyM !important;
+    font-size: 14px !important;
+    color: #000 !important;
+}
 /* BARRA VERTICAL DE ELEMENTOS QUE APARECEM COM OPÇÂO SELECIONADA */
 .divsMR {
     border-left: solid #58595b !important;
