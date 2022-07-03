@@ -10,6 +10,10 @@
  * @return {void} 
  * @author Sérgio Machado
  */
+
+$(document).ready(function () {
+    alert("Git Ok")
+});
 function anexo(event) {
     try {
         const acao = event.currentTarget.getAttribute("data-acao");
@@ -283,6 +287,7 @@ function btnState(idInput, acao, btn) {
  * @author Sérgio Machado
  */
 function displayBtnFiles() {
+    alert("Ok")
     try {
         $('.componentAnexo').each(function (i, element) {
             let inputFile = $(element).find(".inputAnexo")
