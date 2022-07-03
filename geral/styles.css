@@ -227,6 +227,10 @@ span.form-control {
     background-color: #cc5c00 !important;
     z-index: 99;
 }
+.btnLaterais i{
+    width: 100%;
+    color: #fff;
+}
 .btnLaterais:hover {
     background-color: #58595b !important;
 }

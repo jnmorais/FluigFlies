@@ -93,7 +93,7 @@ $(document).ready(function () {
         });
     }
     // Controla o click nos inputs que escondem campos
-    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == "null" || ATV == 9 || ATV == 37 || ATV == 98) {
+    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null || ATV == 9 || ATV == 37 || ATV == 98) {
         // CHECKBOX SISTEMAS
         $(".cbx_si").change(function () {
             $("#" + $(this).attr('id_div')).toggle();
@@ -174,7 +174,7 @@ $(document).ready(function () {
         });
     }
     // Controla a exibicao dos inputs clicados
-    if (ATV >= 4 || ATV == "null") {
+    if (ATV >= 4 || ATV == null) {
         // EXIBE OS SISTEMAS CLICADOS
         $($('#sistemas').find("input[type='checkbox']:checked")).each(function () {
             $("#" + $(this).attr('id_div')).show()
@@ -238,21 +238,21 @@ $(document).ready(function () {
         }
     }
     // Controla exb dos campos na avl do rh
-    if (ATV == 9 || ATV == "null") {
+    if (ATV == 9 || ATV == null) {
         show_on_click('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
     }
     // Controla click nas atvs candidato selecionado
-    if (ATV == 37 || ATV == 98 || ATV == "null") {
+    if (ATV == 37 || ATV == 98 || ATV == null) {
         show_on_click('rd_dst_rh', 'Não', null, 'cdd_slc')
     }
     // Controla click nas atvs hcm
-    if (ATV == 51 || ATV == 102 || ATV == "null") {
+    if (ATV == 51 || ATV == 102 || ATV == null) {
         show_on_click('rd_dst_dp', 'Não', null, 'dt_cntr_clb')
         show_on_click('rd_dst_dp', 'Solicitar alterações ao RH', null, 'txt_dp_alter')
     }
     // controla exbc da data da integração
-    if (ATV == 63 || ATV == "null") {
+    if (ATV == 63 || ATV == null) {
         show_on_click('rd_int_rh', 'Sim', null, 'dt_int_rh')
     }
 })

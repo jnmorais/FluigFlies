@@ -8,7 +8,7 @@ $(document).ready(function () {
         });
     }
     // AQUI CONTROLA A EXIBICAO EM QUALQUER MOMENTO DO FORMULARIO DOS BOTOES QUE JA FORAM CLICADOS
-    if (ATV == "null" || FM == "VIEW" || FM == "MOD" || FM == "ADD") {
+    if (ATV == null || FM == "VIEW" || FM == "MOD" || FM == "ADD") {
         $("#nn_motivorepro, #nn_motivo1, #altadirecao_mot, #nn_minutareproprosp, #nn_minutareprodire,#EstMassa_aprv,#viab_Aprov,#orcOk,#ans_OrcViab_appv").hide();
         $("#ass_Contrato_appv,#ass_Contrato_rpv").hide();
         $("#preVBAprovView, #nn_valortorna, #nn_valorpf, #nn_valorpfinan,#nn_negRejtd").show();
