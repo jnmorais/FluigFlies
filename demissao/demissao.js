@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#div_rd_Dslg,#div_anx_demissao,#div_rd_tpDslg,#div_txt_acrdPts,#div_rd_eftv,#recisao_colab").hide()
+    $("#div_rd_mtvDslg,#div_anx_demissao,#div_rd_tpAvs,#div_txt_acrdPts,#div_rd_eftv,#recisao_colab").hide()
     if (FM == "VIEW" || FM == "MOD") {
         $("span.form-control").removeAttr("style")
     }
@@ -31,32 +31,32 @@ $(document).ready(function() {
     if (ATV >= 0 || ATV == "null") {
         var rd_Estg_clc
         $("input[name$='rd_Estg']").click(function (e) {
-            $("input[name$='rd_dslg']").removeAttr('checked')
-            $("input[name$='rd_tpDslg']").removeAttr('checked')
+            $("input[name$='rd_mtvDslg']").removeAttr('checked')
+            $("input[name$='rd_tpAvs']").removeAttr('checked')
             if($("#div_anx_demissao").is(":visible")) $("#div_anx_demissao").hide()
             
             rd_Estg_clc = $(this).val()
-            $("#div_rd_Dslg").show()
+            $("#div_rd_mtvDslg").show()
             if(rd_Estg_clc == "Não"){ 
                 $("#div_txt_cargo").show()
                 $("#div_rd_eftv").hide()
             }else{
                 $("#div_rd_eftv").show()
-                $("#div_txt_cargo,#div_rd_tpDslg").hide()
+                $("#div_txt_cargo,#div_rd_tpAvs").hide()
             }
         })
-        $("input[name$='rd_dslg']").click(function (e) { 
+        $("input[name$='rd_mtvDslg']").click(function (e) { 
             var val1 = "Antecipação do término de contrato de experiência"
             var val2 = "Término do contrato de experiência"
             var val3 = "Desligamento Empregador (Empresa)"
             if(($(this).val() == val1 || $(this).val() == val2 || $(this).val() == val3) && rd_Estg_clc == "Não"){
-                $("#div_rd_tpDslg").show()
+                $("#div_rd_tpAvs").show()
                 $("#div_anx_demissao").hide()
             }else if($(this).val() == "Pedido de demissão pelo colaborador"){
-                $("#div_rd_tpDslg").hide()
+                $("#div_rd_tpAvs").hide()
                 $("#div_anx_demissao").show()
             }else{
-                $("#div_anx_demissao, #div_rd_tpDslg").hide()
+                $("#div_anx_demissao, #div_rd_tpAvs").hide()
             }
         })
         $("input[name$='rd_acrdPts']").click(function (e) {
