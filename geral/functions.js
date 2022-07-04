@@ -19,6 +19,14 @@ function visualizarSolicitacao() {
     var url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_processInstanceId="
     parent.open(url + $("#solicitacao").val());
 }
+function openForm() {
+    $("#overlay").toggle();
+    window.parent.$("#workflowview-header").toggle()
+    window.parent.$("#breadcrumb").toggle()
+    // window.parent.$("#breadcrumb").prop("style", "z-index:-1")
+    $(".fluig-style-guide").css("background-color","#000")
+    $("#email_si").toggle();
+}
 function anexarFile(nome, input) {
     var btn = parent.document.getElementById("ecm-navigation-inputFile-clone");
     if (btn && document.createEvent) {

@@ -286,11 +286,3 @@ function hide_on_load(campo, valor1, valor2, show) {
         }
     }
 }
-function openForm() {
-    $("#overlay").toggle();
-    window.parent.$("#workflowview-header").toggle()
-    window.parent.$("#breadcrumb").toggle()
-    // window.parent.$("#breadcrumb").prop("style", "z-index:-1")
-    $(".fluig-style-guide").css("background-color","#000")
-    $("#email_si").toggle();
-}
