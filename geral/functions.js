@@ -37,13 +37,3 @@ function anexarFile(nome, input) {
         btn.click();
     }
 }
-// Carregar mensagem RH
-function loadMsg(process, gpLogado) {
-    if (process == "Alterar RH" && gpLogado == "RecursosHumanos") {
-        FLUIGC.toast({
-            title: 'Atenção!',
-            message: 'A edição do formulário está habilitada nesta tarefa!',
-            type: 'success'
-        });
-    }
-}
