@@ -38,12 +38,13 @@ function anexarFile(nome, input) {
     }
 }
 function loadMsg(process) {
-    if (process == "ADM" && ATV == 37 || ATV == 109 || ATV == 9) {
-        FLUIGC.toast({
-            title: 'Atenção!',
-            message: 'A edição do formulário está habilitada nesta tarefa!',
-            type: 'success'
-        });
-    }
+    // if (process == "ADM" && ATV == 37 || ATV == 109 || ATV == 9) {
+    //     FLUIGC.toast({
+    //         title: 'Atenção!',
+    //         message: 'A edição do formulário está habilitada nesta tarefa!',
+    //         type: 'success'
+    //     });
+    // }
+    alert(process)
 }
 
