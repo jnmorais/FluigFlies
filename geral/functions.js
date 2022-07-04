@@ -24,7 +24,6 @@ function openForm() {
     window.parent.$("#workflowview-header").toggle()
     window.parent.$("#breadcrumb").toggle()
     // window.parent.$("#breadcrumb").prop("style", "z-index:-1")
-    $(".fluig-style-guide").css("background-color","#000")
     $("#email_si").toggle();
 }
 function anexarFile(nome, input) {
