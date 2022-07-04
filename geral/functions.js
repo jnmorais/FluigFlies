@@ -38,7 +38,6 @@ function anexarFile(nome, input) {
     }
 }
 // Carregar mensagem RH
-// dsaasda
 function loadMsg(process, gpLogado) {
     if (process == "Alterar RH" && gpLogado == "RecursosHumanos") {
         FLUIGC.toast({
