@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var contentLoaded = 0;
     var rich = FLUIGC.richeditor('ti_message', {
         extraPlugins: 'liststyle,image',
         resize_enabled: true,
@@ -22,7 +23,74 @@ $(document).ready(function () {
     // Carregar centros de custos, cidade e SPE
     if (FM == "ADD" || FM == "MOD") {
         $(".select2").select2();
-        loadData()
+        // $("#slt_cidade,#selectIdiomas,#slt_spe,#slt_cc").select2();
+        if (contentLoaded == 0) {
+            $.ajax({
+                type: "GET",
+                url: "https://experterp.com.br/inter/apiFluig/getCentroCusto.php",
+                dataType: "json",
+                success: function (response) {
+                    $.each(response.data, function (index, value) {
+                        $("<option></option>", {
+                            value: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME,
+                            text: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME
+                        }).appendTo("#slt_cc");
+                    });
+                },
+                error: function () {
+                    $.each(response.data, function (index, value) {
+                        $("<option></option>", {
+                            value: "Erro ao carregar centros de custo",
+                            text: "Erro ao carregar centros de custo"
+                        }).appendTo("#slt_cc");
+                    });
+                }
+            });
+            $.ajax({
+                type: "GET",
+                url: "https://experterp.com.br/inter/apiFluig/getSPE.php",
+                dataType: "json",
+                success: function (response) {
+                    $.each(response.data, function (index, value) {
+                        $("<option></option>", {
+                            value: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME,
+                            text: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME
+                        }).appendTo("#slt_spe");
+                    });
+                },
+                error: function () {
+                    $.each(response.data, function (index, value) {
+                        $("<option></option>", {
+                            value: "Erro ao carregar SPEs",
+                            text: "Erro ao carregar SPEs"
+                        }).appendTo("#slt_spe");
+                    });
+                }
+            });
+            $.ajax({
+                type: "GET",
+                url: "https://rawcdn.githack.com/marllonsousa/FluigFiles/c9dcc197a7c44a346af03969e13e2953e98f5cfa/geral/cidades.json",
+                dataType: "json",
+                success: function (response) {
+                    for (var index = 0; index < response.cidades.length - 1; index++) {
+                        $("<option></option>", {
+                            value: response.cidades[index],
+                            text: response.cidades[index]
+                        }
+                        ).appendTo("#slt_cidade");
+                    }
+                },
+                error: function () {
+                    $.each(response.data, function (index, value) {
+                        $("<option></option>", {
+                            value: "Erro ao carregar cidades",
+                            text: "Erro ao carregar cidades"
+                        }).appendTo("#slt_cidade");
+                    });
+                }
+            });
+            contentLoaded = 1;
+        }
     }
     // Controla o click nos inputs que escondem campos
     if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null || ATV == 9 || ATV == 37 || ATV == 98) {
@@ -174,13 +242,8 @@ $(document).ready(function () {
         show_on_click('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
     }
-    if (ATV == 37 || ATV == 109 || ATV == 9) {
-        // FLUIGC.toast({
-        //     title: 'Atenção!',
-        //     message: 'A edição do formulário está habilitada nesta tarefa!',
-        //     type: 'success'
-        // });
-        alert("Teste")
+    if (ATV == 37 || ATV == 109 || ATV == 9 && gpLogado == "RecursosHumanos") {
+        alert()
     }
     // Controla click nas atvs candidato selecionado
     if (ATV == 37 || ATV == 98 || ATV == null) {
