@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    loadMsg("ADM")
     var rich = FLUIGC.richeditor('ti_message', {
         extraPlugins: 'liststyle,image',
         resize_enabled: true,

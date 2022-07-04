@@ -23,7 +23,7 @@ function openForm() {
     $("#overlay").toggle();
     window.parent.$("#workflowview-header").toggle()
     window.parent.$("#breadcrumb").toggle()
-    // window.parent.$("#breadcrumb").prop("style", "z-index:-1")
+    window.parent.$("#breadcrumb").prop("style", "z-index:-1")
     $("#email_si").toggle();
 }
 function anexarFile(nome, input) {
@@ -37,3 +37,16 @@ function anexarFile(nome, input) {
         btn.click();
     }
 }
+function loadMsg(process){
+    if(process == "ADM" && ATV == 37 || ATV == 109 || ATV == 9){
+        $(document).ready(function () {
+            FLUIGC.toast({
+                title: 'Atenção!',
+                message: 'A edição do formulário está habilitada nesta tarefa!',
+                type: 'success'
+            });
+        });
+    }
+}
+    
+ 
