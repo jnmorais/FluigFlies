@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    loadMsg("ADM")
     var rich = FLUIGC.richeditor('ti_message', {
         extraPlugins: 'liststyle,image',
         resize_enabled: true,
@@ -238,6 +237,9 @@ $(document).ready(function () {
     if (ATV == 9 || ATV == null) {
         show_on_click('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
+    }
+    if(ATV == 37 || ATV == 109 || ATV == 9){
+        loadMsg("Alterar RH")
     }
     // Controla click nas atvs candidato selecionado
     if (ATV == 37 || ATV == 98 || ATV == null) {
