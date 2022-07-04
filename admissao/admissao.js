@@ -237,8 +237,12 @@ $(document).ready(function () {
         show_on_click('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
     }
-    if(ATV == 37 || ATV == 109 || ATV == 9){
-        loadMsg("Alterar RH", gpLogado)
+    if (ATV == 37 || ATV == 109 || ATV == 9 && gpLogado == "RecursosHumanos") {
+        FLUIGC.toast({
+            title: 'Recursos Humanos: ',
+            message: 'A edição do formulário está liberada!',
+            type: 'info'
+        })
     }
     // Controla click nas atvs candidato selecionado
     if (ATV == 37 || ATV == 98 || ATV == null) {
