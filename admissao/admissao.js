@@ -175,11 +175,12 @@ $(document).ready(function () {
         show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
     }
     if (ATV == 37 || ATV == 109 || ATV == 9 && gpLogado == "RecursosHumanos") {
-        FLUIGC.toast({
-            title: 'Atenção!',
-            message: 'A edição do formulário está habilitada nesta tarefa!',
-            type: 'success'
-        });
+        // FLUIGC.toast({
+        //     title: 'Atenção!',
+        //     message: 'A edição do formulário está habilitada nesta tarefa!',
+        //     type: 'success'
+        // });
+        alert()
     }
     // Controla click nas atvs candidato selecionado
     if (ATV == 37 || ATV == 98 || ATV == null) {
