@@ -38,7 +38,7 @@ function anexarFile(nome, input) {
     }
 }
 function loadMsg(process) {
-    if (process == "Alterar RH") {
+    if (process == "Alterar RH" && gpLogado == "RecursosHumanos") {
         FLUIGC.toast({
             title: 'Atenção!',
             message: 'A edição do formulário está habilitada nesta tarefa!',
