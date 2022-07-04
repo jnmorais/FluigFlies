@@ -37,3 +37,59 @@ function anexarFile(nome, input) {
         btn.click();
     }
 }
+
+function loadData(){
+    var contentLoaded = 0;
+    var centro_custo = [];
+    var spes = [];
+    var cidades = [];
+
+    if (contentLoaded == 0) {
+        $.ajax({
+            type: "GET",
+            url: "https://experterp.com.br/inter/apiFluig/getCentroCusto.php",
+            dataType: "json",
+            success: function (response) {
+                centro_custo = response.data
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "https://experterp.com.br/inter/apiFluig/getSPE.php",
+            dataType: "json",
+            success: function (response) {
+                spes = response.data
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "https://rawcdn.githack.com/marllonsousa/FluigFiles/c9dcc197a7c44a346af03969e13e2953e98f5cfa/geral/cidades.json",
+            dataType: "json",
+            success: function (response) {
+                cidades = response.data
+            }
+        });
+        contentLoaded = 1;
+    }
+
+    if(contentLoaded == 1){
+        $.each(centro_custo, function (index, value) {
+            $("<option></option>", {
+                value: "(" + centro_custo[index].CODIGO + ") - " + centro_custo[index].NOME,
+                text: "(" + centro_custo[index].CODIGO + ") - " + centro_custo[index].NOME
+            }).appendTo("#slt_cc");
+        });
+        $.each(spes, function (index, value) {
+            $("<option></option>", {
+                value: "(" + spes[index].CODIGO + ") - " + spes[index].NOME,
+                text: "(" + spes[index].CODIGO + ") - " + spes[index].NOME
+            }).appendTo("#slt_spe");
+        });
+        $.each(cidades.cidades, function (index, value) {
+            $("<option></option>", {
+                value: "(" + cidades.cidades[index] + ") - " + cidades.cidades[index],
+                text: "(" + cidades.cidades[index] + ") - " + cidades.cidades[index]
+            }).appendTo("#slt_cidade");
+        });
+    }
+}
