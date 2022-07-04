@@ -239,7 +239,7 @@ $(document).ready(function () {
         show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
     }
     if(ATV == 37 || ATV == 109 || ATV == 9){
-        loadMsg("Alterar RH")
+        loadMsg("Alterar RH", gpLogado)
     }
     // Controla click nas atvs candidato selecionado
     if (ATV == 37 || ATV == 98 || ATV == null) {
