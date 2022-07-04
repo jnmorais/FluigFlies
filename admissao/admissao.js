@@ -22,6 +22,7 @@ $(document).ready(function () {
     // Carregar centros de custos, cidade e SPE
     if (FM == "ADD" || FM == "MOD") {
         $(".select2").select2();
+        loadData()
     }
     // Controla o click nos inputs que escondem campos
     if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null || ATV == 9 || ATV == 37 || ATV == 98) {
@@ -173,7 +174,7 @@ $(document).ready(function () {
         show_on_click('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
     }
-    if (ATV == 37 || ATV == 109 || ATV == 9 && gpLogado == "RecursosHumanos") {
+    if (ATV == 37 || ATV == 109 || ATV == 9) {
         // FLUIGC.toast({
         //     title: 'Atenção!',
         //     message: 'A edição do formulário está habilitada nesta tarefa!',
