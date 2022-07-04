@@ -37,6 +37,7 @@ function anexarFile(nome, input) {
         btn.click();
     }
 }
+// Carregar mensagem RH
 function loadMsg(process) {
     if (process == "Alterar RH" && gpLogado == "RecursosHumanos") {
         FLUIGC.toast({
