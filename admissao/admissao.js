@@ -22,7 +22,6 @@ $(document).ready(function () {
     // Carregar centros de custos, cidade e SPE
     if (FM == "ADD" || FM == "MOD") {
         $(".select2").select2();
-        loadData()
     }
     // Controla o click nos inputs que escondem campos
     if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null || ATV == 9 || ATV == 37 || ATV == 98) {
@@ -180,7 +179,7 @@ $(document).ready(function () {
         //     message: 'A edição do formulário está habilitada nesta tarefa!',
         //     type: 'success'
         // });
-        alert()
+        alert("Teste")
     }
     // Controla click nas atvs candidato selecionado
     if (ATV == 37 || ATV == 98 || ATV == null) {
