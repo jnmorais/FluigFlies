@@ -29,24 +29,22 @@ $(document).ready(function () {
         var assunto = $("#ti_assunto").val()
         var email = $("#ti_email").val()
         var message = $("#ti_message").val()
-
-        // if(email != "" && assunto != "" && message != ""){
-            var data = {
-                "assunto": assunto,
-                "email": email,
-                "message": message
+        var email = {
+            "assunto": assunto,
+            "email": email,
+            "message": message
+        }
+        $.ajax({
+            type: "POST",
+            url: "https://experterp.com.br/inter/apiFluig/sendMail.php",
+            data: JSON.stringify(email),
+            dataType: "dataType",
+            success: function (response) {
+                alert("Email enviado!")
+            },
+            error: function (response) {
+                alert("Email não enviado!")
             }
-            const options = {
-                method: 'POST',
-                headers: {"Access-Control-Allow-Origin": "*", "Content-Type": "application/json" },
-                body: JSON.stringify(data)
-            };
-            fetch('https://experterp.com.br/inter/apiFluig/sendMail.php', options)
-                .then(response => response.json())
-                .then(response => console.log(response))
-                .catch(err => console.error(err));
-        // }else{
-            // alert("Preencha os campos!")
-        // }
+        });
     });
 });	
