@@ -24,7 +24,7 @@ function openForm() {
     window.parent.$("#workflowview-header").toggle()
     window.parent.$("#breadcrumb").toggle()
     window.parent.$("#breadcrumb").prop("style", "z-index:-1")
-    $("#email_si").toggle();
+    $("#teste").toggle();
 }
 function anexarFile(nome, input) {
     var btn = parent.document.getElementById("ecm-navigation-inputFile-clone");

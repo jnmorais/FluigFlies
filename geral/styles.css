@@ -270,7 +270,7 @@ span.form-control {
     cursor: pointer;
 }
 /* EMAIL POPUP */
-.chat-popup {
+.chat-popup, #teste {
     display: none;
     position: fixed;
     top: 70;
