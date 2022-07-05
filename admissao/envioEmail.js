@@ -38,7 +38,7 @@ $(document).ready(function () {
             type: "POST",
             url: "https://experterp.com.br/inter/apiFluig/sendMail.php",
             data: JSON.stringify(email),
-            dataType: "dataType",
+            dataType: "json",
             success: function (response) {
                 alert("Email enviado!")
             },

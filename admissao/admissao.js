@@ -1,11 +1,11 @@
 $(document).ready(function () {
-    var rich = FLUIGC.richeditor('ti_message', {
-        extraPlugins: 'liststyle,image',
-        resize_enabled: true,
-        width: "auto",
-        height: "auto",
-        allowedContent: true
-    });
+    // var rich = FLUIGC.richeditor('ti_message', {
+    //     extraPlugins: 'liststyle,image',
+    //     resize_enabled: true,
+    //     width: "auto",
+    //     height: "auto",
+    //     allowedContent: true
+    // });
     // Controla os botoes de anexo // Caso estejam em modo leitura, vincula um click para a aba anexos e altera o texto para visualizr anexos
     var anexos = ['anx_aprDir', 'anx_crl']
     for (var pos = 0; pos < anexos.length; pos++) {
