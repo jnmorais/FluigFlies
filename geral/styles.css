@@ -56,7 +56,7 @@ textarea {
 input[type=text][readonly],
 textarea[readonly],
 select[readonly] {
-    background-color: #fff !important;
+    /* background-color: #fff !important; */
     color: #58595b !important;
     border: #58595b solid 1px !important;
 }
