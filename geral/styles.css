@@ -292,3 +292,6 @@ span.form-control {
 #ti_submit {
     margin-top: 10px;
 }
+.has-error {
+    color: #f00 !important;
+}
