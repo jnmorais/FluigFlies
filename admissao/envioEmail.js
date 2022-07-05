@@ -29,7 +29,8 @@ $(document).ready(function () {
         var assunto = $("#ti_assunto").val()
         var email = $("#ti_email").val()
         var message = $("#ti_message").val()
-        if(email != "" && assunto != "" && message != ""){
+
+        // if(email != "" && assunto != "" && message != ""){
             var data = {
                 "assunto": assunto,
                 "email": email,
@@ -44,8 +45,8 @@ $(document).ready(function () {
                 .then(response => response.json())
                 .then(response => console.log(response))
                 .catch(err => console.error(err));
-        }else{
-            alert("Preencha os campos!")
-        }
+        // }else{
+            // alert("Preencha os campos!")
+        // }
     });
 });	
