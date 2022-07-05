@@ -37,25 +37,3 @@ function anexarFile(nome, input) {
         btn.click();
     }
 }
-// VALIDAR FORM 
-$('.create-form-components').on('keyup', 'input[required="required"][type="text"], input[required="required"][type="number"], input[required="required"][type="date"], textarea[required="required"]', function () {
-    validationFieldsForm($(this), $(this).parents('.form-field').data('type'));
-});
-$('.create-form-components').on('change', 'input[required="required"][type="checkbox"], input[required="required"][type="radio"], select[required="required"]', function () {
-    validationFieldsForm($(this), $(this).parents('.form-field').data('type'));
-});
-function validationFieldsForm(field, type) {
-    if (type === "checkbox" || type === "radio") {
-        if (!field.is(':checked')) {
-            field.parents('.form-field').addClass('required');
-        } else {
-            field.parents('.form-field').removeClass('required');
-        }
-    } else {
-        if (!field.val().trim()) {
-            field.parents('.form-field').addClass('required');
-        } else {
-            field.parents('.form-field').removeClass('required');
-        }
-    }
-}
