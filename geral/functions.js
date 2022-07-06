@@ -1,9 +1,16 @@
 // Ação ao clicar no botão documento
 $(document).ready(function () {
-    fetch('https://interconstrutora136608.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?processID=API')
-        .then(response => response.json())
-        .then(json => console.log(json))  
-        .catch(err => console.log('Erro de solicitação', err)); 
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+    };
+    fetch("https://interconstrutora136393.fluig.cloudtotvs.com.br/process-management/api/v2/tasks", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+        
     displayBtnFiles()
     $(".copyCode").click(function (e) {
         e.preventDefault()
