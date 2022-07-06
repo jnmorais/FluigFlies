@@ -6,11 +6,11 @@ $(document).ready(function () {
         method: 'GET',
         headers: myHeaders,
     };
-    fetch("https://interconstrutora136393.fluig.cloudtotvs.com.br/process-management/api/v2/tasks", requestOptions)
+    fetch("https://interconstrutora136608.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?processID=API", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
-        
+
     displayBtnFiles()
     $(".copyCode").click(function (e) {
         e.preventDefault()

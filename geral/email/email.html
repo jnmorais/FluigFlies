@@ -10,7 +10,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="src/richtext.min.css">
     <script type="text/javascript" src="src/jquery.richtext.js"></script>
-    <title>Document</title>
+    <title>Envio de e-mail</title>
 </head>
 <script>
     $(document).ready(function () {
@@ -20,32 +20,28 @@
             var assunto = $("#assunto").val()
             var email = $("#email").val()
             var mensagem = $("#mensagem").val()
-            if (mensagem != "") {
-                var msg = {
-                    "assunto": assunto,
-                    "email": email,
-                    "message": mensagem
-                }
-                async function sendMailReset(mail) {
-                    try {
-                        const myInit = {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(msg)
-                        }
-                        const result = await fetch('https://experterp.com.br/inter/apiFluig/sendMail.php', myInit);
-                        const json = await result.json();
-                        console.log(json)
-                    } catch (error) {
-                        console.log(error)
+            async function sendMailReset(mail) {
+                try {
+                    const myInit = {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            "assunto": assunto,
+                            "email": email,
+                            "message": mensagem
+                        })
                     }
+                    await fetch('https://experterp.com.br/inter/apiFluig/sendMail.php', myInit);
+                    const json = await result.json();
+
+                    console.log(result)
+                    console.log(json)
+                } catch (error) {
+                    console.log(error)
                 }
-            }else {
-                alert("A Mensagem não pode estar vazia!")
             }
-            
         });
     });
 </script>
