@@ -3,7 +3,7 @@ $(document).ready(function () {
     $.ajax({
         type: "GET",
         url: "https://interconstrutora136608.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?processID=API",
-        dataType: "application/json",
+        dataType: "json",
         success: function (response) {
             console.log(response)
         }
