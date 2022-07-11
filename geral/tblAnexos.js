@@ -42,3 +42,24 @@ function destroyRow(event) {
         console.error(e)
     }
 }
+
+function getIndice(id) {
+    return id.split('___').pop();
+}
+function tableLineCount(tablename) {
+    try {
+        let atributo = "[tablename]";
+        if (tablename) {
+            atributo = `[tablename='${tablename}']`
+        }
+        $.each($(atributo), function (index) {
+            const tabelaRow = $(this).find('tbody tr').not(':first');
+            tabelaRow.each(function (i) {
+                tabelaRow.eq(i).find('td.count').html(`<span>${i + 1}</span>`);
+            });
+        });
+    } catch (e) {
+        console.error("Houve um erro inesperado na função tableLineCount")
+        console.error(e)
+    }
+}
