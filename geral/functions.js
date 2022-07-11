@@ -2,7 +2,7 @@
 $(document).ready(function () {
     displayBtnFiles()
     tableLineCount()
-    if(MOD == "VIEW"){
+    if(FM == "VIEW"){
 		customJS += "$('.btnAddNewRow').remove();";
 		customJS += "$('.tdDeleteRow').remove();";
 	}
