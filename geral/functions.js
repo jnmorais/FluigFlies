@@ -1,6 +1,11 @@
 // Ação ao clicar no botão documento
 $(document).ready(function () {
     displayBtnFiles()
+    tableLineCount()
+    if(MODE == "VIEW"){
+		customJS += "$('.btnAddNewRow').remove();";
+		customJS += "$('.tdDeleteRow').remove();";
+	}
     $(".copyCode").click(function (e) {
         e.preventDefault()
         navigator.clipboard.writeText($(this).val())
