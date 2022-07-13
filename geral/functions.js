@@ -3,8 +3,8 @@ $(document).ready(function () {
     displayBtnFiles()
     tableLineCount()
     if(FM == "VIEW"){
-		customJS += "$('.btnAddNewRow').remove();";
-		customJS += "$('.tdDeleteRow').remove();";
+		$(".btnAddNewRow").remove();
+		$(".tdDeleteRow").remove();
 	}
     $(".copyCode").click(function (e) {
         e.preventDefault()
