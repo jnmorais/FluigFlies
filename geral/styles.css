@@ -292,3 +292,8 @@ span.form-control {
 #ti_submit {
     margin-top: 10px;
 }
+
+p{
+    font-size: 20px;
+    color: #000;
+}
