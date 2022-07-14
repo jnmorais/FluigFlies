@@ -159,7 +159,7 @@ $(document).ready(function () {
         $(".select2").select2();
         $.ajax({
             type: "GET",
-            url: "https://rawcdn.githack.com/marllonsousa/FluigFiles/c9dcc197a7c44a346af03969e13e2953e98f5cfa/geral/cidades.json",
+            url: "https://rawcdn.githack.com/marllonsousa/FluigFiles/ba1b31bb77ba63963cc05396e8f122d4e25866ad/geral/cidades.json",
             dataType: "json",
             success: function (response) {
                 for (var cdd = 0; cdd < response.cidades.length - 1; cdd++) {
