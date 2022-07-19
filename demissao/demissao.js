@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    var rd_Estg_clc
     var rd_mtvDslg1 = "Antecipação do término de contrato de experiência"
     var rd_mtvDslg2 = "Término do contrato de experiência"
     var rd_mtvDslg3 = "Desligamento Empregador (Empresa)"
@@ -35,9 +34,8 @@ $(document).ready(function () {
             $("input[name$='rd_mtvDslg']").removeAttr('checked')
             $("input[name$='rd_tpAvs']").removeAttr('checked')
             if ($("#div_anx_demissao").is(":visible")) $("#div_anx_demissao").hide()
-            rd_Estg_clc = $(this).val()
             $("#div_rd_mtvDslg").show()
-            if (rd_Estg_clc == "Não") {
+            if ($("input[name$='rd_Estg']".val() == "Não")) {
                 $("#div_txt_cargo").show()
                 $("#div_rd_eftv").hide()
             } else {
@@ -49,7 +47,7 @@ $(document).ready(function () {
             if (($(this).val() == rd_mtvDslg1
                 || $(this).val() == rd_mtvDslg2
                 || $(this).val() == rd_mtvDslg3)
-                && rd_Estg_clc == "Não") {
+                && $("input[name$='rd_Estg']".val() == "Não")) {
                 $("#div_rd_tpAvs").show()
                 $("#div_anx_demissao").hide()
             } else if ($(this).val() == "Pedido de demissão pelo colaborador") {
