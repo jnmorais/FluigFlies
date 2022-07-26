@@ -2,7 +2,7 @@ $(document).ready(function () {
     var rd_mtvDslg1 = "Antecipação do término de contrato de experiência"
     var rd_mtvDslg2 = "Término do contrato de experiência"
     var rd_mtvDslg3 = "Desligamento Empregador (Empresa)"
-    // $("#div_rd_mtvDslg,#div_anx_demissao,#div_rd_tpAvs,#div_txt_acrdPts,#div_rd_eftv,#div_patr_eqp").hide()
+    $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg,#div_txt_cargo,#div_rd_tpAvs").hide()
     if (FM == "ADD" || FM == "MOD") {
         $(".select2").select2()
         // Carregar SPE
@@ -34,27 +34,33 @@ $(document).ready(function () {
             $("input[name$='rd_mtvDslg']").removeAttr('checked')
             $("input[name$='rd_tpAvs']").removeAttr('checked')
             if ($("#div_anx_demissao").is(":visible")) $("#div_anx_demissao").hide()
-            $("#div_rd_mtvDslg").show()
-            if ($("input[name$='rd_Estg']".val() == "Não")) {
-                $("#div_txt_cargo").show()
+            if ($("#div_rd_tpAvs").is(":visible")) $("#div_rd_tpAvs").hide()
+            if ($("#div_rd_mtvDslg").is(":visible")) $("#div_rd_mtvDslg").hide()
+            if ($("input[name$='rd_Estg']:checked").val() == "Não") {
+                $("#div_rd_mtvDslg, #div_txt_cargo").show()
                 $("#div_rd_eftv").hide()
             } else {
-                $("#div_rd_eftv").show()
-                $("#div_txt_cargo,#div_rd_tpAvs").hide()
+                $("#div_rd_mtvDslg, #div_rd_eftv").show()
+                $("#div_txt_cargo").hide()
             }
         })
         $("input[name$='rd_mtvDslg']").click(function (e) {
-            if (($(this).val() == rd_mtvDslg1
-                || $(this).val() == rd_mtvDslg2
-                || $(this).val() == rd_mtvDslg3)
-                && $("input[name$='rd_Estg']".val() == "Não")) {
-                $("#div_rd_tpAvs").show()
-                $("#div_anx_demissao").hide()
-            } else if ($(this).val() == "Pedido de demissão pelo colaborador") {
-                $("#div_rd_tpAvs").hide()
-                $("#div_anx_demissao").show()
-            } else {
-                $("#div_anx_demissao, #div_rd_tpAvs").hide()
+            var rd_Estg = $("input[name$='rd_Estg']:checked").val()
+            var rd_mtvDslg = $("input[name$='rd_mtvDslg']:checked").val()
+            switch (true) {
+                case (rd_mtvDslg == rd_mtvDslg1 && rd_Estg == "Não"):
+                case (rd_mtvDslg == rd_mtvDslg2 && rd_Estg == "Não"):
+                case (rd_mtvDslg == rd_mtvDslg3 && rd_Estg == "Não"):
+                    $("#div_rd_tpAvs").show()
+                    $("#div_anx_demissao").hide()
+                break;
+                case (rd_mtvDslg == "Pedido de demissão pelo colaborador"):
+                    $("#div_anx_demissao").show()
+                    $("#div_rd_tpAvs").hide()
+                break;
+                default:
+                    $("#div_anx_demissao,#div_rd_tpAvs").hide()
+                    break;
             }
         })
         $("input[name$='rd_acrdPts']").click(function (e) {
@@ -72,16 +78,18 @@ $(document).ready(function () {
             }
         })
     }
-    if (ATV >=4 || ATV == null) {
+    if (ATV >= 4 || ATV == null) {
         // CONTROLA EXIBICAO DOS INPUTS DPS DE CLICADOS
-        if ($("input[name$='rd_Estg']:checked").val() == "Não") {
+        if ($("input[name$='rd_Estg']:checked").val() == "Sim") {
+            $("#div_rd_eftv,#div_rd_mtvDslg").show()
+            $("#div_txt_cargo,#div_rd_tpAvs").hide()
+        } else {
             $("#div_rd_mtvDslg,#div_txt_cargo").show()
             $("#div_rd_eftv").hide()
-        } else if ($("input[name$='rd_Estg']:checked").val() == "Sim") {
-            $("#div_rd_eftv").show()
-            $("#div_txt_cargo,#div_rd_tpAvs").hide()
         }
-        if ($("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg1 || rd_mtvDslg2 || rd_mtvDslg3
+        if ($("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg1 || 
+            $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg2 || 
+            $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg3
             && $("input[name$='rd_Estg']:checked").val() == "Não") {
             $("#div_rd_tpAvs").show()
             $("#div_anx_demissao").hide()
