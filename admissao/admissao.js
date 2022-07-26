@@ -137,12 +137,12 @@ $(document).ready(function () {
                 case "Alteração de contrato PJ para CLT":
                     $("#rd_pc,#rd_etp_na").hide()
                     $("input[name=rd_na][value='Não'").attr('checked', 'checked');
-                    $("input[name=rd_pc][value='Não, será necessário alugar um computador.'").attr('checked', 'checked');
+                    // $("input[name=rd_pc][value='Não, será necessário alugar um computador.'").attr('checked', 'checked');
                     break;
                 case "Aumento de quadro":
                     $("#rd_pc").show()
                     $("input[name=rd_na][value='Não'").attr('checked', false);
-                    $("input[name=rd_pc][value='Não, será necessário alugar um computador.'").attr('checked', false);
+                    // $("input[name=rd_pc][value='Não, será necessário alugar um computador.'").attr('checked', false);
                     break;
             }
         });
