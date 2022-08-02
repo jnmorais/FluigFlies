@@ -18,9 +18,9 @@ function addNewRow(event) {
 //REMOVE LINHAS DA TABELAS
 function destroyRow(event) {
     try {
-        // const tabela = $(event).closest('table')[0]
-        // const tablename = tabela.getAttribute("tablename")
-        const tablename = $(event).attr("data-table")
+        const tabela = $(event).closest('table')[0]
+        const tablename = tabela.getAttribute("tablename")
+        // const tablename = $(event).attr("data-table")
         const indice = getIndice($(event).closest('tr').find("input")[0].id)
         const codigo = $("#"+tablename+`_Codigo___${indice}`).val() || "Código em branco"
         const inputFileName = $(event).closest('tr').find(".inputAnexo").val()
