@@ -47,6 +47,14 @@ $(document).ready(function() {
                 $("#nvInf_vldSolct_s").hide()
                 $("#nvInf_vldSolct_n").show()
             }
+        }); 
+        // nvInf_vldSolct_n
+        $("select[name$='nvInf_vldSolct_n']").click(function() {
+            if ($(this).val() == "Distrato") {
+                $("#mtv_distrato_txt").show()
+            }else{
+                $("#mtv_distrato_txt").hide()
+            }
         });  
         // Informações Jurídicas
         $("input[name$='nvInf_elbAdtv']").click(function() {
