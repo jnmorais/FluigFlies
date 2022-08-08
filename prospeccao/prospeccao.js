@@ -3,7 +3,7 @@ $(document).ready(function () {
     // AQUI CONTROLA A EXIBICAO EM QUALQUER MOMENTO DO FORMULARIO DOS BOTOES QUE JA FORAM CLICADOS
     if (ATV == null || FM == "VIEW" || FM == "MOD" || FM == "ADD") {
         $("#nn_motivorepro, #nn_motivo1, #altadirecao_mot, #nn_minutareproprosp").hide() 
-        $("#nn_minutareprodire,#EstMassa_aprv,#viab_Aprov,#orcOk,#ans_OrcViab_appv").hide();
+        $("#nn_minutareprodire,#EstMassa_aprv,#viab_Aprov,#voltaviabilidade_info,#orcOk,#ans_OrcViab_appv").hide();
         $("#ass_Contrato_appv,#ass_Contrato_rpv,#nn_negRejtd").hide();
         $("#nn_valortorna, #nn_valorpf, #nn_valorpfinan").show();
 
@@ -63,6 +63,9 @@ $(document).ready(function () {
         }
         if ($("input[name$='voltaviabilidade']:checked").val() == "Não") {
             $("#viab_Aprov").show();
+        }
+        if ($("input[name$='voltaviabilidade']:checked").val() == "Sim (Orçamento)" || $("input[name$='voltaviabilidade']:checked").val() == "Sim (Estudo de massa)") {
+            $("#voltaviabilidade_info").show();
         }
         if ($("input[name$='nn_aprov1']:checked").val() == "Não") {
             $("#nn_motivorepro, #nn_motivo1").show()
@@ -133,6 +136,7 @@ $(document).ready(function () {
             e.preventDefault();
             var click = $(this).val();
             if (click == "Não") { $("#viab_Aprov").show() }else { $("#viab_Aprov").hide()}
+            if (click == "Sim (Orçamento)" || click == "Sim (Estudo de massa)") { $("#voltaviabilidade_info").show() }else { $("#voltaviabilidade_info").hide()}
         });
     }
     // ANS Estudo Massa
@@ -206,8 +210,20 @@ $(document).ready(function () {
             }
         });
     }
-    if (ATV > 22) {
-
+    // PRE VIABILIDADE
+    if (ATV == 14) {
+        $("input[name$='nn_aprov1']").click(function () {
+            var click = $(this).val();
+            if(click == "Não") {
+                $("#nn_motivorepro, #nn_motivo1").show()
+                $("#ans_OrcViab_appv").hide()
+            }else if(click == "Sim"){
+                $("#nn_motivorepro, #nn_motivo1").hide()
+                $("#ans_OrcViab_appv").show()
+            }else{
+                $("#nn_motivorepro, #nn_motivo1,#ans_OrcViab_appv").hide()
+            }
+        });
     }
     if (ATV == 29) {
         $("input[name$='nn_aprov1']").click(function () {
