@@ -23,7 +23,7 @@ $(document).ready(function () {
     if(FM == "VIEW"){
         $(".select2").select2();
     }
-    if (FM == "ADD" || FM == "MOD") {
+    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 37 || ATV == null) {
         $(".select2").select2();
         $.ajax({
             type: "GET",
@@ -34,7 +34,7 @@ $(document).ready(function () {
                     $("<option></option>", {
                         value: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME,
                         text: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME
-                    }).appendTo("#slt_cc");
+                    }).appendTo("#slt_cc,#slt_ccrh");
                 });
             },
             error: function () {
@@ -42,7 +42,7 @@ $(document).ready(function () {
                     $("<option></option>", {
                         value: "Erro ao carregar centros de custo",
                         text: "Erro ao carregar centros de custo"
-                    }).appendTo("#slt_cc");
+                    }).appendTo("#slt_cc,#slt_ccrh");
                 });
             }
         });
@@ -55,7 +55,7 @@ $(document).ready(function () {
                     $("<option></option>", {
                         value: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME,
                         text: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME
-                    }).appendTo("#slt_spe");
+                    }).appendTo("#slt_spe,#slt_sperh");
                 });
             },
             error: function () {
@@ -63,7 +63,7 @@ $(document).ready(function () {
                     $("<option></option>", {
                         value: "Erro ao carregar SPEs",
                         text: "Erro ao carregar SPEs"
-                    }).appendTo("#slt_spe");
+                    }).appendTo("#slt_spe,#slt_sperh");
                 });
             }
         });
@@ -237,7 +237,7 @@ $(document).ready(function () {
         show_on_click('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
     }
-    if (ATV == 37 || ATV == 109 || ATV == 9 && gpLogado == "RecursosHumanos") {
+    if ((ATV == 37 || ATV == 109 || ATV == 9) && gpLogado == "RecursosHumanos") {
         FLUIGC.toast({
             title: 'Recursos Humanos: ',
             message: 'A edição do formulário está liberada!',
