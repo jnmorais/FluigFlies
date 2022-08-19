@@ -71,7 +71,7 @@ $(document).ready(function () {
             }
         })
         $("input[name$='rd_devEqp_slt']").click(function (e) {
-            if ($(this).val() != "Não utilizava equipamentos de T.I.") {
+            if (($(this).val() == "Sim, farei a devolução dos equipamentos para T.I Infra.")||($(this).val() == "Sim, porém os equipamentos serão realocados no setor.")) {
                 $("#div_patr_eqp").show()
             }
         })
