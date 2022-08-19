@@ -2,7 +2,7 @@ $(document).ready(function () {
     var rd_mtvDslg1 = "Antecipação do término de contrato de experiência"
     var rd_mtvDslg2 = "Término do contrato de experiência"
     var rd_mtvDslg3 = "Desligamento Empregador (Empresa)"
-    $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg,#div_txt_cargo,#div_rd_tpAvs").hide()
+    $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg,#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh").hide()
     if (FM == "ADD" || FM == "MOD") {
         $(".select2").select2()
         // Carregar SPE
@@ -28,7 +28,7 @@ $(document).ready(function () {
             }
         })
     }
-    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 13 || ATV == 29 || ATV == 58 || ATV == 27 || ATV == 15 || ATV == 19 || ATV == 21 || ATV == 23 || ATV == 25 || ATV == 36 || ATV == null) {
+    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 13 || ATV == 29 || ATV == 58 || ATV == 27 || ATV == 15 || ATV == 19 || ATV == 21 || ATV == 23 || ATV == 25 || ATV == 36 || ATV == 127 || ATV == null) {
         // CONTROLA EXIBICAO DOS INPUTS QUANDO CLICADOS
         $("input[name$='rd_Estg']").click(function (e) {
             $("input[name$='rd_mtvDslg']").removeAttr('checked')
@@ -77,6 +77,13 @@ $(document).ready(function () {
                 $("#div_patr_eqp").show()
             }
         })
+        $("input[name$='rd_entrev_rh']").click(function (e) {
+            if ($(this).val() == "Sim") {
+                $("#txt_altr_rh").hide()
+            } else if ($(this).val() == "Não") {
+                $("#txt_altr_rh").show()
+            }
+        })
     }
     if (ATV >= 4 || ATV == null) {
         // CONTROLA EXIBICAO DOS INPUTS DPS DE CLICADOS
@@ -86,6 +93,12 @@ $(document).ready(function () {
         } else {
             $("#div_rd_mtvDslg,#div_txt_cargo").show()
             $("#div_rd_eftv").hide()
+        }
+        // ALTERAÇÕES RH
+        if ($("input[name$='rd_entrev_rh']:checked").val() == "Não") {
+            $("#txt_altr_rh").show()
+        } else {
+            $("#txt_altr_rh").hide()
         }
         if ($("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg1 || 
             $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg2 || 
