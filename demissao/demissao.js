@@ -71,9 +71,7 @@ $(document).ready(function () {
             }
         })
         $("input[name$='rd_devEqp_slt']").click(function (e) {
-            if ($(this).val() == "Sim") {
-                $("#div_patr_eqp").hide()
-            } else if ($(this).val() == "Não, serão realocados") {
+            if ($(this).val() != "Não utilizava equipamentos de T.I.") {
                 $("#div_patr_eqp").show()
             }
         })
@@ -116,10 +114,8 @@ $(document).ready(function () {
         } else if ($("input[name$='rd_acrdPts']:checked").val() == "Sim") {
             $("#div_txt_acrdPts").show()
         }
-        if ($("input[name$='rd_devEqp_slt']:checked").val() == "Não, serão realocados") {
+        if ($("input[name$='rd_devEqp_slt']:checked").val() != "Não utilizava equipamentos de T.I.") {
             $("#div_patr_eqp").show()
-        } else if ($("input[name$='rd_devEqp_slt']:checked").val() == "Sim") {
-            $("#div_patr_eqp").hide()
         }
     }
 })
