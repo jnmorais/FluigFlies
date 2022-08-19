@@ -71,8 +71,10 @@ $(document).ready(function () {
             }
         })
         $("input[name$='rd_devEqp_slt']").click(function (e) {
-            if (($(this).val() == "Sim, farei a devolução dos equipamentos para T.I Infra.")||($(this).val() == "Sim, porém os equipamentos serão realocados no setor.")) {
+            if ($(this).val() != "Não utilizava equipamentos de T.I.") {
                 $("#div_patr_eqp").show()
+            }else{
+                $("#div_patr_eqp").hide()
             }
         })
         $("input[name$='rd_entrev_rh']").click(function (e) {
