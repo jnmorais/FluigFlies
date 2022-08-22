@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip()
     // var rich = FLUIGC.richeditor('ti_message', {
     //     extraPlugins: 'liststyle,image',
     //     resize_enabled: true,
@@ -149,25 +150,28 @@ $(document).ready(function () {
     }
     // Ação ao arrastar o input de competencias
     if (ATV == 0 || ATV == 1 || ATV == 4) {
-        // EXIBIR VALOR DO RANGE NO OUTPUT
         $("input[type='range']").on("input", function () {
             var comportamento = $(this).attr("compData").split("vs");
             $(this).trigger("change");
             if ($(this).val() > 50) {
-                var x = ($(this).val() - 100) * -1;
-                $(this).next("output").text(x + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
-                $(this).next("output").next("input").val(x + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
+              var x = ($(this).val() - 100) * -1;
+              $(this).next("output").text(x + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
+              $(this).next("output").next("input").val(x + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
+              $(this).next("output").addClass("output")
+              $(this).next("output").show()
             } else if ($(this).val() < 50) {
-                var y = (-$(this).val() + 100);
-                $(this).next("output").text(y + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
-                $(this).next("output").next("input").val(y + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
+              var y = (-$(this).val() + 100);
+              $(this).next("output").text(y + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
+              $(this).next("output").next("input").val(y + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
+              $(this).next("output").addClass("output")
+              $(this).next("output").show()
             } else if ($(this).val() == 50) {
-                var x = 0;
-                $(this).next("output").text(comportamento[0] + " e " + comportamento[1]);
-                $(this).next("output").next("input").val(comportamento[0] + " e " + comportamento[1]);
+              var x = 0;
+              $(this).next("output").text(comportamento[0] + " e " + comportamento[1]);
+              $(this).next("output").next("input").val(comportamento[0] + " e " + comportamento[1]);
+              $(this).next("output").hide()
             }
-            // $(this).next("output").show();
-        });
+          });
     }
     // Controla a exibicao dos inputs clicados
     if (ATV >= 4 || ATV == null) {
