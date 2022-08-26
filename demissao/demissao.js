@@ -2,7 +2,7 @@ $(document).ready(function () {
     var rd_mtvDslg1 = "Antecipação do término de contrato de experiência"
     var rd_mtvDslg2 = "Término do contrato de experiência"
     var rd_mtvDslg3 = "Desligamento Empregador (Empresa)"
-    $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg,#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh").hide()
+    $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg,#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh,#rh_fdbk,#rh_fdbk_sim").hide()
     if (FM == "ADD" || FM == "MOD") {
         $(".select2").select2()
         // Carregar SPE
@@ -80,10 +80,20 @@ $(document).ready(function () {
         $("input[name$='rd_entrev_rh']").click(function (e) {
             if ($(this).val() == "Sim") {
                 $("#txt_altr_rh").hide()
+                $("#rh_fdbk").show()
             } else if ($(this).val() == "Não") {
                 $("#txt_altr_rh").show()
+                $("#rh_fdbk").hide()
             }
         })
+        $("input[name$='rd_rh_fdb']").click(function (e) {
+            if ($(this).val() == "Sim") {
+                $("#rh_fdbk_sim").show()
+            } else if ($(this).val() == "Não") {
+                $("#rh_fdbk_sim").hide()
+            }
+        })
+        
     }
     if (ATV >= 4 || ATV == null) {
         // CONTROLA EXIBICAO DOS INPUTS DPS DE CLICADOS
@@ -97,8 +107,10 @@ $(document).ready(function () {
         // ALTERAÇÕES RH
         if ($("input[name$='rd_entrev_rh']:checked").val() == "Não") {
             $("#txt_altr_rh").show()
+            $("#rh_fdbk").hide()
         } else {
             $("#txt_altr_rh").hide()
+            $("#rh_fdbk").show()
         }
         if ($("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg1 || 
             $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg2 || 
