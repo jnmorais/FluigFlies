@@ -108,7 +108,7 @@ $(document).ready(function () {
         if ($("input[name$='rd_entrev_rh']:checked").val() == "Não") {
             $("#txt_altr_rh").show()
             $("#rh_fdbk").hide()
-        } else {
+        } else if($("input[name$='rd_entrev_rh']:checked").val() == "Sim"){
             $("#txt_altr_rh").hide()
             $("#rh_fdbk").show()
         }
