@@ -159,7 +159,7 @@ $(document).ready(function () {
             }
         });
     }
-    if (ATV == 0 || ATV == 1 || ATV == 7) {
+    if (ATV == 0 || ATV == 1 || ATV == 7 || ATV == 16) {
         $(".select2").select2();
         $.ajax({
             type: "GET",
