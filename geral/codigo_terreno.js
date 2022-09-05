@@ -1,10 +1,13 @@
 $(document).ready(function () {
+    let url_prod    = "https://interconstrutora136393.fluig.cloudtotvs.com.br/api/public/ecm/dataset/search?datasetId=005"
+    let url_homg    = "https://interconstrutora136608.fluig.cloudtotvs.com.br/api/public/ecm/dataset/search?datasetId=ds_consultaprospeccao"
+    let url_dataset = ""
+    let url_base = window.location.href
+    url_base.split("136608") ? url_dataset = url_homg : url_dataset = url_prod
     $.ajax({
         type: "GET",
         dataType:"json",
-        // url: "https://interconstrutora136608.fluig.cloudtotvs.com.br/process-management/api/v2/requests/"+item.id,
-        // url: "https://interconstrutora136393.fluig.cloudtotvs.com.br/api/public/2.0/workflows/findActiveTasks/"+item.id,
-        url: "https://interconstrutora136393.fluig.cloudtotvs.com.br/api/public/ecm/dataset/search?datasetId=005",
+        url: url_dataset,
         success: function (response) {
             // let val = response.content.find(o => o.solicitacao === solicitacao)
             $.each(response.content, function (index, value) {
@@ -23,7 +26,7 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
             dataType:"json",
-            url: "https://interconstrutora136393.fluig.cloudtotvs.com.br/api/public/ecm/dataset/search?datasetId=005",
+            url: url_dataset,
             success: function (response) {
                 let val = response.content.find(o => o.solicitacao == solicitacao)
                 if(val){
