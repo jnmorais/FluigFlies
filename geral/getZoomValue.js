@@ -3,7 +3,7 @@ function setSelectedZoomItem(item) {
         $.ajax({
             type: "GET",
             // url: "https://interconstrutora136608.fluig.cloudtotvs.com.br/process-management/api/v2/requests/"+item.id,
-            url: "https://interconstrutora136608.fluig.cloudtotvs.com.br/api/public/2.0/workflows/findActiveTasks/"+item.id,
+            url: "https://interconstrutora136393.fluig.cloudtotvs.com.br/api/public/2.0/workflows/findActiveTasks/"+item.id,
             success: function (response) {
                 let terreno = ""
                 response.content.formValues.nmcl_terreno == "" ? terreno = response.content.formValues.nn_terreno : terreno = response.content.formValues.nmcl_terreno
