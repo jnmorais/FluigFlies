@@ -1,9 +1,16 @@
 $(document).ready(function () {
     let url_prod    = "https://interconstrutora136393.fluig.cloudtotvs.com.br/api/public/ecm/dataset/search?datasetId=005"
     let url_homg    = "https://interconstrutora136608.fluig.cloudtotvs.com.br/api/public/ecm/dataset/search?datasetId=ds_consultaprospeccao"
-    let url_dataset = ""
     let url_base = window.location.href
-    url_base.split("136608") ? url_dataset = url_homg : url_dataset = url_prod
+    let url_dataset = ""
+
+    if(url_base.match("136393")){
+        url_dataset = url_prod
+    }else{
+        url_dataset = url_homg
+    }
+    console.log(url_dataset)
+    
     $.ajax({
         type: "GET",
         dataType:"json",
