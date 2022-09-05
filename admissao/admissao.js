@@ -206,7 +206,8 @@ $(document).ready(function () {
         hide_on_load('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         hide_on_load('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
         hide_on_load('rd_mail', 'Sim', null, 'clb_mail')
-        hide_on_load('rd_dst_rh', 'Não', null, 'cdd_slc')
+        hide_on_load('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc')
+        hide_on_load('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int')
         hide_on_load('rd_dst_dp', 'Não', null, 'dt_cntr_clb')
         hide_on_load('rd_dst_dp', 'Solicitar alterações ao RH', null, 'txt_dp_alter')
         hide_on_load('rd_int_rh', 'Sim', null, 'dt_int_rh')
@@ -250,7 +251,8 @@ $(document).ready(function () {
     }
     // Controla click nas atvs candidato selecionado
     if (ATV == 37 || ATV == 98 || ATV == null) {
-        show_on_click('rd_dst_rh', 'Não', null, 'cdd_slc')
+        show_on_click('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc')
+        show_on_click('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int')
     }
     // Controla click nas atvs hcm
     if (ATV == 51 || ATV == 102 || ATV == null) {
