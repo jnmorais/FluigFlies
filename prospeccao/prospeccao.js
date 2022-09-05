@@ -170,8 +170,7 @@ $(document).ready(function () {
                     $("<option></option>", {
                         value: response.cidades[cdd],
                         text: response.cidades[cdd]
-                    }
-                    ).appendTo("#cidade_slc");
+                    }).appendTo("#cidade_slc");
                 }
             }
         });
