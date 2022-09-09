@@ -11,22 +11,7 @@ $(document).ready(function () {
     }
     console.log(url_dataset)
     
-    $.ajax({
-        type: "GET",
-        dataType:"json",
-        url: url_dataset,
-        success: function (response) {
-            // let val = response.content.find(o => o.solicitacao === solicitacao)
-            $.each(response.content, function (index, value) {
-                if(response.content[index].status == 1 || response.content[index].status == 2){
-                    $("<option></option>", {
-                        value: response.content[index].solicitacao,
-                        text: "Terreno referente a solicitação Nº: " + response.content[index].solicitacao
-                    }).appendTo("#slt_terreno");
-                }
-            });
-        }
-    });
+
     $("#slt_terreno").change(function (e) {
         let solicitacao = $(this).val()
         e.preventDefault();
