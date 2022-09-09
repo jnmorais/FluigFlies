@@ -37,8 +37,10 @@ $(document).ready(function () {
             success: function (response) {
                 let val = response.content.find(o => o.solicitacao == solicitacao)
                 if(val){
-                    $("#nm_terreno").text(val.nmcl_terreno)
-                    $("#end_terreno").text(val.nn_endereco)
+                    $("#nm_terreno").text("Solicitação: " + val.nmcl_terreno)
+                    $("#nm_terreno").val("Solicitação: " + val.nmcl_terreno)
+                    $("#end_terreno").text("Solicitação: " + val.nn_endereco)
+                    $("#end_terreno").val("Solicitação: " + val.nn_endereco)
                 }else{
                     FLUIGC.toast({title: 'Erro ao obter terreno',message: 'Não foi possível obter os dados do terreno selecionado!',type: 'danger'});
                 }
