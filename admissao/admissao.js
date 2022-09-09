@@ -205,6 +205,7 @@ $(document).ready(function () {
         hide_on_load('rd_eqpRossi', 'Sim', null, 'entrg_RossiEqp')
         hide_on_load('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         hide_on_load('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
+        hide_on_load('rd_avl_rh', 'Reprovada', null, 'txt_rpv_rh')
         hide_on_load('rd_mail', 'Sim', null, 'clb_mail')
         hide_on_load('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc')
         hide_on_load('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int')
@@ -241,6 +242,7 @@ $(document).ready(function () {
     if (ATV == 9 || ATV == null) {
         show_on_click('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
+        show_on_click('rd_avl_rh', 'Reprovada', null, 'txt_rpv_rh')
     }
     if ((ATV == 37 || ATV == 109 || ATV == 9) && gpLogado == "RecursosHumanos") {
         FLUIGC.toast({
