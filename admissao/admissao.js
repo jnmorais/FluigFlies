@@ -1,12 +1,6 @@
 $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip()
-    // var rich = FLUIGC.richeditor('ti_message', {
-    //     extraPlugins: 'liststyle,image',
-    //     resize_enabled: true,
-    //     width: "auto",
-    //     height: "auto",
-    //     allowedContent: true
-    // });
+
     // Controla os botoes de anexo // Caso estejam em modo leitura, vincula um click para a aba anexos e altera o texto para visualizr anexos
     var anexos = ['anx_aprDir', 'anx_crl']
     for (var pos = 0; pos < anexos.length; pos++) {
@@ -206,6 +200,7 @@ $(document).ready(function () {
         hide_on_load('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         hide_on_load('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
         hide_on_load('rd_avl_rh', 'Reprovada', null, 'txt_rpv_rh')
+        hide_on_load('rd_avl_rh', 'Recrutamento interno', null, 'cdd_slc_int_1')
         hide_on_load('rd_mail', 'Sim', null, 'clb_mail')
         hide_on_load('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc')
         hide_on_load('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int')
@@ -243,6 +238,7 @@ $(document).ready(function () {
         show_on_click('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
         show_on_click('rd_avl_rh', 'Reprovada', null, 'txt_rpv_rh')
+        show_on_click('rd_avl_rh', 'Recrutamento interno', null, 'cdd_slc_int_1')
     }
     if ((ATV == 37 || ATV == 109 || ATV == 9) && gpLogado == "RecursosHumanos") {
         FLUIGC.toast({
@@ -264,6 +260,16 @@ $(document).ready(function () {
     // controla exbc da data da integração
     if (ATV == 63 || ATV == null) {
         show_on_click('rd_int_rh', 'Sim', null, 'dt_int_rh')
+    }
+    // Sistemas
+    if(ATV == 67){
+        FLUIGC.richeditor('txt_etg_si', {
+            extraPlugins: 'liststyle,image',
+            resize_enabled: true,
+            width: "auto",
+            height: "auto",
+            allowedContent: true
+        });
     }
 })
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
