@@ -125,22 +125,22 @@ $(document).ready(function () {
             // not checked
         });
         // Caso de subst e promoção oculta campos NA e Infra
-        $("input[name$='rd_mtvCntr']").click(function () {
-            switch ($(this).val()) {
-                case "Substituição de colaborador":
-                case "Promoção":
-                case "Alteração de contrato PJ para CLT":
-                    $("#rd_pc,#rd_etp_na").hide()
-                    // $("input[name=rd_na][value='Não']").attr('checked', 'checked');
-                    $("input[name=rd_pc][value='Não, será necessário alugar um computador.']").attr('checked', 'checked');
-                    break;
-                case "Aumento de quadro":
-                    $("#rd_pc").show()
-                    // $("input[name=rd_na][value='Não']").attr('checked', false);
-                    $("input[name=rd_pc][value='Não, será necessário alugar um computador.']").attr('checked', false);
-                    break;
-            }
-        });
+        // $("input[name$='rd_mtvCntr']").click(function () {
+        //     switch ($(this).val()) {
+        //         case "Substituição de colaborador":
+        //         case "Promoção":
+        //         case "Alteração de contrato PJ para CLT":
+        //             $("#rd_pc,#rd_etp_na").hide()
+        //             // $("input[name=rd_na][value='Não']").attr('checked', 'checked');
+        //             $("input[name=rd_pc][value='Não, será necessário alugar um computador.']").attr('checked', 'checked');
+        //             break;
+        //         case "Aumento de quadro":
+        //             $("#rd_pc").show()
+        //             // $("input[name=rd_na][value='Não']").attr('checked', false);
+        //             $("input[name=rd_pc][value='Não, será necessário alugar um computador.']").attr('checked', false);
+        //             break;
+        //     }
+        // });
     }
     // Ação ao arrastar o input de competencias
     if (ATV == 0 || ATV == 1 || ATV == 4) {
@@ -176,8 +176,8 @@ $(document).ready(function () {
         // Controla a exibicao dos inputs clicados ao retornar pro inicio
         hide_on_load('rd_mtvCntr', 'Substituição de colaborador', 'Promoção', 'txt_prSb')
         hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'vlr_Sb')
-        hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'rd_pc')
-        hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'rd_etp_na')
+        // hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'rd_pc')
+        // hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'rd_etp_na')
         hide_on_load('rd_mtvCntr', 'Promoção', null, 'rd_pc')
         hide_on_load('rd_mtvCntr', 'Promoção', null, 'rd_etp_na')
         hide_on_load('rd_mtvCntr', 'Alteração de contrato PJ para CLT', null, 'rd_pc')

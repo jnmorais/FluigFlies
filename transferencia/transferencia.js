@@ -1,5 +1,8 @@
 $(document).ready(function () {
     $(".select2").select2();
+    if(FM == "VIEW"){
+        $(".select2").select2();
+    }
     $.ajax({
         type: "GET",
         url: "https://experterp.com.br/inter/apiFluig/getCentroCusto.php",
