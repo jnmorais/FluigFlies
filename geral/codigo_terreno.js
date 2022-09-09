@@ -27,7 +27,7 @@ $(document).ready(function () {
             }
         });
     }
-    $("#slt_terreno").change(function (e) {
+    $("#slt_terreno").mouseleave(function (e) {
         let solicitacao = $(this).val()
         e.preventDefault();
         $.ajax({
