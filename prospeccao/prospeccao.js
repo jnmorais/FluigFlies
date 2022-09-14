@@ -84,7 +84,7 @@ $(document).ready(function () {
                     type: 'warning'
                 });
             }else{
-                const fileDescription = "Anexo_"+codigoVb
+                const fileDescription = "Anx_PreViabilidadeElaborada_"+codigoVb
                 try {
                     if (hasFileFluig(fileDescription)) {
                             const anexos = parent.ECM.attachmentTable.getData();
