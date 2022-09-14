@@ -14,9 +14,9 @@ $(document).ready(function () {
             $("#nn_minuta_radio").hide();
             $("#nn_minutareproprosp").hide();
         }
-        if ($("input[name$='jur_aprovacao']:checked").val() == "Não") {
-            $("#nn_minuta_1").hide();
-        }
+        // if ($("input[name$='jur_aprovacao']:checked").val() == "Não") {
+        //     $("#nn_minuta_1").hide();
+        // }
         if ($("input[name$='negociacao']:checked").val() == "Não" || $("input[name$='negociacao']:checked").val() == undefined) {
             $("#nn_negRejtd").hide();
         }
@@ -267,17 +267,17 @@ $(document).ready(function () {
             }
         });
     }
-    if (ATV == 25) {
-        $("#nn_minuta_1").hide()
-        $("input[name$='jur_aprovacao']").click(function () {
-            var click = $(this).val();
-            if (click == "Sim") {
-                $("#nn_minuta_1").show()
-            } else {
-                $("#nn_minuta_1").hide()
-            }
-        });
-    }
+    // if (ATV == 25) {
+    //     $("#nn_minuta_1").hide()
+    //     $("input[name$='jur_aprovacao']").click(function () {
+    //         var click = $(this).val();
+    //         if (click == "Sim") {
+    //             $("#nn_minuta_1").show()
+    //         } else {
+    //             $("#nn_minuta_1").hide()
+    //         }
+    //     });
+    // }
     if (ATV == 18 || ATV == 19 || ATV == 23 || ATV == 21 || ATV == 128) {
         $("#alert_fim").append("<div class='alert alert-warning' role='alert'>Processo de prospecção cancelado!</div>");
     }
