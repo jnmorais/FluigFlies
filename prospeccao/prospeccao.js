@@ -76,7 +76,7 @@ $(document).ready(function () {
         }
         $("#open_preVBAprov").click(function (e) { 
             e.preventDefault();
-            var codigoVb = $("input[name$='cod_preVBAprov']").val()
+            var codigoVb = $("[name$='cod_preVBAprov'] ").find(":selected").val()
             if(codigoVb == ""){
                 FLUIGC.toast({
                     title: 'Atenção! ',
