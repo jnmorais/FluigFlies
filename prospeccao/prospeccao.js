@@ -74,6 +74,14 @@ $(document).ready(function () {
             $("#ans_OrcViab_appv").show()
             $("#nn_motivorepro, #nn_motivo1").hide()
         }
+        let cont_preVb = wdkAddChild('tblpreVb');
+        for(let i = 0; i < cont_preVb; i++){
+            $("#tblpreVb_Codigo___" + i).val() != undefined || $("#tblpreVb_Codigo___" + i).val() != null ? 
+            $("<option></option>", {
+                value: $("#tblpreVb_Codigo___" + i).val(),
+                text: "Código: " + $("#tblpreVb_Codigo___" + i).val() + " Descrição: " + $("#tblpreVb_Nome___" + i).val()
+            }).appendTo("#cod_preVBAprov") : false
+        }
         $("#open_preVBAprov").click(function (e) { 
             e.preventDefault();
             var codigoVb = $("[name$='cod_preVBAprov'] ").find(":selected").val()
