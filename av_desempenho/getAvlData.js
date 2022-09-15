@@ -332,7 +332,7 @@ $(document).ready(function () {
             let comptNota  = Number((sltComp.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
             let prepNota   = Number((sltPrepQlf.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
             let resultNota = Number((sltResult.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
-            let notageral  = (comptNota + prepNota + resultNota/300) * 100
+            let notageral  = ((comptNota + prepNota + resultNota)/300) * 100
             $("#notaRHComp strong").text(comptNota)
             $("#notaRHPrep strong").text(prepNota)
             $("#notaRHResult strong").text(resultNota)
