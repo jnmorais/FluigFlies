@@ -2,7 +2,8 @@ $(document).ready(function () {
     let notaComp = 0, notaGComp = 0;
     let notaPrepQlf = 0, notaGPrepQlf = 0;
     let notaResult = 0, notaGResult = 0;
-    let sltComp = [0], sltPrepQlf = [0], sltResult = [0];
+    let sltComp = [], sltPrepQlf = [], sltResult = [];
+    let arrGComp = [], arrGPrepQlf = [], arrGResult = [];
     let notaGestorComp = 0, notaGestorPrepQlf = 0, notaGestorResult = 0, notaGestorLider = 0
     if ($("#vrf_gestor").val() != "gestor") {
         // AUTO AVALIACAO
@@ -16,7 +17,6 @@ $(document).ready(function () {
                     $("#th_comp_" + index).append(el0)
                     $("#avlP_comp_" + index).show()
                     notaComp += 0;
-                    // AQUI
                     break;
                 case "Ruim":
                     var icon = $("<a data-toggle='tooltip' data-placement='right' title='" + $("#avlP_comp_" + index + "_txt").val() + "'> <i class='bi bi-patch-question'></i></a>")
@@ -56,7 +56,6 @@ $(document).ready(function () {
                     $("#th_prepQlf_" + index).append(el0)
                     $("#avlP_prepQlf_" + index).show()
                     notaPrepQlf += 0;
-                    // AQUI
                     break;
                 case "Ruim":
                     var icon = $("<a data-toggle='tooltip' data-placement='right' title='" + $("#avlP_prepQlf_" + index + "_txt").val() + "'> <i class='bi bi-patch-question'></i></a>")
@@ -96,7 +95,6 @@ $(document).ready(function () {
                     $("#th_result_" + index).append(el0)
                     $("#avlP_result_" + index).show()
                     notaResult += 0;
-                    // AQUI
                     break;
                 case "Ruim":
                     var icon = $("<a data-toggle='tooltip' data-placement='right' title='" + $("#avlP_result_" + index + "_txt").val() + "'> <i class='bi bi-patch-question'></i></a>")
@@ -137,7 +135,7 @@ $(document).ready(function () {
                     $("#th_compG_" + index).append(el0)
                     $("#avlPG_compG_" + index).show()
                     notaGComp += 0;
-                    // AQUI
+                    arrGComp[index] = 0;
                     break;
                 case "Ruim":
                     var icon = $("<a data-toggle='tooltip' data-placement='right' title='" + $("#avlPG_compG_" + index + "_txt").val() + "'> <i class='bi bi-patch-question'></i></a>")
@@ -146,24 +144,28 @@ $(document).ready(function () {
                     $("#th_compG_" + index).append(el1)
                     $("#avlPG_compG_" + index).show()
                     notaGComp += 0.6;
+                    arrGComp[index] = 0.6;
                     break;
                 case "Regular":
                     let el2 = $("<span/>").addClass("control_03").text($(this).val())
                     $("#th_compG_" + index).append(el2)
                     $("#avlPG_compG_" + index).hide()
                     notaGComp += 2.6;
+                    arrGComp[index] = 2.6;
                     break;
                 case "Bom":
                     let el3 = $("<span/>").addClass("control_04").text($(this).val())
                     $("#th_compG_" + index).append(el3)
                     $("#avlPG_compG_" + index).hide()
                     notaGComp += 4.6;
+                    arrGComp[index] = 4.6;
                     break;
                 case "Ótimo":
                     let el4 = $("<span/>").addClass("control_05").text($(this).val())
                     $("#th_compG_" + index).append(el4)
                     $("#avlPG_compG_" + index).hide()
                     notaGComp += 6.6;
+                    arrGComp[index] = 6.6;
                     break;
             }
         });
@@ -177,7 +179,7 @@ $(document).ready(function () {
                     $("#th_prepQlfG_" + index).append(el0)
                     $("#avlPG_prepQlfG_" + index).show()
                     notaGPrepQlf += 0;
-                    // AQUI
+                    arrGPrepQlf[index] = 0;
                     break;
                 case "Ruim":
                     var icon = $("<a data-toggle='tooltip' data-placement='right' title='" + $("#avlPG_prepQlfG_" + index + "_txt").val() + "'> <i class='bi bi-patch-question'></i></a>")
@@ -186,24 +188,28 @@ $(document).ready(function () {
                     $("#th_prepQlfG_" + index).append(el1)
                     $("#avlPG_prepQlfG_" + index).show()
                     notaGPrepQlf += 2.2;
+                    arrGPrepQlf[index] = 2.2;
                     break;
                 case "Regular":
                     let el2 = $("<span/>").addClass("control_03").text($(this).val());
                     $("#th_prepQlfG_" + index).append(el2)
                     $("#avlPG_prepQlfG_" + index).hide()
                     notaGPrepQlf += 6.2;
+                    arrGPrepQlf[index] = 6.2;
                     break;
                 case "Bom":
                     let el3 = $("<span/>").addClass("control_04").text($(this).val());
                     $("#th_prepQlfG_" + index).append(el3)
                     $("#avlPG_prepQlfG_" + index).hide()
                     notaGPrepQlf += 10.4;
+                    arrGPrepQlf[index] = 10.4;
                     break;
                 case "Ótimo":
                     let el4 = $("<span/>").addClass("control_05").text($(this).val());
                     $("#th_prepQlfG_" + index).append(el4)
                     $("#avlPG_prepQlfG_" + index).hide()
                     notaGPrepQlf += 16.6;
+                    arrGPrepQlf[index] = 16.6;
                     break;
             }
         });
@@ -217,7 +223,7 @@ $(document).ready(function () {
                     $("#th_resultG_" + index).append(el0)
                     $("#avlPG_resultG_" + index).show()
                     notaGResult += 0;
-                    // AQUI
+                    arrGResult[index] = 0;
                     break;
                 case "Ruim":
                     var icon = $("<a data-toggle='tooltip' data-placement='right' title='" + $("#avlPG_resultG_" + index + "_txt").val() + "'> <i class='bi bi-patch-question'></i></a>")
@@ -226,24 +232,28 @@ $(document).ready(function () {
                     $("#th_resultG_" + index).append(el1)
                     $("#avlPG_resultG_" + index).show()
                     notaGResult += 3.3;
+                    arrGResult[index] = 3.3;
                     break;
                 case "Regular":
                     let el2 = $("<span/>").addClass("control_03").text($(this).val())
                     $("#th_resultG_" + index).append(el2)
                     $("#avlPG_resultG_" + index).hide()
                     notaGResult += 13.3;
+                    arrGResult[index] = 13.3;
                     break;
                 case "Bom":
                     let el3 = $("<span/>").addClass("control_04").text($(this).val())
                     $("#th_resultG_" + index).append(el3)
                     $("#avlPG_resultG_" + index).hide()
                     notaGResult += 23.3;
+                    arrGResult[index] = 23.3;
                     break;
                 case "Ótimo":
                     let el4 = $("<span/>").addClass("control_05").text($(this).val())
                     $("#th_resultG_" + index).append(el4)
                     $("#avlPG_resultG_" + index).hide()
                     notaGResult += 33.3;
+                    arrGResult[index] = 33.3;
                     break;
             }
         });
@@ -276,7 +286,6 @@ $(document).ready(function () {
                             $(this).css({ "background": "#85C88A", "color": "#fff" })
                             break;
                     }
-
                     break;
                 case "slt_prepQlf":
                     let click_prep = $(this).attr("id").split("slt_prepQlfR_")[1]
@@ -332,11 +341,9 @@ $(document).ready(function () {
             let comptNota  = Number((sltComp.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
             let prepNota   = Number((sltPrepQlf.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
             let resultNota = Number((sltResult.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
-            let notageral  = ((comptNota + prepNota + resultNota)/300) * 100
             $("#notaRHComp strong").text(comptNota)
             $("#notaRHPrep strong").text(prepNota)
             $("#notaRHResult strong").text(resultNota)
-            $("#notaGeral").text("Nota Geral: "+ notageral + "%")
         });
         // RH - AO CLICAR ALTERA VALORES
         $(".select_rh").change(function (e) {
@@ -367,7 +374,6 @@ $(document).ready(function () {
                             $(this).css({ "background": "#85C88A", "color": "#fff" })
                             break;
                     }
-
                     break;
                 case "slt_prepQlf":
                     let click_prep = $(this).attr("id").split("slt_prepQlfR_")[1]
@@ -424,26 +430,33 @@ $(document).ready(function () {
             $("#notaRHPrep strong").text(Number((sltPrepQlf.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1)))
             $("#notaRHResult strong").text(Number((sltResult.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1)))
         });
-        // SOMATORIO
-        // let notaBlocoComp = 0, notaBlocoPrepQlf = 0, notaBlocoResult = 0;
-        // Calculo Comportamentais
-        // for (let i = 1; i <= 15; i++) {
-        //     notasAComp[i] = (percGComp[i] - percComp[i]) * (((pontGComp[i] - notaComp[i]) * 100) / (notaGComp[i] - notaComp[i]) / 100) + percComp[i]
-        //     notaBlocoComp += notasAComp[i]
-        //     console.log("Nota ["+i+"]: " + notasAComp[i])
-        // }
-        // Calculo PrepQlf
-        // for (let i = 1; i <= 7; i++) {
-        //     notasAPrepQlf[i] = (percGPrepQlf[i] - percPrepQlf[i]) * (((pontGPrepQlf[i] - notaPrepQlf[i]) * 100) / (notaGPrepQlf[i] - notaPrepQlf[i]) / 100) + percPrepQlf[i]
-        //     notaBlocoPrepQlf += notasAPrepQlf[i]
-        //     console.log("Nota ["+i+"]: " + notasAPrepQlf[i])
-        // }
-        // Calculo Resultados0
-        // for (let i = 1; i <= 3; i++) {
-        //     notasAResult[i] = (percGResult[i] - percResult[i]) * (((pontGResult[i] - notaResult[i]) * 100) / (notaGResult[i] - notaResult[i]) / 100) + percResult[i]
-        //     notaBlocoResult += notasAResult[i]
-        //     console.log("Nota ["+i+"]: " + notasAResult[i])
-        // }
+        // CALCULO NOTA GERAL 
+        let notaGeralAA = notaComp + notaPrepQlf + notaResult;
+        let notaAlinhamentoComp = 0, notaAlinhamentoPrepQlf = 0, notaAlinhamentoResult = 0;
+        for (let comp = 1; comp < arrGComp.length; comp++) {
+            if(sltComp[comp] != undefined){
+                notaAlinhamentoComp += sltComp[comp]
+            }else{
+                notaAlinhamentoComp += arrGComp[comp]
+            }
+        }
+        for (let prepQ = 1; prepQ < arrGPrepQlf.length; prepQ++) {
+            if(sltPrepQlf[prepQ] != undefined){
+                notaAlinhamentoPrepQlf += sltPrepQlf[prepQ]
+            }else{
+                notaAlinhamentoPrepQlf += arrGPrepQlf[prepQ]
+            }
+        }
+        for (let result = 1; result < arrGResult.length; result++) {
+            if(sltResult[result] != undefined){
+                notaAlinhamentoResult += sltResult[result]
+            }else {
+                notaAlinhamentoResult += arrGResult[result]
+            }
+        }
+        let notaAlinhamento = notaAlinhamentoComp + notaAlinhamentoPrepQlf + notaAlinhamentoResult
+        let notaFinal       = Number(((notaGeralAA + notaAlinhamento) / 600) * 100).toFixed(1)
+        $("#notaGeral").text("Nota Final: "+notaFinal+"%")
         // EXIBIR NOTAS
         $("#notas").show()
         $("#notaComp strong").text(Number((notaComp).toFixed(1)))
@@ -466,7 +479,6 @@ $(document).ready(function () {
                     $("#th_compG_" + index).append(el0)
                     $("#avlPG_compG_" + index).show()
                     notaGestorComp += 0;
-                    // AQUI
                     break;
                 case "Ruim":
                     var icon = $("<a data-toggle='tooltip' data-placement='right' title='" + $("#avlP_comp_" + index + "_txt").val() + "'> <i class='bi bi-patch-question'></i></a>")
@@ -502,7 +514,6 @@ $(document).ready(function () {
                 case "Péssimo":
                     $("#avlPG_prepQlfG_" + index).show()
                     notaGestorPrepQlf += 0;
-                    // AQUI
                     break;
                 case "Ruim":
                     $("#avlPG_prepQlfG_" + index).show()
@@ -528,7 +539,6 @@ $(document).ready(function () {
                 case "Péssimo":
                     $("#avlPG_resultG_" + index).show()
                     notaGestorResult += 0;
-                    // AQUI
                     break;
                 case "Ruim":
                     $("#avlPG_resultG_" + index).show()
@@ -554,7 +564,6 @@ $(document).ready(function () {
                 case "Péssimo":
                     $("#avlPG_lider_" + index).show()
                     notaGestorLider += 0;
-                    // AQUI
                     break;
                 case "Ruim":
                     $("#avlPG_lider_" + index).show()
