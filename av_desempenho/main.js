@@ -26,6 +26,12 @@ $(document).ready(function () {
         $(".toastRH").css("z-index", "999")
         toast.show()
     });
+    $("#toast_Nota").click(function (e) {
+        e.preventDefault();
+        const toast = new bootstrap.Toast($("#toastNota"))
+        $(".toastNota").css("z-index", "999")
+        toast.show()
+    });
     if (ATV <= 39 || ATV == "null") {
         var radioHide = ["avlP_comp_1", "avlP_comp_2", "avlP_comp_3", "avlP_comp_4", "avlP_comp_5", "avlP_comp_6", "avlP_comp_7", "avlP_comp_8", "avlP_comp_9", "avlP_comp_10", "avlP_comp_11", "avlP_comp_12", "avlP_comp_13", "avlP_comp_14", "avlP_comp_15", "avlP_prepQlf_1", "avlP_prepQlf_2", "avlP_prepQlf_3", "avlP_prepQlf_4", "avlP_prepQlf_5", "avlP_prepQlf_6", "avlP_prepQlf_7", "avlP_result_1", "avlP_result_2", "avlP_result_3", "avlPG_compG_1", "avlPG_compG_2", "avlPG_compG_3", "avlPG_compG_4", "avlPG_compG_5", "avlPG_compG_6", "avlPG_compG_7", "avlPG_compG_8", "avlPG_compG_9", "avlPG_compG_10", "avlPG_compG_11", "avlPG_compG_12", "avlPG_compG_13", "avlPG_compG_14", "avlPG_compG_15", "avlPG_prepQlfG_1", "avlPG_prepQlfG_2", "avlPG_prepQlfG_3", "avlPG_prepQlfG_4", "avlPG_prepQlfG_5", "avlPG_prepQlfG_6", "avlPG_prepQlfG_7", "avlPG_resultG_1", "avlPG_resultG_2", "avlPG_resultG_3", "avlPG_lider_1", "avlPG_lider_2", "avlPG_lider_3", "avlPG_lider_4", "avlPG_lider_5", "avlPG_lider_6", "avlPG_lider_7", "avlPG_lider_8", "avlPG_lider_9"]
         for (var xxx = 0; xxx < radioHide.length; xxx++) {

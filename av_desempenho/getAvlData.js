@@ -329,9 +329,14 @@ $(document).ready(function () {
                     }
                     break;
             }
-            $("#notaRHComp strong").text(Number((sltComp.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1)))
-            $("#notaRHPrep strong").text(Number((sltPrepQlf.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1)))
-            $("#notaRHResult strong").text(Number((sltResult.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1)))
+            let comptNota  = Number((sltComp.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
+            let prepNota   = Number((sltPrepQlf.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
+            let resultNota = Number((sltResult.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
+            let notageral  = (comptNota + prepNota + resultNota/300) * 100
+            $("#notaRHComp strong").text(comptNota)
+            $("#notaRHPrep strong").text(prepNota)
+            $("#notaRHResult strong").text(resultNota)
+            $("#notaGeral").text("Nota Geral: "+ notageral + "%")
         });
         // RH - AO CLICAR ALTERA VALORES
         $(".select_rh").change(function (e) {
