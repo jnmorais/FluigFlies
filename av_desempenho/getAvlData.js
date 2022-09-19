@@ -431,7 +431,7 @@ $(document).ready(function () {
             $("#notaRHResult strong").text(Number((sltResult.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1)))
         });
         // CALCULO NOTA GERAL 
-        let notaGeralAA = notaComp + notaPrepQlf + notaResult;
+        // let notaGeralAA = notaComp + notaPrepQlf + notaResult;
         let notaAlinhamentoComp = 0, notaAlinhamentoPrepQlf = 0, notaAlinhamentoResult = 0;
         for (let comp = 1; comp < arrGComp.length; comp++) {
             if(sltComp[comp] != undefined){
@@ -455,7 +455,7 @@ $(document).ready(function () {
             }
         }
         let notaAlinhamento = notaAlinhamentoComp + notaAlinhamentoPrepQlf + notaAlinhamentoResult
-        let notaFinal       = Number(((notaGeralAA + notaAlinhamento) / 600) * 100).toFixed(1)
+        let notaFinal       = Number((notaAlinhamento / 300) * 100).toFixed(1)
         $("#notaGeral").text("Nota Final: "+notaFinal+"%")
         // EXIBIR NOTAS
         $("#notas").show()
