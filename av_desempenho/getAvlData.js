@@ -102,25 +102,29 @@ $(document).ready(function () {
                     $(el1).append(icon)
                     $("#th_result_" + index).append(el1)
                     $("#avlP_result_" + index).show()
-                    notaResult += 3.3;
+                    notaResult += 5;
+                    // notaResult += 3.3;
                     break;
                 case "Regular":
                     let el2 = $("<span/>").addClass("control_03").text($(this).val())
                     $("#th_result_" + index).append(el2)
                     $("#avlP_result_" + index).hide()
-                    notaResult += 13.3;
+                    notaResult += 20;
+                    // notaResult += 13.3;
                     break;
                 case "Bom":
                     const e3 = $("<span/>").addClass("control_04").text($(this).val())
                     $("#th_result_" + index).append(e3)
                     $("#avlP_result_" + index).hide()
-                    notaResult += 23.3;
+                    notaResult += 35;
+                    // notaResult += 23.3;
                     break;
                 case "Ótimo":
                     let el4 = $("<span/>").addClass("control_05").text($(this).val());
                     $("#th_result_" + index).append(el4)
                     $("#avlP_result_" + index).hide()
-                    notaResult += 33.3;
+                    notaResult += 50;
+                    // notaResult += 33.3;
                     break;
             }
         });
