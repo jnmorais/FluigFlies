@@ -15,7 +15,7 @@ $(document).ready(function () {
         }
     }
     // Carregar centros de custos, cidade e SPE
-    if(FM == "VIEW"){
+    if (FM == "VIEW") {
         $(".select2").select2();
     }
     if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 37 || ATV == null) {
@@ -95,6 +95,7 @@ $(document).ready(function () {
         show_on_click('rd_mtvCntr', 'Substituição de colaborador', null, 'vlr_Sb')
         show_on_click('rd_escol', 'Ensino Superior Incompleto', 'Ensino Superior Completo', 'txt_supDsj')
         show_on_click('rd_idioma', 'Sim', null, 'txt_idioma')
+        show_on_click('rd_loc', 'Obra', null, 'div_loc_Obra')
         show_on_click('rd_hrtb', 'Outros', null, 'txt_hrtb')
         show_on_click('rd_crl', 'Sim', null, 'anx_crl')
         show_on_click('rd_na', 'Sim', null, 'rd_etp_na')
@@ -105,6 +106,51 @@ $(document).ready(function () {
         show_on_click('rd_acsRd', 'Sim', null, 'pastasRede')
         show_on_click('rd_eqpRossi', 'Sim', null, 'entrg_RossiEqp')
         show_on_click('rd_cntr', 'Estágio', null, 'estagio')
+        // Controla troca de valores do salário
+        $('#txt_cargo').on('change', function () {
+            // let element = document.getElementById("txt_cargo");
+            // $("[name$='vl_salario_orc']").text(element.options[element.selectedIndex].getAttribute("data-slr"))
+            // $("[name$='vl_salario_orc']").val(element.options[element.selectedIndex].getAttribute("data-slr"))
+            switch ($(this).val()) {
+                case "Tecnico De Segurança do Trabalho":
+                    $("input[name='rd_escol'][value='Ensino Médio Completo']").attr("checked", true);
+                    $("#txt_supDsj").is(":visible") ? $("#txt_supDsj").hide() : false
+                    break;
+                case "Engenheiro Do Trabalho":
+                    $("[name='txt_supDsj']").text("")
+                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", true);
+                    $("#txt_supDsj").is(":hidden") ? $("#txt_supDsj").show() : false
+                    $("[name='txt_supDsj']").text("Ensino superior completo em Engenharia")
+                    break;
+                case "Médico Do Trabalho":
+                    $("[name='txt_supDsj']").text("")
+                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", true);
+                    $("#txt_supDsj").is(":hidden") ? $("#txt_supDsj").show() : false
+                    $("[name='txt_supDsj']").text("Ensino superior completo em Medicina")
+                    break;
+                case "Arquiteto":
+                    $("[name='txt_supDsj']").text("")
+                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", true);
+                    $("#txt_supDsj").is(":hidden") ? $("#txt_supDsj").show() : false
+                    $("[name='txt_supDsj']").text("Ensino superior em Arquitetura")
+                    break;
+                case "Engenheiro Civil":
+                    $("[name='txt_supDsj']").text("")
+                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", true);
+                    $("#txt_supDsj").is(":hidden") ? $("#txt_supDsj").show() : false
+                    $("[name='txt_supDsj']").text("Ensino Superior em Engenharia civil")
+                    break;
+                case "Advogado":
+                    $("[name='txt_supDsj']").text("")
+                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", true);
+                    $("#txt_supDsj").is(":hidden") ? $("#txt_supDsj").show() : false
+                    $("[name='txt_supDsj']").text("Ensino superior em Direito")
+                    break;
+                default:
+                    $("[name='txt_supDsj']").text("")
+                    break;
+            }
+        });
         // Desmarca todos os sistemas ao marcar o cbx_nhm
         var divs = ['mega', 'expert', 'approvo', 'adobe', 'cv', 'hcm', 'microtik', 'uc2b'];
         $("#cbx_nhm").click(function () {
@@ -125,22 +171,22 @@ $(document).ready(function () {
             // not checked
         });
         // Caso de subst e promoção oculta campos NA e Infra
-        // $("input[name$='rd_mtvCntr']").click(function () {
-        //     switch ($(this).val()) {
-        //         case "Substituição de colaborador":
-        //         case "Promoção":
-        //         case "Alteração de contrato PJ para CLT":
-        //             $("#rd_pc,#rd_etp_na").hide()
-        //             // $("input[name=rd_na][value='Não']").attr('checked', 'checked');
-        //             $("input[name=rd_pc][value='Não, será necessário alugar um computador.']").attr('checked', 'checked');
-        //             break;
-        //         case "Aumento de quadro":
-        //             $("#rd_pc").show()
-        //             // $("input[name=rd_na][value='Não']").attr('checked', false);
-        //             $("input[name=rd_pc][value='Não, será necessário alugar um computador.']").attr('checked', false);
-        //             break;
-        //     }
-        // });
+        $("input[name$='rd_mtvCntr']").click(function () {
+            switch ($(this).val()) {
+                case "Substituição de colaborador":
+                case "Promoção":
+                case "Alteração de contrato PJ para CLT":
+                    // $("#rd_pc,#rd_etp_na").hide()
+                    // $("input[name=rd_na][value='Não']").attr('checked', 'checked');
+                    $("input[name=rd_pc][value='Não, será necessário alugar um computador.']").attr('checked', 'checked');
+                    break;
+                case "Aumento de quadro":
+                    // $("#rd_pc").show()
+                    // $("input[name=rd_na][value='Não']").attr('checked', false);
+                    $("input[name=rd_pc][value='Não, será necessário alugar um computador.']").attr('checked', false);
+                    break;
+            }
+        });
     }
     // Ação ao arrastar o input de competencias
     if (ATV == 0 || ATV == 1 || ATV == 4) {
@@ -148,36 +194,38 @@ $(document).ready(function () {
             var comportamento = $(this).attr("compData").split("vs");
             $(this).trigger("change");
             if ($(this).val() > 50) {
-              var x = ($(this).val() - 100) * -1;
-              $(this).next("output").text(x + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
-              $(this).next("output").next("input").val(x + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
-              $(this).next("output").addClass("output")
-              $(this).next("output").show()
+                var x = ($(this).val() - 100) * -1;
+                $(this).next("output").text(x + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
+                $(this).next("output").next("input").val(x + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
+                $(this).next("output").addClass("output")
+                $(this).next("output").show()
             } else if ($(this).val() < 50) {
-              var y = (-$(this).val() + 100);
-              $(this).next("output").text(y + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
-              $(this).next("output").next("input").val(y + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
-              $(this).next("output").addClass("output")
-              $(this).next("output").show()
+                var y = (-$(this).val() + 100);
+                $(this).next("output").text(y + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
+                $(this).next("output").next("input").val(y + "% " + comportamento[0] + " e " + $(this).val() + "% " + comportamento[1]);
+                $(this).next("output").addClass("output")
+                $(this).next("output").show()
             } else if ($(this).val() == 50) {
-              var x = 0;
-              $(this).next("output").text(comportamento[0] + " e " + comportamento[1]);
-              $(this).next("output").next("input").val(comportamento[0] + " e " + comportamento[1]);
-              $(this).next("output").hide()
+                var x = 0;
+                $(this).next("output").text(comportamento[0] + " e " + comportamento[1]);
+                $(this).next("output").next("input").val(comportamento[0] + " e " + comportamento[1]);
+                $(this).next("output").hide()
             }
-          });
+        });
     }
     // Controla a exibicao dos inputs clicados
-    if (ATV >= 4 || ATV == null) {
+    if (ATV) {
         // EXIBE OS SISTEMAS CLICADOS
         $($('#sistemas').find("input[type='checkbox']:checked")).each(function () {
             $("#" + $(this).attr('id_div')).show()
         });
         // Controla a exibicao dos inputs clicados ao retornar pro inicio
+        hide_on_load('rd_loc', 'Obra', null, 'div_loc_Obra')
+        hide_on_load('rd_idioma', 'Sim', null, 'txt_idioma')
         hide_on_load('rd_mtvCntr', 'Substituição de colaborador', 'Promoção', 'txt_prSb')
         hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'vlr_Sb')
-        // hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'rd_pc')
-        // hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'rd_etp_na')
+        hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'rd_pc')
+        hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'rd_etp_na')
         hide_on_load('rd_mtvCntr', 'Promoção', null, 'rd_pc')
         hide_on_load('rd_mtvCntr', 'Promoção', null, 'rd_etp_na')
         hide_on_load('rd_mtvCntr', 'Alteração de contrato PJ para CLT', null, 'rd_pc')
@@ -194,7 +242,7 @@ $(document).ready(function () {
         hide_on_load('rd_pc', 'Sim, já tem computador.', null, 'rd_patrm')
         hide_on_load('rd_pc', 'Não, será necessário alugar um computador.', null, 'entrg_Rossi')
         hide_on_load('rd_pc', 'Não, será necessário alugar um computador.', null, 'softwares')
-        if($("input[name$='rd_pc]").val() == "") $("#entrg_Rossi").hide()
+        if ($("input[name$='rd_pc]").val() == "") $("#entrg_Rossi").hide()
         hide_on_load('rd_acsRd', 'Sim', null, 'pastasRede')
         hide_on_load('rd_eqpRossi', 'Sim', null, 'entrg_RossiEqp')
         hide_on_load('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
@@ -203,7 +251,7 @@ $(document).ready(function () {
         hide_on_load('rd_avl_rh', 'Recrutamento interno', null, 'cdd_slc_int_1')
         hide_on_load('rd_mail', 'Sim', null, 'clb_mail')
         hide_on_load('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc')
-        hide_on_load('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int')
+        hide_on_load('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int_2')
         hide_on_load('rd_dst_dp', 'Não', null, 'dt_cntr_clb')
         hide_on_load('rd_dst_dp', 'Solicitar alterações ao RH', null, 'txt_dp_alter')
         hide_on_load('rd_int_rh', 'Sim', null, 'dt_int_rh')
@@ -250,7 +298,7 @@ $(document).ready(function () {
     // Controla click nas atvs candidato selecionado
     if (ATV == 37 || ATV == 98 || ATV == null) {
         show_on_click('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc')
-        show_on_click('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int')
+        show_on_click('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int_2')
     }
     // Controla click nas atvs hcm
     if (ATV == 51 || ATV == 102 || ATV == null) {
@@ -262,7 +310,7 @@ $(document).ready(function () {
         show_on_click('rd_int_rh', 'Sim', null, 'dt_int_rh')
     }
     // Sistemas
-    if(ATV == 67){
+    if (ATV == 67) {
         FLUIGC.richeditor('txt_etg_si', {
             extraPlugins: 'liststyle,image',
             resize_enabled: true,
@@ -274,7 +322,7 @@ $(document).ready(function () {
 })
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
 function show_on_click(campo, valor1, valor2, show) {
-    $("input[name$='" + campo + "']").click(function () {
+    $("[name$='" + campo + "']").click(function () {
         if (valor2 == null) {
             if ($(this).val() == valor1) {
                 $("#" + show).show();
@@ -293,13 +341,13 @@ function show_on_click(campo, valor1, valor2, show) {
 // Controla a exibição dos campos ocultos
 function hide_on_load(campo, valor1, valor2, show) {
     if (valor2 == null) {
-        if ($("input[name$='" + campo + "']:checked").val() == valor1) {
+        if ($("[name$='" + campo + "']:checked").val() == valor1) {
             $("#" + show).show();
         } else {
             $("#" + show).hide();
         }
     } else {
-        if ($("input[name$='" + campo + "']:checked").val() == valor1 || $("input[name$='" + campo + "']:checked").val() == valor2) {
+        if ($("[name$='" + campo + "']:checked").val() == valor1 || $("[name$='" + campo + "']:checked").val() == valor2) {
             $("#" + show).show();
         } else {
             $("#" + show).hide();

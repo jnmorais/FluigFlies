@@ -119,8 +119,8 @@ $(document).ready(function () {
             $("#txt_altr_rh").hide()
             $("#rh_fdbk").show()
         }
-        if ($("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg1 || 
-            $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg2 || 
+        if ($("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg1 ||
+            $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg2 ||
             $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg3
             && $("input[name$='rd_Estg']:checked").val() == "Não") {
             $("#div_rd_tpAvs").show()
