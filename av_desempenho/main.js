@@ -7,7 +7,7 @@ $(document).ready(function () {
     $("#title").text($("#titulo").val())
     $("#year").text(new Date().toLocaleDateString().split("/")[2])
     ATV == 0 || ATV == 1 || ATV == 2 ? $("#toasts").hide() : false
-    ATV == "null" || FM == "VIEW" ? $("#lideranca, #buttons").hide() : false
+    ATV == "null" || FM == "VIEW" ? $("#buttons").hide() : false
     ATV == "null" && FM == "VIEW" && $("#vrf_gestor").val() == "gestor" ? $("#avaliacao_geral,#avl_colab").hide() : false
     $("#toast_AA_Btn").click(function (e) {
         e.preventDefault();
