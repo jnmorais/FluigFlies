@@ -108,41 +108,38 @@ $(document).ready(function () {
         show_on_click('rd_cntr', 'Estágio', null, 'estagio')
         // Controla troca de valores do salário
         $('#txt_cargo').on('change', function () {
-            // let element = document.getElementById("txt_cargo");
-            // $("[name$='vl_salario_orc']").text(element.options[element.selectedIndex].getAttribute("data-slr"))
-            // $("[name$='vl_salario_orc']").val(element.options[element.selectedIndex].getAttribute("data-slr"))
             switch ($(this).val()) {
                 case "Tecnico De Segurança do Trabalho":
-                    $("input[name='rd_escol'][value='Ensino Médio Completo']").attr("checked", true);
+                    $("input[name='rd_escol'][value='Ensino Médio Completo']").attr("checked", "checked");
                     $("#txt_supDsj").is(":visible") ? $("#txt_supDsj").hide() : false
                     break;
                 case "Engenheiro Do Trabalho":
                     $("[name='txt_supDsj']").text("")
-                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", true);
+                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", "checked");
                     $("#txt_supDsj").is(":hidden") ? $("#txt_supDsj").show() : false
                     $("[name='txt_supDsj']").text("Ensino superior completo em Engenharia")
                     break;
                 case "Médico Do Trabalho":
                     $("[name='txt_supDsj']").text("")
-                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", true);
+                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", "checked");
                     $("#txt_supDsj").is(":hidden") ? $("#txt_supDsj").show() : false
                     $("[name='txt_supDsj']").text("Ensino superior completo em Medicina")
                     break;
                 case "Arquiteto":
                     $("[name='txt_supDsj']").text("")
-                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", true);
+                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", "checked");
                     $("#txt_supDsj").is(":hidden") ? $("#txt_supDsj").show() : false
                     $("[name='txt_supDsj']").text("Ensino superior em Arquitetura")
                     break;
                 case "Engenheiro Civil":
                     $("[name='txt_supDsj']").text("")
-                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", true);
+                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", "checked");
                     $("#txt_supDsj").is(":hidden") ? $("#txt_supDsj").show() : false
                     $("[name='txt_supDsj']").text("Ensino Superior em Engenharia civil")
                     break;
                 case "Advogado":
                     $("[name='txt_supDsj']").text("")
-                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", true);
+                    $("input[name='rd_escol'][value='Ensino Superior Completo']").attr("checked", "checked");
                     $("#txt_supDsj").is(":hidden") ? $("#txt_supDsj").show() : false
                     $("[name='txt_supDsj']").text("Ensino superior em Direito")
                     break;
