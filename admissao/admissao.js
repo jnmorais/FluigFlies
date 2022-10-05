@@ -270,8 +270,8 @@ $(document).ready(function () {
                     $("#txt_supDsj").is(":hidden") ? $("#txt_supDsj").show() : false
                     $("#cargoResp,#cargoAut").show()
                     $("[name='txt_supDsj']").text("Superior completo")
-                    $("#cargoResp blockquote").text("Supervisionar e controlar equipe e serviços no seu departamento")
-                    $("#cargoAut blockquote").text("Garantir cumprimento de normas e qualidade das tarefas executadas pela equipe")
+                    $("#cargoResp blockquote").text("Gerenciar equipe; realizar auditorias internas em busca das melhores práticas, conforme as diretrizes e regulamentos aplicáveis.")
+                    $("#cargoAut blockquote").text("Realizar auditorias internas.")
                     break;
                 case "Estagiários de Escritório":
                     $("#rd_escol").val("Ensino Superior Incompleto (cursando)")
@@ -450,8 +450,8 @@ $(document).ready(function () {
                     $("#cargoAut blockquote").text("Coordenar a equipe de acordo com as diretrizes da empresa, visando o alcance dos objetivos específicos daquele setor")
                     break;
                 case "Gerente da Qualidade":
-                    $("#cargoResp blockquote").text("Supervisionar e controlar equipe e serviços no seu departamento")
-                    $("#cargoAut blockquote").text("Garantir cumprimento de normas e qualidade das tarefas executadas pela equipe")
+                    $("#cargoResp blockquote").text("Gerenciar equipe; realizar auditorias internas em busca das melhores práticas, conforme as diretrizes e regulamentos aplicáveis.")
+                    $("#cargoAut blockquote").text("Realizar auditorias internas.")
                     break;
                 case "Estagiários de Escritório":
                     $("#cargoResp blockquote").text("Acompanhar e prestar auxílio em atividades de atendimento, elaboração de planilhas; organização de documentos; conferência de relatórios e preparar informações para atualização de banco de dados")
