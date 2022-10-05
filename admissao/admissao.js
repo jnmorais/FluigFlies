@@ -164,20 +164,20 @@ $(document).ready(function () {
                     $("#cargoAut blockquote").text("")
                     break;
                 case "Auxiliares, Assistentes, Analistas Técnicos e similares (Suporte Técnico no Escritório)":
-                    $("#rd_escol").val("Ensino Médio Completo")
+                    $("#rd_escol").val("Ensino Médio Completo (Técnico na área)")
                     $("#cargoResp,#cargoAut").show()
                     $("#cargoResp blockquote").text("Realizar atividades nas áreas administrativas em geral, de acordo com as exigências do cargo, diretrizes da empresa e do setor de atuação (Projetos, Engenharia, DP, Assistência Técnica, RH, Suprimentos etc)")
                     $("#cargoAut blockquote").text("Auxiliar, executar, analisar conforme a função e as orientações do gestor e necessidades da área")
                     break;
                 case "Técnico em Segurança do Trabalho":
-                    $("#rd_escol").val("Ensino Médio Completo")
+                    $("#rd_escol").val("Ensino Médio Completo (Técnico na área)")
                     $("#cargoResp,#cargoAut").show()
                     $("[name='txt_supDsj']").text("Técnico em segurança do trabalho")
                     $("#cargoResp blockquote").text("Orientar quanto aos riscos inerentes da atividade, monitorar metas, promover a realização de atividades de orientação, informação e conscientização dos trabalhadores para a prevenção de acidentes e doenças relacionadas ao trabalho")
                     $("#cargoAut blockquote").text("Implantar a prevenção dos riscos ocupacionais, fiscalizar e fazer cumprir as diretrizes da segurança")
                     break;
                 case "Supervisor em Segurança do Trabalho":
-                    $("#rd_escol").val("Ensino Médio Completo")
+                    $("#rd_escol").val("Ensino Médio Completo (Técnico na área)")
                     $("#cargoResp,#cargoAut").show()
                     $("[name='txt_supDsj']").text("Técnico em segurança do trabalho")
                     $("#cargoResp blockquote").text("Responsável por supervisionar as equipes de segurança do trabalho nas demandas de prevenção e atendimentos aos requisitos legais, monitorando por meio de indicadores os resultados e metas")
@@ -248,19 +248,19 @@ $(document).ready(function () {
                     $("#cargoAut blockquote").text("Interromper o funcionamento da máquina ou equipamento, caso identifique alguma irregularidade e comunicar ao superior imediato")
                     break;
                 case "Cargos de Gestão - Gerentes e similares":
-                    $("#rd_escol").val("Ensino Médio Completo")
+                    $("#rd_escol").val("Ensino Médio Completo (Técnico na área)")
                     $("#cargoResp,#cargoAut").show()
                     $("#cargoResp blockquote").text("Gerenciar recursos humanos, financeiros, tecnológicos dentre outros Garantir o cumprimento de normas, procedimentos e demais atribuições do cargo")
                     $("#cargoAut blockquote").text("Tomar decisões assertivas; definir objetivos para a equipe; coordenar ações que contribuam para um melhor resultado")
                     break;
                 case "Cargos de Gestão - Coordenadores e similares":
-                    $("#rd_escol").val("Ensino Médio Completo")
+                    $("#rd_escol").val("Ensino Médio Completo (Técnico na área)")
                     $("#cargoResp,#cargoAut").show()
                     $("#cargoResp blockquote").text("Gerenciar equipe; realizar auditorias internas em busca das melhores práticas, conforme as diretrizes e regulamentos aplicáveis")
                     $("#cargoAut blockquote").text("Realizar auditorias internas ")
                     break;
                 case "Cargos de Gestão - Supervisores e similares":
-                    $("#rd_escol").val("Ensino Médio Completo")
+                    $("#rd_escol").val("Ensino Médio Completo (Técnico na área)")
                     $("#cargoResp,#cargoAut").show()
                     $("#cargoResp blockquote").text("Coordenar equipes e projetos; elaborar relatórios; zelar pelo cumprimento de normas, procedimentos e demais atribuições do cargo")
                     $("#cargoAut blockquote").text("Coordenar a equipe de acordo com as diretrizes da empresa, visando o alcance dos objetivos específicos daquele setor")
@@ -357,7 +357,7 @@ $(document).ready(function () {
     }
     // Controla a exibicao dos inputs clicados
     if (ATV) {
-        if($("#rd_escol").val() == "Ensino Médio Completo" || $("#rd_escol").val() == "Ensino Médio Incompleto" || $("#rd_escol").val() == "Ensino Superior Incompleto (cursando)" || $("#rd_escol").val() == "Ensino Superior Completo" || $("#rd_escol").val() == "Ensino Fundamental Incompleto (cursando)"){
+        if($("#rd_escol").val() == "Ensino Médio Completo (Técnico na área)" || $("#rd_escol").val() == "Ensino Médio Incompleto" || $("#rd_escol").val() == "Ensino Superior Incompleto (cursando)" || $("#rd_escol").val() == "Ensino Superior Completo" || $("#rd_escol").val() == "Ensino Fundamental Incompleto (cursando)"){
             $("#cargoResp,#cargoAut").show()
             $("[name$='txt_supDsj]").text() != "" ? $("#txt_supDsj").show() : $("#txt_supDsj").hide()
             switch ($("[name$='txt_cargo']").val()) {
