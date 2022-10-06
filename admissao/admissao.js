@@ -14,7 +14,7 @@ $(document).ready(function () {
         }
     }
     // Carregar centros de custos, cidade e SPE
-    if (FM == "VIEW") {
+    if (FM == "VIEW" || ATV == null) {
         $(".select2").select2();
     }
     if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 37 || ATV == null) {
@@ -85,7 +85,7 @@ $(document).ready(function () {
         });
     }
     // Controla o click nos inputs que escondem campos
-    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null || ATV == 9 || ATV == 37 || ATV == 98) {
+    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null || ATV == 9 || ATV == 37 || ATV == 98 || ATV == null) {
         // CHECKBOX SISTEMAS
         $(".cbx_si").change(function () {
             $("#" + $(this).attr('id_div')).toggle();
@@ -356,7 +356,7 @@ $(document).ready(function () {
         });
     }
     // Controla a exibicao dos inputs clicados
-    if (ATV) {
+    if (ATV || ATV == null) {
         if($("#rd_escol").val() == "Ensino Médio Completo (Técnico na área)" || $("#rd_escol").val() == "Ensino Médio Incompleto" || $("#rd_escol").val() == "Ensino Superior Incompleto (cursando)" || $("#rd_escol").val() == "Ensino Superior Completo" || $("#rd_escol").val() == "Ensino Fundamental Incompleto (cursando)"){
             $("#cargoResp,#cargoAut").show()
             $("[name$='txt_supDsj]").text() != "" ? $("#txt_supDsj").show() : $("#txt_supDsj").hide()
