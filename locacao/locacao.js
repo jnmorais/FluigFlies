@@ -39,6 +39,7 @@ $(document).ready(function () {
 	// 	FLUIGC.richeditor('txt_observacoes_entrd');
 	// 	FLUIGC.richeditor('txt_observacoes_dev');
 	// }
+    console.log("Página Carregada")
 	$("thead").hide()
 	$(".btnEqps,.btnContato,.btnFrncd,.btnDevEqps").click(function (e) {
 		e.preventDefault();
