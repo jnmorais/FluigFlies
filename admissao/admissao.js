@@ -85,7 +85,7 @@ $(document).ready(function () {
         });
     }
     // Controla o click nos inputs que escondem campos
-    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null || ATV == 9 || ATV == 37 || ATV == 98 || ATV == null) {
+    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 37 || ATV == 98 || ATV == null) {
         // CHECKBOX SISTEMAS
         $(".cbx_si").change(function () {
             $("#" + $(this).attr('id_div')).toggle();
@@ -356,7 +356,7 @@ $(document).ready(function () {
         });
     }
     // Controla a exibicao dos inputs clicados
-    if (ATV || ATV == null) {
+    if (ATV >= 0 || ATV == null) {
         if($("#rd_escol").val() == "Ensino Médio Completo (Técnico na área)" || $("#rd_escol").val() == "Ensino Médio Incompleto" || $("#rd_escol").val() == "Ensino Superior Incompleto (cursando)" || $("#rd_escol").val() == "Ensino Superior Completo" || $("#rd_escol").val() == "Ensino Fundamental Incompleto (cursando)"){
             $("#cargoResp,#cargoAut").show()
             $("[name$='txt_supDsj]").text() != "" ? $("#txt_supDsj").show() : $("#txt_supDsj").hide()
@@ -496,7 +496,6 @@ $(document).ready(function () {
         hide_on_load('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
         hide_on_load('rd_avl_rh', 'Reprovada', null, 'txt_rpv_rh')
         hide_on_load('rd_avl_rh', 'Recrutamento interno', null, 'cdd_slc_int_1')
-        hide_on_load('rd_mail', 'Sim', null, 'clb_mail')
         hide_on_load('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc')
         hide_on_load('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int_2')
         hide_on_load('rd_dst_dp', 'Não', null, 'dt_cntr_clb')
@@ -557,7 +556,8 @@ $(document).ready(function () {
         show_on_click('rd_int_rh', 'Sim', null, 'dt_int_rh')
     }
     // Sistemas
-    if (ATV == 67) {
+    if (ATV == 67 || ATV == null) {
+        show_on_click("rd_etg_si","Sim",null,"show_acessos")
         FLUIGC.richeditor('txt_etg_si', {
             extraPlugins: 'liststyle,image',
             resize_enabled: true,
@@ -565,6 +565,9 @@ $(document).ready(function () {
             height: "auto",
             allowedContent: true
         });
+    }
+    if(ATV == 150 || ATV == null){
+        show_on_click("rd_etg_infra_acs","Sim",null,"clb_mail")
     }
 })
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
