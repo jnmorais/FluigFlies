@@ -34,7 +34,7 @@ function setLimit(campo) {
 	$("input[name$='qnt_vgt']").attr("max", $(campo).val());
 }
 $(document).ready(function () {
-	// FLUIGC.switcher.init('#qnt_forncd');
+	// FLUIGC.switcher.init('#qnt_forncd')
 	// if(FM == "MOD"){
 	// 	FLUIGC.richeditor('txt_observacoes_entrd');
 	// 	FLUIGC.richeditor('txt_observacoes_dev');
