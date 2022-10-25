@@ -76,3 +76,11 @@ function show_on_click(campo, div, valor) {
 function show_on_load(campo, div, valor) {
     $("input[name$='" + campo + "']:checked").val() == valor ? $("#" + div).show() : $("#" + div).hide()
 }
+function viewDoc() {
+    var url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/ecmnavigation?app_ecm_navigation_doc=";
+    parent.open(url + $("#documento").val());
+}
+function visualizarSolicitacao() {
+    var url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_processInstanceId="
+    parent.open(url + $("#solicitacao").val());
+}
