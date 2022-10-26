@@ -43,7 +43,7 @@ $(document).ready(function () {
         }
     });
     // Ocultar campos
-    $("#div_end_atual, #div_end_destino, #div_nv_salario, #div_carga_hr, #div_nv_cargo").hide()
+    $("#div_end_atual, #div_end_destino, #div_nv_salario, #div_carga_hr, #div_nv_cargo, #div_dp_info").hide()
     var processo_num, subprocesso;
     if ($("input[name$='processo_num']").val() != "" && $("input[name$='processo_num']").val() != undefined && $("input[name$='subprocesso']").val() != "" && $("input[name$='subprocesso']").val() != undefined) {
         processo_num = $("input[name$='processo_num']").val()
