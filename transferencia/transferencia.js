@@ -1,8 +1,5 @@
 $(document).ready(function () {
     $(".select2").select2();
-    if(FM == "VIEW"){
-        $(".select2").select2();
-    }
     $.ajax({
         type: "GET",
         url: "https://experterp.com.br/inter/apiFluig/getCentroCusto.php",
@@ -46,7 +43,7 @@ $(document).ready(function () {
         }
     });
     // Ocultar campos
-    $("#div_nv_salario","#div_nv_cargo","#div_end_atual","#div_end_destino","#div_alt_cgH","#div_carga_hr,#div_rh_alt_cargo").hide()
+    $("#div_end_atual, #div_end_destino, #div_nv_salario, #div_carga_hr, #div_nv_cargo").hide()
     var processo_num, subprocesso;
     if ($("input[name$='processo_num']").val() != "" && $("input[name$='processo_num']").val() != undefined && $("input[name$='subprocesso']").val() != "" && $("input[name$='subprocesso']").val() != undefined) {
         processo_num = $("input[name$='processo_num']").val()
@@ -59,14 +56,12 @@ $(document).ready(function () {
     show_on_click("rd_alt_cargo", "div_nv_cargo", "Sim")
     show_on_click("rd_alt_cgH", "div_carga_hr", "Sim")
     show_on_click("rd_dp_infos", "div_dp_info", "Sim")
-    show_on_click("rd_atv_rh", "div_rh_alt_cargo", "Sim")
     show_on_load("rd_locA", "div_end_atual", "Obra")
     show_on_load("rd_locD", "div_end_destino", "Obra")
     show_on_load("rd_alt_sal", "div_nv_salario", "Sim")
     show_on_load("rd_alt_cargo", "div_nv_cargo", "Sim")
     show_on_load("rd_alt_cgH", "div_carga_hr", "Sim")
     show_on_load("rd_dp_infos", "div_dp_info", "Sim")
-    show_on_load("rd_atv_rh", "div_rh_alt_cargo", "Sim")
 });
 // Controla a exibição ao clicar
 function show_on_click(campo, div, valor) {
@@ -77,12 +72,4 @@ function show_on_click(campo, div, valor) {
 // Controla a exibição dos campos ocultos
 function show_on_load(campo, div, valor) {
     $("input[name$='" + campo + "']:checked").val() == valor ? $("#" + div).show() : $("#" + div).hide()
-}
-function viewDoc() {
-    var url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/ecmnavigation?app_ecm_navigation_doc=";
-    parent.open(url + $("#documento").val());
-}
-function visualizarSolicitacao() {
-    var url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_processInstanceId="
-    parent.open(url + $("#solicitacao").val());
 }
