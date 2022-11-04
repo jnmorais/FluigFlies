@@ -1,5 +1,40 @@
 $(document).ready(function () {
+    $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
+    // FLUIGC.autocomplete('#txt_gestor', {
+    //     highlight: true,
+    //     minLength: 0,
+    //     hint: true,
+    //     searchTimeout: 100,
+    //     type: 'tagAutocomplete',
+    //     name: 'testeSync',
+    //     tagClass: 'tag-warning',
+    //     maxTags: 1,
+    //     allowDuplicates: false,
+    //     displayKey: 'NOME',
+    //     source: {
+    //         url: '/api/public/ecm/dataset/search?datasetId=testeSync&searchField=NOME&',
+    //         limit: 10,
+    //         offset: 0,
+    //         limitKey: 'limit',
+    //         patternKey: 'searchValue',
+    //         root: 'content'
+    //     },
+    //     onMaxTags: function (item, tag) {
+    //         return false;
+    //     },
+    //     tagMaxWidth: 800
+    // }, function (err, data) {
+    //     // something with err or data.
+    //     if (err) {
+    //         try {
+    //             errMessage = JSON.parse(err.responseText.message);
+    //             errMessage = errMessage.message ? err.responseText.message : err.responseText;
+    //         } catch (e) {
+    //             errMessage = 'Não foi possível listar os gestores.';
+    //         }
+    //     }
+    // });
     // Controla os botoes de anexo // Caso estejam em modo leitura, vincula um click para a aba anexos e altera o texto para visualizr anexos
     var anexos = ['anx_aprDir', 'anx_crl']
     for (var pos = 0; pos < anexos.length; pos++) {
@@ -12,77 +47,6 @@ $(document).ready(function () {
                 window.parent.document.querySelector("#tab-attachments > div > div.col-xs-8").click()
             });
         }
-    }
-    // Carregar centros de custos, cidade e SPE
-    if (FM == "VIEW" || ATV == null) {
-        $(".select2").select2();
-    }
-    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 37 || ATV == null) {
-        $(".select2").select2();
-        $.ajax({
-            type: "GET",
-            url: "https://experterp.com.br/inter/apiFluig/getCentroCusto.php",
-            dataType: "json",
-            success: function (response) {
-                $.each(response.data, function (index, value) {
-                    $("<option></option>", {
-                        value: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME,
-                        text: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME
-                    }).appendTo("#slt_cc,#slt_ccrh");
-                });
-            },
-            error: function () {
-                $.each(response.data, function (index, value) {
-                    $("<option></option>", {
-                        value: "Erro ao carregar centros de custo",
-                        text: "Erro ao carregar centros de custo"
-                    }).appendTo("#slt_cc,#slt_ccrh");
-                });
-            }
-        });
-        $.ajax({
-            type: "GET",
-            url: "https://experterp.com.br/inter/apiFluig/getSPE.php",
-            dataType: "json",
-            success: function (response) {
-                $.each(response.data, function (index, value) {
-                    $("<option></option>", {
-                        value: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME,
-                        text: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME
-                    }).appendTo("#slt_spe,#slt_sperh");
-                });
-            },
-            error: function () {
-                $.each(response.data, function (index, value) {
-                    $("<option></option>", {
-                        value: "Erro ao carregar SPEs",
-                        text: "Erro ao carregar SPEs"
-                    }).appendTo("#slt_spe,#slt_sperh");
-                });
-            }
-        });
-        $.ajax({
-            type: "GET",
-            url: "https://rawcdn.githack.com/marllonsousa/FluigFiles/c9dcc197a7c44a346af03969e13e2953e98f5cfa/geral/cidades.json",
-            dataType: "json",
-            success: function (response) {
-                for (var index = 0; index < response.cidades.length - 1; index++) {
-                    $("<option></option>", {
-                        value: response.cidades[index],
-                        text: response.cidades[index]
-                    }
-                    ).appendTo("#slt_cidade");
-                }
-            },
-            error: function () {
-                $.each(response.data, function (index, value) {
-                    $("<option></option>", {
-                        value: "Erro ao carregar cidades",
-                        text: "Erro ao carregar cidades"
-                    }).appendTo("#slt_cidade");
-                });
-            }
-        });
     }
     // Controla o click nos inputs que escondem campos
     if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 37 || ATV == 98 || ATV == null) {
@@ -357,7 +321,7 @@ $(document).ready(function () {
     }
     // Controla a exibicao dos inputs clicados
     if (ATV >= 0 || ATV == null) {
-        if($("#rd_escol").val() == "Ensino Médio Completo (Técnico na área)" || $("#rd_escol").val() == "Ensino Médio Incompleto" || $("#rd_escol").val() == "Ensino Superior Incompleto (cursando)" || $("#rd_escol").val() == "Ensino Superior Completo" || $("#rd_escol").val() == "Ensino Fundamental Incompleto (cursando)"){
+        if ($("#rd_escol").val() == "Ensino Médio Completo (Técnico na área)" || $("#rd_escol").val() == "Ensino Médio Incompleto" || $("#rd_escol").val() == "Ensino Superior Incompleto (cursando)" || $("#rd_escol").val() == "Ensino Superior Completo" || $("#rd_escol").val() == "Ensino Fundamental Incompleto (cursando)") {
             $("#cargoResp,#cargoAut").show()
             $("[name$='txt_supDsj]").text() != "" ? $("#txt_supDsj").show() : $("#txt_supDsj").hide()
             switch ($("[name$='txt_cargo']").val()) {
@@ -501,6 +465,8 @@ $(document).ready(function () {
         hide_on_load('rd_dst_dp', 'Não', null, 'dt_cntr_clb')
         hide_on_load('rd_dst_dp', 'Solicitar alterações ao RH', null, 'txt_dp_alter')
         hide_on_load('rd_int_rh', 'Sim', null, 'dt_int_rh')
+        hide_on_load('rd_etg_infra_acs', 'Sim', null, 'show_clb_mail')
+        hide_on_load('rd_etg_si', 'Sim', null, 'show_acessos')
         if (ATV == 9) {
             $('input[type=range]').prop('disabled', false);
             $('input[type=range]').css('pointer-events', 'none');
@@ -557,7 +523,7 @@ $(document).ready(function () {
     }
     // Sistemas
     if (ATV == 67 || ATV == null) {
-        show_on_click("rd_etg_si","Sim",null,"show_acessos")
+        show_on_click("rd_etg_si", "Sim", null, "show_acessos")
         FLUIGC.richeditor('txt_etg_si', {
             extraPlugins: 'liststyle,image',
             resize_enabled: true,
@@ -566,8 +532,8 @@ $(document).ready(function () {
             allowedContent: true
         });
     }
-    if(ATV == 150 || ATV == null){
-        show_on_click("rd_etg_infra_acs","Sim",null,"clb_mail")
+    if (ATV == 150 || ATV == null) {
+        show_on_click("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
     }
 })
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
