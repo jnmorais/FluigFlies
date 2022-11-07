@@ -1,40 +1,7 @@
 $(document).ready(function () {
     $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
-    // FLUIGC.autocomplete('#txt_gestor', {
-    //     highlight: true,
-    //     minLength: 0,
-    //     hint: true,
-    //     searchTimeout: 100,
-    //     type: 'tagAutocomplete',
-    //     name: 'testeSync',
-    //     tagClass: 'tag-warning',
-    //     maxTags: 1,
-    //     allowDuplicates: false,
-    //     displayKey: 'NOME',
-    //     source: {
-    //         url: '/api/public/ecm/dataset/search?datasetId=testeSync&searchField=NOME&',
-    //         limit: 10,
-    //         offset: 0,
-    //         limitKey: 'limit',
-    //         patternKey: 'searchValue',
-    //         root: 'content'
-    //     },
-    //     onMaxTags: function (item, tag) {
-    //         return false;
-    //     },
-    //     tagMaxWidth: 800
-    // }, function (err, data) {
-    //     // something with err or data.
-    //     if (err) {
-    //         try {
-    //             errMessage = JSON.parse(err.responseText.message);
-    //             errMessage = errMessage.message ? err.responseText.message : err.responseText;
-    //         } catch (e) {
-    //             errMessage = 'Não foi possível listar os gestores.';
-    //         }
-    //     }
-    // });
+    let arr_cbxsi = []
     // Controla os botoes de anexo // Caso estejam em modo leitura, vincula um click para a aba anexos e altera o texto para visualizr anexos
     var anexos = ['anx_aprDir', 'anx_crl']
     for (var pos = 0; pos < anexos.length; pos++) {
@@ -430,6 +397,7 @@ $(document).ready(function () {
         // EXIBE OS SISTEMAS CLICADOS
         $($('#sistemas').find("input[type='checkbox']:checked")).each(function () {
             $("#" + $(this).attr('id_div')).show()
+            arr_cbxsi.push($(this).attr('id_div'))
         });
         // Controla a exibicao dos inputs clicados ao retornar pro inicio
         hide_on_load('rd_loc', 'Obra', null, 'div_loc_Obra')
@@ -522,15 +490,13 @@ $(document).ready(function () {
         show_on_click('rd_int_rh', 'Sim', null, 'dt_int_rh')
     }
     // Sistemas
-    if (ATV == 67 || ATV == null) {
+    if (ATV == 67 || ATV == null || FM == "VIEW") {
         show_on_click("rd_etg_si", "Sim", null, "show_acessos")
-        FLUIGC.richeditor('txt_etg_si', {
-            extraPlugins: 'liststyle,image',
-            resize_enabled: true,
-            width: "auto",
-            height: "auto",
-            allowedContent: true
-        });
+        $("#entrg_fwc,#entrg_mega,#entrg_expert,#entrg_approvo,#entrg_adobe,#entrg_cv,#entrg_hcm,#entrg_microtik,#entrg_uc2b").hide()
+        for (let index = 0; index < arr_cbxsi.length; index++) {
+            arr_cbxsi[index] == "mega" || arr_cbxsi[index] == "expert" ? $("#entrg_fwc").show() : false
+            $("#entrg_" + arr_cbxsi[index]).show()
+        }
     }
     if (ATV == 150 || ATV == null) {
         show_on_click("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
