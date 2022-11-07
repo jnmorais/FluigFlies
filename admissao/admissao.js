@@ -16,15 +16,16 @@ $(document).ready(function () {
         }
     }
     // Controla o click nos inputs que escondem campos
-    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 37 || ATV == 98 || ATV == null) {
+    if (ATV) {
         // CHECKBOX SISTEMAS
         $(".cbx_si").change(function () {
             $("#" + $(this).attr('id_div')).toggle();
         });
         show_on_click('rd_mtvCntr', 'Substituição de colaborador', 'Promoção', 'txt_prSb')
+        show_on_click('rd_mtvCntr', 'Substituição de colaborador', 'Promoção', 'txt_prSb')
         show_on_click('rd_mtvCntr', 'Substituição de colaborador', null, 'vlr_Sb')
         show_on_click('rd_idioma', 'Sim', null, 'txt_idioma')
-        show_on_click('rd_loc', 'Obra', null, 'div_loc_Obra')
+        show_on_click('rd_loc', 'Obra', null, 'documentacao_funcionario')
         show_on_click('rd_hrtb', 'Outros', null, 'txt_hrtb')
         show_on_click('rd_crl', 'Sim', null, 'anx_crl')
         show_on_click('rd_na', 'Sim', null, 'rd_etp_na')
@@ -400,7 +401,7 @@ $(document).ready(function () {
             arr_cbxsi.push($(this).attr('id_div'))
         });
         // Controla a exibicao dos inputs clicados ao retornar pro inicio
-        hide_on_load('rd_loc', 'Obra', null, 'div_loc_Obra')
+        hide_on_load('rd_loc', 'Obra', null, 'documentacao_funcionario')
         hide_on_load('rd_idioma', 'Sim', null, 'txt_idioma')
         hide_on_load('rd_mtvCntr', 'Substituição de colaborador', 'Promoção', 'txt_prSb')
         hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'vlr_Sb')
