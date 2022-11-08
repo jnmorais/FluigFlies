@@ -7,7 +7,8 @@ $(document).ready(function() {
             if ($(this).val() == "Sim") {
                 $("#div_slt_terreno").show()
             } else{
-                $("#div_slt_terreno").hide()
+                $("#div_slt_terreno,#div_txt_solicitacao").hide()
+                $("#txt_readonly input").attr("readonly", false)
             }
         });  
         // ATUALIZAÇÃO DA ESTIMATIVA DO ORÇAMENTO
