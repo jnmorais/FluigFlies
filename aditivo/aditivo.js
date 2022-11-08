@@ -5,9 +5,9 @@ $(document).ready(function() {
         // INICIO
         $("input[name$='rd_terreno']").click(function() {
             if ($(this).val() == "Sim") {
-                $("#terr_ext").show()
+                $("#div_slt_terreno").show()
             } else{
-                $("#terr_ext").hide()
+                $("#div_slt_terreno").hide()
             }
         });  
         // ATUALIZAÇÃO DA ESTIMATIVA DO ORÇAMENTO
@@ -115,9 +115,9 @@ $(document).ready(function() {
     if(FM == "MOD" || FM == "VIEW" || ATV == "null"){
         // INICIO
         if($("input[name$='rd_terreno']:checked").val() == "Sim") {
-            $("#terr_ext").show()
+            $("#div_slt_terreno").show()
         }else if($("input[name$='rd_terreno']:checked").val() == "Não"){
-            $("#terr_ext").hide()
+            $("#div_slt_terreno").hide()
         }
         // ATUALIZAÇÃO DA ESTIMATIVA DO ORÇAMENTO
         if($("input[name$='nvInf_estOrc']:checked").val() == "Sim") {
