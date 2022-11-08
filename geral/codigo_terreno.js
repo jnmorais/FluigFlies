@@ -10,7 +10,7 @@ $(document).ready(function () {
         url_dataset = url_homg
     }
     $("#slt_terreno").change(function (e) {
-        let nmclTerreno = $(this + " option:selected").val()
+        let nmclTerreno = $(this + " option").val()
         e.preventDefault();
         $.ajax({
             type: "GET",
