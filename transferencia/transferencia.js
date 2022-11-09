@@ -11,6 +11,7 @@ $(document).ready(function () {
     show_on_click("rd_locA", "div_end_atual", "Obra")
     show_on_click("rd_locD", "div_end_destino", "Obra")
     show_on_click("rd_alt_sal", "div_nv_salario", "Sim")
+    show_on_click("rd_alt_sal", "apv_diretor", "Sim")
     show_on_click("rd_alt_cargo", "div_nv_cargo", "Sim")
     show_on_click("rd_alt_cgH", "div_carga_hr", "Sim")
     // show_on_click("rd_dp_infos", "div_dp_info", "Sim")
@@ -31,8 +32,8 @@ function show_on_click(campo, div, valor) {
 function show_on_load(campo, div, valor) {
     $("input[name$='" + campo + "']:checked").val() == valor ? $("#" + div).show() : $("#" + div).hide()
 }
-function setSelectedZoomItem(selectedItem) {
-    selectedItem.inputId == "cc_atual" ? cc_atual = selectedItem["CC"] : false
-    selectedItem.inputId == "cc_destino" ? cc_destino = selectedItem["CC"] : false
-    cc_atual != cc_destino ? $("#apv_diretor").show() : $("#apv_diretor").hide()
-}
+// function setSelectedZoomItem(selectedItem) {
+//     selectedItem.inputId == "cc_atual" ? cc_atual = selectedItem["CC"] : false
+//     selectedItem.inputId == "cc_destino" ? cc_destino = selectedItem["CC"] : false
+//     cc_atual != cc_destino ? $("#apv_diretor").show() : $("#apv_diretor").hide()
+// }
