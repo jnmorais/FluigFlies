@@ -5,10 +5,17 @@ $(document).ready(function() {
         // INICIO
         $("input[name$='rd_terreno']").click(function() {
             if ($(this).val() == "Sim") {
-                $("#div_slt_terreno").show()
+                $("#div_slt_terreno,#div_txt_solicitacao").show()
+                $("#txt_readonly input").attr("readonly", true)
+                $("#txt_readonly input").val("")
+                $("#txt_readonly input").text("")
+                $("[attr-class='mudarClasse']").removeClass("col-md-4 form-group").addClass("col-md-3 form-group");
             } else{
                 $("#div_slt_terreno,#div_txt_solicitacao").hide()
                 $("#txt_readonly input").attr("readonly", false)
+                $("#txt_readonly input").val("")
+                $("#txt_readonly input").text("")
+                $("[attr-class='mudarClasse']").removeClass("col-md-3 form-group").addClass("col-md-4 form-group");
             }
         });  
         // ATUALIZAÇÃO DA ESTIMATIVA DO ORÇAMENTO
