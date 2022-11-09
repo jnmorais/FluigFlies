@@ -30,9 +30,9 @@ $(document).ready(function () {
         show_on_click('rd_crl', 'Sim', null, 'anx_crl')
         show_on_click('rd_na', 'Sim', null, 'rd_etp_na')
         show_on_click('rd_crtComb', 'Sim', null, 'vl_crtComb')
-        show_on_click('rd_pc', 'Sim, já tem computador.', null, 'rd_patrm')
-        show_on_click('rd_pc', 'Não, será necessário alugar um computador.', null, 'entrg_Rossi')
-        show_on_click('rd_pc', 'Não, será necessário alugar um computador.', null, 'softwares')
+        show_on_click('rd_pc', 'Sim, já tem computador', null, 'rd_patrm')
+        show_on_click('rd_pc', 'Não, mas será necessário alugar um computador', null, 'entrg_Rossi')
+        show_on_click('rd_pc', 'Não, mas será necessário alugar um computador', null, 'softwares')
         show_on_click('rd_acsRd', 'Sim', null, 'pastasRede')
         show_on_click('rd_eqpRossi', 'Sim', null, 'entrg_RossiEqp')
         show_on_click('rd_cntr', 'Estágio', null, 'estagio')
@@ -254,10 +254,10 @@ $(document).ready(function () {
                 case "Substituição de colaborador":
                 case "Promoção":
                 case "Alteração de contrato PJ para CLT":
-                    $("input[name=rd_pc][value='Não, será necessário alugar um computador.").attr('checked', 'checked');
+                    $("input[name=rd_pc][value='Não, mas será necessário alugar um computador").attr('checked', 'checked');
                     break;
                 case "Aumento de quadro":
-                    $("input[name=rd_pc][value='Não, será necessário alugar um computador.").attr('checked', false);
+                    $("input[name=rd_pc][value='Não, mas será necessário alugar um computador").attr('checked', false);
                     break;
             }
         });
@@ -419,9 +419,9 @@ $(document).ready(function () {
         hide_on_load('rd_crl', 'Sim', '', 'anx_crl')
         hide_on_load('rd_na', 'Sim', '', 'rd_etp_na')
         hide_on_load('rd_crtComb', 'Sim', null, 'vl_crtComb')
-        hide_on_load('rd_pc', 'Sim, já tem computador.', null, 'rd_patrm')
-        hide_on_load('rd_pc', 'Não, será necessário alugar um computador.', null, 'entrg_Rossi')
-        hide_on_load('rd_pc', 'Não, será necessário alugar um computador.', null, 'softwares')
+        hide_on_load('rd_pc', 'Sim, já tem computador', null, 'rd_patrm')
+        hide_on_load('rd_pc', 'Não, mas será necessário alugar um computador', null, 'entrg_Rossi')
+        hide_on_load('rd_pc', 'Não, mas será necessário alugar um computador', null, 'softwares')
         if ($("input[name$='rd_pc]").val() == "") $("#entrg_Rossi").hide()
         hide_on_load('rd_acsRd', 'Sim', null, 'pastasRede')
         hide_on_load('rd_eqpRossi', 'Sim', null, 'entrg_RossiEqp')
