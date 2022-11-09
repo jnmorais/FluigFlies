@@ -34,7 +34,5 @@ function show_on_load(campo, div, valor) {
 function setSelectedZoomItem(selectedItem) {
     selectedItem.inputId == "cc_atual" ? cc_atual = selectedItem["CC"] : false
     selectedItem.inputId == "cc_destino" ? cc_destino = selectedItem["CC"] : false
-    if (cc_atual == cc_destino) {
-        $("#apv_diretor").show()
-    }
+    cc_atual == cc_destino ? $("#apv_diretor").show() : $("#apv_diretor").hide()
 }
