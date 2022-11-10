@@ -14,7 +14,6 @@ $(document).ready(function () {
     show_on_click("rd_alt_sal", "apv_diretor", "Sim")
     show_on_click("rd_alt_cargo", "div_nv_cargo", "Sim")
     show_on_click("rd_alt_cgH", "div_carga_hr", "Sim")
-    
     show_on_click("rd_tp_procs", "alert_transferencia", "Transferência")
     show_on_click("rd_tp_procs", "alert_promocao", "Promoção")
     // show_on_click("rd_dp_infos", "div_dp_info", "Sim")
@@ -24,6 +23,8 @@ $(document).ready(function () {
     show_on_load("rd_alt_cargo", "div_nv_cargo", "Sim")
     show_on_load("rd_alt_cgH", "div_carga_hr", "Sim")
     // show_on_load("rd_dp_infos", "div_dp_info", "Sim")
+    show_on_load("rd_tp_procs", "alert_transferencia", "Transferência")
+    show_on_load("rd_tp_procs", "alert_promocao", "Promoção")
 });
 // Controla a exibição ao clicar
 function show_on_click(campo, div, valor) {
