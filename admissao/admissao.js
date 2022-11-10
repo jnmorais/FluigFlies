@@ -537,3 +537,8 @@ function hide_on_load(campo, valor1, valor2, show) {
         }
     }
 }
+function setSelectedZoomItem(selectedItem) {
+    if (selectedItem.inputId == "txt_cargo_att") {
+        selectedItem["Cargo"] == "Não encontrei!" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
+    }
+}
