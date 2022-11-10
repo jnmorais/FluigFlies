@@ -2,7 +2,7 @@ $(document).ready(function () {
     let cc_atual, cc_destino, processo_num, subprocesso
     // Ocultar campos
     // #div_dp_info
-    $("#div_end_atual, #div_end_destino, #div_nv_salario, #div_carga_hr, #div_nv_cargo,#apv_diretor").hide()
+    $("#div_end_atual, #div_end_destino, #div_nv_salario, #div_carga_hr, #div_nv_cargo,#apv_diretor,#alert_transferencia,#alert_promocao").hide()
     if ($("input[name$='processo_num']").val() != "" && $("input[name$='processo_num']").val() != undefined && $("input[name$='subprocesso']").val() != "" && $("input[name$='subprocesso']").val() != undefined) {
         processo_num = $("input[name$='processo_num']").val()
         subprocesso = $("input[name$='subprocesso']").val()
@@ -14,6 +14,9 @@ $(document).ready(function () {
     show_on_click("rd_alt_sal", "apv_diretor", "Sim")
     show_on_click("rd_alt_cargo", "div_nv_cargo", "Sim")
     show_on_click("rd_alt_cgH", "div_carga_hr", "Sim")
+    
+    show_on_click("rd_tp_procs", "alert_transferencia", "Transferência")
+    show_on_click("rd_tp_procs", "alert_promocao", "Promoção")
     // show_on_click("rd_dp_infos", "div_dp_info", "Sim")
     show_on_load("rd_locA", "div_end_atual", "Obra")
     show_on_load("rd_locD", "div_end_destino", "Obra")
