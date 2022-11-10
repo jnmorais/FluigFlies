@@ -436,6 +436,7 @@ $(document).ready(function () {
         hide_on_load('rd_int_rh', 'Sim', null, 'dt_int_rh')
         hide_on_load('rd_etg_infra_acs', 'Sim', null, 'show_clb_mail')
         hide_on_load('rd_etg_si', 'Sim', null, 'show_acessos')
+        $("#div_novo_cargo").val() != "" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
         if (ATV == 9) {
             $('input[type=range]').prop('disabled', false);
             $('input[type=range]').css('pointer-events', 'none');
