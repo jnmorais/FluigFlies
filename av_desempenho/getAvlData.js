@@ -342,8 +342,8 @@ $(document).ready(function () {
                     }
                     break;
             }
-            let comptNota  = Number((sltComp.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
-            let prepNota   = Number((sltPrepQlf.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
+            let comptNota = Number((sltComp.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
+            let prepNota = Number((sltPrepQlf.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
             let resultNota = Number((sltResult.reduce((previousValue, currentValue) => previousValue + currentValue, 0)).toFixed(1))
             $("#notaRHComp strong").text(comptNota)
             $("#notaRHPrep strong").text(prepNota)
@@ -438,29 +438,29 @@ $(document).ready(function () {
         // let notaGeralAA = notaComp + notaPrepQlf + notaResult;
         let notaAlinhamentoComp = 0, notaAlinhamentoPrepQlf = 0, notaAlinhamentoResult = 0;
         for (let comp = 1; comp < arrGComp.length; comp++) {
-            if(sltComp[comp] != undefined){
+            if (sltComp[comp] != undefined) {
                 notaAlinhamentoComp += sltComp[comp]
-            }else{
+            } else {
                 notaAlinhamentoComp += arrGComp[comp]
             }
         }
         for (let prepQ = 1; prepQ < arrGPrepQlf.length; prepQ++) {
-            if(sltPrepQlf[prepQ] != undefined){
+            if (sltPrepQlf[prepQ] != undefined) {
                 notaAlinhamentoPrepQlf += sltPrepQlf[prepQ]
-            }else{
+            } else {
                 notaAlinhamentoPrepQlf += arrGPrepQlf[prepQ]
             }
         }
         for (let result = 1; result < arrGResult.length; result++) {
-            if(sltResult[result] != undefined){
+            if (sltResult[result] != undefined) {
                 notaAlinhamentoResult += sltResult[result]
-            }else {
+            } else {
                 notaAlinhamentoResult += arrGResult[result]
             }
         }
         let notaAlinhamento = notaAlinhamentoComp + notaAlinhamentoPrepQlf + notaAlinhamentoResult
-        let notaFinal       = Number((notaAlinhamento / 300) * 100).toFixed(1)
-        $("#notaGeral").text("Nota Final: "+notaFinal+"%")
+        let notaFinal = Number((notaAlinhamento / 300) * 100).toFixed(1)
+        $("#notaGeral").text("Nota Final: " + notaFinal + "%")
         // EXIBIR NOTAS
         $("#notas").show()
         $("#notaComp strong").text(Number((notaComp).toFixed(1)))
@@ -472,7 +472,6 @@ $(document).ready(function () {
         $("#notaLideranca").hide()
         $('[data-toggle="tooltip"]').tooltip()
     } else {
-        // GESTOR
         $("#compGtcompG input:checked").each(function (index) {
             index += 1
             switch ($(this).val()) {
@@ -516,24 +515,34 @@ $(document).ready(function () {
             index += 1
             switch ($(this).val()) {
                 case "Péssimo":
-                    $("#avlPG_prepQlfG_" + index).show()
+                    let el0 = $("<span/>").addClass("control_01").text($(this).val())
                     notaGestorPrepQlf += 0;
+                    $("#th_PrepQlfG_" + index).append(el0)
+                    $("#avlPG_PrepQlfG_" + index).show()
                     break;
                 case "Ruim":
-                    $("#avlPG_prepQlfG_" + index).show()
+                    let el1 = $("<span/>").addClass("control_02").text($(this).val())
                     notaGestorPrepQlf += 2.2;
+                    $("#th_PrepQlfG_" + index).append(el1)
+                    $("#avlPG_PrepQlfG_" + index).show()
                     break;
                 case "Regular":
-                    $("#avlPG_prepQlfG_" + index).hide()
+                    let el2 = $("<span/>").addClass("control_03").text($(this).val())
                     notaGestorPrepQlf += 6.2;
+                    $("#th_PrepQlfG_" + index).append(el2)
+                    $("#avlPG_PrepQlfG_" + index).hide()
                     break;
                 case "Bom":
-                    $("#avlPG_prepQlfG_" + index).hide()
+                    let el3 = $("<span/>").addClass("control_04").text($(this).val())
                     notaGestorPrepQlf += 10.4;
+                    $("#th_PrepQlfG_" + index).append(el3)
+                    $("#avlPG_PrepQlfG_" + index).hide()
                     break;
                 case "Ótimo":
-                    $("#avlPG_prepQlfG_" + index).hide()
+                    let el4 = $("<span/>").addClass("control_05").text($(this).val())
                     notaGestorPrepQlf += 16.6;
+                    $("#th_PrepQlfG_" + index).append(el4)
+                    $("#avlPG_PrepQlfG_" + index).hide()
                     break;
             }
         });
@@ -542,21 +551,31 @@ $(document).ready(function () {
             switch ($(this).val()) {
                 case "Péssimo":
                     $("#avlPG_resultG_" + index).show()
+                    $("#th_resultG_" + index).append(el4)
+                    $("#avlPG_resultG_" + index).hide()
                     notaGestorResult += 0;
                     break;
                 case "Ruim":
                     $("#avlPG_resultG_" + index).show()
+                    $("#th_resultG_" + index).append(el4)
+                    $("#avlPG_resultG_" + index).hide()
                     notaGestorResult += 3.3;
                     break;
                 case "Regular":
+                    $("#avlPG_resultG_" + index).hide()
+                    $("#th_resultG_" + index).append(el4)
                     $("#avlPG_resultG_" + index).hide()
                     notaGestorResult += 13.3;
                     break;
                 case "Bom":
                     $("#avlPG_resultG_" + index).hide()
+                    $("#th_resultG_" + index).append(el4)
+                    $("#avlPG_resultG_" + index).hide()
                     notaGestorResult += 23.3;
                     break;
                 case "Ótimo":
+                    $("#avlPG_resultG_" + index).hide()
+                    $("#th_resultG_" + index).append(el4)
                     $("#avlPG_resultG_" + index).hide()
                     notaGestorResult += 33.3;
                     break;
