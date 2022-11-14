@@ -517,31 +517,31 @@ $(document).ready(function () {
                 case "Péssimo":
                     let el0 = $("<span/>").addClass("control_01").text($(this).val())
                     notaGestorPrepQlf += 0;
-                    $("#th_PrepQlfG_" + index).append(el0)
+                    $("#th_prepQlfG_" + index).append(el0)
                     $("#avlPG_prepQlfG_" + index).show()
                     break;
                 case "Ruim":
                     let el1 = $("<span/>").addClass("control_02").text($(this).val())
                     notaGestorPrepQlf += 2.2;
-                    $("#th_PrepQlfG_" + index).append(el1)
+                    $("#th_prepQlfG_" + index).append(el1)
                     $("#avlPG_prepQlfG_" + index).show()
                     break;
                 case "Regular":
                     let el2 = $("<span/>").addClass("control_03").text($(this).val())
                     notaGestorPrepQlf += 6.2;
-                    $("#th_PrepQlfG_" + index).append(el2)
+                    $("#th_prepQlfG_" + index).append(el2)
                     $("#avlPG_prepQlfG_" + index).hide()
                     break;
                 case "Bom":
                     let el3 = $("<span/>").addClass("control_04").text($(this).val())
                     notaGestorPrepQlf += 10.4;
-                    $("#th_PrepQlfG_" + index).append(el3)
+                    $("#th_prepQlfG_" + index).append(el3)
                     $("#avlPG_prepQlfG_" + index).hide()
                     break;
                 case "Ótimo":
                     let el4 = $("<span/>").addClass("control_05").text($(this).val())
                     notaGestorPrepQlf += 16.6;
-                    $("#th_PrepQlfG_" + index).append(el4)
+                    $("#th_prepQlfG_" + index).append(el4)
                     $("#avlPG_prepQlfG_" + index).hide()
                     break;
             }
