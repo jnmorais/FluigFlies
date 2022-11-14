@@ -550,30 +550,35 @@ $(document).ready(function () {
             index += 1
             switch ($(this).val()) {
                 case "Péssimo":
+                    let el0 = $("<span/>").addClass("control_01").text($(this).val())
                     $("#avlPG_resultG_" + index).show()
-                    $("#th_resultG_" + index).append(el4)
+                    $("#th_resultG_" + index).append(el0)
                     $("#avlPG_resultG_" + index).hide()
                     notaGestorResult += 0;
                     break;
                 case "Ruim":
+                    let el1 = $("<span/>").addClass("control_02").text($(this).val())
                     $("#avlPG_resultG_" + index).show()
-                    $("#th_resultG_" + index).append(el4)
+                    $("#th_resultG_" + index).append(el1)
                     $("#avlPG_resultG_" + index).hide()
                     notaGestorResult += 3.3;
                     break;
                 case "Regular":
+                    let el2 = $("<span/>").addClass("control_03").text($(this).val())
                     $("#avlPG_resultG_" + index).hide()
-                    $("#th_resultG_" + index).append(el4)
+                    $("#th_resultG_" + index).append(el2)
                     $("#avlPG_resultG_" + index).hide()
                     notaGestorResult += 13.3;
                     break;
                 case "Bom":
+                    let el3 = $("<span/>").addClass("control_04").text($(this).val())
                     $("#avlPG_resultG_" + index).hide()
-                    $("#th_resultG_" + index).append(el4)
+                    $("#th_resultG_" + index).append(el3)
                     $("#avlPG_resultG_" + index).hide()
                     notaGestorResult += 23.3;
                     break;
                 case "Ótimo":
+                    let el4 = $("<span/>").addClass("control_05").text($(this).val())
                     $("#avlPG_resultG_" + index).hide()
                     $("#th_resultG_" + index).append(el4)
                     $("#avlPG_resultG_" + index).hide()
