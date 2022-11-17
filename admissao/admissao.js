@@ -2,8 +2,8 @@ $(document).ready(function () {
     $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
     let camposModal = "<div class='row' style='margin-top:20px'><div class='col-md-12'>"
-    camposModal += "<label for='txtAr_setor'>Informe o nome do colaborador</label>"
-    camposModal += "<textarea name='txtAr_setor' id='txtAr_setor' rows='2' class='form-control'></textarea></div>"
+    camposModal += "<label for='txtAr_nomeColabTransf'>Informe o nome do colaborador</label>"
+    camposModal += "<textarea name='txtAr_nomeColabTransf' id='txtAr_nomeColabTransf' rows='2' class='form-control'></textarea></div>"
     let arr_cbxsi = []
     // Controla os botoes de anexo // Caso estejam em modo leitura, vincula um click para a aba anexos e altera o texto para visualizr anexos
     var anexos = ['anx_aprDir', 'anx_crl']
@@ -38,10 +38,8 @@ $(document).ready(function () {
                 }, function (err, data) {
                     if (err) { } else {
                         $("#fluig_modal").find("button[data-add-modal]").on("click", function () {
-                            let valorCampo = $("#txtAr_setor").val();
-                            let valorRadio = $("[name$='rd_procTransf']:checked").val();
+                            let valorCampo = $("#txtAr_nomeColabTransf").val();
                             $("#txt_nmClb_recrutamento").val(valorCampo)
-                            $("#rd_procTransf").val(valorRadio)
                             $("[name$='rd_avl_rh'][value='Recrutamento interno']").prop("checked", true)
                         })
                     }
