@@ -20,29 +20,30 @@ $(document).ready(function () {
     }
     // Controla o click nos inputs que escondem campos
     if (ATV) {
-
-        
-        FLUIGC.modal({
-            title: 'Processo de Transferência | Promoção | Recrutamento Interno',
-            content: camposModal,
-            id: 'fluig_modal',
-            actions: [{
-                'label': 'Salvar',
-                'bind': 'data-add-modal',
-                'autoClose': true
-            }, {
-                'label': 'Cancelar',
-                'autoClose': true
-            }]
-        }, function (err, data) {
-            if (err) { } else {
-                $("#fluig_modal").find("button[data-add-modal]").on("click", function () {
-                    let valorCampo = $("#txtAr_setor").val();
-                    let valorRadio = $("[name$='rd_procTransf']:checked").val();
-                    $("#txt_nmClb_recrutamento").val(valorCampo)
-                    $("#rd_procTransf").val(valorRadio)
-                })
-            }
+        $("[name$='rd_avl_rh']").click(function (e) {
+            e.preventDefault();
+            FLUIGC.modal({
+                title: 'Processo de Transferência | Promoção | Recrutamento Interno',
+                content: camposModal,
+                id: 'fluig_modal',
+                actions: [{
+                    'label': 'Salvar',
+                    'bind': 'data-add-modal',
+                    'autoClose': true
+                }, {
+                    'label': 'Cancelar',
+                    'autoClose': true
+                }]
+            }, function (err, data) {
+                if (err) { } else {
+                    $("#fluig_modal").find("button[data-add-modal]").on("click", function () {
+                        let valorCampo = $("#txtAr_setor").val();
+                        let valorRadio = $("[name$='rd_procTransf']:checked").val();
+                        $("#txt_nmClb_recrutamento").val(valorCampo)
+                        $("#rd_procTransf").val(valorRadio)
+                    })
+                }
+            });
         });
         // CHECKBOX SISTEMAS
         $(".cbx_si").change(function () {
@@ -64,8 +65,6 @@ $(document).ready(function () {
         show_on_click('rd_eqpRossi', 'Sim', null, 'entrg_RossiEqp')
         show_on_click('rd_cntr', 'Estágio', null, 'estagio')
         show_on_click('rd_rh_sst', 'Sim, informar SST.', null, 'descricao_cargos')
-
-        
         // Controla troca de valores do salário
         $('#txt_cargo').on('change', function () {
             // $("[name='txt_supDsj'],#cargoResp blockquote,#cargoAut blockquote").text("")
@@ -467,7 +466,6 @@ $(document).ready(function () {
         hide_on_load('rd_etg_infra_acs', 'Sim', null, 'show_clb_mail')
         hide_on_load('rd_etg_si', 'Sim', null, 'show_acessos')
         hide_on_load('rd_rh_sst', 'Sim, informar SST.', null, 'descricao_cargos')
-
         $("#novo_cargo").val() != "" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
         if (ATV == 9) {
             $('input[type=range]').prop('disabled', false);
