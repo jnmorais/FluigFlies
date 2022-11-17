@@ -42,10 +42,10 @@ $(document).ready(function () {
                             let valorRadio = $("[name$='rd_procTransf']:checked").val();
                             $("#txt_nmClb_recrutamento").val(valorCampo)
                             $("#rd_procTransf").val(valorRadio)
+                            $("[name$='rd_avl_rh'][value='Recrutamento interno']").prop("checked", true)
                         })
                     }
                 });
-                $(this + "[value='Recrutamento interno']").prop("checked", true)
             }
         });
         // CHECKBOX SISTEMAS
