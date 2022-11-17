@@ -2,8 +2,8 @@ $(document).ready(function () {
     $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
     let camposModal = "<div class='row' style='margin-top:20px'>"
-    camposModal += "<div class='col-md-12 form-group'><label for='txtAr_setor'>Informe o nome do colaborador</label><textarea name='txtAr_setor' id='txtAr_setor' rows='2' class='form-control'></textarea><label for='txtAr_setor'>Informe o nome do colaborador</label></div>"
-    camposModal += "<div class='col-md-12 form-group'><label for='#'><strong>Vaga será cancelada?</strong></label><div class='custom-radio custom-radio-warning'><input type='radio' name='rd_procTransf' value='Sim' id='radio-444'><label for='radio-444'>Sim</label></div><div class='custom-radio custom-radio-success'><input type='radio' name='rd_procTransf' value='Não' id='radio-555'><label for='radio-555'>Não</label></div></div></div>"
+    camposModal += "<div class='col-md-12 form-group'><label for='txtAr_setor'>Informe o nome do colaborador</label><textarea name='txtAr_setor' id='txtAr_setor' rows='2' class='form-control'></textarea>"
+    camposModal += "<div class='col-md-12 form-group'><label for='#'><strong>Informe o tipo</strong></label><div class='custom-radio custom-radio-warning'><input type='radio' name='rd_procTransf' value='Transferência' id='radio-444'><label for='radio-444'>Transferência</label></div><div class='custom-radio custom-radio-success'><input type='radio' name='rd_procTransf' value='Promoção' id='radio-555'><label for='radio-555'>Promoção</label></div><div class='custom-radio custom-radio-success'><input type='radio' name='rd_procTransf' value='Recrutamento Interno' id='radio-666'><label for='radio-666'>Recrutamento Interno</label></div></div></div>"
     let arr_cbxsi = []
     // Controla os botoes de anexo // Caso estejam em modo leitura, vincula um click para a aba anexos e altera o texto para visualizr anexos
     var anexos = ['anx_aprDir', 'anx_crl']
