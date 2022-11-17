@@ -1,9 +1,9 @@
 $(document).ready(function () {
     $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
-    let camposModal = "<div class='row' style='margin-top:20px'>"
-    camposModal += "<label for='txtAr_setor'>Informe o nome do colaborador</label><textarea name='txtAr_setor' id='txtAr_setor' rows='2' class='form-control'></textarea>"
-    camposModal += "<div class='row' style='margin-top:5px'><label for='#'><strong>Informe o tipo</strong></label><div class='custom-radio custom-radio-warning'><input type='radio' name='rd_procTransf' value='Transferência' id='radio-444'><label for='radio-444'>Transferência</label></div><div class='custom-radio custom-radio-success'><input type='radio' name='rd_procTransf' value='Promoção' id='radio-555'><label for='radio-555'>Promoção</label></div><div class='custom-radio custom-radio-success'><input type='radio' name='rd_procTransf' value='Recrutamento Interno' id='radio-666'><label for='radio-666'>Recrutamento Interno</label></div></div>"
+    let camposModal = "<div class='row' style='margin-top:20px'><div class='col-md-12'>"
+    camposModal += "<label for='txtAr_setor'>Informe o nome do colaborador</label>"
+    camposModal += "<textarea name='txtAr_setor' id='txtAr_setor' rows='2' class='form-control'></textarea></div>"
     let arr_cbxsi = []
     // Controla os botoes de anexo // Caso estejam em modo leitura, vincula um click para a aba anexos e altera o texto para visualizr anexos
     var anexos = ['anx_aprDir', 'anx_crl']
