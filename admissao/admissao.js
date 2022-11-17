@@ -45,6 +45,7 @@ $(document).ready(function () {
                         })
                     }
                 });
+                $(this + "[value='Recrutamento interno']").prop("checked", true)
             }
         });
         // CHECKBOX SISTEMAS
