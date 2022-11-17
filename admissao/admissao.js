@@ -1,9 +1,6 @@
 $(document).ready(function () {
     $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
-    let camposModal = "<div class='row' style='margin-top:20px'><div class='col-md-12'>"
-    camposModal += "<label for='txtAr_nomeColabTransf'>Informe o nome do colaborador</label>"
-    camposModal += "<textarea name='txtAr_nomeColabTransf' id='txtAr_nomeColabTransf' rows='2' class='form-control'></textarea></div>"
     let arr_cbxsi = []
     // Controla os botoes de anexo // Caso estejam em modo leitura, vincula um click para a aba anexos e altera o texto para visualizr anexos
     var anexos = ['anx_aprDir', 'anx_crl']
@@ -25,7 +22,7 @@ $(document).ready(function () {
                 e.preventDefault();
                 FLUIGC.modal({
                     title: 'Processo de Transferência | Promoção | Recrutamento Interno',
-                    content: camposModal,
+                    content: "<div class='row' style='margin-top:20px'><div class='col-md-12'><label for='txt_nomeColabTransf'>Informe o nome do colaborador</label><input type='text' maxlength='50' class='form-control' name='txt_nomeColabTransf' id='txt_nomeColabTransf' placeholder='Informe o nome completo do colaborador'></div>",
                     id: 'fluig_modal',
                     actions: [{
                         'label': 'Salvar',
@@ -38,8 +35,9 @@ $(document).ready(function () {
                 }, function (err, data) {
                     if (err) { } else {
                         $("#fluig_modal").find("button[data-add-modal]").on("click", function () {
-                            let valorCampo = $("#txtAr_nomeColabTransf").val();
+                            let valorCampo = $("#txt_nomeColabTransf").val();
                             $("#txt_nmClb_recrutamento").val(valorCampo)
+                            alert($("#txt_nmClb_recrutamento").val())
                             $("[name$='rd_avl_rh'][value='Recrutamento interno']").prop("checked", true)
                         })
                     }
@@ -461,6 +459,7 @@ $(document).ready(function () {
         // hide_on_load('rd_avl_rh', 'Recrutamento interno', null, 'cdd_slc_int_1')
         hide_on_load('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc')
         hide_on_load('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int')
+        hide_on_load('rd_dst_rh', 'Não, novo candidato selecionado', null, 'sst_alteracao')
         hide_on_load('rd_dst_dp', 'Não', null, 'dt_cntr_clb')
         hide_on_load('rd_dst_dp', 'Solicitar alterações ao RH', null, 'txt_dp_alter')
         hide_on_load('rd_int_rh', 'Sim', null, 'dt_int_rh')
@@ -512,6 +511,7 @@ $(document).ready(function () {
     if (ATV == 37 || ATV == 98 || ATV == null) {
         show_on_click('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc')
         show_on_click('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int')
+        show_on_click('rd_dst_rh', 'Não, novo candidato selecionado', null, 'sst_alteracao')
     }
     // Controla click nas atvs hcm
     if (ATV == 51 || ATV == 102 || ATV == null) {
