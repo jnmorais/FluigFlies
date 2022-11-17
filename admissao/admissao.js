@@ -1,6 +1,9 @@
 $(document).ready(function () {
     $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
+    let camposModal = "<div class='row' style='margin-top:20px'>"
+    camposModal += "<div class='col-md-12 form-group'><label for='txtAr_setor'>Informe o nome do colaborador</label><textarea name='txtAr_setor' id='txtAr_setor' rows='2' class='form-control'></textarea><label for='txtAr_setor'>Informe o nome do colaborador</label></div>"
+    camposModal += "<div class='col-md-12 form-group'><label for='#'><strong>Vaga será cancelada?</strong></label><div class='custom-radio custom-radio-warning'><input type='radio' name='rd_procTransf' value='Sim' id='radio-444'><label for='radio-444'>Sim</label></div><div class='custom-radio custom-radio-success'><input type='radio' name='rd_procTransf' value='Não' id='radio-555'><label for='radio-555'>Não</label></div></div></div>"
     let arr_cbxsi = []
     // Controla os botoes de anexo // Caso estejam em modo leitura, vincula um click para a aba anexos e altera o texto para visualizr anexos
     var anexos = ['anx_aprDir', 'anx_crl']
@@ -17,6 +20,30 @@ $(document).ready(function () {
     }
     // Controla o click nos inputs que escondem campos
     if (ATV) {
+
+        
+        FLUIGC.modal({
+            title: 'Processo de Transferência | Promoção | Recrutamento Interno',
+            content: camposModal,
+            id: 'fluig_modal',
+            actions: [{
+                'label': 'Salvar',
+                'bind': 'data-add-modal',
+                'autoClose': true
+            }, {
+                'label': 'Cancelar',
+                'autoClose': true
+            }]
+        }, function (err, data) {
+            if (err) { } else {
+                $("#fluig_modal").find("button[data-add-modal]").on("click", function () {
+                    let valorCampo = $("#txtAr_setor").val();
+                    let valorRadio = $("[name$='rd_procTransf']:checked").val();
+                    $("#txt_nmClb_recrutamento").val(valorCampo)
+                    $("#rd_procTransf").val(valorRadio)
+                })
+            }
+        });
         // CHECKBOX SISTEMAS
         $(".cbx_si").change(function () {
             $("#" + $(this).attr('id_div')).toggle();
@@ -431,9 +458,9 @@ $(document).ready(function () {
         hide_on_load('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         hide_on_load('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
         hide_on_load('rd_avl_rh', 'Reprovada', null, 'txt_rpv_rh')
-        hide_on_load('rd_avl_rh', 'Recrutamento interno', null, 'cdd_slc_int_1')
+        // hide_on_load('rd_avl_rh', 'Recrutamento interno', null, 'cdd_slc_int_1')
         hide_on_load('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc')
-        hide_on_load('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int_2')
+        // hide_on_load('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int_2')
         hide_on_load('rd_dst_dp', 'Não', null, 'dt_cntr_clb')
         hide_on_load('rd_dst_dp', 'Solicitar alterações ao RH', null, 'txt_dp_alter')
         hide_on_load('rd_int_rh', 'Sim', null, 'dt_int_rh')
@@ -473,7 +500,7 @@ $(document).ready(function () {
         show_on_click('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh')
         show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh')
         show_on_click('rd_avl_rh', 'Reprovada', null, 'txt_rpv_rh')
-        show_on_click('rd_avl_rh', 'Recrutamento interno', null, 'cdd_slc_int_1')
+        // show_on_click('rd_avl_rh', 'Recrutamento interno', null, 'cdd_slc_int_1')
     }
     if ((ATV == 37 || ATV == 109 || ATV == 9) && gpLogado == "RecursosHumanos") {
         FLUIGC.toast({
@@ -485,7 +512,7 @@ $(document).ready(function () {
     // Controla click nas atvs candidato selecionado
     if (ATV == 37 || ATV == 98 || ATV == null) {
         show_on_click('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc')
-        show_on_click('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int_2')
+        // show_on_click('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int_2')
     }
     // Controla click nas atvs hcm
     if (ATV == 51 || ATV == 102 || ATV == null) {
