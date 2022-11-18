@@ -54,7 +54,7 @@ $(document).ready(function () {
                     $("#div_rd_tpAvs").show()
                     $("#div_anx_demissao").hide()
                 break;
-                case (rd_mtvDslg == "Pedido de demissão pelo colaborador"):
+                case (rd_mtvDslg == "Pedido de desligamento pelo colaborador"):
                     $("#div_anx_demissao").show()
                     $("#div_rd_tpAvs").hide()
                 break;
