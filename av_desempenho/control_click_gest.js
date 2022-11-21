@@ -1,3 +1,6 @@
+$(document).ready(function () {
+  $("textarea[name^='avlPG_']").hide()
+});
 $(".av_pnl").click(function () {
     let div = $(this).attr("attr-id")
     let element = $("." + div + ".active").attr("id")
