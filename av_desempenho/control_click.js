@@ -30,22 +30,22 @@ $(".btnAction").click(function () {
     }
 });
 $("input").on('change', function () {
-    const div_id = $(this).attr('name')
+    let div_id = $(this).attr('name')
     $("#" + div_id).hasClass("atentionEff") ? $("#" + div_id).removeClass("atentionEff") : false
     $("#" + div_id).hasClass("atentionBrd") ? $("#" + div_id).removeClass("atentionBrd") : false
 });
 // Controla o click do botão avançar item
 $(".av").click(function () {
-    const div = $(this).attr("attr-id")
-    const limit = document.getElementById(div).childElementCount;
-    const element = $("#" + div + " .active").attr("id")
-    const name = element.split("_")[0]
-    const id = parseInt(element.split("_")[1]) + 1
-    const atual_radio = $("input[name$='" + element + "']:checked").val()
+    let div = $(this).attr("attr-id")
+    let limit = document.getElementById(div).childElementCount;
+    let element = $("#" + div + " .active").attr("id")
+    let name = element.split("_")[0]
+    let id = parseInt(element.split("_")[1]) + 1
+    let atual_radio = $("input[name$='" + element + "']:checked").val()
     if (atual_radio != undefined) {
         if (id <= limit) {
             $("#" + element).removeClass("atentionEff")
-            const nextElement = name + "_" + id
+            let nextElement = name + "_" + id
             $("#tarefa_" + div).text("Item: " + id + "/" + limit)
             $("#" + element).removeClass("active").addClass("desative")
             $("#" + nextElement + " .desative") ? $("#" + nextElement).removeClass("desative").addClass("active") : false
@@ -61,15 +61,15 @@ $(".av").click(function () {
 });
 // Controla o click do botão voltar item
 $(".vlt").click(function () {
-    const div = $(this).attr("attr-id")
-    const limit = document.getElementById(div).childElementCount
-    const element = $("#" + div + " .active").attr("id")
-    const name = element.split("_")[0]
-    const id = parseInt(element.split("_")[1]) - 1
-    const hidden = $("#" + div).find(":hidden")
+    let div = $(this).attr("attr-id")
+    let limit = document.getElementById(div).childElementCount
+    let element = $("#" + div + " .active").attr("id")
+    let name = element.split("_")[0]
+    let id = parseInt(element.split("_")[1]) - 1
+    let hidden = $("#" + div).find(":hidden")
     if (id > 0) {
         $(".nav-" + div).find(":hidden").show()
-        const nextElement = name + "_" + id
+        let nextElement = name + "_" + id
         $("#tarefa_" + div).text("Item: " + id + "/" + limit)
         $("#" + element).removeClass("active").addClass("desative")
         $("#" + nextElement + " .desative") ? $("#" + nextElement).removeClass("desative").addClass("active") : false
