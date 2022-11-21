@@ -75,6 +75,17 @@ $(document).ready(function () {
         // Analise Minuta
         show_on_click("rd_apvMnt", "Não", null, "show_mntRpv")
         hide_on_load("rd_apvMnt", "Não", null, "show_mntRpv")
+        // Pre Viabilidade
+        show_on_click("rd_preViab", "Não", null, "show_preViabApv")
+        hide_on_load("rd_preViab", "Não", null, "show_preViabApv")
+        // Negociacao Terrenista
+        show_on_click("rd_negTrr", "Sim", null, "dados_corretor")
+        hide_on_load("rd_negTrr", "Sim", null, "dados_corretor")
+        // Presidencia
+        show_on_click("rd_trrAutorizado_vp", "Sim", null, "div_tktMedio")
+        show_on_click("rd_trrAutorizado_vp", "Não", null, "presRetorno")
+        hide_on_load("rd_trrAutorizado_vp", "Sim", null, "div_tktMedio")
+        hide_on_load("rd_trrAutorizado_vp", "Não", null, "presRetorno")
         // Assinatura do contrato (INTER E TERRENISTA)
         show_on_click("rd_cttAprv", "Sim", null, "show_cttAprv")
         hide_on_load("rd_cttAprv", "Sim", null, "show_cttAprv")

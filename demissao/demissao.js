@@ -2,7 +2,7 @@ $(document).ready(function () {
     var rd_mtvDslg1 = "Antecipação do término de contrato de experiência"
     var rd_mtvDslg2 = "Término do contrato de experiência"
     var rd_mtvDslg3 = "Desligamento Empregador (Empresa)"
-    $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg,#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh,#rh_fdbk,#rh_fdbk_sim,#premioApv").hide()
+    $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg,#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh,#rh_fdbk,#rh_fdbk_sim,#premioApv,#bonus_producao").hide()
     if (FM == "ADD" || FM == "MOD") {
         $(".select2").select2()
         // Carregar SPE
@@ -61,6 +61,13 @@ $(document).ready(function () {
                 default:
                     $("#div_anx_demissao,#div_rd_tpAvs").hide()
                     break;
+            }
+        })
+        $("input[name$='rd_bonus_producao']").click(function (e) {
+            if ($("input[name$='rd_bonus_producao']:checked").val() == "Sim") {
+                $("#bonus_producao").show()
+            } else {
+                $("#bonus_producao").hide()
             }
         })
         $("input[name$='rd_premio']").click(function (e) {
@@ -140,6 +147,9 @@ $(document).ready(function () {
         }
         if ($("input[name$='rd_premio']:checked").val() != "Não") {
             $("#premioApv").show()
+        }
+        if ($("input[name$='rd_bonus_producao']:checked").val() != "Não") {
+            $("#bonus_producao").show()
         }
     }
 })
