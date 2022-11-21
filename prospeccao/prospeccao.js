@@ -1,21 +1,8 @@
 $(document).ready(function () {
-    $("#show_fNTorna,#show_fNFisc,#show_fNFinc,#show_preViabApv,#show_estOrc,#show_preViab_infos,#show_mntRpv,#show_cttAprv,#tktMedio").hide()
+    $("#show_fNTorna,#show_fNFisc,#show_fNFinc,#show_preViabApv,#show_estOrc,#show_preViab_infos,#show_mntRpv,#show_cttAprv,#tktMedio,#div_tktMedio,#presRetorno,#dados_corretor").hide()
 
     if (ATV) {
         $(".select2").select2();
-        $.ajax({
-            type: "GET",
-            url: "https://rawcdn.githack.com/marllonsousa/FluigFiles/0b8d47500df9538fbd71e88d7e100c98f91d453c/geral/cidades.json",
-            dataType: "json",
-            success: function (response) {
-                for (var cdd = 0; cdd < response.cidades.length - 1; cdd++) {
-                    $("<option></option>", {
-                        value: response.cidades[cdd],
-                        text: response.cidades[cdd]
-                    }).appendTo("#slt_cidadeTrr");
-                }
-            }
-        });
         // CONTROLA CLICKS
         $("select[name$='slt_fmrNeg']").change(function () {
             var click = $(this).val();
@@ -82,10 +69,10 @@ $(document).ready(function () {
         show_on_click("rd_negTrr", "Sim", null, "dados_corretor")
         hide_on_load("rd_negTrr", "Sim", null, "dados_corretor")
         // Presidencia
-        show_on_click("rd_trrAutorizado_vp", "Sim", null, "div_tktMedio")
-        show_on_click("rd_trrAutorizado_vp", "Não", null, "presRetorno")
-        hide_on_load("rd_trrAutorizado_vp", "Sim", null, "div_tktMedio")
-        hide_on_load("rd_trrAutorizado_vp", "Não", null, "presRetorno")
+        show_on_click("rd_PresTrrAutorizado", "Sim", null, "div_tktMedio")
+        show_on_click("rd_PresTrrAutorizado", "Não", null, "presRetorno")
+        hide_on_load("rd_PresTrrAutorizado", "Sim", null, "div_tktMedio")
+        hide_on_load("rd_PresTrrAutorizado", "Não", null, "presRetorno")
         // Assinatura do contrato (INTER E TERRENISTA)
         show_on_click("rd_cttAprv", "Sim", null, "show_cttAprv")
         hide_on_load("rd_cttAprv", "Sim", null, "show_cttAprv")
