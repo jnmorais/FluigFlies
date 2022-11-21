@@ -22,10 +22,10 @@ $(".btnAction").click(function () {
         resultCalc_colab[z] = $("input[name$='resultG_" + z + "']:checked").val()
         resultCalc_colab[z] == "" || resultCalc_colab[z] == undefined ? $("#resultG_" + z).addClass("atentionEff") : cont++;
     }
-    if(cont == 24){
+    if (cont == 24) {
         $(this).attr("id") == "enviar" ? parent.document.querySelector("#workflow-detail-card > div > div > button:nth-child(1)").click()
-        : parent.document.querySelector("#optionList > li:nth-child(2) > a").click()
-    }else{
+            : parent.document.querySelector("#optionList > li:nth-child(2) > a").click()
+    } else {
         alert("Existem campos não preenchidos!")
     }
 });
@@ -56,7 +56,7 @@ $(".av").click(function () {
     } else {
         setTimeout(function () {
             $("#" + element).addClass("atentionEff")
-        },100);
+        }, 100);
     }
 });
 // Controla o click do botão voltar item
@@ -77,13 +77,13 @@ $(".vlt").click(function () {
 });
 // AVALIACAO PESSIMO\RUIM
 $($("input:radio")).click(function () {
-    if($(this).hasClass("control_01") || $(this).hasClass("control_02")){
+    if ($(this).hasClass("control_01") || $(this).hasClass("control_02")) {
         $("#avlPG_" + $(this).attr("name")).is(":hidden") ? $("#avlPG_" + $(this).attr("name")).show() : false
-    }else{
-        if($("#avlPG_" + $(this).attr("name")).is(":visible")){
+    } else {
+        if ($("#avlPG_" + $(this).attr("name")).is(":visible")) {
             $("#avlPG_" + $(this).attr("name")).hide()
-            $("#avlPG_" + $(this).attr("name")+" textarea").text('')
-            $("#avlPG_" + $(this).attr("name")+" textarea").val('')
+            $("#avlPG_" + $(this).attr("name") + " textarea").text('')
+            $("#avlPG_" + $(this).attr("name") + " textarea").val('')
         }
     }
 });
