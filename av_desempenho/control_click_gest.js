@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("textarea[name^='avlPG_']").hide()
+  $("div[id^='avlPG_']").hide()
 });
 $(".av_pnl").click(function () {
     let div = $(this).attr("attr-id")
