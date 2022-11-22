@@ -37,7 +37,7 @@ $(document).ready(function () {
                     break;
             }
         });
-        selectShow(selectName)
+        selectShow("slt_fmrNeg")
         // Levantamento Orçamento
         show_on_click("rd_estOrc", "Não", null, "show_estOrc")
         hide_on_load("rd_estOrc", "Não", null, "show_estOrc")
