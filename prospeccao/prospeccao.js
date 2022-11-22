@@ -37,6 +37,7 @@ $(document).ready(function () {
                     break;
             }
         });
+        selectShow(selectName)
         // Levantamento Orçamento
         show_on_click("rd_estOrc", "Não", null, "show_estOrc")
         hide_on_load("rd_estOrc", "Não", null, "show_estOrc")
@@ -157,4 +158,38 @@ function limpa_formulário_cep() {
     $("#txt_bairro").val("");
     $("#txt_cidade").val("");
     $("#txt_uf").val("");
+}
+function selectShow(selectName) {
+    let sltName = $("select[name$='" + selectName + "']").val()
+    switch (sltName) {
+        case "Compra e Venda":
+            $("#show_fNTorna,#show_fNFisc,#show_fNFinc").hide();
+            break;
+        case "Permuta Física":
+            $("#show_fNFisc").show();
+            $("#show_fNFinc,#show_fNTorna").hide();
+            break;
+        case "Permuta Financeira":
+            $("#show_fNFinc").show();
+            $("#show_fNFisc,#show_fNTorna").hide();
+            break;
+        case "Permuta Física e Financeira":
+            $("#show_fNFisc,#show_fNFinc").show();
+            $("#show_fNTorna").hide();
+            break;
+        case "Permuta Física e Torna":
+            $("#show_fNFisc,#show_fNTorna").show();
+            $("#show_fNFinc").hide();
+            break;
+        case "Permuta Financeira e Torna":
+            $("#show_fNFinc,#show_fNTorna").show();
+            $("#show_fNFisc").hide();
+            break;
+        case "Permuta Física, Financeira e Torna":
+            $("#show_fNTorna, #show_fNFisc, #show_fNFinc").show();
+            break;
+        default:
+            $("#show_fNTorna, #show_fNFisc, #show_fNFinc").hide();
+            break;
+    }
 }
