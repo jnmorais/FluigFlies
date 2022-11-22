@@ -116,3 +116,47 @@ function hide_on_load(campo, valor1, valor2, show) {
         }
     }
 }
+function limpa_formulário_cep() {
+    $("#txt_logradouro").val("");
+    $("#txt_bairro").val("");
+    $("#txt_cidade").val("");
+    $("#txt_uf").val("");
+}
+//Quando o campo cep perde o foco.
+$("#txt_cep").blur(function () {
+    var cep = $(this).val().replace(/\D/g, '');
+    if (cep != "") {
+        var validacep = /^[0-9]{8}$/;
+        if (validacep.test(cep)) {
+            //Preenche os campos com "..." enquanto consulta webservice.
+            $("#txt_logradouro").val("...");
+            $("#txt_bairro").val("...");
+            $("#txt_cidade").val("...");
+            $("#txt_uf").val("...");
+            //Consulta o webservice viacep.com.br/
+            $.getJSON("https://viacep.com.br/ws/" + cep + "/json/", function (dados) {
+                if (!("erro" in dados)) {
+                    //Atualiza os campos com os valores da consulta.
+                    $("#txt_logradouro").val(dados.logradouro);
+                    $("#txt_bairro").val(dados.bairro);
+                    $("#txt_cidade").val(dados.localidade);
+                    $("#txt_uf").val(dados.uf);
+                } //end if.
+                else {
+                    //CEP pesquisado não foi encontrado.
+                    limpa_formulário_cep();
+                    alert("CEP não encontrado.");
+                }
+            });
+        } //end if.
+        else {
+            //cep é inválido.
+            limpa_formulário_cep();
+            alert("Formato de CEP inválido.");
+        }
+    } //end if.
+    else {
+        //cep sem valor, limpa formulário.
+        limpa_formulário_cep();
+    }
+});
