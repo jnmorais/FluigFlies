@@ -20,6 +20,7 @@ $(document).ready(function () {
     show_on_load("rd_locA", "div_end_atual", "Obra")
     show_on_load("rd_locD", "div_end_destino", "Obra")
     show_on_load("rd_alt_sal", "div_nv_salario", "Sim")
+    show_on_load("rd_alt_sal", "apv_diretor", "Sim")
     show_on_load("rd_alt_cargo", "div_nv_cargo", "Sim")
     show_on_load("rd_alt_cgH", "div_carga_hr", "Sim")
     show_on_load("rd_dp_infos", "div_dt_dp_transfr", "Não")
