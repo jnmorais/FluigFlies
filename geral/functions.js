@@ -21,7 +21,7 @@ function viewDoc() {
     parent.open(url + $("#documento").val());
 }
 function visualizarSolicitacao() {
-    var url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_processInstanceId="
+    var url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID="
     parent.open(url + $("#solicitacao").val());
 }
 function openForm() {
