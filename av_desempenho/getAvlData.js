@@ -438,21 +438,21 @@ $(document).ready(function () {
         // let notaGeralAA = notaComp + notaPrepQlf + notaResult;
         let notaAlinhamentoComp = 0, notaAlinhamentoPrepQlf = 0, notaAlinhamentoResult = 0;
         for (let comp = 1; comp < arrGComp.length; comp++) {
-            if (sltComp[comp] != undefined) {
+            if (sltComp[comp] != undefined && sltComp[comp] != "") {
                 notaAlinhamentoComp += sltComp[comp]
             } else {
                 notaAlinhamentoComp += arrGComp[comp]
             }
         }
         for (let prepQ = 1; prepQ < arrGPrepQlf.length; prepQ++) {
-            if (sltPrepQlf[prepQ] != undefined) {
+            if (sltPrepQlf[prepQ] != undefined && sltPrepQlf[prepQ] != "") {
                 notaAlinhamentoPrepQlf += sltPrepQlf[prepQ]
             } else {
                 notaAlinhamentoPrepQlf += arrGPrepQlf[prepQ]
             }
         }
         for (let result = 1; result < arrGResult.length; result++) {
-            if (sltResult[result] != undefined) {
+            if (sltResult[result] != undefined && sltResult[result] != "") {
                 notaAlinhamentoResult += sltResult[result]
             } else {
                 notaAlinhamentoResult += arrGResult[result]
