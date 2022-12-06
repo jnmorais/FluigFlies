@@ -266,8 +266,17 @@ $(document).ready(function () {
         show_on_click("rd_etg_infra_acs", "Sim", null, "show_clb_mail");
     }
     // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
+    if (ATV == 348 || ATV == null) {
+        show_on_click("rd_etg_si_1", "Sim", null, "show_acessos_1")
+    }
     // ATV 350 - (SISTEMAS) - CV e Adobe
+    if (ATV == 350 || ATV == null) {
+        show_on_click("rd_etg_si_2", "Sim", null, "show_acessos_2")
+    }
     // ATV 352 - (SISTEMAS) - FLUIG;
+    if (ATV == 352 || ATV == null) {
+        show_on_click("rd_etg_si_3", "Sim", null, "show_acessos_3")
+    }
     if (ATV || FM) {
         if ($("#rd_escol").val() == "Ensino Médio Completo (Técnico na área)" || $("#rd_escol").val() == "Ensino Médio Incompleto" || $("#rd_escol").val() == "Ensino Superior Incompleto (cursando)" || $("#rd_escol").val() == "Ensino Superior Completo" || $("#rd_escol").val() == "Ensino Fundamental Incompleto (cursando)") {
             $("#cargoResp,#cargoAut").show()
@@ -407,6 +416,13 @@ $(document).ready(function () {
         hide_on_load('rd_int_rh', 'Sim', null, 'dt_int_rh');
         // ATV 150
         hide_on_load("rd_etg_infra_acs", "Sim", null, "show_clb_mail");
+        // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
+        hide_on_load("rd_etg_si_1", "Sim", null, "show_acessos_1")
+        // ATV 350 - (SISTEMAS) - CV e Adobe
+        hide_on_load("rd_etg_si_2", "Sim", null, "show_acessos_2")
+        // ATV 352 - (SISTEMAS) - FLUIG;
+        hide_on_load("rd_etg_si_3", "Sim", null, "show_acessos_3")
+        // EXIBIR CARGO SELECIONADO
         $("#novo_cargo").val() != "" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
         // Carrega valor dos input range
         for (var i = 1; i <= 24; i++) {
