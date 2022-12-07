@@ -247,10 +247,10 @@ $(document).ready(function () {
     // ATV 37
     if (ATV == 37 || ATV == null) {
         show_on_click('rd_rh_sst', 'Sim, informar SST.', null, 'descricao_cargos');
-        show_on_click('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc');
-        show_on_click('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int');
-        show_on_click('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'sst_alteracao');
-        show_on_click('rd_dst_rh', 'Não, novo candidato selecionado', null, 'sst_alteracao');
+        show_on_click('rd_selecao_rh', 'Sim, candidato selecionado pelo G&G', null, 'cdd_slc');
+        show_on_click('rd_selecao_rh', 'Sim, candidato selecionado via Recrutamento Interno', null, 'cdd_slc_int');
+        show_on_click('rd_selecao_rh', 'Sim, candidato selecionado via Recrutamento Interno', null, 'sst_alteracao');
+        show_on_click('rd_selecao_rh', 'Sim, candidato selecionado pelo G&G', null, 'sst_alteracao');
         FLUIGC.toast({ title: 'Recursos Humanos: ', message: 'A edição do formulário está liberada!', type: 'info' });
     }
     // ATV 51
@@ -407,10 +407,10 @@ $(document).ready(function () {
         hide_on_load('rd_avl_rh', 'Reprovada', null, 'txt_rpv_rh');
         // ATV 37
         hide_on_load('rd_rh_sst', 'Sim, informar SST.', null, 'descricao_cargos');
-        hide_on_load('rd_dst_rh', 'Não, novo candidato selecionado', null, 'cdd_slc');
-        hide_on_load('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'cdd_slc_int');
-        hide_on_load('rd_dst_rh', 'Não, seguir para recrutamento interno', null, 'sst_alteracao');
-        hide_on_load('rd_dst_rh', 'Não, novo candidato selecionado', null, 'sst_alteracao');
+        hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado pelo G&G', null, 'cdd_slc');
+        hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado via Recrutamento Interno', null, 'cdd_slc_int');
+        hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado via Recrutamento Interno', null, 'sst_alteracao');
+        hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado pelo G&G', null, 'sst_alteracao');
         // ATV 51
         hide_on_load('rd_dst_dp', 'Não', null, 'dt_cntr_clb');
         hide_on_load('rd_dst_dp', 'Alteração/Inclusão de informações ao Gente & Gestão', null, 'txt_dp_alter');
