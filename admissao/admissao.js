@@ -2,6 +2,11 @@ $(document).ready(function () {
     $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
     // ATV 0|1|4
+    if(ATV == 0 || ATV == 1){
+        var sistemas = ["Nenhum sistema será necessário","Mega", "Expert", "Approvo", "Adobe/Doc Sign", "Construtor de vendas", "Fluig"];
+        /* Instantiated new autocomplete */
+        var myAutocomplete = FLUIGC.autocomplete('#slt_sistemas', { source: substringMatcher(sistemas), name: 'sistemas', displayKey: 'sistema', tagClass: 'tag-gray', type: 'tagAutocomplete', highlight: true, hint: 'true', autoLoading: 'false' });
+    }
     if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null) {
         show_on_click('rd_mtvCntr', 'Substituição de colaborador', 'Promoção (Efetivação de Estagiário pós desligamento)', 'txt_prSb');
         show_on_click('rd_mtvCntr', 'Substituição de colaborador', null, 'vlr_Sb');
@@ -17,9 +22,6 @@ $(document).ready(function () {
         show_on_click('rd_acsRd', 'Sim', null, 'pastasRede');
         show_on_click('rd_eqpRossi', 'Sim', null, 'entrg_RossiEqp');
         show_on_click('rd_cntr', 'Estágio', null, 'estagio');
-        var sistemas = ["Mega", "Expert", "Approvo", "Adobe/Doc Sign", "Construtor de vendas", "Fluig"];
-        /* Instantiated new autocomplete */
-        var myAutocomplete = FLUIGC.autocomplete('#slt_sistemas', { source: substringMatcher(sistemas), name: 'sistemas', displayKey: 'sistema', tagClass: 'tag-gray', type: 'tagAutocomplete', highlight: true, hint: 'true', autoLoading: 'true' });
         // CONTROLA O INPUT COMPETENCIAS
         $("input[type='range']").on("input", function () {
             var comportamento = $(this).attr("compData").split("vs");
@@ -249,6 +251,8 @@ $(document).ready(function () {
         show_on_click('rd_rh_sst', 'Sim, informar SST.', null, 'descricao_cargos');
         show_on_click('rd_selecao_rh', 'Sim, candidato selecionado pelo G&G', null, 'cdd_slc');
         show_on_click('rd_selecao_rh', 'Sim, candidato selecionado por Recrutamento Interno', null, 'cdd_slc_int');
+        show_on_click('rd_selecao_rh', 'Sim, candidato selecionado por Recrutamento Interno', null, 'rh_alteracoes');
+        show_on_click('rd_selecao_rh', 'Sim, candidato selecionado pelo G&G', null, 'rh_alteracoes');
         FLUIGC.toast({ title: 'Recursos Humanos: ', message: 'A edição do formulário está liberada!', type: 'info' });
     }
     // ATV 51
@@ -408,6 +412,8 @@ $(document).ready(function () {
         hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado pelo G&G', null, 'cdd_slc');
         hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado por Recrutamento Interno', null, 'cdd_slc_int');
         hide_on_load('txt_cargo_att', 'Novo cargo', null, 'div_novo_cargo');
+        hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado por Recrutamento Interno', null, 'rh_alteracoes');
+        hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado pelo G&G', null, 'rh_alteracoes');
         // ATV 51
         hide_on_load('rd_dst_dp', 'Não', null, 'dt_cntr_clb');
         hide_on_load('rd_dst_dp', 'Alteração/Inclusão de informações ao Gente & Gestão', null, 'txt_dp_alter');
