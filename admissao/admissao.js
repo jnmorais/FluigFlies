@@ -407,6 +407,7 @@ $(document).ready(function () {
         hide_on_load('rd_rh_sst', 'Sim, informar SST.', null, 'descricao_cargos');
         hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado pelo G&G', null, 'cdd_slc');
         hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado por Recrutamento Interno', null, 'cdd_slc_int');
+        hide_on_load('txt_cargo_att', 'Novo cargo', null, 'div_novo_cargo');
         // ATV 51
         hide_on_load('rd_dst_dp', 'Não', null, 'dt_cntr_clb');
         hide_on_load('rd_dst_dp', 'Alteração/Inclusão de informações ao Gente & Gestão', null, 'txt_dp_alter');
@@ -478,7 +479,7 @@ function hide_on_load(campo, valor1, valor2, show) {
 }
 function setSelectedZoomItem(selectedItem) {
     if (selectedItem.inputId == "txt_cargo_att") {
-        selectedItem["Cargo"] == "Não encontrei!" || selectedItem["Cargo"] == "" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
+        selectedItem["Cargo"] == "Novo cargo" || selectedItem["Cargo"] == "" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
     }
 }
 function substringMatcher(strs) {
