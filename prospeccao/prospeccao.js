@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#show_fNTorna,#show_fNFisc,#show_fNFinc,#show_preViabApv,#show_estOrc,#show_preViab_infos,#show_mntRpv,#show_cttAprv,#tktMedio,#div_tktMedio,#presRetorno,#dados_corretor").hide()
+    $("#show_fNTorna,#show_fNFisc,#show_fNFinc,#show_preViabApv,#show_estOrc,#show_preViab_infos,#show_mntRpv,#show_cttAprv,#tktMedio,#div_tktMedio,#presRetorno,#dados_corretor,#div_anx_viabMinuta").hide()
     if (ATV) {
         $(".select2").select2();
         // CONTROLA CLICKS
@@ -76,6 +76,9 @@ $(document).ready(function () {
         // Assinatura do contrato (INTER E TERRENISTA)
         show_on_click("rd_cttAprv", "Sim", null, "show_cttAprv")
         hide_on_load("rd_cttAprv", "Sim", null, "show_cttAprv")
+        // Validação da minuta vs viabilidadee
+        show_on_click("rd_ansViab", "Sim", null, "div_anx_viabMinuta")
+        hide_on_load("rd_ansViab", "Sim", null, "div_anx_viabMinuta")
         // Analise Comercial - tktMedio
         show_on_click("rd_ansComrc", "Sim", null, "tktMedio")
         hide_on_load("rd_ansComrc", "Sim", null, "tktMedio")
