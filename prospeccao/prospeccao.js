@@ -67,9 +67,9 @@ $(document).ready(function () {
         hide_on_load("rd_preViab", "Não", null, "show_preViabApv")
         // Negociacao Terrenista
         show_on_click("rd_negTrr", "Sim", null, "dados_corretor")
-        show_on_click("rd_negTrr", "Sim", null, "slt_viabFinal")
+        show_on_click("rd_negTrr", "Sim", null, "div_slt_viabFinal")
         hide_on_load("rd_negTrr", "Sim", null, "dados_corretor")
-        hide_on_load("rd_negTrr", "Sim", null, "slt_viabFinal")
+        hide_on_load("rd_negTrr", "Sim", null, "div_slt_viabFinal")
         // Presidencia
         show_on_click("rd_PresTrrAutorizado", "Sim", null, "div_tktMedio")
         show_on_click("rd_PresTrrAutorizado", "Não", null, "presRetorno")
