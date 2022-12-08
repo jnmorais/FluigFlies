@@ -121,6 +121,20 @@ $(document).ready(function () {
             }
         });
     }
+    if (ATV == 40) {
+        let anexos = parent.parent.ECM.attachmentTable.getData()
+        for (let i = 0; i < anexos.length; i++) {
+            if (anexos[i].description.search("Anexo_PreViabilidadeElaborada") == 0) {
+                let codigo = anexos[i].description.split("Anexo_PreViabilidadeElaborada_")[1]
+                // anexosArr.push({codigo: codigo,descricao: anexos[i].description, nome_arquivo:anexos[i].name})
+                $("<option></option>", {
+                    text: "Código: " + codigo + " | Arquivo: " + anexos[i].name,
+                    value: "Código: " + codigo + " | Arquivo: " + anexos[i].name
+                }
+                ).appendTo("#slt_viabFinal");
+            }
+        }
+    }
 });
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
 function show_on_click(campo, valor1, valor2, show) {
