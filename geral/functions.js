@@ -25,16 +25,8 @@ function visualizarSolicitacao() {
     parent.open(url + $("#solicitacao").val());
 }
 function visualizarRelacao() {
-    FLUIGC.modal({
-        title: 'Relação Cargo x Atividade',
-        content: '<iframe src="https://interconstrutora136608.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?processID=relacao_cargoAtividade" frameborder="0"></iframe>',
-        id: 'fluig-modal',
-        size: 'large',
-        actions: [{
-            'label': 'Fechar',
-            'autoClose': true
-        }]
-    }, function(err, data) {if(err) {} else {}});
+    let url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?processID=relacao_cargoAtividade"
+    parent.open(url);
 }
 function openForm() {
     $("#overlay").toggle();
