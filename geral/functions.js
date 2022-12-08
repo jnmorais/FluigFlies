@@ -24,6 +24,18 @@ function visualizarSolicitacao() {
     var url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID="
     parent.open(url + $("#solicitacao").val());
 }
+function visualizarRelacao() {
+    FLUIGC.modal({
+        title: 'Relação Cargo x Atividade',
+        content: '<iframe src="https://interconstrutora136608.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?processID=relacao_cargoAtividade" frameborder="0"></iframe>',
+        id: 'fluig-modal',
+        size: 'large',
+        actions: [{
+            'label': 'Fechar',
+            'autoClose': true
+        }]
+    }, function(err, data) {if(err) {} else {}});
+}
 function openForm() {
     $("#overlay").toggle();
     window.parent.$("#workflowview-header").toggle()

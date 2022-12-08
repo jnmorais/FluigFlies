@@ -279,6 +279,10 @@ $(document).ready(function () {
     if (ATV == 352 || ATV == null) {
         show_on_click("rd_etg_si_3", "Sim", null, "show_acessos_3")
     }
+    // ATV 390 - (SISTEMAS) - HCM;
+    if (ATV == 390 || ATV == null) {
+        show_on_click("rd_etg_si_4", "Sim", null, "show_acessos_4")
+    }
     if (ATV || FM) {
         if ($("#rd_escol").val() == "Ensino Médio Completo (Técnico na área)" || $("#rd_escol").val() == "Ensino Médio Incompleto" || $("#rd_escol").val() == "Ensino Superior Incompleto (cursando)" || $("#rd_escol").val() == "Ensino Superior Completo" || $("#rd_escol").val() == "Ensino Fundamental Incompleto (cursando)") {
             $("#cargoResp,#cargoAut").show()
@@ -425,6 +429,8 @@ $(document).ready(function () {
         hide_on_load("rd_etg_si_2", "Sim", null, "show_acessos_2")
         // ATV 352 - (SISTEMAS) - FLUIG;
         hide_on_load("rd_etg_si_3", "Sim", null, "show_acessos_3")
+        // ATV 390 - (SISTEMAS) - HCM;
+        hide_on_load("rd_etg_si_4", "Sim", null, "show_acessos_4")
         // EXIBIR CARGO SELECIONADO
         $("#novo_cargo").val() != "" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
         // Carrega valor dos input range

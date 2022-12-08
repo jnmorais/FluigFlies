@@ -245,12 +245,16 @@ span.form-control {
 .visualizarSolicitacao {
     bottom: 230px;
 }
+.visualizarRelacao {
+    bottom: 305px;
+}
 /* OCULTAR OS BOTOES MOBILE */
 @media screen and (max-width: 960px) {
     #imprimirForm,
     #viewDoc,
     #sendMail,
-    #visualizarSolicitacao {
+    #visualizarSolicitacao,
+    #visualizarRelacao {
         display: none !important;
     }
 }
