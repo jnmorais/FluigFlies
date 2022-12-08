@@ -67,7 +67,9 @@ $(document).ready(function () {
         hide_on_load("rd_preViab", "Não", null, "show_preViabApv")
         // Negociacao Terrenista
         show_on_click("rd_negTrr", "Sim", null, "dados_corretor")
+        show_on_click("rd_negTrr", "Sim", null, "slt_viabFinal")
         hide_on_load("rd_negTrr", "Sim", null, "dados_corretor")
+        hide_on_load("rd_negTrr", "Sim", null, "slt_viabFinal")
         // Presidencia
         show_on_click("rd_PresTrrAutorizado", "Sim", null, "div_tktMedio")
         show_on_click("rd_PresTrrAutorizado", "Não", null, "presRetorno")
@@ -128,8 +130,8 @@ $(document).ready(function () {
                 let codigo = anexos[i].description.split("Anexo_PreViabilidadeElaborada_")[1]
                 // anexosArr.push({codigo: codigo,descricao: anexos[i].description, nome_arquivo:anexos[i].name})
                 $("<option></option>", {
-                    text: "Código: " + codigo + " | Arquivo: " + anexos[i].name,
-                    value: "Código: " + codigo + " | Arquivo: " + anexos[i].name
+                    text: "Código do anexo da viabilidade escolhida: " + codigo,
+                    value: "Código do anexo da viabilidade escolhida: " + codigo
                 }
                 ).appendTo("#slt_viabFinal");
             }
