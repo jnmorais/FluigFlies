@@ -1,9 +1,9 @@
 $(document).ready(function () {
     if(ATV){
         $("#AttOrc_anexos,#AttViab_anexos").hide()
-        show_on_click("rd_infoAttOrc","Sim",null,"AttOrc_anexos")
+        show_on_click("rd_infoAttOrc","Não",null,"AttOrc_anexos")
         show_on_click("rd_infoAttViab","Sim",null,"AttViab_anexos")
-        hide_on_load("rd_infoAttOrc","Sim",null,"AttOrc_anexos")
+        hide_on_load("rd_infoAttOrc","Não",null,"AttOrc_anexos")
         hide_on_load("rd_infoAttViab","Sim",null,"AttViab_anexos")
     }
 })
