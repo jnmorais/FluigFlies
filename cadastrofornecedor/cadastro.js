@@ -37,7 +37,7 @@ $(document).ready(function () {
     });
     if ($("[name$='rd_tipofornecedor']:checked").val() != "") {
         if ($("[name$='rd_tipofornecedor']:checked").val() == "Material") {
-            $("#vl_anx_cnpj, #vl_anx_matqua, #vl_anx_ficha, #vl_anx_cs, #vl_anx_cbj").is(":hidden") ? $("#vl_anx_cnpj, #vl_anx_matqua, #vl_anx_ficha, #vl_anx_cs, #vl_anx_cbj").show() : false
+            $("#vl_anx_cnpj, #vl_anx_ficha, #vl_anx_cs, #vl_anx_cbj").is(":hidden") ? $("#vl_anx_cnpj, #vl_anx_ficha, #vl_anx_cs, #vl_anx_cbj").show() : false
             $("#txt_nt1,#txt_nt5,#txt_nt2,#txt_nt3").is(":hidden") ? $("#txt_nt1,#txt_nt5,#txt_nt2,#txt_nt3").show() : false
             $("#vl_anx_corretor, #vl_anx_projetos, #vl_anx_matqua, #vl_anx_rg, #vl_anx_compestadual, #vl_anx_ima, #vl_anx_nf, #vl_anx_dps").is(":visible") ? $("#vl_anx_corretor, #vl_anx_projetos, #vl_anx_matqua, #vl_anx_rg, #vl_anx_compestadual, #vl_anx_ima, #vl_anx_nf, #vl_anx_dps").hide() : false
         }
