@@ -1,45 +1,16 @@
 $(document).ready(function () {
-    let arr_cbxsi = []
-
     if (ATV == 0 || ATV == 1) {
         var sistemas = ["Nenhum sistema será necessário", "Mega", "Expert", "Approvo", "Adobe/Doc Sign", "Construtor de vendas", "Fluig", "HCM"];
         /* Instantiated new autocomplete */
         var myAutocomplete = FLUIGC.autocomplete('#slt_sistemas', { source: substringMatcher(sistemas), name: 'sistemas', displayKey: 'sistema', tagClass: 'tag-gray', type: 'tagAutocomplete', highlight: true, hint: 'true', autoLoading: 'false' });
+        var myTag = FLUIGC.autocomplete('#slt_softwares');
     }
     // Controla os cliques nos campos
     if (ATV) {
-        // $("#rd_etp_na, #vl_crtComb, #rd_tpPc,#entrg_RossiEqp,#pastasRede,#anx_ctt_ass,#show_acessos,#mega, #expert, #approvo, #adobe, #cv, #hcm, #microtik, #uc2b").hide()
-        $("#rd_patrm,#entrg_Rossi,#softwares").hide()
+        $("#rd_etp_na, #vl_crtComb, #rd_tpPc,#entrg_RossiEqp,#pastasRede,#anx_ctt_ass,#show_acessos,#mega, #expert, #approvo, #adobe, #cv, #hcm, #microtik, #uc2b").hide()
+        $("#rd_patrm,#entrg_Rossi,#softwares,#rd_etp_na").hide()
         // Habilita pesquisa em select
         $(".select2").select2()
-        // CHECKBOX SISTEMAS
-        $(".cbx_si").change(function () {
-            $("#" + $(this).attr('id_div')).toggle();
-        });
-        // Desmarca todos os sistemas ao marcar o cbx_nhm
-        var divs = ['mega', 'expert', 'approvo', 'adobe', 'cv', 'hcm', 'microtik', 'uc2b'];
-        $("#cbx_nhm").click(function () {
-            $("input[type='checkbox'].cbx_si:checked").prop('checked', false);
-            for (var i = 0; i < divs.length; i++) {
-                if ($("#" + divs[i]).is(':visible')) {
-                    $("#" + divs[i]).hide()
-                }
-            }
-        });
-        // Bloqueia os sistemas caso cbx_nhm esteja marcado
-        $('#cbx_nhm').change(function () {
-            if ($(this).prop("checked")) {
-                $('.cbx_si').attr('disabled', true);
-                return;
-            }
-            $('.cbx_si').attr('disabled', false);
-            // not checked
-        });
-        // EXIBE OS SISTEMAS CLICADOS
-        $($('#sistemas').find("input[type='checkbox']:checked")).each(function () {
-            $("#" + $(this).attr('id_div')).show()
-            arr_cbxsi.push($(this).attr('id_div'))
-        });
         // CHECKBOX SISTEMAS FIM
         show_on_click("rd_na", "Sim", null, "rd_etp_na")
         show_on_click("rd_crtComb", "Sim", null, "vl_crtComb")
@@ -89,14 +60,6 @@ $(document).ready(function () {
         hide_on_load("rd_etg_si_3", "Sim", null, "show_acessos_3")
         // ATV 93 - (SISTEMAS) - HCM;
         hide_on_load("rd_etg_si_4", "Sim", null, "show_acessos_4")
-    }
-    // Sistemas
-    if (ATV == 39 || ATV == null || FM == "VIEW") {
-        $("#entrg_fwc,#entrg_mega,#entrg_expert,#entrg_approvo,#entrg_adobe,#entrg_cv,#entrg_hcm,#entrg_microtik,#entrg_uc2b").hide()
-        for (let index = 0; index < arr_cbxsi.length; index++) {
-            arr_cbxsi[index] == "mega" || arr_cbxsi[index] == "expert" ? $("#entrg_fwc").show() : false
-            $("#entrg_" + arr_cbxsi[index]).show()
-        }
     }
 });
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
