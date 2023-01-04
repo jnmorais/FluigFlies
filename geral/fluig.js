@@ -1,6 +1,6 @@
 // VARIAVEIS GLOBAIS
-const url_prod    = "https://interconstrutora136393.fluig.cloudtotvs.com.br/"
-const url_homg    = "https://interconstrutora136608.fluig.cloudtotvs.com.br/"
+const url_prod    = "https://meuinc136393.fluig.cloudtotvs.com.br/"
+const url_homg    = "https://meuinc136608.fluig.cloudtotvs.com.br/"
 const url_docs    = "portal/p/1/ecmnavigation?app_ecm_navigation_doc="
 const url_slts    = "portal/p/1/pageworkflowview?app_ecm_workflowview_processInstanceId="
 // Retornar a URL do ambiente

@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    let url_prod = "https://interconstrutora136393.fluig.cloudtotvs.com.br/api/public/ecm/dataset/search?datasetId=009"
-    let url_homg = "https://interconstrutora136608.fluig.cloudtotvs.com.br/api/public/ecm/dataset/search?datasetId=ds_consultaprospeccao"
+    let url_prod = "https://meuinc136393.fluig.cloudtotvs.com.br/api/public/ecm/dataset/search?datasetId=009"
+    let url_homg = "https://meuinc136608.fluig.cloudtotvs.com.br/api/public/ecm/dataset/search?datasetId=ds_consultaprospeccao"
     let url_base = window.location.href
     let url_dataset = ""
 

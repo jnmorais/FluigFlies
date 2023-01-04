@@ -17,15 +17,15 @@ $(document).ready(function () {
     })
 })
 function viewDoc() {
-    var url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/ecmnavigation?app_ecm_navigation_doc=";
+    var url = "https://meuinc136393.fluig.cloudtotvs.com.br/portal/p/1/ecmnavigation?app_ecm_navigation_doc=";
     parent.open(url + $("#documento").val());
 }
 function visualizarSolicitacao() {
-    var url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID="
+    var url = "https://meuinc136393.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID="
     parent.open(url + $("#solicitacao").val());
 }
 function visualizarRelacao() {
-    let url = "https://interconstrutora136393.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?processID=relacao_cargoAtividade"
+    let url = "https://meuinc136393.fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?processID=relacao_cargoAtividade"
     parent.open(url);
 }
 function openForm() {
