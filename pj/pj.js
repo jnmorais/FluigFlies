@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $("#rd_etp_na, #vl_crtComb, #rd_tpPc,#entrg_RossiEqp,#pastasRede,#anx_ctt_ass,#show_acessos,#mega, #expert, #approvo, #adobe, #cv, #hcm, #microtik, #uc2b,#rd_patrm,#entrg_Rossi,#softwares,#rd_etp_na").hide()
     if (ATV == 0 || ATV == 1) {
         var sistemas = ["Nenhum sistema será necessário", "Mega", "Expert", "Approvo", "Adobe/Doc Sign", "Construtor de vendas", "Fluig", "HCM"];
         /* Instantiated new autocomplete */
@@ -7,8 +8,6 @@ $(document).ready(function () {
     }
     // Controla os cliques nos campos
     if (ATV) {
-        $("#rd_etp_na, #vl_crtComb, #rd_tpPc,#entrg_RossiEqp,#pastasRede,#anx_ctt_ass,#show_acessos,#mega, #expert, #approvo, #adobe, #cv, #hcm, #microtik, #uc2b").hide()
-        $("#rd_patrm,#entrg_Rossi,#softwares,#rd_etp_na").hide()
         // Habilita pesquisa em select
         $(".select2").select2()
         // CHECKBOX SISTEMAS FIM
