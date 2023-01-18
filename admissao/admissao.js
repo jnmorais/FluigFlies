@@ -1,27 +1,29 @@
 $(document).ready(function () {
     $(".select2").select2();
-    $('[data-toggle="tooltip"]').tooltip()
+    $("[data-toggle='tooltip']").tooltip()
     // ATV 0|1|4
     if (ATV == 0 || ATV == 1) {
         var sistemas = ["Nenhum sistema será necessário", "Mega", "Expert", "Approvo", "Adobe/Doc Sign", "Construtor de vendas", "Fluig", "HCM"];
         /* Instantiated new autocomplete */
-        var myAutocomplete = FLUIGC.autocomplete('#slt_sistemas', { source: substringMatcher(sistemas), name: 'sistemas', displayKey: 'sistema', tagClass: 'tag-gray', type: 'tagAutocomplete', highlight: true, hint: 'true', autoLoading: 'false' });
+        var myAutocomplete = FLUIGC.autocomplete("#slt_sistemas", { source: substringMatcher(sistemas), name: "sistemas", displayKey: "sistema", tagClass: "tag-gray", type: "tagAutocomplete", highlight: true, hint: "true", autoLoading: "false" });
+        var myTag = FLUIGC.autocomplete('#slt_softwares');
     }
-    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null) {
-        show_on_click('rd_mtvCntr', 'Substituição de colaborador', 'Promoção (Efetivação de Estagiário pós desligamento)', 'txt_prSb');
-        show_on_click('rd_mtvCntr', 'Substituição de colaborador', null, 'vlr_Sb');
-        show_on_click('rd_idioma', 'Sim', null, 'txt_idioma');
-        show_on_click('rd_loc', 'Obra', null, 'documentacao_funcionario');
-        show_on_click('rd_hrtb', 'Outros', null, 'txt_hrtb');
-        show_on_click('rd_crl', 'Sim', null, 'anx_crl');
-        show_on_click('rd_na', 'Sim', null, 'rd_etp_na');
-        show_on_click('rd_crtComb', 'Sim', null, 'vl_crtComb');
-        show_on_click('rd_pc', 'Sim, já tem computador', null, 'rd_patrm');
-        show_on_click('rd_pc', 'Não, mas será necessário alugar um computador', null, 'entrg_Rossi');
-        show_on_click('rd_pc', 'Não, mas será necessário alugar um computador', null, 'softwares');
-        show_on_click('rd_acsRd', 'Sim', null, 'pastasRede');
-        show_on_click('rd_eqpRossi', 'Sim', null, 'entrg_RossiEqp');
-        show_on_click('rd_cntr', 'Estágio', null, 'estagio');
+    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 37 || ATV == null) {
+        show_on_click("rd_mtvCntr", "Substituição de colaborador", "Promoção (Efetivação de Estagiário pós desligamento)", "txt_prSb");
+        show_on_click("rd_mtvCntr", "Substituição de colaborador", null, "vlr_Sb");
+        show_on_click("rd_idioma", "Sim", null, "txt_idioma");
+        show_on_click("rd_loc", "Obra", null, "documentacao_funcionario");
+        show_on_click("rd_loc", "Obra", null, "slt_spe");
+        show_on_click("rd_hrtb", "Outros", null, "txt_hrtb");
+        show_on_click("rd_crl", "Sim", null, "anx_crl");
+        show_on_click("rd_na", "Sim", null, "rd_etp_na");
+        show_on_click("rd_crtComb", "Sim", null, "vl_crtComb");
+        show_on_click("rd_pc", "Sim, já tem computador", null, "rd_patrm");
+        show_on_click("rd_pc", "Não, mas será necessário alugar um computador", null, "entrg_Rossi");
+        show_on_click("rd_pc", "Não, mas será necessário alugar um computador", null, "softwares");
+        show_on_click("rd_acsRd", "Sim", null, "pastasRede");
+        show_on_click("rd_eqpRossi", "Sim", null, "entrg_RossiEqp");
+        show_on_click("rd_cntr", "Estágio", null, "estagio");
         // CONTROLA O INPUT COMPETENCIAS
         $("input[type='range']").on("input", function () {
             var comportamento = $(this).attr("compData").split("vs");
@@ -46,7 +48,7 @@ $(document).ready(function () {
             }
         });
         // CONTROLA O TEXTO DOS CARGOS
-        $('#txt_cargo').on('change', function () {
+        $("#txt_cargo").on("change", function () {
             // $("[name='txt_supDsj'],#cargoResp blockquote,#cargoAut blockquote").text("")
             $("#rd_escol").val("");
             $("#txt_supDsj,#cargoResp,#cargoAut").hide()
@@ -241,47 +243,45 @@ $(document).ready(function () {
     }
     // ATV 9
     if (ATV == 9 || ATV == null) {
-        show_on_click('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh');
-        show_on_click('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh');
-        show_on_click('rd_avl_rh', 'Reprovada', null, 'txt_rpv_rh');
-        FLUIGC.toast({ title: 'Recursos Humanos: ', message: 'A edição do formulário está liberada!', type: 'info' });
+        show_on_click("rd_avl_rh", "Aprovada", "Aprovada c/ Urgência", "txt_obs_rh");
+        show_on_click("rd_avl_rh", "Alteração/Inclusão de informações", null, "txt_alt_rh");
+        show_on_click("rd_avl_rh", "Reprovada", null, "txt_rpv_rh");
+        FLUIGC.toast({ title: "Recursos Humanos: ", message: "A edição do formulário está liberada!", type: "info" });
     }
     // ATV 37
     if (ATV == 37 || ATV == null) {
-        show_on_click('rd_selecao_rh', 'Sim, candidato selecionado pelo G&G', null, 'cdd_slc');
-        show_on_click('rd_selecao_rh', 'Sim, candidato selecionado por Recrutamento Interno', null, 'cdd_slc');
-        show_on_click('rd_selecao_rh', 'Sim, admissão com promoção de estagiário', null, 'cdd_slc');
-        FM == "MOD" ? FLUIGC.toast({ title: 'Recursos Humanos: ', message: 'A edição do formulário está liberada!', type: 'info' }) : false
+        show_on_click_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G","Sim, candidato selecionado por Recrutamento Interno","Sim, admissão com promoção de estagiário", "cdd_slc");
+        FM == "MOD" ? FLUIGC.toast({ title: "Recursos Humanos: ", message: "A edição do formulário está liberada!", type: "info" }) : false
     }
     // ATV 51
     if (ATV == 51 || ATV == null) {
-        show_on_click('rd_dst_dp', 'Não', null, 'dt_cntr_clb');
-        show_on_click('rd_dst_dp', 'Alteração/Inclusão de informações ao Gente & Gestão', null, 'txt_dp_alter');
+        show_on_click("rd_dst_dp", "Não", null, "dt_cntr_clb");
+        show_on_click("rd_dst_dp", "Alteração/Inclusão de informações ao Gente & Gestão", null, "txt_dp_alter");
     }
     // ATV 63
     if (ATV == 63 || ATV == null) {
-        show_on_click('rd_int_rh', 'Sim', null, 'dt_int_rh');
+        show_on_click("rd_int_rh", "Sim", null, "dt_int_rh");
     }
     // ATV 150
     if (ATV == 150 || ATV == null) {
         show_on_click("rd_etg_infra_acs", "Sim", null, "show_clb_mail");
     }
-    // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
-    if (ATV == 348 || ATV == null) {
-        show_on_click("rd_etg_si_1", "Sim", null, "show_acessos_1")
-    }
-    // ATV 350 - (SISTEMAS) - CV e Adobe
-    if (ATV == 350 || ATV == null) {
-        show_on_click("rd_etg_si_2", "Sim", null, "show_acessos_2")
-    }
-    // ATV 352 - (SISTEMAS) - FLUIG;
-    if (ATV == 352 || ATV == null) {
-        show_on_click("rd_etg_si_3", "Sim", null, "show_acessos_3")
-    }
-    // ATV 390 - (SISTEMAS) - HCM;
-    if (ATV == 390 || ATV == null) {
-        show_on_click("rd_etg_si_4", "Sim", null, "show_acessos_4")
-    }
+    // // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
+    // if (ATV == 348 || ATV == null) {
+    //     show_on_click("rd_etg_si_1", "Sim", null, "show_acessos_1")
+    // }
+    // // ATV 350 - (SISTEMAS) - CV e Adobe
+    // if (ATV == 350 || ATV == null) {
+    //     show_on_click("rd_etg_si_2", "Sim", null, "show_acessos_2")
+    // }
+    // // ATV 352 - (SISTEMAS) - FLUIG;
+    // if (ATV == 352 || ATV == null) {
+    //     show_on_click("rd_etg_si_3", "Sim", null, "show_acessos_3")
+    // }
+    // // ATV 390 - (SISTEMAS) - HCM;
+    // if (ATV == 390 || ATV == null) {
+    //     show_on_click("rd_etg_si_4", "Sim", null, "show_acessos_4")
+    // }
     if (ATV || FM) {
         if ($("#rd_escol").val() == "Ensino Médio Completo (Técnico na área)" || $("#rd_escol").val() == "Ensino Médio Incompleto" || $("#rd_escol").val() == "Ensino Superior Incompleto (cursando)" || $("#rd_escol").val() == "Ensino Superior Completo" || $("#rd_escol").val() == "Ensino Fundamental Incompleto (cursando)") {
             $("#cargoResp,#cargoAut").show()
@@ -390,44 +390,43 @@ $(document).ready(function () {
             }
         }
         // ATV 0/4
-        hide_on_load('rd_mtvCntr', 'Substituição de colaborador', 'Promoção (Efetivação de Estagiário pós desligamento)', 'txt_prSb');
-        hide_on_load('rd_mtvCntr', 'Substituição de colaborador', 'Promoção (Efetivação de Estagiário pós desligamento)', 'txt_prSb');
-        hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, 'vlr_Sb');
-        hide_on_load('rd_idioma', 'Sim', null, 'txt_idioma');
-        hide_on_load('rd_loc', 'Obra', null, 'documentacao_funcionario');
-        hide_on_load('rd_hrtb', 'Outros', null, 'txt_hrtb');
-        hide_on_load('rd_crl', 'Sim', null, 'anx_crl');
-        hide_on_load('rd_na', 'Sim', null, 'rd_etp_na');
-        hide_on_load('rd_crtComb', 'Sim', null, 'vl_crtComb');
-        hide_on_load('rd_pc', 'Sim, já tem computador', null, 'rd_patrm');
-        hide_on_load('rd_pc', 'Não, mas será necessário alugar um computador', null, 'entrg_Rossi');
-        hide_on_load('rd_pc', 'Não, mas será necessário alugar um computador', null, 'softwares');
-        hide_on_load('rd_acsRd', 'Sim', null, 'pastasRede');
-        hide_on_load('rd_eqpRossi', 'Sim', null, 'entrg_RossiEqp');
-        hide_on_load('rd_cntr', 'Estágio', null, 'estagio');
+        hide_on_load("rd_mtvCntr", "Substituição de colaborador", "Promoção (Efetivação de Estagiário pós desligamento)", "txt_prSb");
+        // hide_on_load("rd_mtvCntr","Substituição de colaborador","Promoção (Efetivação de Estagiário pós desligamento)",null,"txt_prSb");
+        hide_on_load("rd_mtvCntr", "Substituição de colaborador", null, "vlr_Sb");
+        hide_on_load("rd_idioma", "Sim", null, "txt_idioma");
+        hide_on_load("rd_loc", "Obra", null, "documentacao_funcionario");
+        hide_on_load("rd_loc", "Obra", null, "slt_spe");
+        hide_on_load("rd_hrtb", "Outros", null, "txt_hrtb");
+        hide_on_load("rd_crl", "Sim", null, "anx_crl");
+        hide_on_load("rd_na", "Sim", null, "rd_etp_na");
+        hide_on_load("rd_crtComb", "Sim", null, "vl_crtComb");
+        hide_on_load("rd_pc", "Sim, já tem computador", null, "rd_patrm");
+        hide_on_load("rd_pc", "Não, mas será necessário alugar um computador", null, "entrg_Rossi");
+        hide_on_load("rd_pc", "Não, mas será necessário alugar um computador", null, "softwares");
+        hide_on_load("rd_acsRd", "Sim", null, "pastasRede");
+        hide_on_load("rd_eqpRossi", "Sim", null, "entrg_RossiEqp");
+        hide_on_load("rd_cntr", "Estágio", null, "estagio");
         // ATV 9
-        hide_on_load('rd_avl_rh', 'Aprovada', 'Aprovada c/ Urgência', 'txt_obs_rh');
-        hide_on_load('rd_avl_rh', 'Alteração/Inclusão de informações', null, 'txt_alt_rh');
-        hide_on_load('rd_avl_rh', 'Reprovada', null, 'txt_rpv_rh');
+        hide_on_load("rd_avl_rh", "Aprovada", "Aprovada c/ Urgência", "txt_obs_rh");
+        hide_on_load("rd_avl_rh", "Alteração/Inclusão de informações", null, "txt_alt_rh");
+        hide_on_load("rd_avl_rh", "Reprovada", null, "txt_rpv_rh");
         // ATV 37
-        hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado pelo G&G', null, 'cdd_slc');
-        hide_on_load('rd_selecao_rh', 'Sim, candidato selecionado por Recrutamento Interno', null, 'cdd_slc');
-        hide_on_load('rd_selecao_rh', 'Sim, admissão com promoção de estagiário', null, 'cdd_slc');
+        hide_on_load_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G","Sim, candidato selecionado por Recrutamento Interno","Sim, admissão com promoção de estagiário", "cdd_slc");
         // ATV 51
-        hide_on_load('rd_dst_dp', 'Não', null, 'dt_cntr_clb');
-        hide_on_load('rd_dst_dp', 'Alteração/Inclusão de informações ao Gente & Gestão', null, 'txt_dp_alter');
+        hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb");
+        hide_on_load("rd_dst_dp", "Alteração/Inclusão de informações ao Gente & Gestão", null, "txt_dp_alter");
         // ATV 63
-        hide_on_load('rd_int_rh', 'Sim', null, 'dt_int_rh');
+        hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh");
         // ATV 150
         hide_on_load("rd_etg_infra_acs", "Sim", null, "show_clb_mail");
         // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
-        hide_on_load("rd_etg_si_1", "Sim", null, "show_acessos_1")
-        // ATV 350 - (SISTEMAS) - CV e Adobe
-        hide_on_load("rd_etg_si_2", "Sim", null, "show_acessos_2")
-        // ATV 352 - (SISTEMAS) - FLUIG;
-        hide_on_load("rd_etg_si_3", "Sim", null, "show_acessos_3")
-        // ATV 390 - (SISTEMAS) - HCM;
-        hide_on_load("rd_etg_si_4", "Sim", null, "show_acessos_4")
+        // hide_on_load("rd_etg_si_1", "Sim", null, "show_acessos_1")
+        // // ATV 350 - (SISTEMAS) - CV e Adobe
+        // hide_on_load("rd_etg_si_2", "Sim", null, "show_acessos_2")
+        // // ATV 352 - (SISTEMAS) - FLUIG;
+        // hide_on_load("rd_etg_si_3", "Sim", null, "show_acessos_3")
+        // // ATV 390 - (SISTEMAS) - HCM;
+        // hide_on_load("rd_etg_si_4", "Sim", null, "show_acessos_4")
         // EXIBIR CARGO SELECIONADO
         $("#novo_cargo").val() != "" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
         // Carrega valor dos input range
@@ -450,7 +449,7 @@ $(document).ready(function () {
         }
     }
 })
-// Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
+// Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir) - simples
 function show_on_click(campo, valor1, valor2, show) {
     $("[name$='" + campo + "']").click(function () {
         if (valor2 == null) {
@@ -468,7 +467,23 @@ function show_on_click(campo, valor1, valor2, show) {
         }
     });
 }
-// Controla a exibição dos campos ocultos
+function show_on_click_custom(campo, valor1, valor2, valor3, show) {
+    $("[name$='" + campo + "']").click(function () {
+        if ($(this).val() == valor1 || $(this).val() == valor2 || $(this).val() == valor3) {
+            $("#" + show).show();
+        } else {
+            $("#" + show).hide();
+        }
+    });
+}
+function hide_on_load_custom(campo, valor1, valor2, valor3, show) {
+    if ($("[name$='" + campo + "']:checked").val() == valor1 || $("[name$='" + campo + "']:checked").val() == valor2 || $("[name$='" + campo + "']:checked").val() == valor3) {
+        $("#" + show).show();
+    } else {
+        $("#" + show).hide();
+    }
+}
+// Controla a exibição dos campos ocultos simples
 function hide_on_load(campo, valor1, valor2, show) {
     if (valor2 == null) {
         if ($("[name$='" + campo + "']:checked").val() == valor1) {
@@ -493,7 +508,7 @@ function substringMatcher(strs) {
     return function findMatches(q, cb) {
         var matches, substrRegex;
         matches = [];
-        substrRegex = new RegExp(q, 'i');
+        substrRegex = new RegExp(q, "i");
         $.each(strs, function (i, str) {
             if (substrRegex.test(str)) {
                 matches.push({
