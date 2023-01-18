@@ -2,33 +2,17 @@ $(document).ready(function () {
     var rd_mtvDslg1 = "Antecipação do término de contrato de experiência"
     var rd_mtvDslg2 = "Término do contrato de experiência"
     var rd_mtvDslg3 = "Desligamento Empregador (Empresa)"
-    $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg,#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh,#rh_fdbk,#rh_fdbk_sim,#premioApv,#bonus_producao").hide()
+    var rd_mtvDslg6 = "Acordo entre as partes (conforme art. 484-A CLT)"
+    $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg,#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh,#rh_fdbk,#div_txt_rh_fdb,#premioApv,#msg_transf,#div_rd_clbLocS,#div_rd_clbLocAnx,#aso_obrigatorio,#sistemas_utilizados").hide()
     if (FM == "ADD" || FM == "MOD") {
         $(".select2").select2()
-        // Carregar SPE
-        $.ajax({
-            type: "GET",
-            url: "https://experterp.com.br/inter/apiFluig/getSPE.php",
-            dataType: "json",
-            success: function (response) {
-                $.each(response.data, function (index, value) {
-                    $("<option></option>", {
-                        value: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME,
-                        text: "(" + response.data[index].CODIGO + ") - " + response.data[index].NOME
-                    }).appendTo("#slt_spe")
-                })
-            },
-            error: function () {
-                $.each(response.data, function (index, value) {
-                    $("<option></option>", {
-                        value: "Erro ao carregar SPEs",
-                        text: "Erro ao carregar SPEs"
-                    }).appendTo("#slt_spe")
-                })
-            }
-        })
     }
-    if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == 9 || ATV == 13 || ATV == 29 || ATV == 58 || ATV == 27 || ATV == 15 || ATV == 19 || ATV == 21 || ATV == 23 || ATV == 25 || ATV == 36 || ATV == 127 || ATV == null) {
+    if (ATV == 0 || ATV == 1) {
+        var sistemas = ["Nenhum sistema era utilizado", "Mega", "Expert", "Approvo", "Adobe/Doc Sign", "Construtor de vendas", "Fluig", "HCM"];
+        /* Instantiated new autocomplete */
+        var myAutocomplete = FLUIGC.autocomplete("#slt_sistemas", { source: substringMatcher(sistemas), name: "sistemas", displayKey: "sistema", tagClass: "tag-gray", type: "tagAutocomplete", highlight: true, hint: "true", autoLoading: "false" });
+    }
+    if (ATV) {
         // CONTROLA EXIBICAO DOS INPUTS QUANDO CLICADOS
         $("input[name$='rd_Estg']").click(function (e) {
             $("input[name$='rd_mtvDslg']").removeAttr('checked')
@@ -51,80 +35,52 @@ $(document).ready(function () {
                 case (rd_mtvDslg == rd_mtvDslg1 && rd_Estg == "Não"):
                 case (rd_mtvDslg == rd_mtvDslg2 && rd_Estg == "Não"):
                 case (rd_mtvDslg == rd_mtvDslg3 && rd_Estg == "Não"):
+                case (rd_mtvDslg == rd_mtvDslg6 && rd_Estg == "Não"):
                     $("#div_rd_tpAvs").show()
                     $("#div_anx_demissao").hide()
-                break;
+                    break;
                 case (rd_mtvDslg == "Pedido de desligamento pelo colaborador"):
                     $("#div_anx_demissao").show()
                     $("#div_rd_tpAvs").hide()
-                break;
+                    break;
                 default:
                     $("#div_anx_demissao,#div_rd_tpAvs").hide()
                     break;
             }
         })
-        $("input[name$='rd_bonus_producao']").click(function (e) {
-            if ($("input[name$='rd_bonus_producao']:checked").val() == "Sim") {
-                $("#bonus_producao").show()
-            } else {
-                $("#bonus_producao").hide()
-            }
-        })
-        $("input[name$='rd_premio']").click(function (e) {
-            if ($("input[name$='rd_premio']:checked").val() == "Sim") {
-                $("#premioApv").show()
-            } else {
-                $("#premioApv").hide()
-            }
-        })
-        $("input[name$='rd_acrdPts']").click(function (e) {
-            if ($(this).val() == "Sim") {
-                $("#div_txt_acrdPts").show()
-            } else if ($(this).val() == "Não") {
-                $("#div_txt_acrdPts").hide()
-            }
-        })
-        $("input[name$='rd_devEqp_slt']").click(function (e) {
-            if ($(this).val() != "Não utilizava equipamentos de T.I.") {
-                $("#div_patr_eqp").show()
-            }else{
-                $("#div_patr_eqp").hide()
-            }
-        })
-        $("input[name$='rd_entrev_rh']").click(function (e) {
-            if ($(this).val() == "Sim") {
-                $("#txt_altr_rh").hide()
-                $("#rh_fdbk").show()
-            } else if ($(this).val() == "Não") {
-                $("#txt_altr_rh").show()
-                $("#rh_fdbk").hide()
-            }
-        })
-        $("input[name$='rd_rh_fdb']").click(function (e) {
-            if ($(this).val() == "Sim") {
-                $("#rh_fdbk_sim").show()
-            } else if ($(this).val() == "Não") {
-                $("#rh_fdbk_sim").hide()
-            }
-        })
-        
-    }
-    if (ATV >= 4 || ATV == null) {
+        // Pi'que
+        show_on_click("rd_clbCargo", "Obra (Canteiro e Produção)", null, "div_rd_clbLocS")
+        show_on_click("rd_clbCargo", "Escritório (BackOffice e Administrativo De Obra)", null, "sistemas_utilizados")
+        show_on_click("rd_clbLoc", "Sim", null, "div_rd_clbLocAnx")
+        show_on_click("rd_premio", "Sim", null, "premioApv")
+        show_on_click("rd_acrdPts", "Sim", null, "div_txt_acrdPts")
+        show_on_click("rd_devEqp_slt", "Sim, farei a devolução dos equipamentos para T.I Infra.", null, "div_patr_eqp")
+        show_on_click("rd_devEqp_slt", "Sim, porém os equipamentos serão realocados no setor.", null, "div_patr_eqp")
+        show_on_click("rd_entrev_rh", "Sim", null, "rh_fdbk")
+        show_on_click("rd_entrev_rh", "Não", null, "txt_altr_rh")
+        show_on_click("rd_rh_fdb", "Sim", null, "div_txt_rh_fdb")
+        show_on_click("rd_rh_ans", "Não, será transferido", null, "msg_transf")
+        show_on_click("rd_adm_aso", "Sim", null, "aso_obrigatorio")
+        // Esconde
+        hide_on_load("rd_clbCargo", "Obra (Canteiro e Produção)", null, "div_rd_clbLocS")
+        hide_on_load("rd_clbCargo", "Escritório (BackOffice e Administrativo De Obra)", null, "sistemas_utilizados")
+        hide_on_load("rd_clbLoc", "Sim", null, "div_rd_clbLocAnx")
+        hide_on_load("rd_premio", "Sim", null, "premioApv")
+        hide_on_load("rd_acrdPts", "Sim", null, "div_txt_acrdPts")
+        hide_on_load("rd_devEqp_slt", "Sim, farei a devolução dos equipamentos para T.I Infra.", null, "div_patr_eqp")
+        hide_on_load("rd_devEqp_slt", "Sim, porém os equipamentos serão realocados no setor.", null, "div_patr_eqp")
+        hide_on_load("rd_entrev_rh", "Sim", null, "rh_fdbk")
+        hide_on_load("rd_entrev_rh", "Não", null, "txt_altr_rh")
+        hide_on_load("rd_rh_fdb", "Sim", null, "div_txt_rh_fdb")
+        hide_on_load("rd_rh_ans", "Não, será transferido", null, "msg_transf")
+        hide_on_load("rd_adm_aso", "Sim", null, "aso_obrigatorio")
         // CONTROLA EXIBICAO DOS INPUTS DPS DE CLICADOS
         if ($("input[name$='rd_Estg']:checked").val() == "Sim") {
             $("#div_rd_eftv,#div_rd_mtvDslg").show()
             $("#div_txt_cargo,#div_rd_tpAvs").hide()
-        } else {
+        } else if ($("input[name$='rd_Estg']:checked").val() == "Não") {
             $("#div_rd_mtvDslg,#div_txt_cargo").show()
             $("#div_rd_eftv").hide()
-        }
-        // ALTERAÇÕES RH
-        if ($("input[name$='rd_entrev_rh']:checked").val() == "Não") {
-            $("#txt_altr_rh").show()
-            $("#rh_fdbk").hide()
-        } else if($("input[name$='rd_entrev_rh']:checked").val() == "Sim"){
-            $("#txt_altr_rh").hide()
-            $("#rh_fdbk").show()
         }
         if ($("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg1 ||
             $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg2 ||
@@ -137,19 +93,54 @@ $(document).ready(function () {
             $("#div_rd_tpAvs").hide()
             $("#div_anx_demissao").show()
         }
-        if ($("input[name$='rd_acrdPts']:checked").val() == "Não") {
-            $("#div_txt_acrdPts").hide()
-        } else if ($("input[name$='rd_acrdPts']:checked").val() == "Sim") {
-            $("#div_txt_acrdPts").show()
-        }
-        if ($("input[name$='rd_devEqp_slt']:checked").val() != "Não utilizava equipamentos de T.I.") {
-            $("#div_patr_eqp").show()
-        }
-        if ($("input[name$='rd_premio']:checked").val() != "Não") {
-            $("#premioApv").show()
-        }
-        if ($("input[name$='rd_bonus_producao']:checked").val() != "Não") {
-            $("#bonus_producao").show()
-        }
     }
 })
+// Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
+function show_on_click(campo, valor1, valor2, show) {
+    $("[name$='" + campo + "']").click(function () {
+        if (valor2 == null) {
+            if ($(this).val() == valor1) {
+                $("#" + show).show();
+            } else {
+                $("#" + show).hide();
+            }
+        } else {
+            if ($(this).val() == valor1 || $(this).val() == valor2) {
+                $("#" + show).show();
+            } else {
+                $("#" + show).hide();
+            }
+        }
+    });
+}
+// Controla a exibição dos campos ocultos
+function hide_on_load(campo, valor1, valor2, show) {
+    if (valor2 == null) {
+        if ($("[name$='" + campo + "']:checked").val() == valor1) {
+            $("#" + show).show();
+        } else {
+            $("#" + show).hide();
+        }
+    } else {
+        if ($("[name$='" + campo + "']:checked").val() == valor1 || $("[name$='" + campo + "']:checked").val() == valor2) {
+            $("#" + show).show();
+        } else {
+            $("#" + show).hide();
+        }
+    }
+}
+function substringMatcher(strs) {
+    return function findMatches(q, cb) {
+        var matches, substrRegex;
+        matches = [];
+        substrRegex = new RegExp(q, "i");
+        $.each(strs, function (i, str) {
+            if (substrRegex.test(str)) {
+                matches.push({
+                    sistema: str
+                });
+            }
+        });
+        cb(matches);
+    };
+}
