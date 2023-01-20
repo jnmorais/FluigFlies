@@ -15,7 +15,7 @@ $(document).ready(function () {
         show_on_click("rd_loc", "Obra", null, "documentacao_funcionario");
         show_on_click("rd_loc", "Obra", null, "slt_spe");
         show_on_click("rd_hrtb", "Outros", null, "txt_hrtb");
-        show_on_click("rd_crl", "Sim", null, "anx_crl");
+        show_on_click("rd_crl", "Sim", null, "div_anx_crl");
         show_on_click("rd_na", "Sim", null, "rd_etp_na");
         show_on_click("rd_crtComb", "Sim", null, "vl_crtComb");
         show_on_click("rd_pc", "Sim, já tem computador", null, "rd_patrm");
@@ -397,7 +397,7 @@ $(document).ready(function () {
         hide_on_load("rd_loc", "Obra", null, "documentacao_funcionario");
         hide_on_load("rd_loc", "Obra", null, "slt_spe");
         hide_on_load("rd_hrtb", "Outros", null, "txt_hrtb");
-        hide_on_load("rd_crl", "Sim", null, "anx_crl");
+        hide_on_load("rd_crl", "Sim", null, "div_anx_crl");
         hide_on_load("rd_na", "Sim", null, "rd_etp_na");
         hide_on_load("rd_crtComb", "Sim", null, "vl_crtComb");
         hide_on_load("rd_pc", "Sim, já tem computador", null, "rd_patrm");
