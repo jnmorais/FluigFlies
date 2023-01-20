@@ -84,7 +84,8 @@ $(document).ready(function () {
         }
         if ($("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg1 ||
             $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg2 ||
-            $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg3
+            $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg3 ||
+            $("input[name$='rd_mtvDslg']:checked").val() == rd_mtvDslg6
             && $("input[name$='rd_Estg']:checked").val() == "Não") {
             $("#div_rd_tpAvs").show()
             $("#div_anx_demissao").hide()
