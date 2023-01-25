@@ -41,9 +41,9 @@ $(document).ready(function () {
         controlaExb("rd_nvsInfos", "Não", "anx_elb_dst")
         // (Direção) Validação do Distrato
         controlaExb("rd_dst_dir_apv", "Não", "mtv_dst_dir_rpv")
-        // Assinatura do distrato
-        controlaExb("rd_ass_dst", "Não", "mtv_ass_dst")
-        controlaExb("rd_ass_dst", "Sim", "anx_ctt_ass")
+//         // Assinatura do distrato
+//         controlaExb("rd_ass_dst", "Não", "mtv_ass_dst")
+//         controlaExb("rd_ass_dst", "Sim", "anx_ctt_ass")
         //Validação Prospector
         controlaExb("rd_dst_prp_apv", "Não", "mtv_dst_prp_rpv")
 
