@@ -25,9 +25,6 @@ $(document).ready(function () {
         controlaClick("rd_nvsInfos", "Não", "anx_elb_dst")
         // (Direção) Validação do Distrato
         controlaClick("rd_dst_dir_apv", "Não", "mtv_dst_dir_rpv")
-        // Assinatura do distrato
-        controlaClick("rd_ass_dst", "Não", "mtv_ass_dst")
-        controlaClick("rd_ass_dst", "Sim", "anx_ctt_ass")
         //Validação Prospector 
         controlaClick("rd_dst_prp_apv", "Não", "mtv_dst_prp_rpv")
         //Aditivo 
