@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    if(ATV){
+    if (ATV) {
         $("#AttOrc_anexos,#AttViab_anexos").hide()
-        show_on_click("rd_infoAttOrc","Não",null,"AttOrc_anexos")
-        show_on_click("rd_infoAttViab","Sim",null,"AttViab_anexos")
-        hide_on_load("rd_infoAttOrc","Não",null,"AttOrc_anexos")
-        hide_on_load("rd_infoAttViab","Sim",null,"AttViab_anexos")
+        show_on_click("rd_infoAttOrc", "Não", null, "AttOrc_anexos")
+        show_on_click("rd_infoAttViab", "Não", null, "AttViab_anexos")
+        hide_on_load("rd_infoAttOrc", "Não", null, "AttOrc_anexos")
+        hide_on_load("rd_infoAttViab", "Não", null, "AttViab_anexos")
     }
 })
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
