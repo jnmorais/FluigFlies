@@ -49,7 +49,7 @@ $(document).ready(function () {
             }
         })
         // Controla slt_adm_fluig
-        $("#slt_adm_fluig").click(function (e) {
+        $("input[name$='rd_adm_fluig']").click(function (e) {
             $(this).val() == "Não" ? $("txt_nm_clb").attr("readonly", false) : false
         })
         // Pi'que
