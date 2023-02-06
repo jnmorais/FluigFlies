@@ -52,7 +52,7 @@ $(document).ready(function () {
         $("input[name$='rd_adm_fluig']").click(function (e) {
             if ($(this).val() == "Não") {
                 $("#txt_nm_clb").attr("readonly", false)
-                $("#txt_nm_clb").text("")
+                $("#txt_nm_clb").val("")
             }
         })
         // Pi'que
