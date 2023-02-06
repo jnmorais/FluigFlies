@@ -50,7 +50,7 @@ $(document).ready(function () {
         })
         // Controla slt_adm_fluig
         $("input[name$='rd_Estg']").click(function (e) {
-            $(this).val() == "Não" ? $(this).attr("readonly", false)
+            $(this).val() == "Não" ? $(this).attr("readonly", false) : false
         })
         // Pi'que
         show_on_click("rd_clbCargo", "Obra (Canteiro e Produção)", null, "div_rd_clbLocS")
