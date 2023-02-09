@@ -86,13 +86,19 @@ function hide_on_load(campo, div, valor1, valor2) {
         $("input[name$='" + campo + "']:checked").val() == valor1 || $("input[name$='" + campo + "']:checked").val() == valor2 ? $("#" + div).show() : $("#" + div).hide()
     }
 }
+$("#txt_cargo_att").change(function (e) {
+    e.preventDefault();
+    if ($(this).val() == "") {
+        $("#novo_cargo").text("")
+        $("#novo_cargo").val("")
+        $("#div_novo_cargo").hide()
+    }
+});
 function setSelectedZoomItem(selectedItem) {
     if (selectedItem.inputId == "txt_cargo_att") {
         if (selectedItem["Cargo"] == "Novo cargo" || selectedItem["Cargo"] == "") {
             $("#div_novo_cargo").show()
         } else {
-            $("#novo_cargo").text("")
-            $("#novo_cargo").val("")
             $("#div_novo_cargo").hide()
         }
     }
