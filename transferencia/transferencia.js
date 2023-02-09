@@ -38,9 +38,9 @@ $(document).ready(function () {
     hide_on_load("rd_tp_procs", "slt_transferencia", "Transferência")
     hide_on_load("rd_tp_procs", "slt_promocao", "Promoção")
     // TRANSFERENCIA
-    show_on_click("rd_locD", "div_infrasi", "Escritório (Backoffice)","Escritório de obra")
-    show_on_click("rd_locD", "div_end_destino", "Obra","Escritório de obra")
-    show_on_click("rd_locA", "div_end_atual", "Obra","Escritório de obra")
+    show_on_click("rd_locD", "div_infrasi", "Escritório (Backoffice)", "Escritório de obra")
+    show_on_click("rd_locD", "div_end_destino", "Obra", "Escritório de obra")
+    show_on_click("rd_locA", "div_end_atual", "Obra", "Escritório de obra")
     show_on_click("rd_alt_sal", "div_nv_salario", "Sim")
     show_on_click("rd_alt_sal", "apv_diretor", "Sim")
     show_on_click("rd_alt_cargo", "div_nv_cargo", "Sim")
@@ -53,9 +53,9 @@ $(document).ready(function () {
     hide_on_load("rd_alt_cgH", "div_carga_hr", "Sim")
     hide_on_load("rd_dp_infos", "div_dt_dp_transfr", "Não")
     hide_on_load("rd_atv_rh", "rh_nivelamento", "Sim")
-    hide_on_load("rd_locD", "div_infrasi", "Escritório (Backoffice)","Escritório de obra")
-    hide_on_load("rd_locD", "div_end_destino", "Obra","Escritório de obra")
-    hide_on_load("rd_locA", "div_end_atual", "Obra","Escritório de obra")
+    hide_on_load("rd_locD", "div_infrasi", "Escritório (Backoffice)", "Escritório de obra")
+    hide_on_load("rd_locD", "div_end_destino", "Obra", "Escritório de obra")
+    hide_on_load("rd_locA", "div_end_atual", "Obra", "Escritório de obra")
     // PROMOCAO
     show_on_click("rd_locPromo", "div_loc_promo", "Obra")
     show_on_click("rd_alt_cargo_promo", "div_nv_cargo_promo", "Sim")
@@ -68,11 +68,11 @@ $(document).ready(function () {
 });
 // Controla a exibição ao clicar
 function show_on_click(campo, div, valor1, valor2) {
-    if(valor2 == null){
+    if (valor2 == null) {
         $("input[name$='" + campo + "']").click(function () {
             $(this).val() == valor1 ? $("#" + div).show() : $("#" + div).hide()
         })
-    }else{
+    } else {
         $("input[name$='" + campo + "']").click(function () {
             $(this).val() == valor1 || $(this).val() == valor2 ? $("#" + div).show() : $("#" + div).hide()
         })
@@ -80,14 +80,20 @@ function show_on_click(campo, div, valor1, valor2) {
 }
 // Controla a exibição dos campos ocultos
 function hide_on_load(campo, div, valor1, valor2) {
-    if(valor2 == null){
+    if (valor2 == null) {
         $("input[name$='" + campo + "']:checked").val() == valor1 ? $("#" + div).show() : $("#" + div).hide()
-    }else{
+    } else {
         $("input[name$='" + campo + "']:checked").val() == valor1 || $("input[name$='" + campo + "']:checked").val() == valor2 ? $("#" + div).show() : $("#" + div).hide()
     }
 }
 function setSelectedZoomItem(selectedItem) {
     if (selectedItem.inputId == "txt_cargo_att") {
-        selectedItem["Cargo"] == "Novo cargo" || selectedItem["Cargo"] == "" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
+        if (selectedItem["Cargo"] == "Novo cargo" || selectedItem["Cargo"] == "") {
+            $("#div_novo_cargo").show()
+        } else {
+            $("#novo_cargo").text("")
+            $("#novo_cargo").val("")
+            $("#div_novo_cargo").hide()
+        }
     }
 }
