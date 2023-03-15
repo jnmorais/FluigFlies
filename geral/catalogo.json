@@ -1,0 +1,156 @@
+[
+    {
+        "setor": "TI",
+        "area": "Infraestrutura de TI",
+        "grupo_fluig": "Infraestrutura",
+        "servicos": [
+            {
+                "servico": "Redes",
+                "microserv": [
+                    {
+                        "nome": "Suporte a rede - Novo",
+                        "prioridade": "",
+                        "sla": "",
+                        "id_row": ""
+                    },
+                    {
+                        "nome": "VPN - Novo",
+                        "prioridade": "",
+                        "sla": "",
+                        "id_row": ""
+                    },
+                    {
+                        "nome": "Wi-Fi Novo",
+                        "prioridade": "",
+                        "sla": "",
+                        "id_row": ""
+                    },
+                    {
+                        "nome": "Cabeamento - Novo",
+                        "prioridade": "",
+                        "sla": "",
+                        "id_row": ""
+                    },
+                    {
+                        "nome": "Configuração de Mikrotik - Novo",
+                        "prioridade": "",
+                        "sla": "",
+                        "id_row": ""
+                    },
+                    {
+                        "nome": "Infraestrutura para entrega de chaves - Novo",
+                        "prioridade": "",
+                        "sla": "",
+                        "id_row": ""
+                    },
+                    {
+                        "nome": "Habilitação de internet em obras,stands e eventos - Novo",
+                        "prioridade": "",
+                        "sla": "",
+                        "id_row": ""
+                    },
+                    {
+                        "nome": "Mudança de ponto de escritório - Novo",
+                        "prioridade": "",
+                        "sla": "",
+                        "id_row": ""
+                    },
+                    {
+                        "nome": "Ponto de rede adicional - Novo",
+                        "prioridade": "",
+                        "sla": "",
+                        "id_row": ""
+                    },
+                    {
+                        "nome": "Problemas com a internet - Novo",
+                        "prioridade": "",
+                        "sla": "",
+                        "id_row": ""
+                    }
+                ]
+            },
+            {
+                "servico": "Impressora",
+                "microserv": {}
+            },
+            {
+                "servico": "Equipamentos",
+                "microserv": {}
+            },
+            {
+                "servico": "Serviços",
+                "microserv": {}
+            },
+            {
+                "servico": "Acessos",
+                "microserv": {}
+            },
+            {
+                "servico": "Aplicativos",
+                "microserv": {}
+            }
+        ]
+    },
+    {
+        "setor": "TI",
+        "area": "Sistemas",
+        "grupo_fluig": "Sistemas",
+        "servicos": [
+            {
+                "servico": "Mega",
+                "microserv": []
+            },
+            {
+                "servico": "Expert",
+                "microserv": {}
+            },
+            {
+                "servico": "Approvo",
+                "microserv": {}
+            },
+            {
+                "servico": "Fluig",
+                "microserv": [
+                    {
+                        "nome": "Novo usuário ou Edição de Perfil",
+                        "prioridade": "Baixa",
+                        "sla": "000:09",
+                        "id_row": "nv_usr_fluig"
+                    },
+                    {
+                        "nome": "Manutenção (Erro/Melhoria)",
+                        "prioridade": "Baixa",
+                        "sla": "000:09",
+                        "id_row": "manut_fluig"
+                    },
+                    {
+                        "nome": "Substituição ou Transferência de Chamados",
+                        "prioridade": "Baixa",
+                        "sla": "000:09",
+                        "id_row": "subst_transf_fluig"
+                    },
+                    {
+                        "nome": "Dúvidas e/ou Outros",
+                        "prioridade": "Baixa",
+                        "sla": "000:09",
+                        "id_row": "duvidas_fluig"
+                    },
+                    {
+                        "nome": "Relatórios",
+                        "prioridade": "Baixa",
+                        "sla": "000:09",
+                        "id_row": "relatorios_fluig"
+                    }
+                ]
+            },
+            {
+                "servico": "HCM",
+                "microserv": {}
+            },
+            {
+                "servico": "Construtor de Vendas",
+                "microserv": {}
+            }
+        ]
+    }
+]
