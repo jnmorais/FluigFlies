@@ -115,7 +115,12 @@
                         "nome": "Novo usuário ou Edição de Perfil",
                         "prioridade": "Baixa",
                         "sla": "000:09",
-                        "id_row": "nv_usr_fluig"
+                        "id_row": "nv_usr_fluig",
+                        "aprovacao": "Sim",
+                        "aprovadores": [
+                            "admin",
+                            "marllon.sousa"
+                        ]
                     },
                     {
                         "nome": "Manutenção (Erro/Melhoria)",
