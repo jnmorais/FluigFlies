@@ -1,13 +1,6 @@
-function setSelectedZoomItem(selectedItem) {
-    if (selectedItem.inputId == "slt_terreno") {
-        $("#txt_codigoTrr").val("").val(selectedItem["codigoterreno"])
-        $("#txt_codigoContrato").val("").val(selectedItem["Código Contrato"])
-        $("#txt_codigoEstudo").val("").val(selectedItem["Código Estudo"])
-        $("#txt_nomenclatura").val("").val(selectedItem["Nomenclatura"])
-        $("#txt_enderecoTrr").val("").val(selectedItem["Endereço"])
-    }
-}
-
+$(document).ready(function () {
+    var editor = FLUIGC.richeditor('txt_obspassagem');
+});
 // ABRE A SOLICITACAO DO ESTUDO SELECIONADO
 function visualizarSolicitacao(campo) {
     let codigo = $("#" + campo).val()

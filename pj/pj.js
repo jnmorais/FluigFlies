@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#rd_etp_na, #vl_crtComb, #rd_tpPc,#entrg_RossiEqp,#pastasRede,#anx_ctt_ass,#show_acessos,#mega, #expert, #approvo, #adobe, #cv, #hcm, #microtik, #uc2b,#rd_patrm,#entrg_Rossi,#softwares,#rd_etp_na").hide()
     if (ATV == 0 || ATV == 1) {
-        var sistemas = ["Nenhum sistema será necessário", "Mega", "Expert", "Approvo", "Adobe/Doc Sign", "Construtor de vendas", "Fluig", "HCM"];
+        var sistemas = ["Nenhum sistema será necessário", "Mega", "Expert", "Approvo", "Adobe/Doc Sign", "Construtor de vendas", "Fluig", "HCM", "INC Academy"];
         /* Instantiated new autocomplete */
         var myAutocomplete = FLUIGC.autocomplete('#slt_sistemas', { source: substringMatcher(sistemas), name: 'sistemas', displayKey: 'sistema', tagClass: 'tag-gray', type: 'tagAutocomplete', highlight: true, hint: 'true', autoLoading: 'false' });
         var myTag = FLUIGC.autocomplete('#slt_softwares');
@@ -20,6 +20,7 @@ $(document).ready(function () {
         show_on_click('rd_pc', 'Não, mas será necessário alugar um computador', null, 'softwares')
         show_on_click('rd_acsRd', 'Sim', null, 'pastasRede')
         show_on_click('rd_eqpRossi', 'Sim', null, 'entrg_RossiEqp')
+        show_on_click("rd_etg_infra_acs", "Sim", null, "show_clb_mail");
         // show_on_click_mult("pf_analise", "Sim", "pf_obs", "pf_justv")
         // show_on_click_mult("cntb_analise", "Sim", "cntb_obs", "cntb_justv")
         // ATV 89 - (SISTEMAS) - Mega, Expert, Approvo
@@ -49,6 +50,7 @@ $(document).ready(function () {
         hide_on_load('rd_pc', 'Não, mas será necessário alugar um computador', null, 'softwares')
         hide_on_load('rd_acsRd', 'Sim', null, 'pastasRede')
         hide_on_load('rd_eqpRossi', 'Sim', null, 'entrg_RossiEqp')
+        hide_on_load("rd_etg_infra_acs", "Sim", null, "show_clb_mail");
         // hide_on_load_mult("pf_analise", "Sim", "pf_obs", "pf_justv")
         // hide_on_load_mult("cntb_analise", "Sim", "cntb_obs", "cntb_justv")
         // ATV 89 - (SISTEMAS) - Mega, Expert, Approvo

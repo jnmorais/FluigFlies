@@ -14,6 +14,12 @@
                         "id_row": ""
                     },
                     {
+                        "nome": "Suporte a rede - 2",
+                        "prioridade": "Baixa",
+                        "sla": "000:09",
+                        "id_row": ""
+                    },
+                    {
                         "nome": "VPN - Novo",
                         "prioridade": "",
                         "sla": "",

@@ -2,87 +2,88 @@
 $(document).ready(function () {
     // Controla os cliques nos campos
     if (FM == "MOD" || FM == "ADD") {
-        $("input[name$='rd_terreno']").click(function () {
-            if ($(this).val() == "Sim") {
-                $("#div_slt_terreno,#div_txt_solicitacao").show()
-                $("#txt_readonly input").attr("readonly", true)
-                $("#txt_readonly input").val("")
-                $("#txt_readonly input").text("")
-                $("[attr-class='mudarClasse']").removeClass("col-md-4 form-group").addClass("col-md-3 form-group");
-            } else {
-                $("#div_slt_terreno,#div_txt_solicitacao").hide()
-                $("#txt_readonly input").attr("readonly", false)
-                $("#txt_readonly input").val("")
-                $("#txt_readonly input").text("")
-                $("[attr-class='mudarClasse']").removeClass("col-md-3 form-group").addClass("col-md-4 form-group");
-            }
-        });
-        // INICIO
-        // (Direção) Análise do Distrato
-        controlaClick("rd_distrato", "Não", "slt_att_infos")
         // Elaboração do Distrato
-        controlaClick("rd_nvsInfos", "Sim", "nvsInfos_elb_dst")
-        controlaClick("rd_nvsInfos", "Não", "anx_elb_dst")
+        show_on_click("rd_nvsInfos", "Sim", null, "nvsInfos_elb_dst")
+        hide_on_load("rd_nvsInfos", "Sim", null, "nvsInfos_elb_dst")
+        show_on_click("rd_nvsInfos", "Não", null, "anx_elb_dst")
+        hide_on_load("rd_nvsInfos", "Não", null, "anx_elb_dst")
         // (Direção) Validação do Distrato
-        controlaClick("rd_dst_dir_apv", "Não", "mtv_dst_dir_rpv")
+        show_on_click("rd_dst_dir_apv", "Não", null, "mtv_dst_dir_rpv")
+        hide_on_load("rd_dst_dir_apv", "Não", null, "mtv_dst_dir_rpv")
         //Validação Prospector 
-        controlaClick("rd_dst_prp_apv", "Não", "mtv_dst_prp_rpv")
+        show_on_click("rd_dst_prp_apv", "Não", null, "mtv_dst_prp_rpv")
+        hide_on_load("rd_dst_prp_apv", "Não", null, "mtv_dst_prp_rpv")
         //Aditivo 
-        controlaClick("rd_ass_dst", "Iniciar aditivo", "aditivo")
-
+        show_on_click("rd_ass_dst", "Não", null, "mtv_ass_dst")
+        hide_on_load("rd_ass_dst", "Não", null, "mtv_ass_dst")
+        show_on_click("rd_ass_dst", "Sim", null, "anx_ctt_ass")
+        hide_on_load("rd_ass_dst", "Sim", null, "anx_ctt_ass")
+        
     }
-    // Controla os campos que já foram clicados anteriormente
-    if (FM == "MOD" || FM == "VIEW" || ATV == "null") {
-        // INICIO
-        // (Direção) Análise do Distrato
-        controlaExb("rd_distrato", "Não", "slt_att_infos")
-        // Elaboração do Distrato
-        controlaExb("rd_nvsInfos", "Sim", "nvsInfos_elb_dst")
-        controlaExb("rd_nvsInfos", "Não", "anx_elb_dst")
-        // (Direção) Validação do Distrato
-        controlaExb("rd_dst_dir_apv", "Não", "mtv_dst_dir_rpv")
-//         // Assinatura do distrato
-//         controlaExb("rd_ass_dst", "Não", "mtv_ass_dst")
-//         controlaExb("rd_ass_dst", "Sim", "anx_ctt_ass")
-        //Validação Prospector
-        controlaExb("rd_dst_prp_apv", "Não", "mtv_dst_prp_rpv")
-
+});
+// Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
+function show_on_click(campo, valor1, valor2, show) {
+    $("[name$='" + campo + "']").click(function () {
+        if (valor2 == null) {
+            if ($(this).val() == valor1) {
+                $("#" + show).show();
+            } else {
+                $("#" + show).hide();
+            }
+        } else {
+            if ($(this).val() == valor1 || $(this).val() == valor2) {
+                $("#" + show).show();
+            } else {
+                $("#" + show).hide();
+            }
+        }
+    });
+}
+// Controla a exibição dos campos ocultos
+function hide_on_load(campo, valor1, valor2, show) {
+    if (valor2 == null) {
+        if ($("[name$='" + campo + "']:checked").val() == valor1) {
+            $("#" + show).show();
+        } else {
+            $("#" + show).hide();
+        }
+    } else {
+        if ($("[name$='" + campo + "']:checked").val() == valor1 || $("[name$='" + campo + "']:checked").val() == valor2) {
+            $("#" + show).show();
+        } else {
+            $("#" + show).hide();
+        }
     }
-    // Pega o valor das textareas das atvs att info e novas infos
-    if (ATV == 58 || ATV == 63) {
-
+}
+function setSelectedZoomItem(selectedItem) {
+    $(".input_reset").val("")
+    if (selectedItem.inputId == "slt_terreno") {
+        $("#txt_codigoTrr").val("").val(selectedItem["codigoterreno"])
+        $("#txt_codigoContrato").val("").val(selectedItem["Código Contrato"])
+        $("#txt_codigoEstudo").val("").val(selectedItem["Código Estudo"])
+        $("#txt_nomenclatura").val("").val(selectedItem["Nomenclatura"])
+        $("#txt_enderecoTrr").val("").val(selectedItem["Endereço"])
     }
-    // Controla os botoes de anexo // Caso estejam em modo leitura, vincula um click para a aba anexos e altera o texto para visualizr anexos
-    var anexos = ["anx_distrato", "anx_att_infos", "anx_elb_dst", "anx_nvs_infos", "anx_dst_rpv", "anx_ctt_ass", "anx_ntf_extj"]
-    for (var pos = 0; pos < anexos.length; pos++) {
-        if ($("input[name*='" + anexos[pos] + "'").attr('readonly') == "readonly") {
-            $("input[name*='" + anexos[pos] + "'").attr('onclick', '').unbind('click');
-            $("input[name*='" + anexos[pos] + "'").css('pointer-events', 'all');
-            $("input[name*='" + anexos[pos] + "'").val('Visualizar anexos');
-            $("input[name*='" + anexos[pos] + "'").on('click', function () {
-                $(window).scrollTop(0);
-                window.parent.document.querySelector("#tab-attachments > div > div.col-xs-8").click()
+}
+// ABRE A SOLICITACAO DO ESTUDO SELECIONADO
+function visualizarSolicitacao(campo) {
+    let codigo = $("#" + campo).val()
+    let serverUrl = window.location.href.split(".fluig")[0] + ".fluig.cloudtotvs.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID="
+    if (codigo == "undefined") {
+        FLUIGC.toast({
+            title: 'Atenção: ',
+            message: 'Código do terreno/estudo não encontrado!',
+            type: 'warning'
+        });
+    } else {
+        if (codigo) {
+            window.open(serverUrl + codigo)
+        } else {
+            FLUIGC.toast({
+                title: 'Atenção: ',
+                message: 'Selecione um terreno/estudo para visualizar!',
+                type: 'warning'
             });
         }
     }
-    // Controla exibição dos titulos da tabela de pagamentos
-    $("[thc='tpg']").hide()
-    $(".tpgBtn").click(function (e) { e.preventDefault(); $("[thc='tpg']").show() })
-    if (ATV != 34) $("[thc='tpg']").show()
-});
-function controlaExb(campo, v_campo, id_show) {
-    if ($("input[name$='" + campo + "']:checked").val() == v_campo) {
-        $("#" + id_show).show()
-    } else {
-        $("#" + id_show).hide()
-    }
-}
-function controlaClick(campo, v_campo, id_show) {
-    $("input[name$='" + campo + "']").click(function () {
-        if ($(this).val() == v_campo) {
-            $("#" + id_show).show()
-        } else {
-            $("#" + id_show).hide()
-        }
-    });
 }

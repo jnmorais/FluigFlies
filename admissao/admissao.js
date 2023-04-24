@@ -3,7 +3,7 @@ $(document).ready(function () {
     $("[data-toggle='tooltip']").tooltip()
     // ATV 0|1|4
     if (ATV == 0 || ATV == 1) {
-        var sistemas = ["Nenhum sistema será necessário", "Mega", "Expert", "Approvo", "Adobe/Doc Sign", "Construtor de vendas", "Fluig", "HCM"];
+        var sistemas = ["Nenhum sistema será necessário", "Mega", "Expert", "Approvo", "Adobe/Doc Sign", "Construtor de vendas", "Fluig", "HCM", "INC Academy"];
         /* Instantiated new autocomplete */
         var myAutocomplete = FLUIGC.autocomplete("#slt_sistemas", { source: substringMatcher(sistemas), name: "sistemas", displayKey: "sistema", tagClass: "tag-gray", type: "tagAutocomplete", highlight: true, hint: "true", autoLoading: "false" });
         var myTag = FLUIGC.autocomplete('#slt_softwares');
@@ -24,6 +24,8 @@ $(document).ready(function () {
         show_on_click("rd_acsRd", "Sim", null, "pastasRede");
         show_on_click("rd_eqpRossi", "Sim", null, "entrg_RossiEqp");
         show_on_click("rd_cntr", "Estágio", null, "estagio");
+        show_on_click('rd_mtvCntr_subst', 'Sim', null, 'div_mtvCntr_subst_1');
+        show_on_click('rd_mtvCntr_subst', 'Não', null, 'div_mtvCntr_subst_2');
         // CONTROLA O INPUT COMPETENCIAS
         $("input[type='range']").on("input", function () {
             var comportamento = $(this).attr("compData").split("vs");
@@ -250,7 +252,7 @@ $(document).ready(function () {
     }
     // ATV 37
     if (ATV == 37 || ATV == null) {
-        show_on_click_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G","Sim, candidato selecionado por Recrutamento Interno","Sim, admissão com promoção de estagiário", "cdd_slc");
+        show_on_click_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G", "Sim, candidato selecionado por Recrutamento Interno", "Sim, admissão com promoção de estagiário", "cdd_slc");
         FM == "MOD" ? FLUIGC.toast({ title: "Recursos Humanos: ", message: "A edição do formulário está liberada!", type: "info" }) : false
     }
     // ATV 51
@@ -406,12 +408,14 @@ $(document).ready(function () {
         hide_on_load("rd_acsRd", "Sim", null, "pastasRede");
         hide_on_load("rd_eqpRossi", "Sim", null, "entrg_RossiEqp");
         hide_on_load("rd_cntr", "Estágio", null, "estagio");
+        hide_on_load('rd_mtvCntr_subst', 'Sim', null, 'div_mtvCntr_subst_1');
+        hide_on_load('rd_mtvCntr_subst', 'Não', null, 'div_mtvCntr_subst_2');
         // ATV 9
         hide_on_load("rd_avl_rh", "Aprovada", "Aprovada c/ Urgência", "txt_obs_rh");
         hide_on_load("rd_avl_rh", "Alteração/Inclusão de informações", null, "txt_alt_rh");
         hide_on_load("rd_avl_rh", "Reprovada", null, "txt_rpv_rh");
         // ATV 37
-        hide_on_load_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G","Sim, candidato selecionado por Recrutamento Interno","Sim, admissão com promoção de estagiário", "cdd_slc");
+        hide_on_load_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G", "Sim, candidato selecionado por Recrutamento Interno", "Sim, admissão com promoção de estagiário", "cdd_slc");
         // ATV 51
         hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb");
         hide_on_load("rd_dst_dp", "Alteração/Inclusão de informações ao Gente & Gestão", null, "txt_dp_alter");
