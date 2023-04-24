@@ -164,6 +164,7 @@ function selectShow(selectName) {
     }
 }
 function buscarUsuarios(cidade) {
+    $("#grupoCoord,#destinatarios").val()
     switch (cidade) {
         case "Juiz de Fora":
             $("#grupoCoord").val("Pool:Role:coord_jf")
@@ -188,7 +189,7 @@ function buscarUsuarios(cidade) {
     }
 }
 function destinatarios(grupoCoord) {
-    var filter = DatasetFactory.createConstraint("workflowColleagueRolePK.groupId", grupoCoord, grupoCoord, ConstraintType.MUST);
+    var filter = DatasetFactory.createConstraint("workflowColleagueRolePK.roleId", grupoCoord, grupoCoord, ConstraintType.MUST);
     var dataset = DatasetFactory.getDataset("workflowColleagueRole", null, [filter], null);
     var destinatarios = []
     for (var i = 0; i < dataset.values.length; i++) {
