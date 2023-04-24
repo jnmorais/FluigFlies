@@ -166,20 +166,36 @@ function selectShow(selectName) {
 function buscarUsuarios(cidade) {
     switch (cidade) {
         case "Juiz de Fora":
-            $("#grupoCoord").val("Pool:Group:coordObra_ZMMG")
-            $("#destinatarios").val(destinatarios("coordObra_ZMMG"))
+            $("#grupoCoord").val("Pool:Role:coord_jf")
+            $("#destinatarios").val(destinatarios("coord_jf"))
+            break;
+        case "São José dos Campos":
+            $("#grupoCoord").val("Pool:Role:coord_sjc")
+            $("#destinatarios").val(destinatarios("coord_sjc"))
+            break;
+        case "Uberaba":
+            $("#grupoCoord").val("Pool:Role:coord_ubrb")
+            $("#destinatarios").val(destinatarios("coord_ubrb"))
+            break;
+        case "Uberlândia":
+            $("#grupoCoord").val("Pool:Role:coord_ubrl")
+            $("#destinatarios").val(destinatarios("coord_ubrl"))
+            break;
+        case "São José do Rio Preto":
+            $("#grupoCoord").val("Pool:Role:coord_sjrp")
+            $("#destinatarios").val(destinatarios("coord_sjrp"))
             break;
     }
 }
 function destinatarios(grupoCoord) {
-    var constraintGrupos = DatasetFactory.createConstraint("colleagueGroupPK.groupId", grupoCoord, grupoCoord, ConstraintType.MUST);
-    var datasetGrupos = DatasetFactory.getDataset("colleagueGroup", null, [constraintGrupos], null);
+    var filter = DatasetFactory.createConstraint("workflowColleagueRolePK.groupId", grupoCoord, grupoCoord, ConstraintType.MUST);
+    var dataset = DatasetFactory.getDataset("workflowColleagueRole", null, [filter], null);
     var destinatarios = []
-    for (var i = 0; i < datasetGrupos.values.length; i++) {
+    for (var i = 0; i < dataset.values.length; i++) {
         var constraintUsuarios = DatasetFactory.createConstraint(
             "colleaguePK.colleagueId",
-            datasetGrupos.values[i]["colleagueGroupPK.colleagueId"].toString(),
-            datasetGrupos.values[i]["colleagueGroupPK.colleagueId"].toString(),
+            dataset.values[i]["workflowColleagueRolePK.colleagueId"].toString(),
+            dataset.values[i]["workflowColleagueRolePK.colleagueId"].toString(),
             ConstraintType.MUST
         );
         var datasetUsuarios = DatasetFactory.getDataset("colleague", null, [constraintUsuarios], null);
