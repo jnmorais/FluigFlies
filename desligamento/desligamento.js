@@ -3,7 +3,9 @@ $(document).ready(function () {
     var rd_mtvDslg2 = "Término do contrato de experiência"
     var rd_mtvDslg3 = "Desligamento Empregador (Empresa)"
     var rd_mtvDslg6 = "Acordo entre as partes (conforme art. 484-A CLT)"
-    $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg,#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh,#rh_fdbk,#div_txt_rh_fdb,#premioApv,#msg_transf,#div_rd_clbLocS,#div_rd_clbLocAnx,#aso_obrigatorio,#sistemas_utilizados").hide()
+    $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg").hide()
+    $("#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh,#rh_fdbk,#div_txt_rh_fdb,#premioApv").hide()
+    $("#msg_transf,#div_rd_clbLocS,#div_rd_clbLocAnx,#aso_obrigatorio,#sistemas_utilizados").hide()
     if (FM == "ADD" || FM == "MOD") {
         $(".select2").select2()
     }
@@ -152,3 +154,32 @@ function substringMatcher(strs) {
         cb(matches);
     };
 }
+// IDENTIFICA CARGOS QUE DEVEM PASSAR PELO RH LOGO APOS O PROCESSO INICIAR
+function setSelectedZoomItem(selectedItem) {
+    if (selectedItem.inputId == "txt_cargo" || selectedItem.inputId == "txt_setor") {
+        var cargo = $("#txt_cargo").val()
+        var setor = $("#txt_setor").val()
+        switch (cargo + "|" + setor) {
+            case "ENCARREGADO ALMOXARIFADO|" + setor:
+            case "ENCARREGADO DE CARPINTEIRO|" + setor:
+            case "ENCARREGADO DE OBRA|" + setor:
+            case "ENCARREGADO DE ACABAMENTO|" + setor:
+            case "ENCARREGADO DE ARMADOR|" + setor:
+            case "ENCARREGADO DE OBRA|" + setor:
+            case "ENCARREGADO DE INSTALAÇÕES|" + setor:
+            case "MESTRE DE OBRA|" + setor:
+            case "PEDREIRO DE ACABAMENTO|Assistência Técnica":
+                $("#vlr_cargos_rh").val("Sim")
+                break;
+            default:
+                $("#vlr_cargos_rh").val("Não")
+                break;
+        }
+    }
+}
+// function setSelectedZoomItem(selectedItem) {
+//     if (selectedItem.inputId == "slt_adm_fluig") {
+//         $("#txt_nm_clb").val(selectedItem["Colaborador"])
+//         $("#txt_nm_clb").attr("readonly", true)
+//     }
+// }
