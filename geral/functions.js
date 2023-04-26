@@ -66,11 +66,15 @@ function tableLineCount(tablename) {
         console.error(e)
     }
 }
-function loadDatasetCargos(verificador) {
+function loadDatasetCargos(verificador, campoId) {
     var dataset = DatasetFactory.getDataset("ds_cargos", null, null, null).values;
-    for (const item of dataset) {
-        if (item.vrf == verificador) {
-            $("#slt_cargo").append(`<option value="${item.Cargo}">${item.Cargo}</option>`);
+    if (verificador != null) {
+        for (const item of dataset) {
+            if (item.vrf == verificador) {
+                $(campoId).append(`<option value="${item.Cargo}">${item.Cargo}</option>`);
+            }
         }
+    } else {
+        $(campoId).append(`<option value="${item.Cargo}">${item.Cargo}</option>`);
     }
 }

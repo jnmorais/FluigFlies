@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    loadDatasetCargos("Adm","#txt_cargo")
     $(".select2").select2();
     $("[data-toggle='tooltip']").tooltip()
     // ATV 0|1|4

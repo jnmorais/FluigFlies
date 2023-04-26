@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    loadDatasetCargos("Obra", "#slt_cargo")
     $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
     $("#div_treinamentos").hide()
