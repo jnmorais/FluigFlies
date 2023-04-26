@@ -2,10 +2,10 @@
 $(document).ready(function () {
     displayBtnFiles()
     tableLineCount()
-    if(FM == "VIEW"){
-		$(".btnAddNewRow").remove();
-		$(".tdDeleteRow").remove();
-	}
+    if (FM == "VIEW") {
+        $(".btnAddNewRow").remove();
+        $(".tdDeleteRow").remove();
+    }
     $(".copyCode").click(function (e) {
         e.preventDefault()
         navigator.clipboard.writeText($(this).val())
@@ -64,5 +64,13 @@ function tableLineCount(tablename) {
     } catch (e) {
         console.error("Houve um erro inesperado na função tableLineCount")
         console.error(e)
+    }
+}
+function loadDatasetCargos(verificador) {
+    var dataset = DatasetFactory.getDataset("ds_cargos", null, null, null).values;
+    for (const item of dataset) {
+        if (item.vrf == verificador) {
+            $("#slt_cargo").append(`<option value="${item.Cargo}">${item.Cargo}</option>`);
+        }
     }
 }
