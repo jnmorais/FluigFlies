@@ -70,6 +70,7 @@ $(document).ready(function () {
         show_on_click("rd_rh_ans", "Não, será transferido", null, "msg_transf")
         show_on_click("rd_adm_aso", "Sim", null, "aso_obrigatorio")
         show_on_click("rd_adm_fluig", "Sim", null, "div_adm_fluig_1")
+        show_on_click("rd_ans_plosdt", "Sim", null, "div_rd_plosdt_ok")
         // Esconde
         hide_on_load("rd_clbCargo", "Obra (Canteiro e Produção)", null, "div_rd_clbLocS")
         hide_on_load("rd_clbCargo", "Escritório (BackOffice e Administrativo De Obra)", null, "sistemas_utilizados")
@@ -83,6 +84,7 @@ $(document).ready(function () {
         hide_on_load("rd_rh_ans", "Não, será transferido", null, "msg_transf")
         hide_on_load("rd_adm_aso", "Sim", null, "aso_obrigatorio")
         hide_on_load("rd_adm_fluig", "Sim", null, "div_adm_fluig_1")
+        hide_on_load("rd_ans_plosdt", "Sim", null, "div_rd_plosdt_ok")
         // CONTROLA EXIBICAO DOS INPUTS DPS DE CLICADOS
         if ($("input[name$='rd_Estg']:checked").val() == "Sim") {
             $("#div_rd_eftv,#div_rd_mtvDslg").show()
