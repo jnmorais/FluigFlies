@@ -36,7 +36,7 @@ $(document).ready(function () {
                 // "searchField": "vrf", "searchValue": "Obra"
             };
             var thisModal = FLUIGC.modal({
-                title: 'Selecione uma função <small>(clique duas vezes na opção)</small>',
+                title: 'Selecione uma função (clique duas vezes na opção)',
                 content: '<div id="postEmb"></div>',
                 id: 'fluig-modal',
                 actions: [{
