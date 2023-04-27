@@ -49,8 +49,8 @@ $(document).ready(function () {
                         },
                         root: 'content'
                     },
-                    renderContent: ['Cargo','vrf'],
-                    header: [{ 'title': 'Cargo', 'size': 'col-sm-8' },{ 'title': 'Processo', 'size': 'col-sm-4' }],
+                    renderContent: ['Cargo', 'vrf'],
+                    header: [{ 'title': 'Cargo', 'size': 'col-sm-8' }, { 'title': 'Processo', 'size': 'col-sm-4' }],
                     multiSelect: false,
                     search: {
                         enabled: true,
@@ -145,22 +145,29 @@ $(document).ready(function () {
     $("#txt_setor_slt").change(function () {
         // e.preventDefault();
         verificarCargosRH()
+        var setor = $("#txt_setor_slt").val()
+        switch (cargo + "|" + setor) {
+            case "PEDREIRO DE ACABAMENTO|Assistência Técnica":
+                $("#vlr_cargos_rh").val("Sim")
+                break;
+            default:
+                $("#vlr_cargos_rh").val("Não")
+                break;
+        }
     });
 })
 // VERIFICAR SE CARGO DEVE PASSAR PELO RH
 function verificarCargosRH() {
     var cargo = $("#slt_cargo").val()
-    var setor = $("#txt_setor_slt").val()
-    switch (cargo + "|" + setor) {
-        case "ENCARREGADO ALMOXARIFADO|" + setor:
-        case "ENCARREGADO DE CARPINTEIRO|" + setor:
-        case "ENCARREGADO DE OBRA|" + setor:
-        case "ENCARREGADO DE ACABAMENTO|" + setor:
-        case "ENCARREGADO DE ARMADOR|" + setor:
-        case "ENCARREGADO DE OBRA|" + setor:
-        case "ENCARREGADO DE INSTALAÇÕES|" + setor:
-        case "MESTRE DE OBRA|" + setor:
-        case "PEDREIRO DE ACABAMENTO|Assistência Técnica":
+    switch (cargo) {
+        case "ENCARREGADO ALMOXARIFADO":
+        case "ENCARREGADO DE CARPINTEIRO":
+        case "ENCARREGADO DE OBRA":
+        case "ENCARREGADO DE ACABAMENTO":
+        case "ENCARREGADO DE ARMADOR":
+        case "ENCARREGADO DE OBRA":
+        case "ENCARREGADO DE INSTALAÇÕES":
+        case "MESTRE DE OBRA":
             $("#vlr_cargos_rh").val("Sim")
             break;
         default:
