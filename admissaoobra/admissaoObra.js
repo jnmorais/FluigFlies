@@ -1,10 +1,12 @@
 $(document).ready(function () {
-    loadDatasetCargos("Obra", "#slt_cargo")
     $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
     $("#div_treinamentos").hide()
     $("#div_novo_cargo").hide()
     // ATV 0|1|4
+    if (ATV == 0 || ATV == 1) {
+        loadDatasetCargos("Obra", "#slt_cargo")
+    }
     if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null) {
         show_on_click('rd_mtvCntr', 'Substituição de colaborador', null, null, 'txt_prSb');
         show_on_click('rd_mtvCntr_subst', 'Sim', null, null, 'div_mtvCntr_subst_1');
