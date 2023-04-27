@@ -124,7 +124,7 @@ $(document).ready(function () {
         }
     }
     if (ATV > 6) {
-        let prioridade = $("[name$='rd_prioridade']").val()
+        let prioridade = $("[name$='rd_prioridade']:checked").val()
         let prioridade_texto = ""
         switch (prioridade) {
             case "Baixa":

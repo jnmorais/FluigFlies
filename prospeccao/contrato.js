@@ -153,6 +153,7 @@ function carregarValoresTbl(solicitacao, tblName, campos, tblDestino) {
     var workflowProcess = DatasetFactory.getDataset("workflowProcess", null, filtros, null);
     var numDoc = workflowProcess.values[0].cardDocumentId
     let table = DatasetFactory.getDataset("formulario_estudoterreno", null, new Array(DatasetFactory.createConstraint("tablename", tblName, tblName, ConstraintType.MUST), DatasetFactory.createConstraint("documentid", numDoc, numDoc, ConstraintType.MUST)), null);
+    console.log(table)
     table.values.forEach(item => {
         for (const campo of campos) {
             $("#" + tblDestino + " tbody").append("<tr><td>" + item[campo] + "</td><td>" + item[campo] + "</td></tr>");
