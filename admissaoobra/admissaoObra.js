@@ -167,9 +167,6 @@ function verificarCargosRH() {
         case "MESTRE DE OBRA":
             $("#vlr_cargos_rh").val("Sim")
             break;
-        default:
-            $("#vlr_cargos_rh").val("Não")
-            break;
     }
 }
 // DETECTA ALTERACOES NO ZOOM
