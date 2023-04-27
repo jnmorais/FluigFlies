@@ -2,19 +2,21 @@ $(document).ready(function () {
     var filtros = new Array(DatasetFactory.createConstraint("workflowProcessPK.processInstanceId", $("#txt_codigoEstudo").val(), $("#txt_codigoEstudo").val(), ConstraintType.MUST))
     var workflowProcess = DatasetFactory.getDataset("workflowProcess", null, filtros, null);
     var numDoc = workflowProcess.values[0].cardDocumentId
-    let tb_areas = DatasetFactory.getDataset("ds_estudoterreno", null, new Array(DatasetFactory.createConstraint("tablename", "tipos_areas", "tipos_areas", ConstraintType.MUST), DatasetFactory.createConstraint("documentid", numDoc, numDoc, ConstraintType.MUST)), null);
-    tb_areas.values.forEach(item => {
-        $("#tbTpArTkM tbody").append("<tr><td>" + item['txt_tp_planta'] + "</td><td>" + item['vlr_tp_area'] + "</td><td>" + item['vlr_tp_tktM'] + "</td></tr>");
-    });
+    let tb_areas = DatasetFactory.getDataset("formulario_estudoterreno", null, new Array(DatasetFactory.createConstraint("tablename", "tipos_areas", "tipos_areas", ConstraintType.MUST), DatasetFactory.createConstraint("documentid", numDoc, numDoc, ConstraintType.MUST)), null);
+    if (tb_areas.length > 0) {
+        tb_areas.values.forEach(item => {
+            $("#tbTpArTkM tbody").append("<tr><td>" + item['txt_tp_planta'] + "</td><td>" + item['vlr_tp_area'] + "</td><td>" + item['vlr_tp_tktM'] + "</td></tr>");
+        });
+    }
     $(".input_custom").attr("readonly", true)
     // DADOS CONTRATO
-    carregarValores("ds_contrato", $("#txt_codigoContrato").val(), ["dt_ppl_ri", "dt_ppl_alvara"], "solicitacao_contrato", false)
+    carregarValores("ds_contratos", $("#txt_codigoContrato").val(), ["dt_ppl_ri", "dt_ppl_alvara"], "solicitacao_contrato", false)
     // DADOS ESTUDO - TIPO EMPREENDIMENTO
-    carregarValores("ds_estudoterreno", $("#txt_codigoEstudo").val(), ["slt_tpEmprd_1", "slt_tpEmprd_2", "slt_tpEmprd_3", "slt_tpEmprd_4"], "solicitacao_estudo", true)
+    carregarValores("formulario_estudoterreno", $("#txt_codigoEstudo").val(), ["slt_tpEmprd_1", "slt_tpEmprd_2", "slt_tpEmprd_3", "slt_tpEmprd_4"], "solicitacao_estudo", true)
     // DADOS ESTUDO - TIPO EMPREENDIMENTO
-    carregarValores("ds_estudoterreno", $("#txt_codigoEstudo").val(), ["dataSolicitacao"], "solicitacao_estudo", false)
+    carregarValores("formulario_estudoterreno", $("#txt_codigoEstudo").val(), ["dataSolicitacao"], "solicitacao_estudo", false)
     // DADOS TERRENO - ANALISE TECNICA
-    carregarValores("ds_cadastroterreno", $("#txt_codigoTrr").val(), ["txtAr_obsansCoord", "txtAr_obsansDirt", "txtAr_obsansComercial"], "solicitacao_cadastro", false)
+    carregarValores("formulario_cadastroterreno", $("#txt_codigoTrr").val(), ["txtAr_obsansCoord", "txtAr_obsansDirt", "txtAr_obsansComercial"], "solicitacao_cadastro", false)
 });
 // ABRE A SOLICITACAO DO ESTUDO SELECIONADO
 function visualizarSolicitacao(campo) {
@@ -40,6 +42,7 @@ function visualizarSolicitacao(campo) {
 }
 // BUSCA INFORMACOES DO TERRENO|ESTUDO CRIADOS
 function carregarValores(processo, solicitacao, campos, campo_vrf, vrf) {
+    // console.log(processo, solicitacao, campos, campo_vrf, vrf)
     if (vrf) {
         var filter = new Array(DatasetFactory.createConstraint(campo_vrf, solicitacao, solicitacao, ConstraintType.MUST));
         var ds_values = DatasetFactory.getDataset(processo, null, filter, null);
@@ -70,10 +73,8 @@ function carregarValoresTbl(solicitacao, tblName, campos, tblDestino) {
     var filtros = new Array(DatasetFactory.createConstraint("workflowProcessPK.processInstanceId", solicitacao, solicitacao, ConstraintType.MUST))
     var workflowProcess = DatasetFactory.getDataset("workflowProcess", null, filtros, null);
     var numDoc = workflowProcess.values[0].cardDocumentId
-    let tb_areas = DatasetFactory.getDataset("ds_estudoterreno", null, new Array(DatasetFactory.createConstraint("tablename", tblName, tblName, ConstraintType.MUST), DatasetFactory.createConstraint("documentid", numDoc, numDoc, ConstraintType.MUST)), null);
-    tb_areas.values.forEach(item => {
-        for (const campo of campos) {
-            $("#" + tblDestino + " tbody").append(" < tr ><td>" + item[campo] + "</td><td>" + item[campo] + "</td></tr > ");
-        }
+    let table = DatasetFactory.getDataset("formulario_estudoterreno", null, new Array(DatasetFactory.createConstraint("tablename", tblName, tblName, ConstraintType.MUST), DatasetFactory.createConstraint("documentid", numDoc, numDoc, ConstraintType.MUST)), null);
+    table.values.forEach(item => {
+        $("#" + tblDestino + " tbody").append("<tr><td>" + item["txt_tpPlanta"] + "</td><td>" + item["vlr_ticketMedio"] + "</td><td>" + item["txt_obs_ticketMedio"] + "</td></tr>");
     });
 }

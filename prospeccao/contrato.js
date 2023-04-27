@@ -52,7 +52,7 @@ function setSelectedZoomItem(selectedItem) {
         // VALORES DO TERRENO
         carregarValores("formulario_cadastroterreno", selectedItem["Codigo do terreno"], ["slt_tpTerr", , "txt_areaTrr", "txt_vlrTerr", "txt_percCrr", "txt_enderecoTrr", "txtAr_obsansCoord", "txtAr_obsansDirt", "txtAr_obsansComercial"], "solicitacao_cadastro")
         // CARREGA TICKET MEDIO
-        carregarValoresTbl(selectedItem["Codigo do estudo"], "tblTicketMedio", ["txt_tpPlanta", "vlr_ticketMedio"], "tblTicketMedio")
+        carregarValoresTbl(selectedItem["Codigo do estudo"], "tblTicketMedio", ["txt_tpPlanta", "vlr_ticketMedio", "txt_obs_ticketMedio"], "tblTicketMedio")
     }
 }
 // ABRE A SOLICITACAO DO ESTUDO SELECIONADO
@@ -153,10 +153,7 @@ function carregarValoresTbl(solicitacao, tblName, campos, tblDestino) {
     var workflowProcess = DatasetFactory.getDataset("workflowProcess", null, filtros, null);
     var numDoc = workflowProcess.values[0].cardDocumentId
     let table = DatasetFactory.getDataset("formulario_estudoterreno", null, new Array(DatasetFactory.createConstraint("tablename", tblName, tblName, ConstraintType.MUST), DatasetFactory.createConstraint("documentid", numDoc, numDoc, ConstraintType.MUST)), null);
-    console.log(table)
     table.values.forEach(item => {
-        for (const campo of campos) {
-            $("#" + tblDestino + " tbody").append("<tr><td>" + item[campo] + "</td><td>" + item[campo] + "</td></tr>");
-        }
+            $("#" + tblDestino + " tbody").append("<tr><td>" + item["txt_tpPlanta"] + "</td><td>" + item["vlr_ticketMedio"] + "</td><td>" + item["txt_obs_ticketMedio"] + "</td></tr>");
     });
 }
