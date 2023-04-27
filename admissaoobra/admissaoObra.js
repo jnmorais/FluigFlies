@@ -145,6 +145,7 @@ $(document).ready(function () {
     $("#txt_setor_slt").change(function () {
         // e.preventDefault();
         verificarCargosRH()
+        var cargo = $("#slt_cargo").val()
         var setor = $("#txt_setor_slt").val()
         switch (cargo + "|" + setor) {
             case "PEDREIRO DE ACABAMENTO|Assistência Técnica":
