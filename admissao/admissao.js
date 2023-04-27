@@ -36,7 +36,7 @@ $(document).ready(function () {
                 // "searchField": "vrf", "searchValue": "Obra"
             };
             var thisModal = FLUIGC.modal({
-                title: 'Selecione uma função',
+                title: 'Selecione uma função (clique duas vezes na opção)',
                 content: '<div id="postEmb"></div>',
                 id: 'fluig-modal',
                 actions: [{
@@ -57,8 +57,8 @@ $(document).ready(function () {
                         },
                         root: 'content'
                     },
-                    renderContent: ['Cargo'],
-                    header: [{ 'title': 'Cargo', 'size': 'col-sm-12' }],
+                    renderContent: ['Cargo','vrf'],
+                    header: [{ 'title': 'Cargo', 'size': 'col-sm-8' },{ 'title': 'vrf', 'size': 'col-sm-4' }],
                     multiSelect: false,
                     search: {
                         enabled: true,
