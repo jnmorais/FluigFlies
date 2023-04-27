@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#div_treinamentos").hide()
     $("#div_novo_cargo").hide()
     // ATV 0|1|4
-    if (ATV == 0 || ATV == 1) {
+    if (ATV == 0 || ATV == 1 || ATV == null) {
         loadDatasetCargos("Obra", "#slt_cargo")
     }
     if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null) {
