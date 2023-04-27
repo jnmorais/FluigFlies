@@ -29,7 +29,7 @@ $(document).ready(function () {
             };
             var thisModal = FLUIGC.modal({
                 title: 'Selecione uma função (clique duas vezes na opção)',
-                content: '<div id="postEmb"><small>Clique duas na opção desejada</small></div>',
+                content: '<div id="postEmb"></div>',
                 id: 'fluig-modal',
                 actions: [{
                     'label': 'Fechar',
