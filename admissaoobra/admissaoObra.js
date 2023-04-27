@@ -40,9 +40,7 @@ $(document).ready(function () {
         // hide_on_load('rd_semNivelamento', 'Não', null, null, 'div_infoCrgSal');
         hide_on_load('rd_ans_sst', 'Sim', null, null, 'div_anxAdendo');
         hide_on_load('rd_cntr_dp', 'Não', null, null, 'cntr_dp_ok');
-    }
-    $("#slt_cargo").change(function (e) {
-        e.preventDefault();
+        // CARGOS E TREINAMENTOS/NR
         switch ($("#slt_cargo option:selected").val()) {
             case "ELETRICISTA DE INSTALAÇÕES":
             case "AUXILIAR DE ELETRICISTA":
@@ -62,8 +60,11 @@ $(document).ready(function () {
                 $("#nr_txt").text("")
                 break;
         }
-        var cargo = $("#txt_cargo").val()
-        var setor = $("#txt_setor").val()
+    }
+    $("#slt_cargo,#txt_setor_slt").change(function () {
+        // e.preventDefault();
+        var cargo = $("#slt_cargo").val()
+        var setor = $("#txt_setor_slt").val()
         switch (cargo + "|" + setor) {
             case "ENCARREGADO ALMOXARIFADO|" + setor:
             case "ENCARREGADO DE CARPINTEIRO|" + setor:
