@@ -1,12 +1,11 @@
 $(document).ready(function () {
+    // loadDatasetCargos("Obra", "#slt_cargo")
+
     $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
     $("#div_treinamentos").hide()
     $("#div_novo_cargo").hide()
     // ATV 0|1|4
-    if (ATV == 0 || ATV == 1) {
-        loadDatasetCargos("Obra", "#slt_cargo")
-    }
     if (ATV == 0 || ATV == 1 || ATV == 4 || ATV == null) {
         show_on_click('rd_mtvCntr', 'Substituição de colaborador', null, null, 'txt_prSb');
         show_on_click('rd_mtvCntr_subst', 'Sim', null, null, 'div_mtvCntr_subst_1');
@@ -21,6 +20,83 @@ $(document).ready(function () {
                 $("#div_infoCrgSal,#alert_cargo,#div_infoCrg").show()
                 $("#div_infoSal,#alert_cargoSalario").hide()
             }
+        });
+        // SELECT CARGOS
+        $('#btZoom').click(function () {
+            var param = {
+                "datasetId": "ds_cargos", "limit": "0",
+                // "filterFields": ["vrf", "Obra"],
+                // "searchField": "vrf", "searchValue": "Obra"
+            };
+            var thisModal = FLUIGC.modal({
+                title: 'Selecione uma função',
+                content: '<div id="postEmb"></div>',
+                id: 'fluig-modal',
+                actions: [{
+                    'label': 'Fechar',
+                    'autoClose': true
+                }]
+            }, function (err, data) {
+                var thisTable = FLUIGC.datatable('#postEmb', {
+                    dataRequest: {
+                        url: '/api/public/ecm/dataset/search/',
+                        options: {
+                            contentType: "application/json",
+                            dataType: 'json',
+                            method: 'POST',
+                            data: JSON.stringify(param),
+                            crossDomain: true,
+                            cache: false
+                        },
+                        root: 'content'
+                    },
+                    renderContent: ['Cargo'],
+                    header: [{ 'title': 'Cargo', 'size': 'col-sm-12' }],
+                    multiSelect: false,
+                    search: {
+                        enabled: true,
+                        searchAreaStyle: 'col-md-9',
+                        onSearch: function (res) {
+                            if (!res) {
+                                thisTable.reload();
+                            }
+                            var dataAll = thisTable.getData();
+                            var search = dataAll.filter(function (el) {
+                                return el.Cargo.indexOf(res.toUpperCase()) >= 0;
+                            });
+                            if (search && search.length) {
+                                thisTable.reload(search);
+                            } else {
+                                FLUIGC.toast({
+                                    title: 'Atenção: ',
+                                    message: 'Cargo informado não encontrado',
+                                    type: 'warning'
+                                });
+                            }
+                        }
+                    },
+                    scroll: {
+                        target: '#postEmb',
+                        enabled: true
+                    },
+                    tableStyle: 'table-striped'
+                }).on('dblclick', function (ev) {
+                    var index = thisTable.selectedRows()[0];
+                    var selected = thisTable.getRow(index);
+                    if (selected.vrf == "ADMINISTRATIVO") {
+                        FLUIGC.toast({
+                            title: 'Atenção: ',
+                            message: 'Este cargo não é destinado a este processo!',
+                            type: 'warning'
+                        });
+                    } else {
+                        $("#slt_cargo").val(selected.Cargo);
+                        verificarCargosRH()
+                        thisModal.remove();
+                    }
+                });
+            });
+            $(".modal-body").css("max-height", window.innerHeight / 2 + 'px');
         });
     }
     if (ATV == 23 || ATV == null) {
@@ -43,7 +119,7 @@ $(document).ready(function () {
         hide_on_load('rd_ans_sst', 'Sim', null, null, 'div_anxAdendo');
         hide_on_load('rd_cntr_dp', 'Não', null, null, 'cntr_dp_ok');
         // CARGOS E TREINAMENTOS/NR
-        switch ($("#slt_cargo option:selected").val()) {
+        switch ($("#slt_cargo").val()) {
             case "ELETRICISTA DE INSTALAÇÕES":
             case "AUXILIAR DE ELETRICISTA":
                 $("#div_treinamentos").show()
@@ -63,28 +139,32 @@ $(document).ready(function () {
                 break;
         }
     }
-    $("#slt_cargo,#txt_setor_slt").change(function () {
+    $("#txt_setor_slt").change(function () {
         // e.preventDefault();
-        var cargo = $("#slt_cargo").val()
-        var setor = $("#txt_setor_slt").val()
-        switch (cargo + "|" + setor) {
-            case "ENCARREGADO ALMOXARIFADO|" + setor:
-            case "ENCARREGADO DE CARPINTEIRO|" + setor:
-            case "ENCARREGADO DE OBRA|" + setor:
-            case "ENCARREGADO DE ACABAMENTO|" + setor:
-            case "ENCARREGADO DE ARMADOR|" + setor:
-            case "ENCARREGADO DE OBRA|" + setor:
-            case "ENCARREGADO DE INSTALAÇÕES|" + setor:
-            case "MESTRE DE OBRA|" + setor:
-            case "PEDREIRO DE ACABAMENTO|Assistência Técnica":
-                $("#vlr_cargos_rh").val("Sim")
-                break;
-            default:
-                $("#vlr_cargos_rh").val("Não")
-                break;
-        }
+        verificarCargosRH()
     });
 })
+// VERIFICAR SE CARGO DEVE PASSAR PELO RH
+function verificarCargosRH() {
+    var cargo = $("#slt_cargo").val()
+    var setor = $("#txt_setor_slt").val()
+    switch (cargo + "|" + setor) {
+        case "ENCARREGADO ALMOXARIFADO|" + setor:
+        case "ENCARREGADO DE CARPINTEIRO|" + setor:
+        case "ENCARREGADO DE OBRA|" + setor:
+        case "ENCARREGADO DE ACABAMENTO|" + setor:
+        case "ENCARREGADO DE ARMADOR|" + setor:
+        case "ENCARREGADO DE OBRA|" + setor:
+        case "ENCARREGADO DE INSTALAÇÕES|" + setor:
+        case "MESTRE DE OBRA|" + setor:
+        case "PEDREIRO DE ACABAMENTO|Assistência Técnica":
+            $("#vlr_cargos_rh").val("Sim")
+            break;
+        default:
+            $("#vlr_cargos_rh").val("Não")
+            break;
+    }
+}
 // DETECTA ALTERACOES NO ZOOM
 function setSelectedZoomItem(selectedItem) {
     if (selectedItem.inputId == "txt_cargo") {
