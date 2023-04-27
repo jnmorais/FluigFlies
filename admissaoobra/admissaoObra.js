@@ -41,8 +41,9 @@ $(document).ready(function () {
         hide_on_load('rd_ans_sst', 'Sim', null, null, 'div_anxAdendo');
         hide_on_load('rd_cntr_dp', 'Não', null, null, 'cntr_dp_ok');
     }
-    if ($("#txt_cargo_slt").val() != null) {
-        switch ($("#txt_cargo_slt").val()) {
+    $("#slt_cargo").change(function (e) {
+        e.preventDefault();
+        switch ($("#slt_cargo option:selected").val()) {
             case "ELETRICISTA DE INSTALAÇÕES":
             case "AUXILIAR DE ELETRICISTA":
                 $("#div_treinamentos").show()
@@ -61,8 +62,32 @@ $(document).ready(function () {
                 $("#nr_txt").text("")
                 break;
         }
-    }
+        var cargo = $("#txt_cargo").val()
+        var setor = $("#txt_setor").val()
+        switch (cargo + "|" + setor) {
+            case "ENCARREGADO ALMOXARIFADO|" + setor:
+            case "ENCARREGADO DE CARPINTEIRO|" + setor:
+            case "ENCARREGADO DE OBRA|" + setor:
+            case "ENCARREGADO DE ACABAMENTO|" + setor:
+            case "ENCARREGADO DE ARMADOR|" + setor:
+            case "ENCARREGADO DE OBRA|" + setor:
+            case "ENCARREGADO DE INSTALAÇÕES|" + setor:
+            case "MESTRE DE OBRA|" + setor:
+            case "PEDREIRO DE ACABAMENTO|Assistência Técnica":
+                $("#vlr_cargos_rh").val("Sim")
+                break;
+            default:
+                $("#vlr_cargos_rh").val("Não")
+                break;
+        }
+    });
 })
+// DETECTA ALTERACOES NO ZOOM
+function setSelectedZoomItem(selectedItem) {
+    if (selectedItem.inputId == "txt_cargo") {
+        selectedItem["Cargo"] == "Novo cargo" || selectedItem["Cargo"] == "" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
+    }
+}
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir)
 function show_on_click(campo, valor1, valor2, valor3, show) {
     $("[name$='" + campo + "']").click(function () {
@@ -94,35 +119,6 @@ function hide_on_load(campo, valor1, valor2, valor3, show) {
             $("#" + show).show();
         } else {
             $("#" + show).hide();
-        }
-    }
-}
-function setSelectedZoomItem(selectedItem) {
-    if (selectedItem.inputId == "txt_cargo") {
-        selectedItem["Cargo"] == "Novo cargo" || selectedItem["Cargo"] == "" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
-    }
-    if (selectedItem.inputId == "txt_cargo_slt") {
-        $("#div_treinamentos").hide()
-        $("#nr_txt").text("")
-        let cargo = selectedItem["Cargo"]
-        switch (cargo) {
-            case "ELETRICISTA DE INSTALAÇÕES":
-            case "AUXILIAR DE ELETRICISTA":
-                $("#div_treinamentos").show()
-                $("#nr_txt").text("NR 10")
-                break;
-            case "OPERADOR DE GRUA":
-            case "OPERADOR DE MINI PÁ CARREGADEIRA":
-            case "OPERADOR DE CREMALHEIRA":
-            case "OPERADOR DE BETONEIRA":
-            case "OPERADOR DE RETRO ESCAVADEIRA":
-                $("#div_treinamentos").show()
-                $("#nr_txt").text("NR 12")
-                break;
-            default:
-                $("#div_treinamentos").hide()
-                $("#nr_txt").text("")
-                break;
         }
     }
 }
