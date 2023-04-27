@@ -1,6 +1,5 @@
 $(document).ready(function () {
     // loadDatasetCargos("Obra", "#slt_cargo")
-
     $(".select2").select2();
     $('[data-toggle="tooltip"]').tooltip()
     $("#div_treinamentos").hide()
@@ -108,6 +107,9 @@ $(document).ready(function () {
     if (ATV == 28) {
         $("#dt_inicio_clb,#anexos").hide()
     }
+    if (ATV == 98) {
+        show_on_click('rd_colab_aloj', 'Sim', null, null, 'div_colab_aloj');
+    }
     if (ATV || FM) {
         // ATV 0/4
         hide_on_load('rd_mtvCntr', 'Substituição de colaborador', null, null, 'txt_prSb');
@@ -118,6 +120,7 @@ $(document).ready(function () {
         // hide_on_load('rd_semNivelamento', 'Não', null, null, 'div_infoCrgSal');
         hide_on_load('rd_ans_sst', 'Sim', null, null, 'div_anxAdendo');
         hide_on_load('rd_cntr_dp', 'Não', null, null, 'cntr_dp_ok');
+        hide_on_load('rd_colab_aloj', 'Sim', null, null, 'div_colab_aloj');
         // CARGOS E TREINAMENTOS/NR
         switch ($("#slt_cargo").val()) {
             case "ELETRICISTA DE INSTALAÇÕES":
