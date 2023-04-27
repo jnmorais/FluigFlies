@@ -90,7 +90,6 @@ $(document).ready(function () {
                         });
                     } else {
                         $("#slt_cargo").val(selected.Cargo);
-                        verificarCargosRH()
                         thisModal.remove();
                     }
                 });
@@ -106,6 +105,9 @@ $(document).ready(function () {
     }
     if (ATV == 28) {
         $("#dt_inicio_clb,#anexos").hide()
+    }
+    if (ATV == 87) {
+        verificarCargosRH()
     }
     if (ATV == 98) {
         show_on_click('rd_colab_aloj', 'Sim', null, null, 'div_colab_aloj');
@@ -142,30 +144,25 @@ $(document).ready(function () {
                 break;
         }
     }
-    $("#txt_setor_slt").change(function () {
-        // e.preventDefault();
-        var cargo = $("#slt_cargo").val()
-        var setor = $("#txt_setor_slt").val()
-        switch (cargo + "|" + setor) {
-            case "PEDREIRO DE ACABAMENTO|Assistência Técnica":
-                $("#vlr_cargos_rh").val("Sim")
-                break;
-        }
-    });
 })
 // VERIFICAR SE CARGO DEVE PASSAR PELO RH
 function verificarCargosRH() {
     var cargo = $("#slt_cargo").val()
-    switch (cargo) {
-        case "ENCARREGADO ALMOXARIFADO":
-        case "ENCARREGADO DE CARPINTEIRO":
-        case "ENCARREGADO DE OBRA":
-        case "ENCARREGADO DE ACABAMENTO":
-        case "ENCARREGADO DE ARMADOR":
-        case "ENCARREGADO DE OBRA":
-        case "ENCARREGADO DE INSTALAÇÕES":
-        case "MESTRE DE OBRA":
+    var setor = $("#txt_setor_slt").val()
+    switch (cargo + "|" + setor) {
+        case "PEDREIRO DE ACABAMENTO|Assistência Técnica":
+        case "ENCARREGADO ALMOXARIFADO|" + setor:
+        case "ENCARREGADO DE CARPINTEIRO|" + setor:
+        case "ENCARREGADO DE OBRA|" + setor:
+        case "ENCARREGADO DE ACABAMENTO|" + setor:
+        case "ENCARREGADO DE ARMADOR|" + setor:
+        case "ENCARREGADO DE OBRA|" + setor:
+        case "ENCARREGADO DE INSTALAÇÕES|" + setor:
+        case "MESTRE DE OBRA|" + setor:
             $("#vlr_cargos_rh").val("Sim")
+            break;
+        default:
+            $("#vlr_cargos_rh").val("Não")
             break;
     }
 }
