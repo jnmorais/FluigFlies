@@ -1,149 +1,150 @@
-[  {
-      "nome": "FVS. 101 - Compactação de Aterro",
-      "decricao": "",
-      "campos": [
-          {
-              "nome": "Demarcação das cotas de aterro",
-              "peso": "25",
-              "obrigatorio": true,
-              "tipo_input": "input",
-              "formato_input": "datetime-local"
-          },
-          {
-              "nome": "Conferência do nível do aterro",
-              "peso": "25",
-              "obrigatorio": true,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Camadas de compactação",
-              "peso": "25",
-              "obrigatorio": true,
-              "tipo_input": "input",
-              "formato_input": "range"
-          },
-          {
-              "nome": "Acabamento",
-              "peso": "25",
-              "obrigatorio": true,
-              "tipo_input": "radio",
-              "formato_input": false
-          }
-      ]
-  },
-  {
-      "nome": "FVS. 102 - Locação de Obra",
-      "decricao": "",
-      "campos": [
-          {
-              "nome": "Definição de referência de nível(RN)",
-              "peso": 25,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Fixação e travamento da tabeira",
-              "peso": 25,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Alinhamento e nível da tabeira",
-              "peso": 25,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Locação dos eixos das peças",
-              "peso": 25,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-      ]
-  },
-  {
-      "nome": "FVS. 103 - Execução de Estacas em Hélice Contínua",
-      "decricao": "",
-      "campos": [
-          {
-              "nome": "Terreno",
-              "peso": 15,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Profundidade",
-              "peso": 17,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Torque",
-              "peso": 17,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Prumo da hélice",
-              "peso": 17,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Diâmetro",
-              "peso": 17,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Armação",
-              "peso": 17,
-              "tipo_input": "radio",
-              "formato_input": false
-          }
-      ]
-  },
-  {
-      "nome": "FVS. 104 - Execução de Estacas Escavadas Mecanicamente",
-      "decricao": "",
-      "campos": [
-          {
-              "nome": "Condições de início",
-              "peso": 15,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Diâmetro",
-              "peso": 17,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Prumo",
-              "peso": 17,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Profundidade",
-              "peso": 17,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Armadura",
-              "peso": 17,
-              "tipo_input": "radio",
-              "formato_input": false
-          },
-          {
-              "nome": "Concretagem",
-              "peso": 17,
-              "tipo_input": "radio",
-              "formato_input": false
-          }
-      ]
-  }
+[
+    {
+        "nome": "FVS. 101 - Compactação de Aterro",
+        "decricao": "",
+        "campos": [
+            {
+                "nome": "Demarcação das cotas de aterro",
+                "peso": "25",
+                "obrigatorio": true,
+                "tipo_input": "input",
+                "formato_input": "datetime-local"
+            },
+            {
+                "nome": "Conferência do nível do aterro",
+                "peso": "25",
+                "obrigatorio": true,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Camadas de compactação",
+                "peso": "25",
+                "obrigatorio": true,
+                "tipo_input": "input",
+                "formato_input": "range"
+            },
+            {
+                "nome": "Acabamento",
+                "peso": "25",
+                "obrigatorio": true,
+                "tipo_input": "radio",
+                "formato_input": false
+            }
+        ]
+    },
+    {
+        "nome": "FVS. 102 - Locação de Obra",
+        "decricao": "",
+        "campos": [
+            {
+                "nome": "Definição de referência de nível(RN)",
+                "peso": 25,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Fixação e travamento da tabeira",
+                "peso": 25,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Alinhamento e nível da tabeira",
+                "peso": 25,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Locação dos eixos das peças",
+                "peso": 25,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+        ]
+    },
+    {
+        "nome": "FVS. 103 - Execução de Estacas em Hélice Contínua",
+        "decricao": "",
+        "campos": [
+            {
+                "nome": "Terreno",
+                "peso": 15,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Profundidade",
+                "peso": 17,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Torque",
+                "peso": 17,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Prumo da hélice",
+                "peso": 17,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Diâmetro",
+                "peso": 17,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Armação",
+                "peso": 17,
+                "tipo_input": "radio",
+                "formato_input": false
+            }
+        ]
+    },
+    {
+        "nome": "FVS. 104 - Execução de Estacas Escavadas Mecanicamente",
+        "decricao": "",
+        "campos": [
+            {
+                "nome": "Condições de início",
+                "peso": 15,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Diâmetro",
+                "peso": 17,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Prumo",
+                "peso": 17,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Profundidade",
+                "peso": 17,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Armadura",
+                "peso": 17,
+                "tipo_input": "radio",
+                "formato_input": false
+            },
+            {
+                "nome": "Concretagem",
+                "peso": 17,
+                "tipo_input": "radio",
+                "formato_input": false
+            }
+        ]
+    }
 ]
