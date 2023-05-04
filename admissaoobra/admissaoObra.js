@@ -49,8 +49,8 @@ $(document).ready(function () {
                         },
                         root: 'content'
                     },
-                    renderContent: ['Cargo', 'vrf'],
-                    header: [{ 'title': 'Cargo', 'size': 'col-sm-8' }, { 'title': 'Processo', 'size': 'col-sm-4' }],
+                    renderContent: ['Cargo','vrf'],
+                    header: [{ 'title': 'Cargo', 'size': 'col-sm-8' },{ 'title': 'Processo', 'size': 'col-sm-4' }],
                     multiSelect: false,
                     search: {
                         enabled: true,
@@ -82,14 +82,16 @@ $(document).ready(function () {
                 }).on('dblclick', function (ev) {
                     var index = thisTable.selectedRows()[0];
                     var selected = thisTable.getRow(index);
-                    if (selected.vrf == "ADMINISTRATIVO") {
+                    if (selected.vrf == "OBRA") {
                         FLUIGC.toast({
                             title: 'Atenção: ',
                             message: 'Este cargo não é destinado a este processo!',
                             type: 'warning'
                         });
                     } else {
-                        $("#slt_cargo").val(selected.Cargo);
+                        $("#txt_cargo").val(selected.Cargo);
+                        $("#rd_escol").val(selected.Escolaridade)
+                        $("#cargoResp blockquote").text(selected.Autoridade)
                         thisModal.remove();
                     }
                 });
