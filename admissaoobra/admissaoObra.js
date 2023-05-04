@@ -82,7 +82,7 @@ $(document).ready(function () {
                 }).on('dblclick', function (ev) {
                     var index = thisTable.selectedRows()[0];
                     var selected = thisTable.getRow(index);
-                    if (selected.vrf == "OBRA") {
+                    if (selected.vrf == "Obra") {
                         FLUIGC.toast({
                             title: 'Atenção: ',
                             message: 'Este cargo não é destinado a este processo!',
