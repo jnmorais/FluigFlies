@@ -89,7 +89,7 @@ $(document).ready(function () {
                             type: 'warning'
                         });
                     } else {
-                        $("#txt_cargo").val(selected.Cargo);
+                        $("#slt_cargo").val(selected.Cargo);
                         $("#rd_escol").val(selected.Escolaridade)
                         $("#cargoResp blockquote").text(selected.Autoridade)
                         thisModal.remove();
