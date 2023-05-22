@@ -68,15 +68,14 @@
                 "item_obrigatorio": "Não",
                 "item_tipo_avaliacao": null,
                 "item_peso": "50",
-                "arrItensAvaliacao": [
+                "arrItensAvaliacao": [],
+                "item_complemento": [
                     {
                         "comentario": "comentario"
                     },
                     {
                         "assinatura": "assinatura"
-                    }
-                ],
-                "item_complemento": null
+                    }]
             }
         ]
     }
