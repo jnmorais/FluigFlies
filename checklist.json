@@ -1,83 +1,82 @@
 [
     {
-        "id_checklist": 2,
-        "chk_nome": "FVS 001 - T.I",
-        "chk_descricao": "FVS 001 - T.I",
+        "id_checklist": 1,
+        "chk_nome": "Checklist 1",
+        "chk_descricao": "Testes",
         "campos": [
             {
                 "id": 1,
-                "id_checklist": 2,
+                "id_checklist": 1,
                 "item_nome": "Item #1",
-                "item_descricao": "FVS 001 - T.I",
-                "item_dica": "FVS 001 - T.I",
+                "item_descricao": "Item #1",
+                "item_dica": "Item #1",
                 "item_tipo": "Avaliativo",
-                "item_formato": "",
-                "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
-                "item_peso": "50",
+                "item_formato": null,
+                "item_obrigatorio": "Não",
+                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom",
+                "item_peso": "25",
                 "arrItensAvaliacao": [
                     {
-                        "ruim": [
-                            "pnlAcao",
-                            "anexos"
+                        "n_ruim": [
+                            "comentario",
+                            "pnlAcao"
+                        ],
+                        "na_regular": [
+                            "Aplicavél"
+                        ],
+                        "s_bom": [
+                            "assinatura"
                         ]
-                    },
-                    {
-                        "regular": "comentario"
-                    },
-                    {
-                        "bom": "Aplicavél"
                     }
                 ],
-                "item_complemento": []
+                "item_complemento": null
             },
             {
                 "id": 2,
-                "id_checklist": 2,
+                "id_checklist": 1,
                 "item_nome": "Item #2",
-                "item_descricao": "FVS 001 - T.I",
-                "item_dica": "FVS 001 - T.I",
+                "item_descricao": "Item #2",
+                "item_dica": "Item #2",
                 "item_tipo": "Avaliativo",
-                "item_formato": "",
-                "item_obrigatorio": "Sim",
+                "item_formato": null,
+                "item_obrigatorio": "Não",
                 "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
-                "item_peso": "50",
+                "item_peso": "25",
                 "arrItensAvaliacao": [
                     {
-                        "n": [
-                            "comentario",
+                        "n_ruim": [
                             "pnlAcao"
+                        ],
+                        "na_regular": [
+                            "assinatura"
+                        ],
+                        "s_bom": [
+                            "assinatura"
                         ]
-                    },
-                    {
-                        "s": "assinatura"
-                    },
-                    {
-                        "na": "Aplicavél"
                     }
                 ],
-                "item_complemento": []
+                "item_complemento": null
             },
             {
                 "id": 3,
-                "id_checklist": 2,
+                "id_checklist": 1,
                 "item_nome": "Item #3",
-                "item_descricao": "FVS 001 - T.I",
-                "item_dica": "FVS 001 - T.I",
+                "item_descricao": "Item #3",
+                "item_dica": "Item #3",
                 "item_tipo": "Data",
-                "item_formato": "Horário 24h",
-                "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrItensAvaliacao": [],
-                "item_complemento": [
+                "item_formato": null,
+                "item_obrigatorio": "Não",
+                "item_tipo_avaliacao": "Horário 24h",
+                "item_peso": "50",
+                "arrItensAvaliacao": [
                     {
                         "comentario": "comentario"
                     },
                     {
                         "assinatura": "assinatura"
                     }
-                ]
+                ],
+                "item_complemento": null
             }
         ]
     }
