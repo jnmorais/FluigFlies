@@ -1,121 +1,81 @@
 [
     {
-        "id_checklist": 1,
-        "chk_nome": "FVS. 106 - Cravação de Estacas Pré-Moldadas",
-        "chk_descricao": "",
+        "id_checklist": 2,
+        "chk_nome": "FVS 001 - T.I",
+        "chk_descricao": "FVS 001 - T.I",
         "campos": [
             {
                 "id": 1,
-                "id_checklist": 1,
+                "id_checklist": 2,
                 "item_nome": "Item #1",
-                "item_descricao": "",
-                "item_dica": "",
-                "item_tipo": "Texto",
+                "item_descricao": "FVS 001 - T.I",
+                "item_dica": "FVS 001 - T.I",
+                "item_tipo": "Avaliativo",
                 "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrItensAvaliacao": [],
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
+                "item_peso": "50",
+                "arrItensAvaliacao": [
+                    {
+                        "ruim": [
+                            "pnlAcao",
+                            "anexos"
+                        ]
+                    },
+                    {
+                        "regular": "comentario"
+                    },
+                    {
+                        "bom": "Aplicavél"
+                    }
+                ],
                 "item_complemento": []
             },
             {
                 "id": 2,
-                "id_checklist": 1,
+                "id_checklist": 2,
                 "item_nome": "Item #2",
-                "item_descricao": "",
-                "item_dica": "",
+                "item_descricao": "FVS 001 - T.I",
+                "item_dica": "FVS 001 - T.I",
                 "item_tipo": "Avaliativo",
                 "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
-                "item_peso": "",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
+                "item_peso": "50",
                 "arrItensAvaliacao": [
                     {
-                        "rd_avlTpNota_ruim": "comentario"
+                        "n": [
+                            "comentario",
+                            "pnlAcao"
+                        ]
                     },
                     {
-                        "rd_avlTpNota_regular": "pnlAcao"
+                        "s": "assinatura"
                     },
                     {
-                        "rd_avlTpNota_bom": "comentario"
+                        "na": "Aplicavél"
                     }
                 ],
                 "item_complemento": []
             },
             {
                 "id": 3,
-                "id_checklist": 1,
+                "id_checklist": 2,
                 "item_nome": "Item #3",
-                "item_descricao": "",
-                "item_dica": "",
-                "item_tipo": "Texto",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrItensAvaliacao": [],
-                "item_complemento": []
-            },
-            {
-                "id": 4,
-                "id_checklist": 1,
-                "item_nome": "Item #4",
-                "item_descricao": "",
-                "item_dica": "",
-                "item_tipo": "Cadastro",
-                "item_formato": "Estado",
-                "item_obrigatorio": "",
+                "item_descricao": "FVS 001 - T.I",
+                "item_dica": "FVS 001 - T.I",
+                "item_tipo": "Data",
+                "item_formato": "Horário 24h",
+                "item_obrigatorio": "Sim",
                 "item_tipo_avaliacao": "",
                 "item_peso": "",
                 "arrItensAvaliacao": [],
                 "item_complemento": [
                     {
-                        "rd_componentes_pnlAcao_": "pnlAcao"
-                    }
-                ]
-            },
-            {
-                "id": 5,
-                "id_checklist": 1,
-                "item_nome": "Item #5",
-                "item_descricao": "",
-                "item_dica": "",
-                "item_tipo": "Avaliativo",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
-                "item_peso": "",
-                "arrItensAvaliacao": [
-                    {
-                        "rd_avlTpAvaliativo_n": "assinatura"
+                        "comentario": "comentario"
                     },
                     {
-                        "rd_avlTpAvaliativo_s": "comentario"
-                    },
-                    {
-                        "rd_avlTpAvaliativo_na": "pnlAcao"
-                    }
-                ],
-                "item_complemento": []
-            },
-            {
-                "id": 6,
-                "id_checklist": 1,
-                "item_nome": "Item #6",
-                "item_descricao": "",
-                "item_dica": "",
-                "item_tipo": "Cadastro",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrItensAvaliacao": [],
-                "item_complemento": [
-                    {
-                        "rd_componentes_comentario_": "comentario"
-                    },
-                    {
-                        "rd_componentes_pnlAcao_": "pnlAcao"
+                        "assinatura": "assinatura"
                     }
                 ]
             }
