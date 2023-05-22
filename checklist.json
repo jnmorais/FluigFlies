@@ -64,9 +64,9 @@
                 "item_descricao": "Item #3",
                 "item_dica": "Item #3",
                 "item_tipo": "Data",
-                "item_formato": null,
+                "item_formato": "Horário 24h",
                 "item_obrigatorio": "Não",
-                "item_tipo_avaliacao": "Horário 24h",
+                "item_tipo_avaliacao": null,
                 "item_peso": "50",
                 "arrItensAvaliacao": [
                     {
