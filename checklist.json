@@ -12,7 +12,7 @@
                 "item_dica": "Item #1",
                 "item_tipo": "Avaliativo",
                 "item_formato": null,
-                "item_obrigatorio": "Não",
+                "item_obrigatorio": "Sim",
                 "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
                 "item_peso": "25",
                 "arrItensAvaliacao": [
