@@ -48,10 +48,10 @@
                             "pnlAcao"
                         ],
                         "na_regular": [
-                            "assinatura"
+                            "ass"
                         ],
                         "s_bom": [
-                            "assinatura"
+                            "ass"
                         ]
                     }
                 ],
@@ -74,7 +74,7 @@
                         "comentario": "comentario"
                     },
                     {
-                        "assinatura": "assinatura"
+                        "assinatura": "ass"
                     }]
             }
         ]
