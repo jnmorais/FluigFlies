@@ -26,9 +26,7 @@
                         ]
                     }
                 ],
-                "arrComplementos": [
-                    {}
-                ]
+                "arrComplementos": []
             },
             {
                 "id": 2,
@@ -54,9 +52,7 @@
                         ]
                     }
                 ],
-                "arrComplementos": [
-                    {}
-                ]
+                "arrComplementos": []
             },
             {
                 "id": 3,
@@ -76,9 +72,7 @@
                         "s_bom": []
                     }
                 ],
-                "arrComplementos": [
-                    {}
-                ]
+                "arrComplementos": []
             }
         ]
     },
