@@ -15,16 +15,20 @@
                 "item_obrigatorio": "Sim",
                 "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
                 "item_peso": "33",
-                "arrItensAvaliacao": {
-                    "n_ruim": [
-                        "pnlAcao"
-                    ],
-                    "na_regular": [],
-                    "s_bom": [
-                        "ass"
-                    ]
-                },
-                "item_complemento": {}
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [
+                            "pnlAcao"
+                        ],
+                        "na_regular": [],
+                        "s_bom": [
+                            "ass"
+                        ]
+                    }
+                ],
+                "arrComplementos": [
+                    {}
+                ]
             },
             {
                 "id": 2,
@@ -37,18 +41,22 @@
                 "item_obrigatorio": "Sim",
                 "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
                 "item_peso": "33",
-                "arrItensAvaliacao": {
-                    "n_ruim": [
-                        "pnlAcao"
-                    ],
-                    "na_regular": [
-                        "comentario"
-                    ],
-                    "s_bom": [
-                        "ass"
-                    ]
-                },
-                "item_complemento": {}
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [
+                            "pnlAcao"
+                        ],
+                        "na_regular": [
+                            "comentario"
+                        ],
+                        "s_bom": [
+                            "ass"
+                        ]
+                    }
+                ],
+                "arrComplementos": [
+                    {}
+                ]
             },
             {
                 "id": 3,
@@ -61,12 +69,16 @@
                 "item_obrigatorio": "Sim",
                 "item_tipo_avaliacao": "",
                 "item_peso": "",
-                "arrItensAvaliacao": {
-                    "n_ruim": [],
-                    "na_regular": [],
-                    "s_bom": []
-                },
-                "item_complemento": {}
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [],
+                        "na_regular": [],
+                        "s_bom": []
+                    }
+                ],
+                "arrComplementos": [
+                    {}
+                ]
             }
         ]
     }
