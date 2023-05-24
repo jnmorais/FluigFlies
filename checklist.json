@@ -18,7 +18,7 @@
                 "arrAvaliacao": [
                     {
                         "n_ruim": [
-                            "pnlAcao"
+                            "plnAcao"
                         ],
                         "na_regular": [],
                         "s_bom": [
@@ -44,7 +44,7 @@
                 "arrAvaliacao": [
                     {
                         "n_ruim": [
-                            "pnlAcao"
+                            "plnAcao"
                         ],
                         "na_regular": [
                             "comentario"
@@ -107,7 +107,7 @@
                             "anexos"
                         ],
                         "s_bom": [
-                            "pnlAcao"
+                            "plnAcao"
                         ]
                     }
                 ],
