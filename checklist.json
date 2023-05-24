@@ -18,7 +18,7 @@
                 "arrAvaliacao": [
                     {
                         "n_ruim": [
-                            "plnAcao,anexos"
+                            "plnAcao"
                         ],
                         "na_regular": [],
                         "s_bom": [
@@ -78,6 +78,65 @@
                 ],
                 "arrComplementos": [
                     {}
+                ]
+            }
+        ]
+    },
+    {
+        "id_checklist": 4,
+        "chk_nome": "Checklist #2",
+        "chk_descricao": "Checklist #2",
+        "campos": [
+            {
+                "id": 6,
+                "id_checklist": 4,
+                "item_nome": "Item #1 Checklist #2",
+                "item_descricao": "Item #1 Checklist #2",
+                "item_dica": "Item #1 Checklist #2",
+                "item_tipo": "Avaliativo",
+                "item_formato": "",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
+                "item_peso": "12",
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [
+                            "ass"
+                        ],
+                        "na_regular": [
+                            "anexos"
+                        ],
+                        "s_bom": [
+                            "plnAcao"
+                        ]
+                    }
+                ],
+                "arrComplementos": [
+                    []
+                ]
+            },
+            {
+                "id": 7,
+                "id_checklist": 4,
+                "item_nome": "Item #2 Checklist #2",
+                "item_descricao": "Item #2 Checklist #2",
+                "item_dica": "Item #2 Checklist #2",
+                "item_tipo": "Data",
+                "item_formato": "Data: mm/aaaa",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "",
+                "item_peso": "",
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [],
+                        "na_regular": [],
+                        "s_bom": []
+                    }
+                ],
+                "arrComplementos": [
+                    [
+                        "anexos"
+                    ]
                 ]
             }
         ]
