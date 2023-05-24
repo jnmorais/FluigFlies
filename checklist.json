@@ -133,11 +133,7 @@
                         "s_bom": []
                     }
                 ],
-                "arrComplementos": [
-                    [
-                        "anexos"
-                    ]
-                ]
+                "arrComplementos": ["anexos"]
             }
         ]
     }
