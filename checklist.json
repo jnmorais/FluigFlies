@@ -1,81 +1,72 @@
 [
     {
         "id_checklist": 1,
-        "chk_nome": "Checklist 1",
-        "chk_descricao": "Testes",
+        "chk_nome": "Checklist #1",
+        "chk_descricao": "Checklist #1",
         "campos": [
             {
                 "id": 1,
                 "id_checklist": 1,
-                "item_nome": "Item #1",
-                "item_descricao": "Item #1",
-                "item_dica": "Item #1",
+                "item_nome": "Item #1 Checklist #1",
+                "item_descricao": "Item #1 Checklist #1",
+                "item_dica": "Item #1 Checklist #1",
                 "item_tipo": "Avaliativo",
-                "item_formato": null,
+                "item_formato": "",
                 "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
-                "item_peso": "25",
-                "arrItensAvaliacao": [
-                    {
-                        "n_ruim": [
-                            "comentario",
-                            "pnlAcao"
-                        ],
-                        "na_regular": [
-                            "Aplicavél"
-                        ],
-                        "s_bom": [
-                            "ass"
-                        ]
-                    }
-                ],
-                "item_complemento": null
+                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
+                "item_peso": "33",
+                "arrItensAvaliacao": {
+                    "n_ruim": [
+                        "pnlAcao"
+                    ],
+                    "na_regular": [],
+                    "s_bom": [
+                        "ass"
+                    ]
+                },
+                "item_complemento": {}
             },
             {
                 "id": 2,
                 "id_checklist": 1,
-                "item_nome": "Item #2",
-                "item_descricao": "Item #2",
-                "item_dica": "Item #2",
+                "item_nome": "Item #2 Checklist #1",
+                "item_descricao": "Item #2 Checklist #1",
+                "item_dica": "Item #2 Checklist #1",
                 "item_tipo": "Avaliativo",
-                "item_formato": null,
-                "item_obrigatorio": "Não",
-                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
-                "item_peso": "25",
-                "arrItensAvaliacao": [
-                    {
-                        "n_ruim": [
-                            "pnlAcao"
-                        ],
-                        "na_regular": [
-                            "ass"
-                        ],
-                        "s_bom": [
-                            "ass"
-                        ]
-                    }
-                ],
-                "item_complemento": null
+                "item_formato": "",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
+                "item_peso": "33",
+                "arrItensAvaliacao": {
+                    "n_ruim": [
+                        "pnlAcao"
+                    ],
+                    "na_regular": [
+                        "comentario"
+                    ],
+                    "s_bom": [
+                        "ass"
+                    ]
+                },
+                "item_complemento": {}
             },
             {
                 "id": 3,
                 "id_checklist": 1,
-                "item_nome": "Item #3",
-                "item_descricao": "Item #3",
-                "item_dica": "Item #3",
+                "item_nome": "Item #3 Checklist #1",
+                "item_descricao": "Item #3 Checklist #1",
+                "item_dica": "Item #3 Checklist #1",
                 "item_tipo": "Data",
-                "item_formato": "Horário 24h",
-                "item_obrigatorio": "Não",
-                "item_tipo_avaliacao": null,
-                "item_peso": "50",
-                "arrItensAvaliacao": [],
-                "item_complemento": [
-                    {
-                        "comentario": "comentario"
-                    },
-                    {
-                        "ass": "ass"
-                    }]
+                "item_formato": "Data: dd/mm/aaaa",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "",
+                "item_peso": "",
+                "arrItensAvaliacao": {
+                    "n_ruim": [],
+                    "na_regular": [],
+                    "s_bom": []
+                },
+                "item_complemento": {}
             }
         ]
     }
