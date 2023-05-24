@@ -18,7 +18,7 @@
                 "arrAvaliacao": [
                     {
                         "n_ruim": [
-                            "plnAcao"
+                            "pnlAcao"
                         ],
                         "na_regular": [],
                         "s_bom": [
@@ -44,7 +44,7 @@
                 "arrAvaliacao": [
                     {
                         "n_ruim": [
-                            "plnAcao"
+                            "pnlAcao"
                         ],
                         "na_regular": [
                             "comentario"
@@ -107,13 +107,11 @@
                             "anexos"
                         ],
                         "s_bom": [
-                            "plnAcao"
+                            "pnlAcao"
                         ]
                     }
                 ],
-                "arrComplementos": [
-                    []
-                ]
+                "arrComplementos": []
             },
             {
                 "id": 7,
@@ -133,7 +131,10 @@
                         "s_bom": []
                     }
                 ],
-                "arrComplementos": ["anexos"]
+                "arrComplementos": [
+                    "anexos",
+                    "testes"
+                ]
             }
         ]
     }
