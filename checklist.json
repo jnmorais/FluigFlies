@@ -2,132 +2,30 @@
     {
         "id_checklist": 1,
         "chk_nome": "Checklist #1",
-        "chk_descricao": "Checklist #1",
+        "chk_descricao": "Descrição Checklist #1",
         "campos": [
             {
                 "id": 1,
                 "id_checklist": 1,
-                "item_nome": "Item #1 Checklist #1",
-                "item_descricao": "Item #1 Checklist #1",
-                "item_dica": "Item #1 Checklist #1",
-                "item_tipo": "Avaliativo",
-                "item_formato": "",
+                "item_nome": "Item #1  Area#1 Checklist #1",
+                "item_descricao": "Descricao Item #1  Area#1 Checklist #1",
+                "item_dica": "Dica Item #1  Area#1 Checklist #1",
+                "item_tipo": "Texto",
+                "item_formato": "CEP",
                 "item_obrigatorio": "Sim",
                 "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
-                "item_peso": "33",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [
-                            "plnAcao"
-                        ],
-                        "na_regular": [],
-                        "s_bom": [
-                            "ass"
-                        ]
-                    }
-                ],
-                "arrComplementos": []
-            },
-            {
-                "id": 2,
-                "id_checklist": 1,
-                "item_nome": "Item #2 Checklist #1",
-                "item_descricao": "Item #2 Checklist #1",
-                "item_dica": "Item #2 Checklist #1",
-                "item_tipo": "Avaliativo",
-                "item_formato": "",
-                "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
-                "item_peso": "33",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [
-                            "plnAcao"
-                        ],
-                        "na_regular": [
-                            "comentario"
-                        ],
-                        "s_bom": [
-                            "ass"
-                        ]
-                    }
-                ],
-                "arrComplementos": []
-            },
-            {
-                "id": 3,
-                "id_checklist": 1,
-                "item_nome": "Item #3 Checklist #1",
-                "item_descricao": "Item #3 Checklist #1",
-                "item_dica": "Item #3 Checklist #1",
-                "item_tipo": "Data",
-                "item_formato": "Data: dd/mm/aaaa",
-                "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "",
                 "item_peso": "",
                 "arrAvaliacao": [
                     {
                         "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
-                ],
-                "arrComplementos": []
-            }
-        ]
-    },
-    {
-        "id_checklist": 4,
-        "chk_nome": "Checklist #2",
-        "chk_descricao": "Checklist #2",
-        "campos": [
-            {
-                "id": 6,
-                "id_checklist": 4,
-                "item_nome": "Item #1 Checklist #2",
-                "item_descricao": "Item #1 Checklist #2",
-                "item_dica": "Item #1 Checklist #2",
-                "item_tipo": "Avaliativo",
-                "item_formato": "",
-                "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
-                "item_peso": "12",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [
-                            "ass"
-                        ],
                         "na_regular": [
                             "anexos"
                         ],
-                        "s_bom": [
-                            "plnAcao"
-                        ]
-                    }
-                ],
-                "arrComplementos": []
-            },
-            {
-                "id": 7,
-                "id_checklist": 4,
-                "item_nome": "Item #2 Checklist #2",
-                "item_descricao": "Item #2 Checklist #2",
-                "item_dica": "Item #2 Checklist #2",
-                "item_tipo": "Data",
-                "item_formato": "Data: mm/aaaa",
-                "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
                         "s_bom": []
                     }
                 ],
-                "arrComplementos": [
-                    "anexos"
-                ]
+                "arrComplementos": [],
+                "area_nome": "Area #1 Checklist #1-Descriacao Area #1 Checklist #1"
             }
         ]
     }
