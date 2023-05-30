@@ -99,6 +99,11 @@ $(document).ready(function () {
             });
             $(".modal-body").css("max-height", window.innerHeight / 2 + 'px');
         });
+        // SELECT SETOR
+        $("#txt_setor_slt").change(function (e) { 
+            e.preventDefault();
+            verificarCargosRH() 
+        });
     }
     if (ATV == 23 || ATV == null) {
         show_on_click('rd_ans_sst', 'Sim', null, null, 'div_anxAdendo');
