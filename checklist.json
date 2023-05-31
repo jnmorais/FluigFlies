@@ -7,33 +7,62 @@
             {
                 "id": 1,
                 "id_checklist": 1,
-                "item_nome": "Teste Item #1",
-                "item_descricao": "Teste Item #1",
-                "item_dica": "Teste Item #1",
+                "item_nome": "Item #1",
+                "item_descricao": "Item #1",
+                "item_dica": "Item #1",
                 "item_tipo": "Avaliativo",
                 "item_formato": "",
-                "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "Opinião (Não/Sim)",
-                "item_peso": "100",
+                "item_obrigatorio": "",
+                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
+                "item_peso": "50",
                 "arrAvaliacao": [
                     {
-                        "n_ruim": [],
+                        "n_ruim": [
+                            "plnAcao"
+                        ],
                         "na_regular": [],
-                        "s_bom": []
+                        "s_bom": [
+                            "ass"
+                        ]
                     }
                 ],
                 "arrComplementos": [],
-                "area_nome": "Area #1-"
+                "area_nome": "Area #1-Area #1"
             },
             {
                 "id": 2,
                 "id_checklist": 1,
-                "item_nome": "Teste Item #2",
-                "item_descricao": "Teste Item #2",
-                "item_dica": "Teste Item #2",
+                "item_nome": "Item #2",
+                "item_descricao": "Item #2",
+                "item_dica": "Item #2",
+                "item_tipo": "Avaliativo",
+                "item_formato": "",
+                "item_obrigatorio": "",
+                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
+                "item_peso": "50",
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [
+                            "plnAcao"
+                        ],
+                        "na_regular": [
+                            "comentario"
+                        ],
+                        "s_bom": []
+                    }
+                ],
+                "arrComplementos": [],
+                "area_nome": "Area #1-Area #1"
+            },
+            {
+                "id": 3,
+                "id_checklist": 1,
+                "item_nome": "Item #3",
+                "item_descricao": "Item #3",
+                "item_dica": "Item #3",
                 "item_tipo": "Cadastro",
-                "item_formato": "CEP",
-                "item_obrigatorio": "Sim",
+                "item_formato": "CNPJ",
+                "item_obrigatorio": "",
                 "item_tipo_avaliacao": "",
                 "item_peso": "",
                 "arrAvaliacao": [
@@ -43,8 +72,10 @@
                         "s_bom": []
                     }
                 ],
-                "arrComplementos": [],
-                "area_nome": "Area #1-"
+                "arrComplementos": [
+                    "comentario"
+                ],
+                "area_nome": "Area #1-Area #1"
             }
         ]
     }
