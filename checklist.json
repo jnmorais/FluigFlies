@@ -1,20 +1,20 @@
 [
     {
         "id_checklist": 1,
-        "chk_nome": "Checklist 1",
-        "chk_descricao": "Checklist 1",
+        "chk_nome": "Checklist #1",
+        "chk_descricao": "Checklist #1",
         "campos": [
             {
                 "id": 1,
                 "id_checklist": 1,
-                "item_nome": "Item #1",
-                "item_descricao": "Item #1",
-                "item_dica": "Item #1",
-                "item_tipo": "Texto",
+                "item_nome": "Teste Item #1",
+                "item_descricao": "Teste Item #1",
+                "item_dica": "Teste Item #1",
+                "item_tipo": "Avaliativo",
                 "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "Opinião (Não/Sim)",
+                "item_peso": "100",
                 "arrAvaliacao": [
                     {
                         "n_ruim": [],
@@ -23,17 +23,17 @@
                     }
                 ],
                 "arrComplementos": [],
-                "area_nome": "Area 1-Area 1"
+                "area_nome": "Area #1-"
             },
             {
                 "id": 2,
                 "id_checklist": 1,
-                "item_nome": "Item #2",
-                "item_descricao": "Item #2",
-                "item_dica": "Item #2",
-                "item_tipo": "Texto",
-                "item_formato": "",
-                "item_obrigatorio": "",
+                "item_nome": "Teste Item #2",
+                "item_descricao": "Teste Item #2",
+                "item_dica": "Teste Item #2",
+                "item_tipo": "Cadastro",
+                "item_formato": "CEP",
+                "item_obrigatorio": "Sim",
                 "item_tipo_avaliacao": "",
                 "item_peso": "",
                 "arrAvaliacao": [
@@ -44,175 +44,7 @@
                     }
                 ],
                 "arrComplementos": [],
-                "area_nome": "Area 1-Area 1"
-            },
-            {
-                "id": 3,
-                "id_checklist": 1,
-                "item_nome": "Item #3",
-                "item_descricao": "Item #3",
-                "item_dica": "Item #3",
-                "item_tipo": "Texto",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
-                ],
-                "arrComplementos": [],
-                "area_nome": "Area 1-Area 1"
-            },
-            {
-                "id": 4,
-                "id_checklist": 1,
-                "item_nome": "Item #4",
-                "item_descricao": "Item #4",
-                "item_dica": "Item #4",
-                "item_tipo": "Texto",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
-                ],
-                "arrComplementos": [],
-                "area_nome": "Area 1-Area 1"
-            },
-            {
-                "id": 5,
-                "id_checklist": 1,
-                "item_nome": "Item #5",
-                "item_descricao": "Item #5",
-                "item_dica": "Item #5",
-                "item_tipo": "Texto",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
-                ],
-                "arrComplementos": [],
-                "area_nome": "Area 1-Area 1"
-            },
-            {
-                "id": 6,
-                "id_checklist": 1,
-                "item_nome": "Item #6",
-                "item_descricao": "Item #6",
-                "item_dica": "Item #6",
-                "item_tipo": "Texto",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
-                ],
-                "arrComplementos": [],
-                "area_nome": "Area 2-Area 2"
-            },
-            {
-                "id": 7,
-                "id_checklist": 1,
-                "item_nome": "Item #7",
-                "item_descricao": "Item #7",
-                "item_dica": "Item #7",
-                "item_tipo": "Texto",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
-                ],
-                "arrComplementos": [],
-                "area_nome": "Area 2-Area 2"
-            },
-            {
-                "id": 8,
-                "id_checklist": 1,
-                "item_nome": "Item #8",
-                "item_descricao": "Item #8",
-                "item_dica": "Item #8",
-                "item_tipo": "Texto",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
-                ],
-                "arrComplementos": [],
-                "area_nome": "Area 2-Area 2"
-            },
-            {
-                "id": 9,
-                "id_checklist": 1,
-                "item_nome": "Item #9",
-                "item_descricao": "Item #9",
-                "item_dica": "Item #9",
-                "item_tipo": "Texto",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
-                ],
-                "arrComplementos": [],
-                "area_nome": "Area 2-Area 2"
-            },
-            {
-                "id": 10,
-                "id_checklist": 1,
-                "item_nome": "Item #10",
-                "item_descricao": "Item #10",
-                "item_dica": "Item #10",
-                "item_tipo": "Texto",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
-                ],
-                "arrComplementos": [],
-                "area_nome": "Area 2-Area 2"
+                "area_nome": "Area #1-"
             }
         ]
     }
