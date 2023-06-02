@@ -1,0 +1,106 @@
+<%- include ('header') %>
+    <div class="col-sm p-3 min-vh-100">
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <% if(status==500){ %>
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <% }else{ %>
+                            <i class="bi bi-check-circle"></i>
+                            <% } %>
+                                <strong class="me-auto">Mensagem do sistema: </strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                    aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    <%= msg %>
+                </div>
+            </div>
+        </div>
+        <form id="criacao_checklist" action="/checklist" method="POST" novalidate>
+            <input type="hidden" name="contadorItens" id="contadorItens">
+            <input type="hidden" name="contadorAreas" id="contadorAreas">
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Default Tabs -->
+                            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="dadosCadastrais-tab" data-bs-toggle="tab"
+                                        data-bs-target="#dadosCadastrais" type="button" role="tab"
+                                        aria-controls="dadosCadastrais" aria-selected="true">Dados
+                                        cadastrais</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="estrutura-tab" data-bs-toggle="tab"
+                                        data-bs-target="#estrutura" type="button" role="tab" aria-controls="estrutura"
+                                        aria-selected="false" tabindex="-1">Estrutura</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content pt-2" id="borderedTabContent">
+                                <div class="tab-pane fade active show" id="dadosCadastrais" role="tabpanel"
+                                    aria-labelledby="dadosCadastrais-tab">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="chk_nome" name="chk_nome">
+                                                <label for="chk_nome">Nome</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating mb-3">
+                                                <textarea class="form-control" id="chk_descricao" name="chk_descricao"
+                                                    style="height: 100px;"></textarea>
+                                                <label for="chk_descricao">Descrição</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label for="chk_unidades">Unidades disponíveis</label>
+                                            <select class="form-control select2" name="chk_unidades[]" id="chk_unidades"
+                                                multiple="multiple">
+                                                <% unidades.forEach(item => { %>
+                                                    <option value="<%= item.id %>">
+                                                        <%= item.unidade %>
+                                                    </option>
+                                                <% }); %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="estrutura" role="tabpanel"
+                                    aria-labelledby="estrutura-tab">
+                                    <div class="row" id="msg_checklist">
+                                        <div class="col">
+                                            <h5 class="text-center">
+                                                Adicione uma área para começar a construir seu checklist.
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="row d-none" id="acc_checklist_itens">
+                                    </div>
+                                    <div class="row mt-5">
+                                        <div class="col">
+                                            <button class="btn btn-dark w-100" onclick="adicionarArea(event)">Adicionar
+                                                área</button>
+                                        </div>
+                                        <!-- <div class="col-6">
+                                <button class="btn btn-dark w-100">Adicionar item</button>
+                            </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-none" id="btnEnviar">
+                <div class="col">
+                    <button type="submit" class="btn btn-success mt-3 w-100">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <%- include ('footer') %>
