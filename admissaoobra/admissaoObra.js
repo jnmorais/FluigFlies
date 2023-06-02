@@ -49,8 +49,8 @@ $(document).ready(function () {
                         },
                         root: 'content'
                     },
-                    renderContent: ['Cargo','vrf'],
-                    header: [{ 'title': 'Cargo', 'size': 'col-sm-8' },{ 'title': 'Processo', 'size': 'col-sm-4' }],
+                    renderContent: ['Cargo', 'vrf'],
+                    header: [{ 'title': 'Cargo', 'size': 'col-sm-8' }, { 'title': 'Processo', 'size': 'col-sm-4' }],
                     multiSelect: false,
                     search: {
                         enabled: true,
@@ -89,6 +89,7 @@ $(document).ready(function () {
                             type: 'warning'
                         });
                     } else {
+                        verificarCargosRH()
                         $("#slt_cargo").val(selected.Cargo);
                         $("#rd_escol").val(selected.Escolaridade)
                         $("#cargoResp blockquote").text(selected.Autoridade)
@@ -97,6 +98,11 @@ $(document).ready(function () {
                 });
             });
             $(".modal-body").css("max-height", window.innerHeight / 2 + 'px');
+        });
+        // SELECT SETOR
+        $("#txt_setor_slt").change(function (e) { 
+            e.preventDefault();
+            verificarCargosRH() 
         });
     }
     if (ATV == 23 || ATV == null) {

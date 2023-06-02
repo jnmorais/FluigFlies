@@ -1,123 +1,81 @@
 [
     {
         "id_checklist": 1,
-        "chk_nome": "FVS. 106 - Cravação de Estacas Pré-Moldadas",
-        "chk_descricao": "",
+        "chk_nome": "Checklist #1",
+        "chk_descricao": "Checklist #1",
         "campos": [
             {
                 "id": 1,
                 "id_checklist": 1,
                 "item_nome": "Item #1",
-                "item_descricao": "",
-                "item_dica": "",
-                "item_tipo": "Texto",
+                "item_descricao": "Item #1",
+                "item_dica": "Item #1",
+                "item_tipo": "Avaliativo",
                 "item_formato": "",
                 "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrItensAvaliacao": [],
-                "item_complemento": []
+                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
+                "item_peso": "50",
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [
+                            "plnAcao"
+                        ],
+                        "na_regular": [],
+                        "s_bom": [
+                            "ass"
+                        ]
+                    }
+                ],
+                "arrComplementos": [],
+                "area_nome": "Area #1-Area #1"
             },
             {
                 "id": 2,
                 "id_checklist": 1,
                 "item_nome": "Item #2",
-                "item_descricao": "",
-                "item_dica": "",
+                "item_descricao": "Item #2",
+                "item_dica": "Item #2",
                 "item_tipo": "Avaliativo",
                 "item_formato": "",
                 "item_obrigatorio": "",
-                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
-                "item_peso": "",
-                "arrItensAvaliacao": [
+                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
+                "item_peso": "50",
+                "arrAvaliacao": [
                     {
-                        "rd_avlTpNota_ruim": "comentario"
-                    },
-                    {
-                        "rd_avlTpNota_regular": "pnlAcao"
-                    },
-                    {
-                        "rd_avlTpNota_bom": "comentario"
+                        "n_ruim": [
+                            "plnAcao"
+                        ],
+                        "na_regular": [
+                            "comentario"
+                        ],
+                        "s_bom": []
                     }
                 ],
-                "item_complemento": []
+                "arrComplementos": [],
+                "area_nome": "Area #1-Area #1"
             },
             {
                 "id": 3,
                 "id_checklist": 1,
                 "item_nome": "Item #3",
-                "item_descricao": "",
-                "item_dica": "",
-                "item_tipo": "Texto",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrItensAvaliacao": [],
-                "item_complemento": []
-            },
-            {
-                "id": 4,
-                "id_checklist": 1,
-                "item_nome": "Item #4",
-                "item_descricao": "",
-                "item_dica": "",
+                "item_descricao": "Item #3",
+                "item_dica": "Item #3",
                 "item_tipo": "Cadastro",
-                "item_formato": "Estado",
+                "item_formato": "CNPJ",
                 "item_obrigatorio": "",
                 "item_tipo_avaliacao": "",
                 "item_peso": "",
-                "arrItensAvaliacao": [],
-                "item_complemento": [
+                "arrAvaliacao": [
                     {
-                        "rd_componentes_pnlAcao_": "pnlAcao"
-                    }
-                ]
-            },
-            {
-                "id": 5,
-                "id_checklist": 1,
-                "item_nome": "Item #5",
-                "item_descricao": "",
-                "item_dica": "",
-                "item_tipo": "Avaliativo",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
-                "item_peso": "",
-                "arrItensAvaliacao": [
-                    {
-                        "rd_avlTpAvaliativo_n": "assinatura"
-                    },
-                    {
-                        "rd_avlTpAvaliativo_s": "comentario"
-                    },
-                    {
-                        "rd_avlTpAvaliativo_na": "pnlAcao"
+                        "n_ruim": [],
+                        "na_regular": [],
+                        "s_bom": []
                     }
                 ],
-                "item_complemento": []
-            },
-            {
-                "id": 6,
-                "id_checklist": 1,
-                "item_nome": "Item #6",
-                "item_descricao": "",
-                "item_dica": "",
-                "item_tipo": "Cadastro",
-                "item_formato": "",
-                "item_obrigatorio": "",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrItensAvaliacao": [],
-                "item_complemento": [
-                    {
-                        "rd_componentes_comentario_": "comentario"
-                    },
-                    {
-                        "rd_componentes_pnlAcao_": "pnlAcao"
-                    }
-                ]
+                "arrComplementos": [
+                    "comentario"
+                ],
+                "area_nome": "Area #1-Area #1"
             }
         ]
     }
