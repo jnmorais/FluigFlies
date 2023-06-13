@@ -295,11 +295,14 @@ function displayBtnFiles(edit) {
                     btnViewerFile.show()
                 }
             }
-            if (FM == "MOD" && inputFile.val() != "") {
-                btnState(inputFile[0].id, "baixar", "viewer")
-            }
-            if (FM == "MOD" && inputFile.val() != "" && edit) {
-                btnState(inputFile[0].id, "delete", "viewer")
+            if(edit){
+                if (FM == "MOD" && inputFile.val() != "") {
+                    btnState(inputFile[0].id, "delete", "viewer")
+                }
+            }else{
+                if (FM == "MOD" && inputFile.val() != "") {
+                    btnState(inputFile[0].id, "baixar", "viewer")
+                }
             }
         });
     } catch (e) {
