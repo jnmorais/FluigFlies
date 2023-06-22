@@ -1,17 +1,38 @@
 [
     {
         "id_checklist": 1,
-        "chk_nome": "Piscina - Benfica",
-        "chk_descricao": "Piscina - Benfica",
+        "chk_nome": "Checklist Teste #1",
+        "chk_descricao": "Descricao Teste #1",
         "campos": [
             {
                 "id": 1,
                 "id_checklist": 1,
-                "item_nome": "Item #1",
-                "item_descricao": "Item #1",
-                "item_dica": "Item #1",
-                "item_tipo": "Texto",
+                "item_nome": "Item 1 Area 1  - Checklist Teste #1",
+                "item_descricao": "Descricao Item 1 Area 1 - Checklist Teste #1",
+                "item_dica": "Dica Item 1 Area 1 - Checklist Teste #1",
+                "item_tipo": "Avaliativo",
                 "item_formato": "",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "Opinião (Não/Sim)",
+                "item_peso": "50",
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [],
+                        "na_regular": [],
+                        "s_bom": []
+                    }
+                ],
+                "arrComplementos": [],
+                "area_nome": "Area  1 - Checklist Teste #1-Descricao Area 1 - Checklist Teste #1"
+            },
+            {
+                "id": 2,
+                "id_checklist": 1,
+                "item_nome": "Item 2 Area 1  - Checklist Teste #1",
+                "item_descricao": "Descricao Item 2 Area 1 - Checklist Teste #1",
+                "item_dica": "Dica Item 2 Area 1 - Checklist Teste #1",
+                "item_tipo": "Cadastro",
+                "item_formato": "CNPJ",
                 "item_obrigatorio": "Sim",
                 "item_tipo_avaliacao": "",
                 "item_peso": "",
@@ -22,69 +43,47 @@
                         "s_bom": []
                     }
                 ],
-                "arrComplementos": [],
-                "area_nome": "Area #1-Area #1"
-            }
-        ]
-    },
-    {
-        "id_checklist": 2,
-        "chk_nome": "Entrega de computadores",
-        "chk_descricao": "Deverá ser preenchido sempre que houver devolução de computadores",
-        "campos": [
-            {
-                "id": 2,
-                "id_checklist": 2,
-                "item_nome": "Foi realizado backup do computador?",
-                "item_descricao": "",
-                "item_dica": "",
-                "item_tipo": "Avaliativo",
-                "item_formato": "",
-                "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "Opinião (Não/Sim)",
-                "item_peso": "50",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
+                "arrComplementos": [
+                    "plnAcao"
                 ],
-                "arrComplementos": [],
-                "area_nome": "Backup-"
+                "area_nome": "Area  1 - Checklist Teste #1-Descricao Area 1 - Checklist Teste #1"
             },
             {
                 "id": 3,
-                "id_checklist": 2,
-                "item_nome": "Foi realizado backup do email?",
-                "item_descricao": "",
-                "item_dica": "",
+                "id_checklist": 1,
+                "item_nome": "Item 3 Area 1  - Checklist Teste #1",
+                "item_descricao": "Descrição Item 3 Area 1  - Checklist Teste #1",
+                "item_dica": "Dica Item 3 Area 1  - Checklist Teste #1",
                 "item_tipo": "Avaliativo",
                 "item_formato": "",
                 "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "Opinião (Não/Sim)",
+                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
                 "item_peso": "50",
                 "arrAvaliacao": [
                     {
-                        "n_ruim": [],
+                        "n_ruim": [
+                            "plnAcao"
+                        ],
                         "na_regular": [],
-                        "s_bom": []
+                        "s_bom": [
+                            "comentario"
+                        ]
                     }
                 ],
                 "arrComplementos": [],
-                "area_nome": "Backup-"
+                "area_nome": "Area  1 - Checklist Teste #1-Descrição 1 - Checklist Teste #1"
             },
             {
                 "id": 4,
-                "id_checklist": 2,
-                "item_nome": "Foi realizada formatação do computador?",
-                "item_descricao": "",
-                "item_dica": "",
-                "item_tipo": "Avaliativo",
+                "id_checklist": 1,
+                "item_nome": "Item 4 Area 1  - Checklist Teste #1",
+                "item_descricao": "Descrição Item 4 Area 1  - Checklist Teste #1",
+                "item_dica": "Dica Item 4 Area 1  - Checklist Teste #1",
+                "item_tipo": "Texto",
                 "item_formato": "",
-                "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "Opinião (Não/Sim)",
-                "item_peso": "100",
+                "item_obrigatorio": "Não",
+                "item_tipo_avaliacao": "",
+                "item_peso": "",
                 "arrAvaliacao": [
                     {
                         "n_ruim": [],
@@ -93,7 +92,7 @@
                     }
                 ],
                 "arrComplementos": [],
-                "area_nome": "Formatação-"
+                "area_nome": "Area  1 - Checklist Teste #1-Descrição 1 - Checklist Teste #1"
             }
         ]
     }
