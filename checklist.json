@@ -1,98 +1,146 @@
 [
     {
         "id_checklist": 1,
-        "chk_nome": "Checklist Teste #1",
-        "chk_descricao": "Descricao Teste #1",
+        "chk_nome": "FVS. 114 - Execução de Alvenaria de Vedação",
+        "chk_descricao": "",
         "campos": [
             {
                 "id": 1,
                 "id_checklist": 1,
-                "item_nome": "Item 1 Area 1  - Checklist Teste #1",
-                "item_descricao": "Descricao Item 1 Area 1 - Checklist Teste #1",
-                "item_dica": "Dica Item 1 Area 1 - Checklist Teste #1",
+                "item_nome": "Esquadro 1ª fiada",
+                "item_descricao": "",
+                "item_dica": "Método de verificação: Com esquadro metálico e trena\nCritério de aceitação: 3 mm na ponta do esquadro",
                 "item_tipo": "Avaliativo",
                 "item_formato": "",
                 "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "Opinião (Não/Sim)",
-                "item_peso": "50",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
-                ],
-                "arrComplementos": [],
-                "area_nome": "Area  1 - Checklist Teste #1-Descricao Area 1 - Checklist Teste #1"
-            },
-            {
-                "id": 2,
-                "id_checklist": 1,
-                "item_nome": "Item 2 Area 1  - Checklist Teste #1",
-                "item_descricao": "Descricao Item 2 Area 1 - Checklist Teste #1",
-                "item_dica": "Dica Item 2 Area 1 - Checklist Teste #1",
-                "item_tipo": "Cadastro",
-                "item_formato": "CNPJ",
-                "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
-                "arrAvaliacao": [
-                    {
-                        "n_ruim": [],
-                        "na_regular": [],
-                        "s_bom": []
-                    }
-                ],
-                "arrComplementos": [
-                    "plnAcao"
-                ],
-                "area_nome": "Area  1 - Checklist Teste #1-Descricao Area 1 - Checklist Teste #1"
-            },
-            {
-                "id": 3,
-                "id_checklist": 1,
-                "item_nome": "Item 3 Area 1  - Checklist Teste #1",
-                "item_descricao": "Descrição Item 3 Area 1  - Checklist Teste #1",
-                "item_dica": "Dica Item 3 Area 1  - Checklist Teste #1",
-                "item_tipo": "Avaliativo",
-                "item_formato": "",
-                "item_obrigatorio": "Sim",
-                "item_tipo_avaliacao": "Nota (Ruim/Reg/Bom)",
-                "item_peso": "50",
+                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
+                "item_peso": "17",
                 "arrAvaliacao": [
                     {
                         "n_ruim": [
                             "plnAcao"
                         ],
                         "na_regular": [],
-                        "s_bom": [
-                            "comentario"
-                        ]
+                        "s_bom": []
                     }
                 ],
                 "arrComplementos": [],
-                "area_nome": "Area  1 - Checklist Teste #1-Descrição 1 - Checklist Teste #1"
+                "area_nome": "--"
             },
             {
-                "id": 4,
+                "id": 2,
                 "id_checklist": 1,
-                "item_nome": "Item 4 Area 1  - Checklist Teste #1",
-                "item_descricao": "Descrição Item 4 Area 1  - Checklist Teste #1",
-                "item_dica": "Dica Item 4 Area 1  - Checklist Teste #1",
-                "item_tipo": "Texto",
+                "item_nome": "Prumo",
+                "item_descricao": "",
+                "item_dica": "Método de verificação: Com prumo de face e trena\nCritério de aceitação: ± 3 mm",
+                "item_tipo": "Avaliativo",
                 "item_formato": "",
-                "item_obrigatorio": "Não",
-                "item_tipo_avaliacao": "",
-                "item_peso": "",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
+                "item_peso": "17",
                 "arrAvaliacao": [
                     {
-                        "n_ruim": [],
+                        "n_ruim": [
+                            "plnAcao"
+                        ],
                         "na_regular": [],
                         "s_bom": []
                     }
                 ],
                 "arrComplementos": [],
-                "area_nome": "Area  1 - Checklist Teste #1-Descrição 1 - Checklist Teste #1"
+                "area_nome": "--"
+            },
+            {
+                "id": 3,
+                "id_checklist": 1,
+                "item_nome": "Planicidade",
+                "item_descricao": "",
+                "item_dica": "Método de verificação: Com régua metálica e trena\nCritério de aceitação: ± 3 mm",
+                "item_tipo": "Avaliativo",
+                "item_formato": "",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
+                "item_peso": "17",
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [
+                            "plnAcao"
+                        ],
+                        "na_regular": [],
+                        "s_bom": []
+                    }
+                ],
+                "arrComplementos": [],
+                "area_nome": "--"
+            },
+            {
+                "id": 4,
+                "id_checklist": 1,
+                "item_nome": "Vãos",
+                "item_descricao": "",
+                "item_dica": "Método de verificação: Medição\nCritério de aceitação: Vãos posicionados conforme projeto",
+                "item_tipo": "Avaliativo",
+                "item_formato": "",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
+                "item_peso": "17",
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [
+                            "plnAcao"
+                        ],
+                        "na_regular": [],
+                        "s_bom": []
+                    }
+                ],
+                "arrComplementos": [],
+                "area_nome": "--"
+            },
+            {
+                "id": 5,
+                "id_checklist": 1,
+                "item_nome": "Acabamento",
+                "item_descricao": "",
+                "item_dica": "Método de verificação: Visual\nCritério de aceitação: Parede terminada e sem falhas",
+                "item_tipo": "Avaliativo",
+                "item_formato": "",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
+                "item_peso": "17",
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [
+                            "plnAcao"
+                        ],
+                        "na_regular": [],
+                        "s_bom": []
+                    }
+                ],
+                "arrComplementos": [],
+                "area_nome": "--"
+            },
+            {
+                "id": 6,
+                "id_checklist": 1,
+                "item_nome": "Limpeza",
+                "item_descricao": "",
+                "item_dica": "Método de verificação: Visual\nCritério de aceitação: Ausência de sobras de argamassa",
+                "item_tipo": "Avaliativo",
+                "item_formato": "",
+                "item_obrigatorio": "Sim",
+                "item_tipo_avaliacao": "Opinião (Não/Sim/N.A)",
+                "item_peso": "",
+                "arrAvaliacao": [
+                    {
+                        "n_ruim": [
+                            "plnAcao"
+                        ],
+                        "na_regular": [],
+                        "s_bom": []
+                    }
+                ],
+                "arrComplementos": [],
+                "area_nome": "--"
             }
         ]
     }
