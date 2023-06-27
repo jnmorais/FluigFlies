@@ -171,6 +171,7 @@ function buscarUsuarios(cidade) {
             $("#destinatarios").val(destinatarios("coord_jf"))
             break;
         case "São José dos Campos":
+        case "Campinas":
             $("#grupoCoord").val("Pool:Role:coord_sjc")
             $("#destinatarios").val(destinatarios("coord_sjc"))
             break;
