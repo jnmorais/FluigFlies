@@ -5,7 +5,7 @@ $(document).ready(function () {
     var rd_mtvDslg6 = "Acordo entre as partes (conforme art. 484-A CLT)"
     $("#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg").hide()
     $("#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh,#rh_fdbk,#div_txt_rh_fdb,#premioApv").hide()
-    $("#msg_transf,#div_rd_clbLocS,#div_rd_clbLocAnx,#aso_obrigatorio,#sistemas_utilizados").hide()
+    $("#msg_transf,#div_rd_clbLocS,#div_rd_clbLocAnx,#aso_obrigatorio,#sistemas_utilizados,#dp_obra").hide()
     if (FM == "ADD" || FM == "MOD") {
         $(".select2").select2()
     }
@@ -59,6 +59,7 @@ $(document).ready(function () {
         })
         // Pi'que
         show_on_click("rd_clbCargo", "Obra (Canteiro e Produção)", null, "div_rd_clbLocS")
+        show_on_click("rd_clbCargo", "Obra (Canteiro e Produção)", null, "div_dp_obra")
         show_on_click("rd_clbCargo", "Escritório (BackOffice e Administrativo De Obra)", null, "sistemas_utilizados")
         show_on_click("rd_clbLoc", "Sim", null, "div_rd_clbLocAnx")
         show_on_click("rd_premio", "Sim", null, "premioApv")
@@ -74,6 +75,7 @@ $(document).ready(function () {
         show_on_click("rd_ans_plnOdonto", "Sim", null, "anexo_plano_odonto")
         // Esconde
         hide_on_load("rd_clbCargo", "Obra (Canteiro e Produção)", null, "div_rd_clbLocS")
+        hide_on_load("rd_clbCargo", "Obra (Canteiro e Produção)", null, "div_dp_obra")
         hide_on_load("rd_clbCargo", "Escritório (BackOffice e Administrativo De Obra)", null, "sistemas_utilizados")
         hide_on_load("rd_clbLoc", "Sim", null, "div_rd_clbLocAnx")
         hide_on_load("rd_premio", "Sim", null, "premioApv")

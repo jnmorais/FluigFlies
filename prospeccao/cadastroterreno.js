@@ -173,6 +173,7 @@ function buscarUsuarios(cidade) {
         case "São José dos Campos":
         case "Campinas":
         case "Jacareí":
+        case "Guarulhos":
             $("#grupoCoord").val("Pool:Role:coord_sjc")
             $("#destinatarios").val(destinatarios("coord_sjc"))
             break;
