@@ -139,7 +139,7 @@ $(document).ready(function () {
     }
     // ATV 37
     if (ATV == 37 || ATV == null) {
-        show_on_click_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G", "Sim, candidato selecionado por Recrutamento Interno", "Sim, admissão com promoção de estagiário", "cdd_slc");
+        show_on_click_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G", "Efetivação de Jovem Aprendiz", "Sim, candidato selecionado por Recrutamento Interno", "Sim, admissão com promoção de estagiário", "cdd_slc");
         FM == "MOD" ? FLUIGC.toast({ title: "Recursos Humanos: ", message: "A edição do formulário está liberada!", type: "info" }) : false
     }
     // ATV 51
@@ -302,7 +302,7 @@ $(document).ready(function () {
         hide_on_load("rd_avl_rh", "Alteração/Inclusão de informações", null, "txt_alt_rh");
         hide_on_load("rd_avl_rh", "Reprovada", null, "txt_rpv_rh");
         // ATV 37
-        hide_on_load_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G", "Sim, candidato selecionado por Recrutamento Interno", "Sim, admissão com promoção de estagiário", "cdd_slc");
+        hide_on_load_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G", "Efetivação de Jovem Aprendiz", "Sim, candidato selecionado por Recrutamento Interno", "Sim, admissão com promoção de estagiário", "cdd_slc");
         // ATV 51
         hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb");
         hide_on_load("rd_dst_dp", "Alteração/Inclusão de informações ao Gente & Gestão", null, "txt_dp_alter");
