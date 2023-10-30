@@ -140,7 +140,7 @@ $(document).ready(function () {
     // ATV 37
     //Add Efetivção
     if (ATV == 37 || ATV == null) {
-        show_on_click_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G", "Sim, candidato selecionado por Recrutamento Interno", "Sim, admissão com promoção de estagiário", "cdd_slc");
+        show_on_click_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G", "Sim, candidato selecionado por Recrutamento Interno", "Sim, efetivação de Jovem Aprendiz", "Sim, admissão com promoção de estagiário", "cdd_slc");
         FM == "MOD" ? FLUIGC.toast({ title: "Recursos Humanos: ", message: "A edição do formulário está liberada!", type: "info" }) : false
     }
     // ATV 51
@@ -304,7 +304,7 @@ $(document).ready(function () {
         hide_on_load("rd_avl_rh", "Reprovada", null, "txt_rpv_rh");
         // ATV 37
         //Add Efetivção
-        hide_on_load_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G", "Sim, candidato selecionado por Recrutamento Interno", "Sim, admissão com promoção de estagiário", "cdd_slc");
+        hide_on_load_custom("rd_selecao_rh", "Sim, candidato selecionado pelo G&G", "Sim, candidato selecionado por Recrutamento Interno", "Sim, efetivação de Jovem Aprendiz", "Sim, admissão com promoção de estagiário", "cdd_slc");
         // ATV 51
         hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb");
         hide_on_load("rd_dst_dp", "Alteração/Inclusão de informações ao Gente & Gestão", null, "txt_dp_alter");
@@ -360,9 +360,9 @@ function show_on_click(campo, valor1, valor2, show) {
         }
     });
 }
-function show_on_click_custom(campo, valor1, valor2, valor3, show) {
+function show_on_click_custom(campo, valor1, valor2, valor3, valor4, show) {
     $("[name$='" + campo + "']").click(function () {
-        if ($(this).val() == valor1 || $(this).val() == valor2 || $(this).val() == valor3) {
+        if ($(this).val() == valor1 || $(this).val() == valor2 || $(this).val() == valor3 || $(this).val() == valor4) {
             $("#" + show).show();
         } else {
             $("#" + show).hide();
