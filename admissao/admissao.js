@@ -369,8 +369,8 @@ function show_on_click_custom(campo, valor1, valor2, valor3, valor4, show) {
         }
     });
 }
-function hide_on_load_custom(campo, valor1, valor2, valor3, show) {
-    if ($("[name$='" + campo + "']:checked").val() == valor1 || $("[name$='" + campo + "']:checked").val() == valor2 || $("[name$='" + campo + "']:checked").val() == valor3) {
+function hide_on_load_custom(campo, valor1, valor2, valor3, valor4, show) {
+    if ($("[name$='" + campo + "']:checked").val() == valor1 || $("[name$='" + campo + "']:checked").val() == valor2 || $("[name$='" + campo + "']:checked").val() == valor3 || $("[name$='" + campo + "']:checked").val() == valor4) {
         $("#" + show).show();
     } else {
         $("#" + show).hide();
