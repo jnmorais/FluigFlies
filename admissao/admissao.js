@@ -548,7 +548,7 @@ $(document).ready(function () {
     )
     hide_on_load("rd_loc", "Escritório", null, "anexos")
     // ATV 51
-    hide_on_load("rd_loc", "Obra", null, "anexos_dp")
+    hide_on_load("rd_loc", "Escritório", null, "anexos_dp")
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
     hide_on_load(
       "rd_dst_dp",
