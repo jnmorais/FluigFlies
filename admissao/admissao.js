@@ -548,12 +548,6 @@ $(document).ready(function () {
     )
     hide_on_load("rd_loc", "Escritório", null, "anexos")
     // ATV 51
-    // ATV 51
-    var rdLocValue = form.getValue("rd_loc")
-    if (rdLocValue == "Escritório") {
-      $("#anexos_dp").closest(".form-group").hide()
-    }
-
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
     hide_on_load(
       "rd_dst_dp",
@@ -561,6 +555,7 @@ $(document).ready(function () {
       null,
       "txt_dp_alter"
     )
+    hide_on_load("rd_loc", "Obra", null, "anexos")
 
     // ATV 63
     hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
