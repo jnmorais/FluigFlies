@@ -505,7 +505,6 @@ $(document).ready(function () {
     hide_on_load("rd_idioma", "Sim", null, "txt_idioma")
     hide_on_load("rd_loc", "Obra", null, "documentacao_funcionario")
     hide_on_load("rd_loc", "Obra", null, "slt_spe")
-    hide_on_load("rd_loc", "Escritório", null, "anexos")
     hide_on_load("rd_hrtb", "Outros", null, "txt_hrtb")
     hide_on_load("rd_crl", "Sim", null, "div_anx_crl")
     hide_on_load("rd_na", "Sim", null, "rd_etp_na")
@@ -547,6 +546,7 @@ $(document).ready(function () {
       "Sim, admissão com promoção de estagiário",
       "cdd_slc"
     )
+    hide_on_load("rd_loc", "Escritório", null, "anexos")
     // ATV 51
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
     hide_on_load(
