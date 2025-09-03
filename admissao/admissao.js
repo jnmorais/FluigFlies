@@ -274,6 +274,22 @@ $(document).ready(function () {
   }
   // ATV 63
   if (ATV == 63 || ATV == null) {
+    function togglePanelRH(form) {
+      // Esconde o panel por padrão
+      var panel = document.getElementById("pnl_doc_rh")
+      if (!panel) return // evita erro se o panel não existir
+      panel.style.display = "none"
+
+      // Pega os valores atuais
+      var loc = form.getValue("rd_loc")
+      var ATV = form.getValue("ATV")
+
+      // Mostra apenas se for Escritório e atividade 63
+      if (loc === "Escritório" && ATV == 63) {
+        panel.style.display = "block"
+      }
+    }
+
     show_on_click("rd_int_rh", "Sim", null, "dt_int_rh")
   }
   // ATV 150
