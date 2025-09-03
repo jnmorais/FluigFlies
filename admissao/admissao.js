@@ -546,6 +546,7 @@ $(document).ready(function () {
       "Sim, admissão com promoção de estagiário",
       "cdd_slc"
     )
+
     hide_on_load("rd_loc", "Escritório", null, "anexos")
     // ATV 51
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
@@ -558,6 +559,7 @@ $(document).ready(function () {
     hide_on_load("rd_loc", "Obra", null, "anexos_dp")
 
     // ATV 63
+    hide_on_load("rd_loc", "Escritório", null, "pnl_doc_rh")
     hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
     // ATV 150
     hide_on_load("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
