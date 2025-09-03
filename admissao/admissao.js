@@ -274,22 +274,6 @@ $(document).ready(function () {
   }
   // ATV 63
   if (ATV == 63 || ATV == null) {
-    function togglePanelRH(form) {
-      // Esconde o panel por padrão
-      var panel = document.getElementById("pnl_doc_rh")
-      if (!panel) return // evita erro se o panel não existir
-      panel.style.display = "none"
-
-      // Pega os valores atuais
-      var loc = form.getValue("rd_loc")
-      var ATV = form.getValue("ATV")
-
-      // Mostra apenas se for Escritório e atividade 63
-      if (loc === "Escritório" && ATV == 63) {
-        panel.style.display = "block"
-      }
-    }
-
     show_on_click("rd_int_rh", "Sim", null, "dt_int_rh")
   }
   // ATV 150
@@ -575,7 +559,6 @@ $(document).ready(function () {
     hide_on_load("rd_loc", "Obra", null, "anexos_dp")
 
     // ATV 63
-    hide_on_load("rd_loc", "Escritório", null, "pnl_doc_rh")
     hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
     // ATV 150
     hide_on_load("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
