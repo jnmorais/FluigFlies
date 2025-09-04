@@ -272,8 +272,8 @@ $(document).ready(function () {
       "txt_dp_alter"
     )
   }
-  // ATV 63
-  if (ATV == 63 || ATV == null) {
+  // ATV 438
+  if (ATV == 438 || ATV == null) {
     show_on_click("rd_int_rh", "Sim", null, "dt_int_rh")
   }
   // ATV 150
