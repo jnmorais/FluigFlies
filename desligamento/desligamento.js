@@ -102,7 +102,6 @@ $(document).ready(function () {
     )
     show_on_click("rd_clbLoc", "Sim", null, "div_rd_clbLocAnx")
     show_on_click("rd_premio", "Sim", null, "premioApv")
-    show_on_click("rd_obras", "Sim", null, "infomPremio")
     show_on_click("rd_obras", "Sim", null, "div_cartao_2")
     show_on_click("rd_acrdPts", "Sim", null, "div_txt_acrdPts")
     show_on_click(
@@ -140,7 +139,6 @@ $(document).ready(function () {
     )
     hide_on_load("rd_clbLoc", "Sim", null, "div_rd_clbLocAnx")
     hide_on_load("rd_premio", "Sim", null, "premioApv")
-    hide_on_load("rd_obras", "Não", null, "infomPremio")
     hide_on_load("rd_obras", "Sim", null, "div_cartao_2")
     hide_on_load("rd_acrdPts", "Sim", null, "div_txt_acrdPts")
     hide_on_load(
