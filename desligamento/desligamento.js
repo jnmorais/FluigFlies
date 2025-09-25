@@ -10,7 +10,7 @@ $(document).ready(function () {
     "#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh,#rh_fdbk,#div_txt_rh_fdb,#premioApv"
   ).hide()
   $(
-    "#msg_transf,#div_rd_clbLocS,#div_rd_clbLocAnx,#aso_obrigatorio,#sistemas_utilizados,#dp_obra"
+    "#msg_transf,#div_rd_clbLocS,#div_rd_clbLocAnx,#aso_obrigatorio,#sistemas_utilizados,#dp_obra,#camposObra"
   ).hide()
   if (FM == "ADD" || FM == "MOD") {
     $(".select2").select2()
@@ -140,7 +140,7 @@ $(document).ready(function () {
     )
     hide_on_load("rd_clbLoc", "Sim", null, "div_rd_clbLocAnx")
     hide_on_load("rd_premio", "Sim", null, "premioApv")
-    show_on_click("rd_obras", "Sim", "Não", "camposObra")
+    hide_on_load("rd_obras", "Sim", "Não", "camposObra")
     hide_on_load("rd_obras", "Sim", null, "div_cartao_2")
     hide_on_load("rd_acrdPts", "Sim", null, "div_txt_acrdPts")
     hide_on_load(
