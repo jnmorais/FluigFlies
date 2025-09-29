@@ -575,6 +575,12 @@ $(document).ready(function () {
       null,
       "txt_dp_alter"
     )
+    show_on_click("rd_loc", "Obra", null, "anexos_dp").hide_on_load(
+      "rd_loc",
+      "Escritório",
+      null,
+      "anexos_dp"
+    )
     hide_on_load("rd_loc", "Escritório", null, "anexos_dp")
 
     // ATV 63
