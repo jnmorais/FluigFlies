@@ -47,7 +47,6 @@ $(document).ready(function () {
     show_on_click("rd_idioma", "Sim", null, "txt_idioma")
     show_on_click("rd_loc", "Obra", null, "documentacao_funcionario")
     show_on_click("rd_loc", "Obra", null, "slt_spe")
-    show_on_click("rd_loc", "Obra", null, "anexos_dp")
     show_on_click("rd_hrtb", "Outros", null, "txt_hrtb")
     show_on_click("rd_crl", "Sim", null, "div_anx_crl")
     show_on_click("rd_na", "Sim", null, "rd_etp_na")
@@ -1067,7 +1066,7 @@ $(document).ready(function () {
     show_on_click("rd_idioma", "Sim", null, "txt_idioma")
     show_on_click("rd_loc", "Obra", null, "documentacao_funcionario")
     show_on_click("rd_loc", "Obra", null, "slt_spe")
-    show_on_click("rd_loc", "Obra", null, "anexos_dp")
+
     show_on_click("rd_hrtb", "Outros", null, "txt_hrtb")
     show_on_click("rd_crl", "Sim", null, "div_anx_crl")
     show_on_click("rd_na", "Sim", null, "rd_etp_na")
@@ -1609,7 +1608,6 @@ $(document).ready(function () {
       null,
       "txt_dp_alter"
     )
-    hide_on_load("rd_loc", "Escritório", null, "anexos_dp")
 
     // ATV 63
     hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
