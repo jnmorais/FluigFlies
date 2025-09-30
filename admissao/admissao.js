@@ -1299,6 +1299,16 @@ $(document).ready(function () {
       "txt_dp_alter"
     )
   }
+
+  if (ATV == 459 || ATV == null) {
+    show_on_click("rd_dst_obra", "Não", null, "dt_cntr_clb_obra")
+    show_on_click(
+      "rd_dst_obra",
+      "Alteração/Inclusão de informações ao Gente & Gestão",
+      null,
+      "txt_dp_alter"
+    )
+  }
   // ATV 438
   if (ATV == 438 || ATV == null) {
     show_on_click("rd_int_rh", "Sim", null, "dt_int_rh")
