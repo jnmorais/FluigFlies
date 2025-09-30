@@ -1577,6 +1577,10 @@ $(document).ready(function () {
     hide_on_load("rd_loc", "Escritório", null, "anexos")
     // ATV 51
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
+
+    // ATV 459
+    hide_on_load("rd_dst_obra", "Não", null, "dt_cntr_clb_obra")
+
     hide_on_load(
       "rd_dst_dp",
       "Alteração/Inclusão de informações ao Gente & Gestão",
