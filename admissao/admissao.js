@@ -1306,7 +1306,7 @@ $(document).ready(function () {
       "rd_dst_obra",
       "Alteração/Inclusão de informações ao Gente & Gestão",
       null,
-      "txt_dp_alter"
+      "txt_dpo_alter"
     )
   }
   // ATV 438
