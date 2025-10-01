@@ -290,11 +290,11 @@ $(document).ready(function () {
       "txt_dp_alter"
     )
   }
-
+  // ATV 459
   if (ATV == 459 || ATV == null) {
-    show_on_click("rd_dst_obra", "Não", null, "dt_cntr_clb_obra")
+    show_on_click("rd_dst_ob", "Não", null, "dt_cntr_ob")
     show_on_click(
-      "rd_dst_obra",
+      "rd_dst_ob",
       "Alteração/Inclusão de informações ao Gente & Gestão",
       null,
       "txt_dpo_alter"
@@ -587,9 +587,9 @@ $(document).ready(function () {
     )
 
     // ATV 459
-    hide_on_load("rd_dst_obra", "Não", null, "dt_cntr_clb_obra")
+    hide_on_load("rd_dst_ob", "Não", null, "dt_cntr_clb_obra")
     hide_on_load(
-      "rd_dst_obra",
+      "rd_dst_ob",
       "Alteração/Inclusão de informações ao Gente & Gestão",
       null,
       "txt_dpo_alter"
@@ -1312,9 +1312,9 @@ $(document).ready(function () {
   }
 
   if (ATV == 459 || ATV == null) {
-    show_on_click("rd_dst_obra", "Não", null, "dt_cntr_clb_obra")
+    show_on_click("rd_dst_ob", "Não", null, "dt_cntr_ob")
     show_on_click(
-      "rd_dst_obra",
+      "rd_dst_ob",
       "Alteração/Inclusão de informações ao Gente & Gestão",
       null,
       "txt_dp_alter"
@@ -1600,7 +1600,7 @@ $(document).ready(function () {
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
 
     // ATV 459
-    hide_on_load("rd_dst_obra", "Não", null, "dt_cntr_clb_obra")
+    hide_on_load("rd_dst_ob", "Não", null, "dt_cntr_ob")
 
     hide_on_load(
       "rd_dst_dp",
