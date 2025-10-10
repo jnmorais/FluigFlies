@@ -297,7 +297,7 @@ $(document).ready(function () {
       "rd_dst_ob",
       "Alteração/Inclusão de informações ao Gente & Gestão",
       null,
-      "txt_dp_alter"
+      "txt_dpo_alter"
     )
   }
 
@@ -334,7 +334,7 @@ $(document).ready(function () {
       $("#rd_escol").val() == "Ensino Fundamental Incompleto (cursando)"
     ) {
       $("#cargoResp,#cargoAut").show()
-      $("[name$='txt_supDsj']").text() != ""
+      $("[name$='txt_supDsj]").text() != ""
         ? $("#txt_supDsj").show()
         : $("#txt_supDsj").hide()
       switch ($("[name$='txt_cargo']").val()) {
@@ -592,7 +592,7 @@ $(document).ready(function () {
       "rd_dst_ob",
       "Alteração/Inclusão de informações ao Gente & Gestão",
       null,
-      "txt_dp_alter"
+      "txt_dpo_alter"
     )
     // ATV 63
     hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
@@ -1353,7 +1353,7 @@ $(document).ready(function () {
       $("#rd_escol").val() == "Ensino Fundamental Incompleto (cursando)"
     ) {
       $("#cargoResp,#cargoAut").show()
-      $("[name$='txt_supDsj']").text() != ""
+      $("[name$='txt_supDsj]").text() != ""
         ? $("#txt_supDsj").show()
         : $("#txt_supDsj").hide()
       switch ($("[name$='txt_cargo']").val()) {
