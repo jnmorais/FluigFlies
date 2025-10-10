@@ -48,7 +48,6 @@ $(document).ready(function () {
     show_on_click("rd_loc", "Obra", null, "documentacao_funcionario")
     show_on_click("rd_loc", "Obra", null, "slt_spe")
     show_on_click("rd_hrtb", "Outros", null, "txt_hrtb")
-    // Mostrar as opções de equipamentos conforme seleção (Computador x Notebook)
     show_on_click("rd_tpEqp", "Computador", null, "computador")
     show_on_click("rd_tpEqp", "Notebook", null, "notebook")
     hide_on_load("rd_tpEqp", "Computador", null, "computador")
@@ -69,6 +68,8 @@ $(document).ready(function () {
       null,
       "softwares"
     )
+    show_on_click("rd_tpEqp", "Computador", null, "computador")
+    show_on_click("rd_tpEqp", "Notebook", null, "notebook")
     show_on_click("rd_acsRd", "Sim", null, "pastasRede")
     show_on_click("rd_eqpRossi", "Sim", null, "entrg_RossiEqp")
     show_on_click("rd_cntr", "Estágio", null, "estagio")
@@ -556,6 +557,8 @@ $(document).ready(function () {
       null,
       "softwares"
     )
+    hide_on_load("rd_tpEqp", "Computador", null, "computador")
+    hide_on_load("rd_tpEqp", "Notebook", null, "notebook")
     hide_on_load("rd_acsRd", "Sim", null, "pastasRede")
     hide_on_load("rd_eqpRossi", "Sim", null, "entrg_RossiEqp")
     hide_on_load("rd_cntr", "Estágio", null, "estagio")
@@ -1089,6 +1092,8 @@ $(document).ready(function () {
       null,
       "softwares"
     )
+    show_on_click("rd_tpEqp", "Computador", null, "computador")
+    show_on_click("rd_tpEqp", "Notebook", null, "notebook")
     show_on_click("rd_acsRd", "Sim", null, "pastasRede")
     show_on_click("rd_eqpRossi", "Sim", null, "entrg_RossiEqp")
     show_on_click("rd_cntr", "Estágio", null, "estagio")
@@ -1575,6 +1580,8 @@ $(document).ready(function () {
       null,
       "softwares"
     )
+    hide_on_load("rd_tpEqp", "Computador", null, "computador")
+    hide_on_load("rd_tpEqp", "Notebook", null, "notebook")
     hide_on_load("rd_acsRd", "Sim", null, "pastasRede")
     hide_on_load("rd_eqpRossi", "Sim", null, "entrg_RossiEqp")
     hide_on_load("rd_cntr", "Estágio", null, "estagio")
