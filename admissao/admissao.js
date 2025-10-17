@@ -1,3 +1,73 @@
+function atualizaSltSistemas() {
+  var arr = []
+  document
+    .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
+    .forEach(function (cb) {
+      if (cb.checked) {
+        var lb = cb.parentNode.querySelector("label")
+        arr.push(lb ? lb.textContent.trim() : (cb.value || "").trim())
+      }
+    })
+  var h = document.getElementById("slt_sistemas")
+  if (h) h.value = JSON.stringify(arr)
+}
+
+function onSistemaChange(e) {
+  var alvo = e.target
+  var lb = alvo.parentNode.querySelector("label")
+  var val = (lb ? lb.textContent : alvo.value || "").trim().toLowerCase()
+
+  if (val.indexOf("nenhum sistema") !== -1 && alvo.checked) {
+    document
+      .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
+      .forEach(function (cb) {
+        if (cb !== alvo) cb.checked = false
+      })
+  } else if (alvo.checked) {
+    document
+      .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
+      .forEach(function (cb) {
+        var l = cb.parentNode.querySelector("label")
+        var t = (l ? l.textContent : cb.value || "").trim().toLowerCase()
+        if (t.indexOf("nenhum sistema") !== -1) cb.checked = false
+      })
+  }
+  atualizaSltSistemas()
+}
+
+function restauraSistemasDoHidden() {
+  var h = document.getElementById("slt_sistemas")
+  if (!h || !h.value) return
+  try {
+    var arr = JSON.parse(h.value)
+    if (Array.isArray(arr)) {
+      var set = {}
+      arr.forEach(function (v) {
+        set[String(v).trim().toLowerCase()] = true
+      })
+      document
+        .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
+        .forEach(function (cb) {
+          var l = cb.parentNode.querySelector("label")
+          var txt = (l ? l.textContent : cb.value || "").trim().toLowerCase()
+          cb.checked = !!set[txt]
+        })
+    }
+  } catch (e) {
+    /* caso não seja JSON, adaptar */
+  }
+}
+
+function ativaSyncSistemas() {
+  document
+    .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
+    .forEach(function (cb) {
+      cb.addEventListener("change", onSistemaChange)
+    })
+  restauraSistemasDoHidden()
+  atualizaSltSistemas()
+}
+
 $(document).ready(function () {
   // loadDatasetCargos("Adm", "#txt_cargo")
 
@@ -5,29 +75,7 @@ $(document).ready(function () {
   $("[data-toggle='tooltip']").tooltip()
   // ATV 0|1|4
   if (ATV == 0 || ATV == 1) {
-    var sistemas = [
-      "Nenhum sistema será necessário",
-      "Mega",
-      "Expert",
-      "Approvo",
-      "Adobe/Doc Sign",
-      "Construtor de vendas",
-      "Fluig",
-      "HCM",
-      "INC Academy",
-    ]
-    /* Instantiated new autocomplete */
-    var myAutocomplete = FLUIGC.autocomplete("#slt_sistemas", {
-      source: substringMatcher(sistemas),
-      name: "sistemas",
-      displayKey: "sistema",
-      tagClass: "tag-gray",
-      type: "tagAutocomplete",
-      highlight: true,
-      hint: "true",
-      autoLoading: "false",
-    })
-    var myTag = FLUIGC.autocomplete("#slt_softwares")
+    ativaSyncSistemas()
   }
   if (
     ATV == 0 ||
