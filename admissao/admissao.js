@@ -1082,29 +1082,7 @@ $(document).ready(function () {
   $("[data-toggle='tooltip']").tooltip()
   // ATV 0|1|4
   if (ATV == 0 || ATV == 1) {
-    var sistemas = [
-      "Nenhum sistema será necessário",
-      "Mega",
-      "Expert",
-      "Approvo",
-      "Adobe/Doc Sign",
-      "Construtor de vendas",
-      "Fluig",
-      "HCM",
-      "INC Academy",
-    ]
-    /* Instantiated new autocomplete */
-    var myAutocomplete = FLUIGC.autocomplete("#slt_sistemas", {
-      source: substringMatcher(sistemas),
-      name: "sistemas",
-      displayKey: "sistema",
-      tagClass: "tag-gray",
-      type: "tagAutocomplete",
-      highlight: true,
-      hint: "true",
-      autoLoading: "false",
-    })
-    var myTag = FLUIGC.autocomplete("#slt_softwares")
+    ativaSyncSistemas()
   }
   if (
     ATV == 0 ||
