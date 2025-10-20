@@ -637,23 +637,15 @@ $(document).ready(function () {
     hide_on_load("rd_loc", "Escritório", null, "anexos")
     // ATV 51
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
+    hide_on_load("rd_loc", "Obra", null, "retornodp")
     hide_on_load(
       "rd_dst_dp",
       "Alteração/Inclusão de informações ao Gente & Gestão",
       null,
       "txt_dp_alter"
-    )
-
-    // ATV 459
-    hide_on_load("rd_dst_ob", "Não", null, "dt_cntr_clb_obra")
-    hide_on_load(
-      "rd_dst_ob",
-      "Alteração/Inclusão de informações ao Gente & Gestão",
-      null,
-      "txt_dpo_alter"
-    )
-    // ATV 63
-    hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
+    ) /
+      // ATV 63
+      hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
     // ATV 150
     hide_on_load("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
     // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
@@ -1341,6 +1333,8 @@ $(document).ready(function () {
   // ATV 51
   if (ATV == 51 || ATV == null) {
     show_on_click("rd_dst_dp", "Não", null, "dt_cntr_clb")
+    show_on_click("rd_loc", "Obra", null, "retornodp")
+
     show_on_click(
       "rd_dst_dp",
       "Alteração/Inclusão de informações ao Gente & Gestão",
@@ -1639,6 +1633,7 @@ $(document).ready(function () {
     hide_on_load("rd_loc", "Escritório", null, "anexos")
     // ATV 51
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
+    hide_on_load("rd_loc", "Obra", null, "retornodp")
 
     // ATV 459
     hide_on_load("rd_dst_ob", "Não", null, "dt_cntr_ob")
