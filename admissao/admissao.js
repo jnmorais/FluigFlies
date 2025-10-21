@@ -649,9 +649,9 @@ $(document).ready(function () {
       "Alteração/Inclusão de informações ao Gente & Gestão",
       null,
       "txt_dp_alter"
-    ) /
-      // ATV 63
-      hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
+    )
+    // ATV 63
+    hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
     // ATV 150
     hide_on_load("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
 
@@ -705,6 +705,15 @@ $(document).ready(function () {
       }
     }
   }
+})
+// Binds independentes para visibilidade (executam em qualquer atividade)
+$(function () {
+  // retornodp: somente quando local = Obra
+  show_on_click("rd_loc", "Obra", null, "retornodp")
+  // show_cod_mega: somente quando valor = "Sim"
+  show_on_click("rd_cdt_mega", "Sim", null, "show_cod_mega")
+  // dt_int_rh: somente quando valor = "Sim"
+  show_on_click("rd_int_rh", "Sim", null, "dt_int_rh")
 })
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir) - simples
 function show_on_click(campo, valor1, valor2, show) {
@@ -1343,7 +1352,6 @@ $(document).ready(function () {
   // ATV 51
   if (ATV == 51 || ATV == null) {
     show_on_click("rd_dst_dp", "Não", null, "dt_cntr_clb")
-    show_on_click("rd_loc", "Obra", null, "retornodp")
 
     show_on_click(
       "rd_dst_dp",
@@ -1713,6 +1721,15 @@ $(document).ready(function () {
       }
     }
   }
+})
+// Binds independentes para visibilidade (executam em qualquer atividade)
+$(function () {
+  // retornodp: somente quando local = Obra
+  show_on_click("rd_loc", "Obra", null, "retornodp")
+  // show_cod_mega: somente quando valor = "Sim"
+  show_on_click("rd_cdt_mega", "Sim", null, "show_cod_mega")
+  // dt_int_rh: somente quando valor = "Sim"
+  show_on_click("rd_int_rh", "Sim", null, "dt_int_rh")
 })
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir) - simples
 function show_on_click(campo, valor1, valor2, show) {
