@@ -708,6 +708,12 @@ $(document).ready(function () {
 })
 // Binds independentes para visibilidade (executam em qualquer atividade)
 $(function () {
+  // Oculta por padrão
+  $("#retornodp,#show_cod_mega,#dt_int_rh").hide()
+  // Aplica estado inicial conforme seleção atual
+  hide_on_load("rd_loc", "Obra", null, "retornodp")
+  hide_on_load("rd_cdt_mega", "Sim", null, "show_cod_mega")
+  hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
   // retornodp: somente quando local = Obra
   show_on_click("rd_loc", "Obra", null, "retornodp")
   // show_cod_mega: somente quando valor = "Sim"
@@ -1724,6 +1730,12 @@ $(document).ready(function () {
 })
 // Binds independentes para visibilidade (executam em qualquer atividade)
 $(function () {
+  // Oculta por padrão
+  $("#retornodp,#show_cod_mega,#dt_int_rh").hide()
+  // Aplica estado inicial conforme seleção atual
+  hide_on_load("rd_loc", "Obra", null, "retornodp")
+  hide_on_load("rd_cdt_mega", "Sim", null, "show_cod_mega")
+  hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
   // retornodp: somente quando local = Obra
   show_on_click("rd_loc", "Obra", null, "retornodp")
   // show_cod_mega: somente quando valor = "Sim"
