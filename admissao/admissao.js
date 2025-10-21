@@ -364,6 +364,12 @@ $(document).ready(function () {
   if (ATV == 150 || ATV == null) {
     show_on_click("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
   }
+
+  // ATV 268
+  if (ATV == 268 || ATV == null) {
+    show_on_click("rd_cdt_mega", "Sim", null, "show_cod_mega")
+  }
+
   // // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
   // if (ATV == 348 || ATV == null) {
   //     show_on_click("rd_etg_si_1", "Sim", null, "show_acessos_1")
@@ -1359,6 +1365,11 @@ $(document).ready(function () {
   // ATV 150
   if (ATV == 150 || ATV == null) {
     show_on_click("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
+  }
+
+  // ATV 268
+  if (ATV == 268 || ATV == null) {
+    show_on_click("rd_cdt_mega", "Sim", null, "show_cod_mega")
   }
   // // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
   // if (ATV == 348 || ATV == null) {
