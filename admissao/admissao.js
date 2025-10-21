@@ -654,6 +654,10 @@ $(document).ready(function () {
       hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
     // ATV 150
     hide_on_load("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
+
+    // ATV 268
+    hide_on_load("rd_cdt_mega", "Sim", null, "show_cod_mega")
+
     // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
     // hide_on_load("rd_etg_si_1", "Sim", null, "show_acessos_1")
     // // ATV 350 - (SISTEMAS) - CV e Adobe
@@ -1646,6 +1650,8 @@ $(document).ready(function () {
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
     hide_on_load("rd_loc", "Obra", null, "retornodp")
 
+    // ATV 268
+    hide_on_load("rd_cdt_mega", "Sim", null, "show_cod_mega")
     // ATV 459
     hide_on_load("rd_dst_ob", "Não", null, "dt_cntr_ob")
 
