@@ -71,6 +71,16 @@ function ativaSyncSistemas() {
 $(document).ready(function () {
   // loadDatasetCargos("Adm", "#txt_cargo")
 
+  $("input[name='rd_loc']").change(function () {
+    var valor = $(this).val()
+
+    if (valor === "Obra" || valor === "") {
+      $("#retornodp").show()
+    } else {
+      $("#retornodp").hide()
+    }
+  })
+
   $(".select2").select2()
   $("[data-toggle='tooltip']").tooltip()
   // ATV 0|1|4
@@ -643,7 +653,7 @@ $(document).ready(function () {
     hide_on_load("rd_loc", "Escritório", null, "anexos")
     // ATV 51
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
-    hide_on_load("rd_loc", "Obra", null, "retornodp")
+
     hide_on_load(
       "rd_dst_dp",
       "Alteração/Inclusão de informações ao Gente & Gestão",
@@ -706,21 +716,7 @@ $(document).ready(function () {
     }
   }
 })
-// Binds independentes para visibilidade (executam em qualquer atividade)
-$(function () {
-  // Oculta por padrão
-  $("#retornodp,#show_cod_mega,#dt_int_rh").hide()
-  // Aplica estado inicial conforme seleção atual
-  hide_on_load("rd_loc", "Obra", null, "retornodp")
-  hide_on_load("rd_cdt_mega", "Sim", null, "show_cod_mega")
-  hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
-  // retornodp: somente quando local = Obra
-  show_on_click("rd_loc", "Obra", null, "retornodp")
-  // show_cod_mega: somente quando valor = "Sim"
-  show_on_click("rd_cdt_mega", "Sim", null, "show_cod_mega")
-  // dt_int_rh: somente quando valor = "Sim"
-  show_on_click("rd_int_rh", "Sim", null, "dt_int_rh")
-})
+
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir) - simples
 function show_on_click(campo, valor1, valor2, show) {
   $("[name$='" + campo + "']").click(function () {
@@ -1662,7 +1658,6 @@ $(document).ready(function () {
     hide_on_load("rd_loc", "Escritório", null, "anexos")
     // ATV 51
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
-    hide_on_load("rd_loc", "Obra", null, "retornodp")
 
     // ATV 268
     hide_on_load("rd_cdt_mega", "Sim", null, "show_cod_mega")
@@ -1728,21 +1723,7 @@ $(document).ready(function () {
     }
   }
 })
-// Binds independentes para visibilidade (executam em qualquer atividade)
-$(function () {
-  // Oculta por padrão
-  $("#retornodp,#show_cod_mega,#dt_int_rh").hide()
-  // Aplica estado inicial conforme seleção atual
-  hide_on_load("rd_loc", "Obra", null, "retornodp")
-  hide_on_load("rd_cdt_mega", "Sim", null, "show_cod_mega")
-  hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
-  // retornodp: somente quando local = Obra
-  show_on_click("rd_loc", "Obra", null, "retornodp")
-  // show_cod_mega: somente quando valor = "Sim"
-  show_on_click("rd_cdt_mega", "Sim", null, "show_cod_mega")
-  // dt_int_rh: somente quando valor = "Sim"
-  show_on_click("rd_int_rh", "Sim", null, "dt_int_rh")
-})
+
 // Controlador dos clicks (nome do input,valor pra verificar, ..., id da div pra exibir) - simples
 function show_on_click(campo, valor1, valor2, show) {
   $("[name$='" + campo + "']").click(function () {
