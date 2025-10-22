@@ -309,23 +309,10 @@ $(document).ready(function () {
     })
   }
 
-  if (ATV == 197 || ATV == null) {
-    show_on_click("rd_pc", "Sim, já tem computador", null, "pnl_ans_infra")
-    show_on_click(
-      "rd_pc",
-      "Não será necessário um computador",
-      null,
-      "pnl_ans_infra"
-    )
-    hide_on_load("rd_pc", "Sim, já tem computador", null, "pnl_ans_infra")
-    hide_on_load(
-      "rd_pc",
-      "Não será necessário um computador",
-      null,
-      "pnl_ans_infra"
-    )
+  // ATV 19
+  if (ATV == 19 || ATV == null) {
+    show_on_click("rd_avl_infra", "Sim", null, "vlr_orc")
   }
-
   // ATV 37
   //Add Efetivção
   if (ATV == 37 || ATV == null) {
@@ -639,7 +626,11 @@ $(document).ready(function () {
       null,
       "txt_alt_rh"
     )
+
     hide_on_load("rd_avl_rh", "Reprovada", null, "txt_rpv_rh")
+
+    // ATV 19
+    hide_on_load("rd_avl_infra", "Sim", null, "vlr_orc")
     // ATV 37
     //Add Efetivção
     hide_on_load_custom(
