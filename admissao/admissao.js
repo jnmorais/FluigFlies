@@ -368,6 +368,10 @@ $(document).ready(function () {
     show_on_click("rd_cdt_mega", "Sim", null, "show_cod_mega")
   }
 
+  if (ATV == 474 || ATV == null) {
+    show_on_click("rd_int_dp", "Sim", null, "dt_int_dp")
+  }
+
   // // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
   // if (ATV == 348 || ATV == null) {
   //     show_on_click("rd_etg_si_1", "Sim", null, "show_acessos_1")
@@ -659,6 +663,9 @@ $(document).ready(function () {
 
     // ATV 268
     hide_on_load("rd_cdt_mega", "Sim", null, "show_cod_mega")
+
+    // ATV 474
+    hide_on_load("rd_int_dp", "Sim", null, "dt_int_dp")
 
     // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
     // hide_on_load("rd_etg_si_1", "Sim", null, "show_acessos_1")
