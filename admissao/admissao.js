@@ -354,6 +354,7 @@ $(document).ready(function () {
       null,
       "txt_dp_alter"
     )
+    show_on_click("rd_loc", "Obra", null, "retornodp")
   }
   // ATV 459
   if (ATV == 459 || ATV == null) {
@@ -653,7 +654,7 @@ $(document).ready(function () {
     hide_on_load("rd_loc", "Escritório", null, "anexos")
     // ATV 51
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
-
+    hide_on_load("rd_loc", "Obra", null, "retornodp")
     hide_on_load(
       "rd_dst_dp",
       "Alteração/Inclusão de informações ao Gente & Gestão",
@@ -1361,6 +1362,7 @@ $(document).ready(function () {
       null,
       "txt_dp_alter"
     )
+    show_on_click("rd_loc", "Obra", null, "retornodp")
   }
 
   if (ATV == 459 || ATV == null) {
@@ -1658,7 +1660,7 @@ $(document).ready(function () {
     hide_on_load("rd_loc", "Escritório", null, "anexos")
     // ATV 51
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
-
+    hide_on_load("rd_loc", "Obra", null, "retornodp")
     // ATV 268
     hide_on_load("rd_cdt_mega", "Sim", null, "show_cod_mega")
     // ATV 459
