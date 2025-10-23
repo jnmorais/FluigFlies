@@ -53,9 +53,7 @@ function restauraSistemasDoHidden() {
           cb.checked = !!set[txt]
         })
     }
-  } catch (e) {
-    /* caso não seja JSON, adaptar */
-  }
+  } catch (e) {}
 }
 
 function ativaSyncSistemas() {
@@ -70,16 +68,6 @@ function ativaSyncSistemas() {
 
 $(document).ready(function () {
   // loadDatasetCargos("Adm", "#txt_cargo")
-
-  $("input[name='rd_loc']").change(function () {
-    var valor = $(this).val()
-
-    if (valor === "Obra" || valor === "") {
-      $("#retornodp").show()
-    } else {
-      $("#retornodp").hide()
-    }
-  })
 
   $(".select2").select2()
   $("[data-toggle='tooltip']").tooltip()
@@ -103,7 +91,6 @@ $(document).ready(function () {
     )
     show_on_click("rd_mtvCntr", "Substituição de colaborador", null, "vlr_Sb")
     show_on_click("rd_idioma", "Sim", null, "txt_idioma")
-    show_on_click("rd_loc", "Obra", null, "documentacao_funcionario")
     show_on_click("rd_loc", "Obra", null, "slt_spe")
     show_on_click("rd_loc", "Obra", null, "clb_aloj")
     show_on_click("rd_hrtb", "Outros", null, "txt_hrtb")
@@ -595,7 +582,6 @@ $(document).ready(function () {
     // hide_on_load("rd_mtvCntr","Substituição de colaborador","Promoção (Efetivação de Estagiário pós desligamento)",null,"txt_prSb");
     hide_on_load("rd_mtvCntr", "Substituição de colaborador", null, "vlr_Sb")
     hide_on_load("rd_idioma", "Sim", null, "txt_idioma")
-    hide_on_load("rd_loc", "Obra", null, "documentacao_funcionario")
     hide_on_load("rd_loc", "Obra", null, "slt_spe")
     hide_on_load("rd_loc", "Obra", null, "clb_aloj")
     hide_on_load("rd_hrtb", "Outros", null, "txt_hrtb")
