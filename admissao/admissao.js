@@ -361,7 +361,7 @@ $(document).ready(function () {
 
   // ATV 376
   if (ATV == 376 || ATV == null) {
-    show_on_click("rd_etg_infra_eqps", "Sim", null, "rd_ptr_infra")
+    show_on_click("rd_etg_infra_eqps", "Sim", null, "patr_infra")
   }
   // // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
   // if (ATV == 348 || ATV == null) {
@@ -658,7 +658,7 @@ $(document).ready(function () {
     hide_on_load("rd_int_dp", "Sim", null, "dt_int_dp")
 
     // ATV 376
-    hide_on_load("rd_etg_infra_eqps", "Sim", null, "rd_ptr_infra")
+    hide_on_load("rd_etg_infra_eqps", "Sim", null, "patr_infra")
 
     // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
     // hide_on_load("rd_etg_si_1", "Sim", null, "show_acessos_1")
