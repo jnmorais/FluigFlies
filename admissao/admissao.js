@@ -56,6 +56,17 @@ function restauraSistemasDoHidden() {
   } catch (e) {}
 }
 
+function show_on_checkbox(checkboxId, targetId) {
+  var cb = document.getElementById(checkboxId)
+  var target = document.getElementById(targetId)
+  if (!cb || !target) return
+  function sync() {
+    target.style.display = cb.checked ? "" : "none"
+  }
+  cb.addEventListener("change", sync)
+  sync()
+}
+
 function ativaSyncSistemas() {
   document
     .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
