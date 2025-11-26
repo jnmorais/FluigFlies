@@ -323,6 +323,7 @@ $(document).ready(function () {
       "Sim, admissão com promoção de estagiário",
       "cdd_slc"
     )
+    show_on_click("rd_vt", "Sim", null, "cartaoVt")
     FM == "MOD"
       ? FLUIGC.toast({
           title: "Recursos Humanos: ",
