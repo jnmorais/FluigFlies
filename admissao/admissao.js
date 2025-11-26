@@ -62,6 +62,7 @@ function ativaSyncSistemas() {
     .forEach(function (cb) {
       cb.addEventListener("change", onSistemaChange)
     })
+  show_on_checkbox("checkbox_outros", "txt_outros_sistemas")
   restauraSistemasDoHidden()
   atualizaSltSistemas()
 }
