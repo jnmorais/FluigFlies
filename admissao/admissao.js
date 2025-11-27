@@ -344,8 +344,40 @@ $(document).ready(function () {
     show_on_click("rd_loc", "Obra", null, "retornodp")
   }
   // ATV 459
+
+  var cargosComCartaoObra = [
+    "ENGENHEIRO CIVIL",
+    "ENGENHEIRO ELETRICISTA",
+    "ENGENHEIRO DE SEG DO TRABALHO",
+    "ARQUITETO",
+    "TECNICO DE OBRAS CIVIS",
+    "TECNICO ORÇAMENTISTA OBRAS",
+    "TECNICO SEG. TRABALHO",
+    "MEDICO DO TRABALHO",
+    "ADVOGADO",
+    "PILOTO",
+  ]
+
+  // função para aplicar regra na tela
+  function aplicaCartaoObraFront() {
+    var loc = $("input[name='rd_loc']:checked").val()
+    var cargo = ($("#txt_cargo_att").val() || "").trim()
+
+    if (loc === "Obra" && cargosComCartaoObra.indexOf(cargo) !== -1) {
+      $("#ct_reg_pfOb").show()
+    } else {
+      $("#ct_reg_pfOb").hide()
+    }
+  }
   if (ATV == 459 || ATV == null) {
     show_on_click("rd_vtOb", "Sim", null, "cartaoVtOb")
+    aplicaCartaoObraFront()
+
+    // se mudar o rádio de local, revalida
+    $(document).on("change", "input[name='rd_loc']", aplicaCartaoObraFront)
+
+    // se mudar o cargo (zoom), também revalida
+    $(document).on("change", "#txt_cargo_att", aplicaCartaoObraFront)
   }
 
   // ATV 63
