@@ -345,13 +345,7 @@ $(document).ready(function () {
   }
   // ATV 459
   if (ATV == 459 || ATV == null) {
-    show_on_click("rd_dst_ob", "Não", null, "dt_cntr_ob")
-    show_on_click(
-      "rd_dst_ob",
-      "Alteração/Inclusão de informações ao Gente & Gestão",
-      null,
-      "txt_dpo_alter"
-    )
+    show_on_click("rd_vtOb", "Sim", null, "cartaoVtOb")
   }
 
   // ATV 63
@@ -660,6 +654,8 @@ $(document).ready(function () {
       null,
       "txt_dp_alter"
     )
+    // ATV 459
+    hide_on_load("rd_vtOb", "Sim", null, "cartaoVtOb")
     // ATV 63
     hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
     // ATV 150
