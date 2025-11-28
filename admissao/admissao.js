@@ -372,7 +372,7 @@ $(document).ready(function () {
       $("#ct_reg_pfOb").hide()
     }
   }
-  if (ATV == 459 || ATV == null) {
+  if (ATV == 474 || ATV == null) {
     show_on_click("rd_vtOb", "Sim", null, "cartaoVtOb")
     aplicaCartaoObraFront()
 
@@ -397,7 +397,7 @@ $(document).ready(function () {
     show_on_click("rd_cdt_mega", "Sim", null, "show_cod_mega")
   }
 
-  if (ATV == 474 || ATV == null) {
+  if (ATV == 488 || ATV == null) {
     show_on_click("rd_int_dp", "Sim", null, "dt_int_dp")
   }
 
