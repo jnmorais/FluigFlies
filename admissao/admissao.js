@@ -356,6 +356,9 @@ $(document).ready(function () {
     "MEDICO DO TRABALHO",
     "ADVOGADO",
     "PILOTO",
+    "AJUDANTE DE ELETRICISTA",
+    "ELETRICISTA DE INSTALAÇÕES",
+    "ENCARREGADO DE INSTALAÇÕES",
   ]
 
   // função para aplicar regra na tela
