@@ -343,7 +343,7 @@ $(document).ready(function () {
     )
     show_on_click("rd_loc", "Obra", null, "retornodp")
   }
-  // ATV 459
+  // ATV 474
 
   var cargosComCartaoObra = [
     "ENGENHEIRO CIVIL",
@@ -689,7 +689,7 @@ $(document).ready(function () {
       null,
       "txt_dp_alter"
     )
-    // ATV 459
+    // ATV 474
     hide_on_load("rd_vtOb", "Sim", null, "cartaoVtOb")
     // ATV 63
     hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
@@ -699,7 +699,7 @@ $(document).ready(function () {
     // ATV 268
     hide_on_load("rd_cdt_mega", "Sim", null, "show_cod_mega")
 
-    // ATV 474
+    // ATV 488
     hide_on_load("rd_int_dp", "Sim", null, "dt_int_dp")
 
     // ATV 376
