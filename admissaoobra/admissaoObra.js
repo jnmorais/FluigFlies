@@ -99,7 +99,8 @@ $(document).ready(function () {
             if (selected.vrf == "Adm") {
               FLUIGC.toast({
                 title: "Atenção: ",
-                message: "Este cargo não é destinado a este processo!",
+                message:
+                  "Este cargo não é destinado a este processo! Abra o de Admissão Admnistrativo",
                 type: "warning",
               })
             } else {
