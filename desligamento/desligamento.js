@@ -47,7 +47,7 @@ $(document).ready(function () {
       if ($("#div_rd_tpAvs").is(":visible")) $("#div_rd_tpAvs").hide()
       if ($("#div_rd_mtvDslg").is(":visible")) $("#div_rd_mtvDslg").hide()
       if ($("input[name$='rd_Estg']:checked").val() == "Não") {
-        $("#div_rd_mtvDslg, #div_txt_cargo").show()
+        $("#div_rd_mtvDslg, #div_txt_cargo , #div_cargo").show()
         $("#div_rd_eftv").hide()
       } else {
         $("#div_rd_mtvDslg, #div_rd_eftv, #div_txt_cargo").show()
