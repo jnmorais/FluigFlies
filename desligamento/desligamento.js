@@ -4,13 +4,13 @@ $(document).ready(function () {
   var rd_mtvDslg3 = "Desligamento Empregador (Empresa)"
   var rd_mtvDslg6 = "Acordo entre as partes (conforme art. 484-A CLT)"
   $(
-    "#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg"
+    "#div_anx_demissao,#div_txt_acrdPts,#div_patr_eqp,#div_rd_eftv,#div_rd_mtvDslg",
   ).hide()
   $(
-    "#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh,#rh_fdbk,#div_txt_rh_fdb,#premioApv"
+    "#div_txt_cargo,#div_rd_tpAvs,#txt_altr_rh,#rh_fdbk,#div_txt_rh_fdb,#premioApv",
   ).hide()
   $(
-    "#msg_transf,#div_rd_clbLocS,#div_rd_clbLocAnx,#aso_obrigatorio,#sistemas_utilizados,#dp_obra,#camposObra"
+    "#msg_transf,#div_rd_clbLocS,#div_rd_clbLocAnx,#aso_obrigatorio,#sistemas_utilizados,#dp_obra,#camposObra",
   ).hide()
   if (FM == "ADD" || FM == "MOD") {
     $(".select2").select2()
@@ -86,19 +86,19 @@ $(document).ready(function () {
       "rd_clbCargo",
       "Obra (Canteiro e Produção)",
       null,
-      "div_rd_clbLocS"
+      "div_rd_clbLocS",
     )
     show_on_click(
       "rd_clbCargo",
       "Obra (Canteiro e Produção)",
       null,
-      "div_dp_obra"
+      "div_dp_obra",
     )
     show_on_click(
       "rd_clbCargo",
       "Escritório (BackOffice e Administrativo De Obra)",
       null,
-      "sistemas_utilizados"
+      "sistemas_utilizados",
     )
     show_on_click("rd_clbLoc", "Sim", null, "div_rd_clbLocAnx")
     show_on_click("rd_premio", "Sim", null, "premioApv")
@@ -109,7 +109,7 @@ $(document).ready(function () {
       "rd_devEqp_slt",
       "Sim, farei a devolução dos equipamentos para T.I Infra",
       "Sim, porém os equipamentos serão realocados no setor",
-      "div_patr_eqp"
+      "div_patr_eqp",
     )
     show_on_click("rd_entrev_rh", "Sim", null, "rh_fdbk")
     show_on_click("rd_entrev_rh", "Não", null, "txt_altr_rh")
@@ -124,19 +124,19 @@ $(document).ready(function () {
       "rd_clbCargo",
       "Obra (Canteiro e Produção)",
       null,
-      "div_rd_clbLocS"
+      "div_rd_clbLocS",
     )
     hide_on_load(
       "rd_clbCargo",
       "Obra (Canteiro e Produção)",
       null,
-      "div_dp_obra"
+      "div_dp_obra",
     )
     hide_on_load(
       "rd_clbCargo",
       "Escritório (BackOffice e Administrativo De Obra)",
       null,
-      "sistemas_utilizados"
+      "sistemas_utilizados",
     )
     hide_on_load("rd_clbLoc", "Sim", null, "div_rd_clbLocAnx")
     hide_on_load("rd_premio", "Sim", null, "premioApv")
@@ -147,7 +147,7 @@ $(document).ready(function () {
       "rd_devEqp_slt",
       "Sim, farei a devolução dos equipamentos para T.I Infra",
       "Sim, porém os equipamentos serão realocados no setor",
-      "div_patr_eqp"
+      "div_patr_eqp",
     )
     hide_on_load("rd_entrev_rh", "Sim", null, "rh_fdbk")
     hide_on_load("rd_entrev_rh", "Não", null, "txt_altr_rh")
@@ -159,8 +159,8 @@ $(document).ready(function () {
     hide_on_load("rd_ans_plnOdonto", "Sim", null, "anexo_plano_odonto")
     // CONTROLA EXIBICAO DOS INPUTS DPS DE CLICADOS
     if ($("input[name$='rd_Estg']:checked").val() == "Sim") {
-      $("#div_rd_eftv,#div_rd_mtvDslg").show()
-      $("#div_txt_cargo,#div_rd_tpAvs").hide()
+      $("#div_rd_eftv,#div_rd_mtvDslg, #div_txt_cargo").show()
+      $("#div_cargo,#div_rd_tpAvs").hide()
     } else if ($("input[name$='rd_Estg']:checked").val() == "Não") {
       $("#div_rd_mtvDslg,#div_txt_cargo").show()
       $("#div_rd_eftv").hide()
