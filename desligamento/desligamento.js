@@ -50,8 +50,8 @@ $(document).ready(function () {
         $("#div_rd_mtvDslg, #div_txt_cargo").show()
         $("#div_rd_eftv").hide()
       } else {
-        $("#div_rd_mtvDslg, #div_rd_eftv").show()
-        $("#div_txt_cargo").hide()
+        $("#div_rd_mtvDslg, #div_rd_eftv, #div_txt_cargo").show()
+        $("#div_cargo").hide()
       }
     })
     $("input[name$='rd_mtvDslg']").click(function (e) {
