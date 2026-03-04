@@ -163,7 +163,6 @@ $(document).ready(function () {
                 dataType: "json",
                 method: "POST",
                 data: JSON.stringify(param),
-                crossDomain: true,
                 cache: false,
               },
               root: "content",
