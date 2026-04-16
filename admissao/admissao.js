@@ -324,6 +324,7 @@ $(document).ready(function () {
       "cdd_slc",
     )
     show_on_click("rd_vt", "Sim", null, "cartaoVt")
+    show_on_click("rd_pcd", "Sim", null, "inf_pcd")
     FM == "MOD"
       ? FLUIGC.toast({
           title: "Recursos Humanos: ",
@@ -681,6 +682,7 @@ $(document).ready(function () {
 
     hide_on_load("rd_loc", "Escritório", null, "anexos")
     hide_on_load("rd_vt", "Sim", null, "cartaoVt")
+    hide_on_load("rd_pcd", "Sim", null, "inf_pcd")
     // ATV 51
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
     hide_on_load("rd_loc", "Obra", null, "retornodp")
