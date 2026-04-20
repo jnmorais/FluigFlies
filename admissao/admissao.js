@@ -377,6 +377,9 @@ $(document).ready(function () {
   }
   if (ATV == 474 || ATV == null) {
     show_on_click("rd_vtOb", "Sim", null, "cartaoVtOb")
+    show_on_click("rd_pcd_ob", "Sim", null, "laudo_med_ob")
+    show_on_click("rd_pcd_ob", "Sim", null, "inf_pcd_ob")
+    show_on_click("rd_tipo_deficiencia_ob", "Outra", null, "otr_def_ob")
     aplicaCartaoObraFront()
 
     // se mudar o rádio de local, revalida
@@ -698,6 +701,9 @@ $(document).ready(function () {
     )
     // ATV 474
     hide_on_load("rd_vtOb", "Sim", null, "cartaoVtOb")
+    hide_on_load("rd_pcd_ob", "Sim", null, "laudo_med_ob")
+    hide_on_load("rd_pcd_ob", "Sim", null, "inf_pcd_ob")
+    hide_on_load("rd_tipo_deficiencia_ob", "Outra", null, "otr_def_ob")
     // ATV 63
     hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
     // ATV 150
