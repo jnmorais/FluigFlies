@@ -388,7 +388,23 @@ $(document).ready(function () {
     // se mudar o cargo (zoom), também revalida
     $(document).on("change", "#txt_cargo_att", aplicaCartaoObraFront)
   }
+  // ATV 457
+  if (ATV == 457 || ATV == null) {
+    function validaRetornoClinica() {
+      var pcd = $("input[name='rd_pcd']:checked").val()
+      var pcd_ob = $("input[name='rd_pcd_ob']:checked").val()
 
+      if (pcd === "Sim" || pcd_ob === "Sim") {
+        $("#retorno_clinica").show()
+      } else {
+        $("#retorno_clinica").hide()
+      }
+    }
+
+    validaRetornoClinica()
+    $(document).on("change", "input[name='rd_pcd']", validaRetornoClinica)
+    $(document).on("change", "input[name='rd_pcd_ob']", validaRetornoClinica)
+  }
   // ATV 63
   if (ATV == 63 || ATV == null) {
     show_on_click("rd_int_rh", "Sim", null, "dt_int_rh")
