@@ -78,7 +78,6 @@ function ativaSyncSistemas() {
 
 $(document).ready(function () {
   // loadDatasetCargos("Adm", "#txt_cargo")
-
   $(".select2").select2()
   $("[data-toggle='tooltip']").tooltip()
   // ATV 0|1|4
@@ -305,7 +304,6 @@ $(document).ready(function () {
       type: "info",
     })
   }
-
   // ATV 19
   if (ATV == 19 || ATV == null) {
     show_on_click("rd_avl_infra", "Sim", null, "vlr_orc")
@@ -731,8 +729,7 @@ $(document).ready(function () {
 
     // ATV 376
     hide_on_load("rd_etg_infra_eqps", "Sim", null, "patr_infra")
-
-    // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
+    // // ATV 348 - (SISTEMAS) - Mega, Expert, Approvo
     // hide_on_load("rd_etg_si_1", "Sim", null, "show_acessos_1")
     // // ATV 350 - (SISTEMAS) - CV e Adobe
     // hide_on_load("rd_etg_si_2", "Sim", null, "show_acessos_2")
