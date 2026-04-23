@@ -4,8 +4,7 @@ function atualizaSltSistemas() {
     .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
     .forEach(function (cb) {
       if (cb.checked) {
-        var lb = cb.parentNode.querySelector("label")
-        arr.push(lb ? lb.textContent.trim() : (cb.value || "").trim())
+        arr.push((cb.value || "").trim())
       }
     })
   var h = document.getElementById("slt_sistemas")
@@ -48,8 +47,7 @@ function restauraSistemasDoHidden() {
       document
         .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
         .forEach(function (cb) {
-          var l = cb.parentNode.querySelector("label")
-          var txt = (l ? l.textContent : cb.value || "").trim().toLowerCase()
+          var txt = (cb.value || "").trim().toLowerCase()
           cb.checked = !!set[txt]
         })
     }
