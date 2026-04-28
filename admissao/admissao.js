@@ -76,6 +76,19 @@ function ativaSyncSistemas() {
   atualizaSltSistemas()
 }
 
+function validaMotivoSubstituicao() {
+  var motivoContratacao = $("input[name='rd_mtvCntr']:checked").val()
+  var precisaComputador = $("input[name='rd_pc']:checked").val()
+
+  if (
+    motivoContratacao === "Substituição de colaborador" &&
+    precisaComputador === "Não, mas será necessário alugar um computador"
+  ) {
+    $("#rd_mtvSub").show()
+  } else {
+    $("#rd_mtvSub").hide()
+  }
+}
 $(document).ready(function () {
   // loadDatasetCargos("Adm", "#txt_cargo")
   $(".select2").select2()
@@ -92,6 +105,12 @@ $(document).ready(function () {
     ATV == 37 ||
     ATV == null
   ) {
+    $(document).on(
+      "change",
+      "input[name='rd_mtvCntr']",
+      validaMotivoSubstituicao,
+    )
+    $(document).on("change", "input[name='rd_pc']", validaMotivoSubstituicao)
     show_on_click(
       "rd_mtvCntr",
       "Substituição de colaborador",
