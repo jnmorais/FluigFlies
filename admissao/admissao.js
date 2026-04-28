@@ -110,7 +110,12 @@ $(document).ready(function () {
     show_on_click("rd_crl", "Sim", null, "div_anx_crl")
     show_on_click("rd_na", "Sim", null, "rd_etp_na")
     show_on_click("rd_crtComb", "Sim", null, "vl_crtComb")
-    show_on_click("rd_mtvCntr", "Aumento de quadro", null, "motivoPC")
+    show_on_click(
+      "rd_mtvCntr",
+      "Substituição de colaborador",
+      null,
+      "rd_mtvSub",
+    )
     show_on_click("rd_pc", "Sim, já tem computador", null, "rd_patrm")
     show_on_click(
       "rd_pc",
@@ -652,7 +657,7 @@ $(document).ready(function () {
     hide_on_load("rd_crl", "Sim", null, "div_anx_crl")
     hide_on_load("rd_na", "Sim", null, "rd_etp_na")
     hide_on_load("rd_crtComb", "Sim", null, "vl_crtComb")
-    hide_on_load("rd_mtvCntr", "Aumento de quadro", null, "motivoPC")
+    hide_on_load("rd_mtvCntr", "Substituição de colaborador", null, "rd_mtvSub")
     hide_on_load("rd_pc", "Sim, já tem computador", null, "rd_patrm")
     hide_on_load(
       "rd_pc",
