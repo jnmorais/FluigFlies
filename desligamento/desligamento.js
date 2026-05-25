@@ -117,6 +117,8 @@ $(document).ready(function () {
     show_on_click("rd_rh_ans", "Não, será transferido", null, "msg_transf")
     show_on_click("rd_adm_aso", "Sim", null, "aso_obrigatorio")
     show_on_click("rd_adm_fluig", "Sim", null, "div_adm_fluig_1")
+    show_on_click("rd_ans_VT", "Sim", null, "anexo_vt")
+    show_on_click("rd_ans_AM", "Sim", null, "anexo_am")
     show_on_click("rd_ans_plnSaude", "Sim", null, "anexo_plano_saude")
     show_on_click("rd_ans_plnOdonto", "Sim", null, "anexo_plano_odonto")
     // Esconde
@@ -155,6 +157,8 @@ $(document).ready(function () {
     hide_on_load("rd_rh_ans", "Não, será transferido", null, "msg_transf")
     hide_on_load("rd_adm_aso", "Sim", null, "aso_obrigatorio")
     hide_on_load("rd_adm_fluig", "Sim", null, "div_adm_fluig_1")
+    hide_on_load("rd_ans_VT", "Sim", null, "anexo_vt")
+    hide_on_load("rd_ans_AM", "Sim", null, "anexo_am")
     hide_on_load("rd_ans_plnSaude", "Sim", null, "anexo_plano_saude")
     hide_on_load("rd_ans_plnOdonto", "Sim", null, "anexo_plano_odonto")
     // CONTROLA EXIBICAO DOS INPUTS DPS DE CLICADOS
