@@ -95,6 +95,7 @@ $(document).ready(function () {
   $("[data-toggle='tooltip']").tooltip()
   // ATV 0|1|4
   if (ATV == 0 || ATV == 1) {
+    carregaResponsaveis()
     ativaSyncSistemas()
   }
   if (
@@ -864,6 +865,49 @@ function hide_on_load(campo, valor1, valor2, show) {
       $("#" + show).hide()
     }
   }
+}
+function carregaResponsaveis() {
+  var userGenerico = $("#usuarioLogado").val()
+  console.log("usuarioLogado lido:", userGenerico) // debug temporário
+  if (!userGenerico) {
+    console.warn("usuarioLogado vazio - combobox não populado")
+    return
+  }
+
+  var constraints = [
+    DatasetFactory.createConstraint(
+      "usuario_generico",
+      userGenerico,
+      userGenerico,
+      ConstraintType.MUST,
+    ),
+  ]
+
+  DatasetFactory.getDataset("ds_responsaveis", null, constraints, null, {
+    success: function (dataset) {
+      var $sel = $("#responsavelAtividade")
+      var valorAtual = $sel.val()
+      $sel
+        .empty()
+        .append('<option value="">Selecione o responsável...</option>')
+
+      if (dataset && dataset.values) {
+        for (var i = 0; i < dataset.values.length; i++) {
+          var nome = dataset.values[i].nome_colaborador
+          $sel.append('<option value="' + nome + '">' + nome + "</option>")
+        }
+      }
+      if (valorAtual) {
+        $sel.val(valorAtual)
+      }
+      if ($sel.hasClass("select2-hidden-accessible")) {
+        $sel.trigger("change")
+      }
+    },
+    error: function (xhr, status, err) {
+      console.error("Erro ao carregar ds_responsaveis:", status, err)
+    },
+  })
 }
 function setSelectedZoomItem(selectedItem) {
   if (selectedItem.inputId == "txt_cargo_att") {
