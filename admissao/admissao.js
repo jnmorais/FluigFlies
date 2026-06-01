@@ -868,7 +868,7 @@ function hide_on_load(campo, valor1, valor2, show) {
   }
 }
 function carregaResponsaveis(idCampo) {
-  var userGenerico = $("#usuarioLogado").val()
+  var userGenerico = $("[name='usuarioLogado']").val()
   if (!userGenerico) {
     console.warn("usuarioLogado vazio - " + idCampo + " não populado")
     return
@@ -885,8 +885,9 @@ function carregaResponsaveis(idCampo) {
 
   DatasetFactory.getDataset("ds_responsaveis", null, constraints, null, {
     success: function (dataset) {
-      var $sel = $("#" + idCampo)
+      var $sel = $("[name='" + idCampo + "']")
       if ($sel.length === 0) {
+        console.warn("Campo " + idCampo + " não encontrado no DOM")
         return
       }
       var valorAtual = $sel.val()
