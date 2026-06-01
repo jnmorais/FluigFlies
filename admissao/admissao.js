@@ -331,6 +331,7 @@ $(document).ready(function () {
   }
   // ATV 19
   if (ATV == 19 || ATV == null) {
+    carregaResponsaveis("resp_atv_19")
     show_on_click("rd_avl_infra", "Sim", null, "vlr_orc")
   }
   // ATV 37
@@ -866,11 +867,10 @@ function hide_on_load(campo, valor1, valor2, show) {
     }
   }
 }
-function carregaResponsaveis() {
+function carregaResponsaveis(idCampo) {
   var userGenerico = $("#usuarioLogado").val()
-  console.log("usuarioLogado lido:", userGenerico) // debug temporário
   if (!userGenerico) {
-    console.warn("usuarioLogado vazio - combobox não populado")
+    console.warn("usuarioLogado vazio - " + idCampo + " não populado")
     return
   }
 
@@ -885,12 +885,14 @@ function carregaResponsaveis() {
 
   DatasetFactory.getDataset("ds_responsaveis", null, constraints, null, {
     success: function (dataset) {
-      var $sel = $("#responsavelAtividade")
+      var $sel = $("#" + idCampo)
+      if ($sel.length === 0) {
+        return
+      }
       var valorAtual = $sel.val()
       $sel
         .empty()
         .append('<option value="">Selecione o responsável...</option>')
-
       if (dataset && dataset.values) {
         for (var i = 0; i < dataset.values.length; i++) {
           var nome = dataset.values[i].nome_colaborador
