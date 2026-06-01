@@ -95,7 +95,6 @@ $(document).ready(function () {
   $("[data-toggle='tooltip']").tooltip()
   // ATV 0|1|4
   if (ATV == 0 || ATV == 1) {
-    carregaResponsaveis()
     ativaSyncSistemas()
   }
   if (
