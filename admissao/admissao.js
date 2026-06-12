@@ -877,7 +877,7 @@ function initSugestaoEmailATV150() {
     return
   }
 
-  if (($("#txt_nome").val() || "").trim()) {
+  if (($("#txt_nm_clb").val() || "").trim()) {
     geraSugestoesEmail()
   } else {
     FLUIGC.toast({
