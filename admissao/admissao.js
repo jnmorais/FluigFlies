@@ -1,3 +1,5 @@
+var WEBHOOK_N8N = "https://webhook.teste.drits.com.br/webhook/sugestao-email"
+
 function atualizaSltSistemas() {
   var arr = []
   document
@@ -432,7 +434,7 @@ $(document).ready(function () {
   }
   // ATV 150
   if (ATV == 150 || ATV == null) {
-    show_on_click("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
+    initSugestaoEmailATV150()
   }
 
   // ATV 268
@@ -866,51 +868,111 @@ function hide_on_load(campo, valor1, valor2, show) {
     }
   }
 }
-function carregaResponsaveis(idCampo) {
-  var userGenerico = $("[name='usuarioLogado']").val()
-  if (!userGenerico) {
-    console.warn("usuarioLogado vazio - " + idCampo + " não populado")
+
+function initSugestaoEmailATV150() {
+  // mantém o comportamento já existente da ATV 150
+  show_on_click("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
+
+  // 1) já há email escolhido salvo? só restaura a seleção
+  if (($("#clb_mail").val() || "").trim()) {
+    restauraEmailDoHidden()
     return
   }
 
-  var constraints = [
-    DatasetFactory.createConstraint(
-      "usuario_generico",
-      userGenerico,
-      userGenerico,
-      ConstraintType.MUST,
-    ),
-  ]
+  // 2) o nome já vem preenchido das etapas anteriores.
+  //    Trava de segurança: só dispara se houver nome (evita chamada vazia).
+  if (($("#txt_nome").val() || "").trim()) {
+    geraSugestoesEmail()
+  } else {
+    FLUIGC.toast({
+      title: "Atenção: ",
+      message: "Nome do candidato não preenchido — sugestões não geradas",
+      type: "warning",
+    })
+  }
+}
 
-  DatasetFactory.getDataset("ds_responsaveis", null, constraints, null, {
-    success: function (dataset) {
-      var $sel = $("[name='" + idCampo + "']")
-      if ($sel.length === 0) {
-        console.warn("Campo " + idCampo + " não encontrado no DOM")
-        return
-      }
-      var valorAtual = $sel.val()
-      $sel
-        .empty()
-        .append('<option value="">Selecione o responsável...</option>')
-      if (dataset && dataset.values) {
-        for (var i = 0; i < dataset.values.length; i++) {
-          var nome = dataset.values[i].nome_colaborador
-          $sel.append('<option value="' + nome + '">' + nome + "</option>")
-        }
-      }
-      if (valorAtual) {
-        $sel.val(valorAtual)
-      }
-      if ($sel.hasClass("select2-hidden-accessible")) {
-        $sel.trigger("change")
-      }
+function geraSugestoesEmail() {
+  var numeroSolicitacao =
+    typeof WKNumProcesso !== "undefined" ? WKNumProcesso : null
+
+  if (!numeroSolicitacao) {
+    FLUIGC.toast({
+      title: "Atenção: ",
+      message: "Número da solicitação não identificado",
+      type: "warning",
+    })
+    return
+  }
+
+  function montaRadioEmail(emails) {
+    var $box = $("#containerEmail")
+    $box.empty()
+
+    if (!emails.length) {
+      $box.append(
+        "<p>Nenhuma sugestão disponível. Preencha manualmente abaixo.</p>",
+      )
+      setEmailCorporativo("")
+      return
+    }
+
+    emails.forEach(function (email, i) {
+      var checked = i === 0 ? "checked" : ""
+      $box.append(
+        '<div class="radio"><label>' +
+          '<input type="radio" name="rd_emailSugestao" value="' +
+          email +
+          '" ' +
+          checked +
+          "> " +
+          email +
+          "</label></div>",
+      )
+    })
+
+    // preenche com a 1ª opção por padrão
+    setEmailCorporativo(emails[0])
+  }
+
+  function restauraEmailDoHidden() {
+    var v = ($("#clb_mail").val() || "").trim()
+    if (v) {
+      $("input[name='rd_emailSugestao'][value='" + v + "']").prop(
+        "checked",
+        true,
+      )
+    }
+  }
+
+  function setEmailCorporativo(email) {
+    $("#clb_mail").val(email)
+    $("#clb_login_agsk").val(email ? email.split("@")[0] : "")
+  }
+
+  $(document).on("change", "input[name='rd_emailSugestao']", function () {
+    setEmailCorporativo($(this).val())
+  })
+
+  $.ajax({
+    url: WEBHOOK_N8N,
+    method: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({ numeroSolicitacao: numeroSolicitacao }),
+    success: function (resp) {
+      var data = typeof resp === "string" ? JSON.parse(resp) : resp
+      montaRadioEmail((data && data.disponiveis) || [])
     },
-    error: function (xhr, status, err) {
-      console.error("Erro ao carregar ds_responsaveis:", status, err)
+    error: function () {
+      FLUIGC.toast({
+        title: "Erro: ",
+        message: "Falha ao gerar sugestões de email",
+        type: "danger",
+      })
     },
   })
 }
+
 function setSelectedZoomItem(selectedItem) {
   if (selectedItem.inputId == "txt_cargo_att") {
     selectedItem["Cargo"] == "Novo cargo" || selectedItem["Cargo"] == ""
