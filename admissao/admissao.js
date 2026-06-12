@@ -870,17 +870,13 @@ function hide_on_load(campo, valor1, valor2, show) {
 }
 
 function initSugestaoEmailATV150() {
-  // mantém o comportamento já existente da ATV 150
   show_on_click("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
 
-  // 1) já há email escolhido salvo? só restaura a seleção
   if (($("#clb_mail").val() || "").trim()) {
     restauraEmailDoHidden()
     return
   }
 
-  // 2) o nome já vem preenchido das etapas anteriores.
-  //    Trava de segurança: só dispara se houver nome (evita chamada vazia).
   if (($("#txt_nome").val() || "").trim()) {
     geraSugestoesEmail()
   } else {
@@ -905,55 +901,6 @@ function geraSugestoesEmail() {
     return
   }
 
-  function montaRadioEmail(emails) {
-    var $box = $("#containerEmail")
-    $box.empty()
-
-    if (!emails.length) {
-      $box.append(
-        "<p>Nenhuma sugestão disponível. Preencha manualmente abaixo.</p>",
-      )
-      setEmailCorporativo("")
-      return
-    }
-
-    emails.forEach(function (email, i) {
-      var checked = i === 0 ? "checked" : ""
-      $box.append(
-        '<div class="radio"><label>' +
-          '<input type="radio" name="rd_emailSugestao" value="' +
-          email +
-          '" ' +
-          checked +
-          "> " +
-          email +
-          "</label></div>",
-      )
-    })
-
-    // preenche com a 1ª opção por padrão
-    setEmailCorporativo(emails[0])
-  }
-
-  function restauraEmailDoHidden() {
-    var v = ($("#clb_mail").val() || "").trim()
-    if (v) {
-      $("input[name='rd_emailSugestao'][value='" + v + "']").prop(
-        "checked",
-        true,
-      )
-    }
-  }
-
-  function setEmailCorporativo(email) {
-    $("#clb_mail").val(email)
-    $("#clb_login_agsk").val(email ? email.split("@")[0] : "")
-  }
-
-  $(document).on("change", "input[name='rd_emailSugestao']", function () {
-    setEmailCorporativo($(this).val())
-  })
-
   $.ajax({
     url: WEBHOOK_N8N,
     method: "POST",
@@ -972,6 +919,51 @@ function geraSugestoesEmail() {
     },
   })
 }
+
+function montaRadioEmail(emails) {
+  var $box = $("#containerEmail")
+  $box.empty()
+
+  if (!emails.length) {
+    $box.append(
+      "<p>Nenhuma sugestão disponível. Preencha manualmente abaixo.</p>",
+    )
+    setEmailCorporativo("")
+    return
+  }
+
+  emails.forEach(function (email, i) {
+    var checked = i === 0 ? "checked" : ""
+    $box.append(
+      '<div class="radio"><label>' +
+        '<input type="radio" name="rd_emailSugestao" value="' +
+        email +
+        '" ' +
+        checked +
+        "> " +
+        email +
+        "</label></div>",
+    )
+  })
+
+  setEmailCorporativo(emails[0])
+}
+
+function restauraEmailDoHidden() {
+  var v = ($("#clb_mail").val() || "").trim()
+  if (v) {
+    $("input[name='rd_emailSugestao'][value='" + v + "']").prop("checked", true)
+  }
+}
+
+function setEmailCorporativo(email) {
+  $("#clb_mail").val(email)
+  $("#clb_login_agsk").val(email ? email.split("@")[0] : "")
+}
+
+$(document).on("change", "input[name='rd_emailSugestao']", function () {
+  setEmailCorporativo($(this).val())
+})
 
 function setSelectedZoomItem(selectedItem) {
   if (selectedItem.inputId == "txt_cargo_att") {
