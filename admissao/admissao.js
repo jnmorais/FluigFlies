@@ -874,38 +874,35 @@ function initSugestaoEmailATV150() {
 
   if (($("#clb_mail").val() || "").trim()) {
     restauraEmailDoHidden()
-    return
   }
-
-  if (($("#txt_nm_clb").val() || "").trim()) {
-    geraSugestoesEmail()
-  } else {
-    FLUIGC.toast({
-      title: "Atenção: ",
-      message: "Nome do candidato não preenchido — sugestões não geradas",
-      type: "warning",
-    })
-  }
+  $("#btGerarEmail").off("click").on("click", geraSugestoesEmail)
 }
 
 function geraSugestoesEmail() {
+  var nome = ($("#txt_nm_clb").val() || "").trim()
   var numeroSolicitacao =
     typeof WKNumProcesso !== "undefined" ? WKNumProcesso : null
 
-  if (!numeroSolicitacao) {
+  if (!nome) {
     FLUIGC.toast({
       title: "Atenção: ",
-      message: "Número da solicitação não identificado",
+      message: "Nome do candidato não preenchido",
       type: "warning",
     })
     return
   }
+  var $btn = $("#btGerarEmail")
+  var txtOriginal = $btn.text()
+  $btn.prop("disabled", true).text("Gerando...")
 
   $.ajax({
     url: WEBHOOK_N8N,
     method: "POST",
     contentType: "application/json",
-    data: JSON.stringify({ numeroSolicitacao: numeroSolicitacao }),
+    data: JSON.stringify({
+      numeroSolicitacao: numeroSolicitacao,
+      nomeCompleto: nome,
+    }),
     success: function (resp) {
       var data = typeof resp === "string" ? JSON.parse(resp) : resp
       montaRadioEmail((data && data.disponiveis) || [])
@@ -916,6 +913,9 @@ function geraSugestoesEmail() {
         message: "Falha ao gerar sugestões de email",
         type: "danger",
       })
+    },
+    complete: function () {
+      $btn.prop("disabled", false).text(txtOriginal)
     },
   })
 }
