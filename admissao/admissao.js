@@ -893,7 +893,11 @@ function montaRadioEmail(emails) {
   }
 
   // título antes dos radios
-  $box.append("Escolha uma das sugestões de email:")
+  $box.append(
+    "Escolha uma das sugestões de email:" +
+      "<br>" +
+      "Caso não encontre sua sugestão, preencha o e-mail corporativo manualmente abaixo.</br>",
+  )
 
   var jaEscolhido = ($("#clb_mail").val() || "").trim()
 
