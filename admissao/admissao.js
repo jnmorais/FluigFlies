@@ -1,5 +1,3 @@
-var WEBHOOK_N8N = "https://webhook.teste.drits.com.br/webhook/sugestao-email"
-
 function atualizaSltSistemas() {
   var arr = []
   document
@@ -872,52 +870,14 @@ function hide_on_load(campo, valor1, valor2, show) {
 function initSugestaoEmailATV150() {
   show_on_click("rd_etg_infra_acs", "Sim", null, "show_clb_mail")
 
-  if (($("#clb_mail").val() || "").trim()) {
-    restauraEmailDoHidden()
-  }
-  $("#btGerarEmail").off("click").on("click", geraSugestoesEmail)
-}
+  // lê as sugestões gravadas no card pela automação (n8n) na ATV 37
+  var sugestoes = [
+    ($("#sugestao1").val() || "").trim(),
+    ($("#sugestao2").val() || "").trim(),
+    ($("#sugestao3").val() || "").trim(),
+  ].filter(Boolean)
 
-function geraSugestoesEmail() {
-  var nome = ($("#txt_nm_clb").val() || "").trim()
-  var numeroSolicitacao =
-    typeof WKNumProcesso !== "undefined" ? WKNumProcesso : null
-
-  if (!nome) {
-    FLUIGC.toast({
-      title: "Atenção: ",
-      message: "Nome do candidato não preenchido",
-      type: "warning",
-    })
-    return
-  }
-  var $btn = $("#btGerarEmail")
-  var txtOriginal = $btn.text()
-  $btn.prop("disabled", true).text("Gerando...")
-
-  $.ajax({
-    url: WEBHOOK_N8N,
-    method: "POST",
-    contentType: "application/json",
-    data: JSON.stringify({
-      numeroSolicitacao: numeroSolicitacao,
-      nomeCompleto: nome,
-    }),
-    success: function (resp) {
-      var data = typeof resp === "string" ? JSON.parse(resp) : resp
-      montaRadioEmail((data && data.disponiveis) || [])
-    },
-    error: function () {
-      FLUIGC.toast({
-        title: "Erro: ",
-        message: "Falha ao gerar sugestões de email",
-        type: "danger",
-      })
-    },
-    complete: function () {
-      $btn.prop("disabled", false).text(txtOriginal)
-    },
-  })
+  montaRadioEmail(sugestoes)
 }
 
 function montaRadioEmail(emails) {
@@ -928,32 +888,27 @@ function montaRadioEmail(emails) {
     $box.append(
       "<p>Nenhuma sugestão disponível. Preencha manualmente abaixo.</p>",
     )
-    setEmailCorporativo("")
     return
   }
 
+  // respeita o email já escolhido (se houver); senão marca o primeiro
+  var jaEscolhido = ($("#clb_mail").val() || "").trim()
+
   emails.forEach(function (email, i) {
-    var checked = i === 0 ? "checked" : ""
+    var marcar = jaEscolhido ? email === jaEscolhido : i === 0
     $box.append(
       '<div class="radio"><label>' +
         '<input type="radio" name="rd_emailSugestao" value="' +
         email +
         '" ' +
-        checked +
+        (marcar ? "checked" : "") +
         "> " +
         email +
         "</label></div>",
     )
   })
 
-  setEmailCorporativo(emails[0])
-}
-
-function restauraEmailDoHidden() {
-  var v = ($("#clb_mail").val() || "").trim()
-  if (v) {
-    $("input[name='rd_emailSugestao'][value='" + v + "']").prop("checked", true)
-  }
+  if (!jaEscolhido) setEmailCorporativo(emails[0])
 }
 
 function setEmailCorporativo(email) {
@@ -961,6 +916,7 @@ function setEmailCorporativo(email) {
   $("#clb_login_agsk").val(email ? email.split("@")[0] : "")
 }
 
+// ao trocar o radio, atualiza email corporativo e login do Agidesk
 $(document).on("change", "input[name='rd_emailSugestao']", function () {
   setEmailCorporativo($(this).val())
 })
