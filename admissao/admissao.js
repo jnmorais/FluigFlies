@@ -886,12 +886,15 @@ function montaRadioEmail(emails) {
 
   if (!emails.length) {
     $box.append(
-      "<p>Nenhuma sugestão disponível. Preencha manualmente abaixo.</p>",
+      "<p><strong>Nenhuma sugestão de email disponível.</strong> " +
+        "Por favor, preencha o e-mail corporativo manualmente no campo abaixo.</p>",
     )
     return
   }
 
-  // respeita o email já escolhido (se houver); senão marca o primeiro
+  // título antes dos radios
+  $box.append("<p><strong>Escolha uma das sugestões de email:</strong></p>")
+
   var jaEscolhido = ($("#clb_mail").val() || "").trim()
 
   emails.forEach(function (email, i) {
