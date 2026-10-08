@@ -1,79 +1,41 @@
+var EDITA_SISTEMAS = ["0", "1", "4"]
+
+function checkboxesSistemas() {
+  return document.querySelectorAll("input[type=checkbox][name^='sis_']")
+}
+
 function atualizaSltSistemas() {
   var arr = []
-  document
-    .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
-    .forEach(function (cb) {
-      if (cb.checked) {
-        arr.push((cb.value || "").trim())
-      }
-    })
+  checkboxesSistemas().forEach(function (cb) {
+    if (cb.checked) arr.push((cb.value || "").trim())
+  })
   var h = document.getElementById("slt_sistemas")
   if (h) h.value = JSON.stringify(arr)
 }
 
 function onSistemaChange(e) {
   var alvo = e.target
-  var lb = alvo.parentNode.querySelector("label")
-  var val = (lb ? lb.textContent : alvo.value || "").trim().toLowerCase()
-
-  if (val.indexOf("nenhum sistema") !== -1 && alvo.checked) {
-    document
-      .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
-      .forEach(function (cb) {
-        if (cb !== alvo) cb.checked = false
-      })
-  } else if (alvo.checked) {
-    document
-      .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
-      .forEach(function (cb) {
-        var l = cb.parentNode.querySelector("label")
-        var t = (l ? l.textContent : cb.value || "").trim().toLowerCase()
-        if (t.indexOf("nenhum sistema") !== -1) cb.checked = false
-      })
+  if (alvo.checked) {
+    var marcouNenhum = alvo.name === "sis_nenhum"
+    checkboxesSistemas().forEach(function (cb) {
+      if (cb !== alvo && (marcouNenhum || cb.name === "sis_nenhum")) {
+        cb.checked = false
+      }
+    })
   }
   atualizaSltSistemas()
-}
-
-function restauraSistemasDoHidden() {
-  var h = document.getElementById("slt_sistemas")
-  if (!h || !h.value) return
-  try {
-    var arr = JSON.parse(h.value)
-    if (Array.isArray(arr)) {
-      var set = {}
-      arr.forEach(function (v) {
-        set[String(v).trim().toLowerCase()] = true
-      })
-      document
-        .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
-        .forEach(function (cb) {
-          var txt = (cb.value || "").trim().toLowerCase()
-          cb.checked = !!set[txt]
-        })
-    }
-  } catch (e) {}
-}
-
-function show_on_checkbox(checkboxId, targetId) {
-  var cb = document.getElementById(checkboxId)
-  var target = document.getElementById(targetId)
-  if (!cb || !target) return
-  function sync() {
-    target.style.display = cb.checked ? "" : "none"
-  }
-  cb.addEventListener("change", sync)
-  sync()
 }
 
 function ativaSyncSistemas() {
-  document
-    .querySelectorAll(".col-md-6.form-group .checkbox input[type=checkbox]")
-    .forEach(function (cb) {
-      cb.addEventListener("change", onSistemaChange)
-    })
-  show_on_checkbox("checkbox_outros", "txt_outros_sistemas")
-  restauraSistemasDoHidden()
+  checkboxesSistemas().forEach(function (cb) {
+    cb.addEventListener("change", onSistemaChange)
+  })
   atualizaSltSistemas()
+}
+
+var beforeSendValidate = function (numState, nextState) {
+  if (EDITA_SISTEMAS.indexOf(String(ATV)) !== -1) atualizaSltSistemas()
+  return true
 }
 
 function validaMotivoSubstituicao() {
@@ -94,7 +56,7 @@ $(document).ready(function () {
   $(".select2").select2()
   $("[data-toggle='tooltip']").tooltip()
   // ATV 0|1|4
-  if (ATV == 0 || ATV == 1) {
+  if (EDITA_SISTEMAS.indexOf(String(ATV)) !== -1) {
     ativaSyncSistemas()
   }
   if (
