@@ -98,4 +98,17 @@ function setSelectedZoomItem(selectedItem) {
             $("#novo_cargo,#txtAr_descricaoAtvs").val("")
         }
     }
+    // PREENCHE AS NOVAS ATIVIDADES COM AS AUTORIDADES E RESPONSABILIDADES DO CARGO (ds_cargos)
+    if (selectedItem.inputId == "txt_cargo_novo" || selectedItem.inputId == "txt_cargo_novo_promo") {
+        var campoAtv = selectedItem.inputId == "txt_cargo_novo" ? "#txtAr_atvNova" : "#txtAr_atvNova_promo"
+        $(campoAtv).val(selectedItem["Cargo"] == "Novo cargo" ? "" : (selectedItem["Autoridade"] || ""))
+    }
+}
+function removedZoomItem(removedItem) {
+    if (removedItem.inputId == "txt_cargo_novo") {
+        $("#txtAr_atvNova").val("")
+    }
+    if (removedItem.inputId == "txt_cargo_novo_promo") {
+        $("#txtAr_atvNova_promo").val("")
+    }
 }
