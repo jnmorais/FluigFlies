@@ -18,6 +18,7 @@ $(document).ready(function () {
             window["cc_promo"].clear()
             window["txt_cargo_att"].clear()
             window["txt_nivelamento_att"].clear()
+            setAutoridadeCargo("txt_cargo_novo_promo", "")
             $("#slt_transferencia,#alert_transferencia").show()
         } else {
             $("#slt_transferencia,#alert_transferencia").hide()
@@ -30,6 +31,7 @@ $(document).ready(function () {
             window["spe_destino"].clear()
             window["cc_atual"].clear()
             window["cc_destino"].clear()
+            setAutoridadeCargo("txt_cargo_novo", "")
             $("#slt_promocao,#alert_promocao").show()
         }
     });
@@ -63,6 +65,9 @@ $(document).ready(function () {
     hide_on_load("rd_locPromo", "div_loc_promo", "Obra")
     hide_on_load("rd_alt_cargo_promo", "div_nv_cargo_promo", "Sim")
     hide_on_load("rd_alt_sal_promo", "div_nv_salario_promo", "Sim")
+    // Autoridades e responsabilidades do novo cargo
+    setAutoridadeCargo("txt_cargo_novo", $("#txt_autoridade_novo").val() || "")
+    setAutoridadeCargo("txt_cargo_novo_promo", $("#txt_autoridade_novo_promo").val() || "")
     // Cadstrar novo cargo
     $("#novo_cargo").val() != "" ? $("#div_novo_cargo").show() : $("#div_novo_cargo").hide()
 });
@@ -98,17 +103,19 @@ function setSelectedZoomItem(selectedItem) {
             $("#novo_cargo,#txtAr_descricaoAtvs").val("")
         }
     }
-    // PREENCHE AS NOVAS ATIVIDADES COM AS AUTORIDADES E RESPONSABILIDADES DO CARGO (ds_cargos)
     if (selectedItem.inputId == "txt_cargo_novo" || selectedItem.inputId == "txt_cargo_novo_promo") {
-        var campoAtv = selectedItem.inputId == "txt_cargo_novo" ? "#txtAr_atvNova" : "#txtAr_atvNova_promo"
-        $(campoAtv).val(selectedItem["Cargo"] == "Novo cargo" ? "" : (selectedItem["Autoridade"] || ""))
+        setAutoridadeCargo(selectedItem.inputId, selectedItem["Cargo"] == "Novo cargo" ? "" : (selectedItem["Autoridade"] || ""))
     }
 }
 function removedZoomItem(removedItem) {
-    if (removedItem.inputId == "txt_cargo_novo") {
-        $("#txtAr_atvNova").val("")
+    if (removedItem.inputId == "txt_cargo_novo" || removedItem.inputId == "txt_cargo_novo_promo") {
+        setAutoridadeCargo(removedItem.inputId, "")
     }
-    if (removedItem.inputId == "txt_cargo_novo_promo") {
-        $("#txtAr_atvNova_promo").val("")
-    }
+}
+// EXIBE AS AUTORIDADES E RESPONSABILIDADES DO NOVO CARGO (ds_cargos), MESMO PADRÃO DA ADMISSÃO
+function setAutoridadeCargo(campo, texto) {
+    var sufixo = campo == "txt_cargo_novo_promo" ? "_promo" : ""
+    $("#txt_autoridade_novo" + sufixo).val(texto)
+    $("#cargoResp_novo" + sufixo + " blockquote").text(texto)
+    texto ? $("#cargoResp_novo" + sufixo).show() : $("#cargoResp_novo" + sufixo).hide()
 }
