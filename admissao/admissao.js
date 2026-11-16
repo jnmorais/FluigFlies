@@ -378,8 +378,10 @@ $(document).ready(function () {
     function validaRetornoClinica() {
       var pcd = $("input[name='rd_pcd']:checked").val()
       var pcd_ob = $("input[name='rd_pcd_ob']:checked").val()
+      var reab = $("input[name='rd_reabilitado']:checked").val()
+      var reab_ob = $("input[name='rd_reabilitado_ob']:checked").val()
 
-      if (pcd === "Sim" || pcd_ob === "Sim") {
+      if (pcd === "Sim" || pcd_ob === "Sim" || reab === "Sim" || reab_ob === "Sim") {
         $("#retorno_clinica").show()
       } else {
         $("#retorno_clinica").hide()
@@ -389,6 +391,8 @@ $(document).ready(function () {
     validaRetornoClinica()
     $(document).on("change", "input[name='rd_pcd']", validaRetornoClinica)
     $(document).on("change", "input[name='rd_pcd_ob']", validaRetornoClinica)
+    $(document).on("change", "input[name='rd_reabilitado']", validaRetornoClinica)
+    $(document).on("change", "input[name='rd_reabilitado_ob']", validaRetornoClinica)
   }
   // ATV 63
   if (ATV == 63 || ATV == null) {
