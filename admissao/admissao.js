@@ -310,6 +310,7 @@ $(document).ready(function () {
     show_on_click("rd_pcd", "Sim", null, "laudo_med")
     show_on_click("rd_pcd", "Sim", null, "inf_pcd")
     show_on_click("rd_tipo_deficiencia", "Outra", null, "otr_def")
+    show_on_click("rd_reabilitado", "Sim", null, "doc_reabilitado")
     FM == "MOD"
       ? FLUIGC.toast({
           title: "Recursos Humanos: ",
@@ -363,6 +364,7 @@ $(document).ready(function () {
     show_on_click("rd_pcd_ob", "Sim", null, "laudo_med_ob")
     show_on_click("rd_pcd_ob", "Sim", null, "inf_pcd_ob")
     show_on_click("rd_tipo_deficiencia_ob", "Outra", null, "otr_def_ob")
+    show_on_click("rd_reabilitado_ob", "Sim", null, "doc_reabilitado_ob")
     aplicaCartaoObraFront()
 
     // se mudar o rádio de local, revalida
@@ -689,6 +691,7 @@ $(document).ready(function () {
     hide_on_load("rd_pcd", "Sim", null, "laudo_med")
     hide_on_load("rd_pcd", "Sim", null, "inf_pcd")
     hide_on_load("rd_tipo_deficiencia", "Outra", null, "otr_def")
+    hide_on_load("rd_reabilitado", "Sim", null, "doc_reabilitado")
     // ATV 51
     hide_on_load("rd_dst_dp", "Não", null, "dt_cntr_clb")
     hide_on_load("rd_loc", "Obra", null, "retornodp")
@@ -703,6 +706,7 @@ $(document).ready(function () {
     hide_on_load("rd_pcd_ob", "Sim", null, "laudo_med_ob")
     hide_on_load("rd_pcd_ob", "Sim", null, "inf_pcd_ob")
     hide_on_load("rd_tipo_deficiencia_ob", "Outra", null, "otr_def_ob")
+    hide_on_load("rd_reabilitado_ob", "Sim", null, "doc_reabilitado_ob")
     // ATV 63
     hide_on_load("rd_int_rh", "Sim", null, "dt_int_rh")
     // ATV 150
